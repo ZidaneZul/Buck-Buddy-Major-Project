@@ -14,6 +14,7 @@ public class NPCRandomChance : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         SceneName = currentScene.name;  
+        StartCoroutine(NPCMaker(SceneName));    
         
     }
 
