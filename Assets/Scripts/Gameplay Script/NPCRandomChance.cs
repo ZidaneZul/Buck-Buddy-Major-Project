@@ -29,7 +29,7 @@ public class NPCRandomChance : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         SceneName = currentScene.name;  
-        StartCoroutine(NPCMaker(SceneName));    
+        StartCoroutine(NPCSpawner(SceneName));    
     
     }
 
@@ -39,7 +39,7 @@ public class NPCRandomChance : MonoBehaviour
         TemporaryButton();
     }
 
-    IEnumerator NPCMaker(string NPCtoSpawn)
+    IEnumerator NPCSpawner(string NPCtoSpawn)
     {
         if(NPCtoSpawn == "SampleScene")
         {
@@ -51,7 +51,7 @@ public class NPCRandomChance : MonoBehaviour
             Debug.Log("A random NPC Appears");
             Instantiate(NPC[randomNPC]);
             yield return new WaitForSeconds(3f);
-            StopCoroutine(NPCMaker(NPCtoSpawn));
+            StopCoroutine(NPCSpawner(NPCtoSpawn));
         }
     }
     
@@ -62,7 +62,7 @@ public class NPCRandomChance : MonoBehaviour
         {
             currentScene = SceneManager.GetActiveScene();
             SceneName = currentScene.name;
-            StartCoroutine(NPCMaker(SceneName));
+            StartCoroutine(NPCSpawner(SceneName));
         }
 
     }
