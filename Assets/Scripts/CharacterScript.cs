@@ -12,13 +12,15 @@ public class CharacterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        Debug.Log(horizontal);
+        Flip();
     }
 
     private void FixedUpdate()
@@ -32,6 +34,8 @@ public class CharacterScript : MonoBehaviour
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
     }
 }
