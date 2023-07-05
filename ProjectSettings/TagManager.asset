@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Purchasable
   - FoodSpawn
+  - Spawners
+  - NPC
   layers:
   - Default
   - TransparentFX
