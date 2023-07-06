@@ -19,7 +19,7 @@ public class CharacterScript : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontal);
+        //Debug.Log(horizontal);
         Flip();
     }
 
