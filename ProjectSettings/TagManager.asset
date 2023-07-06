@@ -8,6 +8,7 @@ TagManager:
   - FoodSpawn
   - Spawners
   - NPC
+  - Waypoint
   layers:
   - Default
   - TransparentFX
