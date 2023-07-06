@@ -6,7 +6,7 @@ public class CharacterScript : MonoBehaviour
 {
     float horizontal;
     public float speed = 3f;
-    bool isFacingRight = true;  
+    public bool isFacingRight = true;  
 
     Rigidbody rb;
     // Start is called before the first frame update

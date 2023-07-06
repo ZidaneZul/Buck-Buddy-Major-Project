@@ -17,6 +17,7 @@ public class NPCRandomChance : MonoBehaviour
     public Transform target;
     public CharacterScript character;
     public Collider[] collidedObjects;
+    public bool interacted;
 
     // To preload variables that will stay between transition of scenes
 
@@ -54,10 +55,15 @@ public class NPCRandomChance : MonoBehaviour
     }
     void FixedUpdate()
     {
-        collidedObjects = Physics.OverlapSphere(this.transform.position, 5f);
+
+        if (GameObject.FindGameObjectWithTag("NPC"))
+        {
+            collidedObjects = Physics.OverlapSphere(nma.transform.position, 3f);
+        }
 
     }
-        IEnumerator NPCSpawner(string NPCtoSpawn)
+
+    IEnumerator NPCSpawner(string NPCtoSpawn)
     {
         if(NPCtoSpawn == "SampleScene")
         {
@@ -86,7 +92,7 @@ public class NPCRandomChance : MonoBehaviour
             {
                 Player = k.gameObject;
                 character = k.gameObject.GetComponent<CharacterScript>();
-                return Vector3.Distance(target.position, gameObject.transform.position) < distance;
+                return true;
             }
         }
         return false;
@@ -184,12 +190,59 @@ public class NPCRandomChance : MonoBehaviour
 
             }
         }
-        else if(PlayerDetection())
+        else if ((PlayerDetection()) && (interacted == false))
         {
             nma.isStopped = true;
             character.speed = 0f;
-            character.transform.LookAt(nma.transform.position);
-            nma.transform.LookAt(Player.transform.position);
+            Transform characterDirection = character.transform;
+
+            if (nma.transform.position.x < character.transform.position.x)
+            {
+                Vector3 localScaleCharacter = transform.localScale;
+                Vector3 localScaleNMA = transform.localScale;
+                localScaleCharacter.x *= -1f;
+                localScaleNMA.x *= 1f;
+                nma.transform.localScale = new Vector3(localScaleNMA.x,nma.transform.localScale.y,nma.transform.localScale.z);
+                character.transform.localScale = new Vector3(localScaleCharacter.x, character.transform.localScale.y, character.transform.localScale.z);
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    interacted = true;
+                    nma.isStopped = false;
+                    character.transform.localScale = characterDirection.transform.localScale;
+                    character.speed = 3f;
+                }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    interacted = true;
+                    character.transform.localScale = characterDirection.transform.localScale;
+                    nma.gameObject.SetActive(false);
+                    character.speed = 3f;
+                }
+            }
+            else if(nma.transform.position.x > character.transform.position.x)
+            {
+                Vector3 localScaleCharacter = transform.localScale;
+                Vector3 localScaleNMA = transform.localScale;
+                localScaleCharacter.x *= 1f;
+                localScaleNMA.x *= -1f;
+                nma.transform.localScale = new Vector3(localScaleNMA.x, nma.transform.localScale.y, nma.transform.localScale.z);
+                character.transform.localScale = new Vector3(localScaleCharacter.x, character.transform.localScale.y, character.transform.localScale.z);
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    interacted = true;
+                    character.transform.localScale = characterDirection.transform.localScale;
+                    nma.isStopped = false;
+                    character.speed = 3f;
+
+                }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    interacted = true;
+                    character.transform.localScale = characterDirection.transform.localScale;
+                    nma.gameObject.SetActive(false);
+                    character.speed = 3f;
+                }
+            }
         }
 
     }
