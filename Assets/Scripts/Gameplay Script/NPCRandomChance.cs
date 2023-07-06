@@ -14,6 +14,7 @@ public class NPCRandomChance : MonoBehaviour
     public GameObject Player;
     public int SpawnPointLocation = 0;
     public bool patrol;
+    public Transform target;
 
 
     // To preload variables that will stay between transition of scenes
@@ -37,7 +38,6 @@ public class NPCRandomChance : MonoBehaviour
         SceneName = currentScene.name;
         SpawnPoints = GameObject.FindGameObjectsWithTag("Spawners");
         StartCoroutine(NPCSpawner(SceneName));
-        GotoNextPoint();
 
 
 
@@ -49,7 +49,6 @@ public class NPCRandomChance : MonoBehaviour
         GotoNextPoint();
         SceneChanged();
         TemporaryButton();
-        Debug.Log(Vector3.Distance(nma.transform.position, nma.destination));
 
     }
 
@@ -81,91 +80,84 @@ public class NPCRandomChance : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("NPC"))
             {
-                if ((SpawnPointLocation == 0) && patrol == false)
+                if(SpawnPointLocation == 0)
                 {
-                    patrol = true;
-                    if (nma.destination == null)
+                    for (int i = 0; i < 2; i++)
                     {
-                        nma.SetDestination(SpawnPoints[SpawnPointLocation + 1].transform.position);
-
-                    }
-
-                    else if (Vector3.Distance(nma.transform.position, nma.destination) < 0.25f)
-                    {
-                        Debug.Log("Made it");
-                        nma.SetDestination(SpawnPoints[SpawnPointLocation].transform.position);
-                        Vector3 newPosition = SpawnPoints[SpawnPointLocation].transform.position;
-                        if (Vector3.Distance(nma.transform.position, newPosition) < 0.25f)
+                        if (target == null)
                         {
-                            nma.ResetPath();
-                            patrol = false;
-                        }
-                        else
-                        {
-                            return;
+
+                            target = SpawnPoints[SpawnPointLocation + i].transform;
+
                         }
 
-                    }
-
-                }
-
-                if ((SpawnPointLocation % 2 == 0) && patrol == false)
-                {
-                    patrol = true;
-                    if(nma.destination == null)
-                    {
-                        nma.SetDestination(SpawnPoints[SpawnPointLocation + 1].transform.position);
-
-                    }
-
-                    else if (Vector3.Distance(nma.transform.position, nma.destination) < 0.25f)
-                    {
-  
-
-                        nma.SetDestination(SpawnPoints[SpawnPointLocation].transform.position);
-                        Vector3 newPosition = SpawnPoints[SpawnPointLocation].transform.position;
-                        if (Vector3.Distance(nma.transform.position, newPosition) < 0.25f)
+                        if (nma.destination != nma.transform.position)
                         {
-                            nma.ResetPath();
-                            patrol = false;
+                            nma.SetDestination(target.position);
                         }
 
-                        else
+                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
                         {
-                            return;
+                            target = null;
                         }
                     }
 
 
                 }
 
-                if ((SpawnPointLocation % 2 == 1) && patrol == false)
+                if (SpawnPointLocation % 2 == 0)
                 {
-                    patrol = true;
-                    if(nma.destination == null)
-                    {
-                        nma.SetDestination(SpawnPoints[SpawnPointLocation - 1].transform.position);
 
-
-                    }
-                    else if (Vector3.Distance(nma.transform.position, nma.destination) < 0.25f)
+                    for (int i = 0; i < 2; i++)
                     {
-                        Debug.Log("Made it");
-                        nma.SetDestination(SpawnPoints[SpawnPointLocation].transform.position);
-                        Vector3 newPosition = SpawnPoints[SpawnPointLocation].transform.position;
-                        Debug.Log(nma.destination);
-                        if (Vector3.Distance(nma.transform.position, newPosition) < 0.25f)
+                        if (target == null)
                         {
-                            nma.ResetPath();
-                            patrol = false;
+
+                            target = SpawnPoints[SpawnPointLocation + i].transform;
+
                         }
 
-
-                        else
+                        if (nma.destination != nma.transform.position)
                         {
-                            return;
+                            nma.SetDestination(target.position);
+                        }
+
+                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
+                        {
+                            target = null;
+
                         }
                     }
+                    
+
+                }
+
+                if (SpawnPointLocation % 2 == 1)
+                {
+                    for (int i = 0; i < -2; i--)
+                    {
+                        if (target == null)
+                        {
+
+                            target = SpawnPoints[SpawnPointLocation + i].transform;
+
+                        }
+
+                        nma.stoppingDistance = 0f;
+
+
+                        if (nma.destination != nma.transform.position)
+                        {
+                            nma.SetDestination(target.position);
+                        }
+
+                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
+                        {
+                            target = null;
+                        }
+                    }
+                    
+
 
                 }
 
