@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.AI;
 public class NPCRandomChance : MonoBehaviour
 {
     Scene currentScene;
     string SceneName;
     NPCRandomChance randomChance;
     public GameObject[] NPC;
+    public GameObject[] SpawnPoints;
+    public NavMeshAgent nma;
+    public GameObject Player;
+    public int SpawnPointLocation = 0;
+    public bool patrol;
+    public Transform target;
+
 
     // To preload variables that will stay between transition of scenes
 
@@ -28,15 +35,21 @@ public class NPCRandomChance : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
-        SceneName = currentScene.name;  
-        StartCoroutine(NPCSpawner(SceneName));    
-    
+        SceneName = currentScene.name;
+        SpawnPoints = GameObject.FindGameObjectsWithTag("Spawners");
+        StartCoroutine(NPCSpawner(SceneName));
+
+
+
     }
 
     void Update()
     {
+
+        GotoNextPoint();
         SceneChanged();
         TemporaryButton();
+
     }
 
     IEnumerator NPCSpawner(string NPCtoSpawn)
@@ -48,12 +61,113 @@ public class NPCRandomChance : MonoBehaviour
         if (NPCtoSpawn == "Level1")
         {
             int randomNPC = Random.Range(0, NPC.Length);
+            SpawnPointLocation = Random.Range(0, SpawnPoints.Length);
+
             Debug.Log("A random NPC Appears");
-            Instantiate(NPC[randomNPC]);
+            Instantiate(NPC[randomNPC],SpawnPoints[SpawnPointLocation].transform);
+            nma = GameObject.FindGameObjectWithTag("NPC").GetComponent<NavMeshAgent>();
+            nma.stoppingDistance = 0.25f;
             yield return new WaitForSeconds(3f);
-            StopCoroutine(NPCSpawner(NPCtoSpawn));
+            StopAllCoroutines();
+
         }
     }
+
+
+    void GotoNextPoint()
+    {
+        if (Player == null)
+        {
+            if (GameObject.FindGameObjectWithTag("NPC"))
+            {
+                if(SpawnPointLocation == 0)
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        if (target == null)
+                        {
+
+                            target = SpawnPoints[SpawnPointLocation + i].transform;
+
+                        }
+                        nma.stoppingDistance = 0f;
+
+                        if (nma.destination != nma.transform.position)
+                        {
+                            nma.SetDestination(target.position);
+                        }
+
+                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
+                        {
+                            target = null;
+                        }
+                    }
+
+
+                }
+
+                if (SpawnPointLocation % 2 == 0)
+                {
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        if (target == null)
+                        {
+
+                            target = SpawnPoints[SpawnPointLocation + i].transform;
+
+                        }
+                        nma.stoppingDistance = 0f;
+
+                        if (nma.destination != nma.transform.position)
+                        {
+                            nma.SetDestination(target.position);
+                        }
+
+                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
+                        {
+                            target = null;
+
+                        }
+                    }
+                    
+
+                }
+
+                if (SpawnPointLocation % 2 == 1)
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        if (target == null)
+                        {
+
+                            target = SpawnPoints[SpawnPointLocation - i].transform;
+
+                        }
+
+                        nma.stoppingDistance = 0f;
+
+
+                        if (nma.destination != nma.transform.position)
+                        {
+                            nma.SetDestination(target.position);
+                        }
+
+                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
+                        {
+                            target = null;
+                        }
+                    }
+                    
+
+
+                }
+
+            }
+        }
+
+    }
+
     
 
     void SceneChanged()
@@ -62,6 +176,7 @@ public class NPCRandomChance : MonoBehaviour
         {
             currentScene = SceneManager.GetActiveScene();
             SceneName = currentScene.name;
+            SpawnPoints = GameObject.FindGameObjectsWithTag("Spawners");
             StartCoroutine(NPCSpawner(SceneName));
         }
 
