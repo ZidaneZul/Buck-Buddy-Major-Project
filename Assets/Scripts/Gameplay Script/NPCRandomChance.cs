@@ -90,6 +90,7 @@ public class NPCRandomChance : MonoBehaviour
                             target = SpawnPoints[SpawnPointLocation + i].transform;
 
                         }
+                        nma.stoppingDistance = 0f;
 
                         if (nma.destination != nma.transform.position)
                         {
@@ -116,6 +117,7 @@ public class NPCRandomChance : MonoBehaviour
                             target = SpawnPoints[SpawnPointLocation + i].transform;
 
                         }
+                        nma.stoppingDistance = 0f;
 
                         if (nma.destination != nma.transform.position)
                         {
@@ -134,12 +136,12 @@ public class NPCRandomChance : MonoBehaviour
 
                 if (SpawnPointLocation % 2 == 1)
                 {
-                    for (int i = 0; i < -2; i--)
+                    for (int i = 0; i < 2; i++)
                     {
                         if (target == null)
                         {
 
-                            target = SpawnPoints[SpawnPointLocation + i].transform;
+                            target = SpawnPoints[SpawnPointLocation - i].transform;
 
                         }
 
