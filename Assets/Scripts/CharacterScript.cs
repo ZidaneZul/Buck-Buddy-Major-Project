@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterScript : MonoBehaviour
 {
     float horizontal;
-    float speed = 3f;
+    public float speed = 3f;
     bool isFacingRight = true;  
 
     Rigidbody rb;

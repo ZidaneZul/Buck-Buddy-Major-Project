@@ -15,7 +15,8 @@ public class NPCRandomChance : MonoBehaviour
     public int SpawnPointLocation = 0;
     public bool patrol;
     public Transform target;
-
+    public CharacterScript character;
+    public Collider[] collidedObjects;
 
     // To preload variables that will stay between transition of scenes
 
@@ -51,8 +52,12 @@ public class NPCRandomChance : MonoBehaviour
         TemporaryButton();
 
     }
+    void FixedUpdate()
+    {
+        collidedObjects = Physics.OverlapSphere(this.transform.position, 5f);
 
-    IEnumerator NPCSpawner(string NPCtoSpawn)
+    }
+        IEnumerator NPCSpawner(string NPCtoSpawn)
     {
         if(NPCtoSpawn == "SampleScene")
         {
@@ -72,15 +77,29 @@ public class NPCRandomChance : MonoBehaviour
 
         }
     }
+    bool PlayerDetection()
+    {
+        float distance = 5f;
+        foreach (Collider k in collidedObjects)
+        {
+            if (k.gameObject.tag == "Player")
+            {
+                Player = k.gameObject;
+                character = k.gameObject.GetComponent<CharacterScript>();
+                return Vector3.Distance(target.position, gameObject.transform.position) < distance;
+            }
+        }
+        return false;
+    }
 
 
     void GotoNextPoint()
     {
-        if (Player == null)
+        if (!PlayerDetection())
         {
             if (GameObject.FindGameObjectWithTag("NPC"))
             {
-                if(SpawnPointLocation == 0)
+                if (SpawnPointLocation == 0)
                 {
                     for (int i = 0; i < 2; i++)
                     {
@@ -130,7 +149,7 @@ public class NPCRandomChance : MonoBehaviour
 
                         }
                     }
-                    
+
 
                 }
 
@@ -158,12 +177,19 @@ public class NPCRandomChance : MonoBehaviour
                             target = null;
                         }
                     }
-                    
+
 
 
                 }
 
             }
+        }
+        else if(PlayerDetection())
+        {
+            nma.isStopped = true;
+            character.speed = 0f;
+            character.transform.LookAt(nma.transform.position);
+            nma.transform.LookAt(Player.transform.position);
         }
 
     }
