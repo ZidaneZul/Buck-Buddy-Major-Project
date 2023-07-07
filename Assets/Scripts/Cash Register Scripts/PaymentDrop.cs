@@ -11,6 +11,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
     public Text moneyGenerater;
     float randomNumber;
+
+    public GameObject tenDollar;
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
@@ -35,5 +37,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
                 i = 0;
             }
         }
+
+        
     }
 }
