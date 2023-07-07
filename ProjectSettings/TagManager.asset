@@ -9,6 +9,7 @@ TagManager:
   - Spawners
   - NPC
   - Waypoint
+  - textBox
   layers:
   - Default
   - TransparentFX

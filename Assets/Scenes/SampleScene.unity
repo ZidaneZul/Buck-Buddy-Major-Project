@@ -341,6 +341,14 @@ MonoBehaviour:
   NPC:
   - {fileID: 3349664440978728803, guid: ad9ec79154f415d4a938cbdff5d9a0b0, type: 3}
   - {fileID: 4827143275190198033, guid: 4c7f38e6444402b46be09930c44fa01c, type: 3}
+  NPCOnScene: {fileID: 0}
+  Dialogues:
+  - 'hello! Do you need help in finding (Ingredient Needed)?  '
+  - 'Yes please '
+  - 'No thank you! I appreciate the help though '
+  - You look lost, would you like some help in finding your item?
+  - 'Yes please '
+  - 'No thank you! I can look for it myself. '
   SpawnPoints: []
   nma: {fileID: 0}
   Player: {fileID: 0}
@@ -349,7 +357,11 @@ MonoBehaviour:
   target: {fileID: 0}
   character: {fileID: 0}
   collidedObjects: []
-  size: 5
+  interacted: 0
+  randomNPC: 0
+  dialogueBox: {fileID: 375679396070942848, guid: b0f37352dc3521440bcb77d1258626c3, type: 3}
+  NPCText: {fileID: 0}
+  yes: 0
 --- !u!4 &1889676806
 Transform:
   m_ObjectHideFlags: 0
