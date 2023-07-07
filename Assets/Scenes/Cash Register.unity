@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 307070373}
   m_Layer: 5
   m_Name: 10 Dollar
-  m_TagString: Untagged
+  m_TagString: 10 Dollar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 878451694}
   m_Layer: 5
   m_Name: 50 Dollar
-  m_TagString: Untagged
+  m_TagString: 50 Dollar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1501,7 +1501,7 @@ GameObject:
   - component: {fileID: 1949652646}
   m_Layer: 5
   m_Name: 100 Dollar
-  m_TagString: Untagged
+  m_TagString: 100 Dollar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

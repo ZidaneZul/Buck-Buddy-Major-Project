@@ -18,7 +18,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
-        randomNumber = Random.Range(1, 100);
+        randomNumber = Random.Range(1, 200);
         moneyGenerater.text = "Amount Left: " + randomNumber;
     }
     public void Update()
@@ -47,6 +47,18 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             else if (eventData.pointerDrag.CompareTag("5 Dollar"))
             {
                 sumAdded += 5;
+            }
+            else if(eventData.pointerDrag.CompareTag("10 Dollar"))
+            {
+                sumAdded += 10;
+            }
+            else if (eventData.pointerDrag.CompareTag("50 Dollar"))
+            {
+                sumAdded += 50;
+            }
+            else if (eventData.pointerDrag.CompareTag("100 Dollar"))
+            {
+                sumAdded += 100;
             }
         }
 
