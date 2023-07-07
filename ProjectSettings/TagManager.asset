@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Waypoint
+  - 2 Dollar
+  - 5 Dollar
   layers:
   - Default
   - TransparentFX

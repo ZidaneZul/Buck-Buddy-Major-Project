@@ -12,6 +12,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public Text moneyGenerater;
     float randomNumber;
 
+    float sumAdded;
+
     public GameObject tenDollar;
     public void Start()
     {
@@ -22,6 +24,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public void Update()
     {
         Debug.Log(i);
+        Debug.Log("Sum added " + sumAdded);
+        moneyGenerater.text = "Amount Left: " + (randomNumber - sumAdded );
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -36,7 +40,16 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             {
                 i = 0;
             }
+            if (eventData.pointerDrag.CompareTag("2 Dollar"))
+            {
+                sumAdded += 2;
+            }
+            else if (eventData.pointerDrag.CompareTag("5 Dollar"))
+            {
+                sumAdded += 5;
+            }
         }
+
 
         
     }
