@@ -44,24 +44,45 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             }
             if (eventData.pointerDrag.CompareTag("2 Dollar"))
             {
-                sumAdded += 2;
+                sumAdded += 2f;
             }
             else if (eventData.pointerDrag.CompareTag("5 Dollar"))
             {
-                sumAdded += 5;
+                sumAdded += 5f;
             }
             else if(eventData.pointerDrag.CompareTag("10 Dollar"))
             {
-                sumAdded += 10;
+                sumAdded += 10f;
             }
             else if (eventData.pointerDrag.CompareTag("50 Dollar"))
             {
-                sumAdded += 50;
+                sumAdded += 50f;
             }
             else if (eventData.pointerDrag.CompareTag("100 Dollar"))
             {
-                sumAdded += 100;
+                sumAdded += 100f;
             }
+            else if(eventData.pointerDrag.CompareTag("1 Dollar"))
+            {
+                sumAdded += 1f;
+            }
+            else if (eventData.pointerDrag.CompareTag("5 Cents"))
+            {
+                sumAdded += 0.05f;
+            }
+            else if (eventData.pointerDrag.CompareTag("10 Cents"))
+            {
+                sumAdded += 0.1f;
+            }
+            else if (eventData.pointerDrag.CompareTag("20 Cents"))
+            {
+                sumAdded += 0.2f;
+            }
+            else if (eventData.pointerDrag.CompareTag("50 Cents"))
+            {
+                sumAdded += 0.5f;
+            }
+
         }
 
 
