@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterScript : MonoBehaviour
 {
     float horizontal;
-    float speed = 3f;
-    bool isFacingRight = true;
+    public float speed = 3f;
+    public bool isFacingRight = true;  
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class CharacterScript : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontal);
+        //Debug.Log(horizontal);
         Flip();
     }
 

@@ -10,6 +10,12 @@ TagManager:
   - 10 Dollar
   - 50 Dollar
   - 100 Dollar
+  - Purchasable
+  - FoodSpawn
+  - Spawners
+  - NPC
+  - Waypoint
+  - textBox
   layers:
   - Default
   - TransparentFX
