@@ -18,7 +18,9 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
-        randomNumber = Random.Range(1, 200);
+        
+        randomNumber = Random.Range(1f, 200f);
+        randomNumber = Mathf.Round(randomNumber * 100.0f) * 0.01f;
         moneyGenerater.text = "Amount Left: " + randomNumber;
     }
     public void Update()
