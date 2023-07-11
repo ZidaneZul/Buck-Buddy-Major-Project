@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoBubble: {fileID: 0}
+  infoBubble: {fileID: 8548046742306672460, guid: a021d84240691674fb4ea44524b2b7ef, type: 3}
 --- !u!1 &1632873540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,6 +2173,14 @@ PrefabInstance:
     - target: {fileID: 3659815958390289515, guid: 3485d889754da6c42b1a888980715075, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935752945326481396, guid: 3485d889754da6c42b1a888980715075, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098132455061687612, guid: 3485d889754da6c42b1a888980715075, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5114980553086386494, guid: 3485d889754da6c42b1a888980715075, type: 3}
