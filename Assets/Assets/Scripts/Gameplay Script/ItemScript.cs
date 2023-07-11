@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
     public GameObject infoBubble;
     GameObject infoBubbleClone;
->>>>>>> Stashed changes
 
     GameObject[] foodPoints;
     GameObject tempPoint, pointChildren;
@@ -36,26 +33,20 @@ public class ItemScript : MonoBehaviour
             {
                 tempPoint = point;
                 Debug.Log("Close to point!");
-<<<<<<< Updated upstream
-=======
                 ShowBubble();
->>>>>>> Stashed changes
             }
         }
     }
 
     void ShowBubble()
     {
-<<<<<<< Updated upstream
         pointChildrenString = tempPoint.GetComponentInChildren<GameObject>().ToString();
         
-=======
         pointChildren = tempPoint.transform.GetChild(0).gameObject;
         pointChildrenString = pointChildren.ToString();
         Debug.Log("the child object is " + pointChildren);
 
         infoBubbleClone = Instantiate(infoBubble, pointChildren.transform);
->>>>>>> Stashed changes
 
 
     }
