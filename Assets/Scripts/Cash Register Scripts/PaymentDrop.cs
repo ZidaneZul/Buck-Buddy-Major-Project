@@ -11,23 +11,24 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
     public Text moneyGenerater;
     float randomNumber;
+    float amountAdded = 0f;
 
     float sumAdded;
 
-    public GameObject tenDollar;
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
         
         randomNumber = Random.Range(1f, 200f);
-        randomNumber = Mathf.Round(randomNumber * 100.0f) * 0.01f;
-        moneyGenerater.text = "Amount Left: " + randomNumber;
+        randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
+        Debug.Log("random amount: " + randomNumber);
+        moneyGenerater.text = "Amount Left: " + amountAdded;
     }
     public void Update()
     {
-        Debug.Log(i);
-        Debug.Log("Sum added " + sumAdded);
-        moneyGenerater.text = "Amount Left: " + (randomNumber - sumAdded );
+        //Debug.Log(i);
+        //Debug.Log("Sum added " + sumAdded);
+        moneyGenerater.text = "Amount Left: " + (amountAdded + sumAdded );
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -82,7 +83,6 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             {
                 sumAdded += 0.5f;
             }
-
         }
 
 
