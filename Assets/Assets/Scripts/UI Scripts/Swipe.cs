@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Swipe : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class Swipe : MonoBehaviour
     private float time;
     private Button takeTheBtn;
     int btnNumber;
+    public ButtonDataHolder buttonDataHolder;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        buttonDataHolder = GameObject.Find("RandomEventHandler").GetComponent<ButtonDataHolder>();
     }
 
     // Update is called once per frame
@@ -62,7 +65,8 @@ public class Swipe : MonoBehaviour
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
-                Debug.LogWarning("Current Selected Level" + i);
+                Debug.LogWarning("Current Selected Level" + (i+1));
+                
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(2.7f, 2.7f), 0.1f);
                 imageContent.transform.GetChild(i).localScale = Vector2.Lerp(imageContent.transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
                 imageContent.transform.GetChild(i).GetComponent<Image>().color = colors[1];
@@ -112,6 +116,9 @@ public class Swipe : MonoBehaviour
                 time = 0;
                 scroll_pos = (pos[btnNumber]);
                 runIt = true;
+                buttonDataHolder.LevelSelected = i + 1;
+                SceneManager.LoadScene("LevelConfirm");
+
             }
         }
 

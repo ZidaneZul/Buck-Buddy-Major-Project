@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889676806}
   - component: {fileID: 1889676805}
+  - component: {fileID: 1889676807}
   m_Layer: 0
   m_Name: RandomEventHandler
   m_TagString: Untagged
@@ -360,6 +361,7 @@ MonoBehaviour:
   interacted: 0
   randomNPC: 0
   dialogueBox: {fileID: 375679396070942848, guid: b0f37352dc3521440bcb77d1258626c3, type: 3}
+  dialogueBoxInScene: {fileID: 0}
   NPCText: {fileID: 0}
   yes: 0
 --- !u!4 &1889676806
@@ -377,3 +379,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1889676807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889676804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8086b3ebcca45408a25a772f676cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelSelected: 0
+  scene:
+    m_Handle: 0
+  textMeshProUGUI: {fileID: 0}
