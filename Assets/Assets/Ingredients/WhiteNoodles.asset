@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
   m_Name: WhiteNoodles
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  price: 0
+  id: 11
+  itemName: White Noodles
+  price: 2.2
   icon: {fileID: 0}

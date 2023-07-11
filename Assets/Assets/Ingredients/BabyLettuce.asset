@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
   m_Name: BabyLettuce
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  price: 0
+  id: 17
+  itemName: Baby Lettuce
+  price: 4.5
   icon: {fileID: 0}
