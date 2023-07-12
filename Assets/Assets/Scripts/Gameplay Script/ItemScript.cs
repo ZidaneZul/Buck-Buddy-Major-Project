@@ -15,6 +15,7 @@ public class ItemScript : MonoBehaviour
 
 
     bool didTextSpawn = false;
+    bool isPointClose = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,37 +27,39 @@ public class ItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IsCloseToPoint();
-
+        FindClosePoint();
+        IsCloseToFood();
     }
 
-    void IsCloseToPoint()
+    void FindClosePoint()
     {
-        foreach (GameObject point in foodPoints)
+        if (!isPointClose)
         {
-            if (Vector3.Distance(transform.position, point.transform.position) < 3)
+            foreach (GameObject point in foodPoints)
             {
-                tempPoint = point;
-                Debug.Log("Found a close point");
-                IsCloseToFood();
-            }
-            else
-            {
-                DeleteBubble();
+                if (Vector3.Distance(transform.position, point.transform.position) < 3)
+                {
+                    tempPoint = point;
+                    isPointClose = true;
+                    Debug.Log("Found a close point");
+                }
             }
         }
     }
 
     void IsCloseToFood()
     {
-        if (Vector3.Distance(transform.position, tempPoint.transform.position) < 3)
+        if (isPointClose)
         {
-            ShowBubble();
-            Debug.Log("Close to " + tempPoint);
-        }
-        else
-        {
-            DeleteBubble();
+            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 3)
+            {
+                ShowBubble();
+                Debug.Log("Close to " + tempPoint);
+            }
+            else
+            {
+                DeleteBubble();
+            }
         }
     }
     void ShowBubble()
@@ -79,6 +82,7 @@ public class ItemScript : MonoBehaviour
             foodBubblePos.y = pointChildren.transform.position.y - 1.4f;
 
             foodBubbleClone = Instantiate(infoBubble);
+            Debug.Log("Made new bubble");
 
             foodBubbleClone.transform.position = foodBubblePos;
             Debug.Log("pos of point is " + pointChildren.transform.position + "\n" +
@@ -91,6 +95,7 @@ public class ItemScript : MonoBehaviour
     {
         Destroy(foodBubbleClone);
         didTextSpawn=false;
+        isPointClose=false;
     }
         
 }
