@@ -41,7 +41,7 @@ public class ItemScript : MonoBehaviour
                 {
                     tempPoint = point;
                     isPointClose = true;
-                    Debug.Log("Found a close point");
+                   // Debug.Log("Found a close point");
                 }
             }
         }
@@ -68,7 +68,7 @@ public class ItemScript : MonoBehaviour
         
         pointChildren = tempPoint.transform.GetChild(0).gameObject;
         pointChildrenString = pointChildren.ToString();
-        Debug.Log("the child object is " + pointChildren);
+        //Debug.Log("the child object is " + pointChildren);
 
         //foodBubblePos.position = new Vector3(pointChildren.transform.position.x, pointChildren.transform.position.y - 1.4f, pointChildren.transform.position.z);
         
@@ -82,11 +82,11 @@ public class ItemScript : MonoBehaviour
             foodBubblePos.y = pointChildren.transform.position.y - 1.4f;
 
             foodBubbleClone = Instantiate(infoBubble);
-            Debug.Log("Made new bubble");
+           // Debug.Log("Made new bubble");
 
             foodBubbleClone.transform.position = foodBubblePos;
-            Debug.Log("pos of point is " + pointChildren.transform.position + "\n" +
-            "pos of food bubble is " + foodBubblePos);
+            //Debug.Log("pos of point is " + pointChildren.transform.position + "\n" +
+            //"pos of food bubble is " + foodBubblePos);
 
         }
     }
