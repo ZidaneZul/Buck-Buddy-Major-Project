@@ -84,7 +84,7 @@ public class NPCRandomChance : MonoBehaviour
     {
         if(NPCtoSpawn == "SampleScene")
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("MainMenu");
         }
         if (NPCtoSpawn == "Level1")
         {
