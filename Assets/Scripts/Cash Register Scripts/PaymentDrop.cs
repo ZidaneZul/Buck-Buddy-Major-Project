@@ -7,19 +7,22 @@ using UnityEngine.UI;
 public class PaymentDrop : MonoBehaviour, IDropHandler
 {
     public GameObject[] placement;
+    //public GameObject[] originalPlacement;
     int i;
+    int j;
 
     public Text moneyGenerater;
-    float randomNumber;
-    float amountAdded = 0f;
+    public float randomNumber;
+    public float amountAdded = 0f;
 
-    float sumAdded;
+    public float sumAdded;
 
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
+        //originalPlacement = GameObject.FindGameObjectsWithTag("Original Waypoints");
         
-        randomNumber = Random.Range(1f, 200f);
+        randomNumber = Random.Range(1f, 100f);
         randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Amount Left: " + amountAdded;
@@ -28,7 +31,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     {
         //Debug.Log(i);
         //Debug.Log("Sum added " + sumAdded);
-        moneyGenerater.text = "Amount Left: " + (amountAdded + sumAdded );
+        moneyGenerater.text = "Total Amount: " + (amountAdded + sumAdded);
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -37,8 +40,11 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         {
            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             eventData.pointerDrag.GetComponent<RectTransform>().transform.position = placement[i].transform.position;
+            //eventData.pointerDrag.GetComponent<RectTransform>().transform.position = originalPlacement[j].transform.position;
             i++;
+            j++;
 
+            //Money added
             if(i == placement.Length)
             {
                 i = 0;
@@ -83,6 +89,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             {
                 sumAdded += 0.5f;
             }
+
+            //Money Subtracted
         }
 
 
