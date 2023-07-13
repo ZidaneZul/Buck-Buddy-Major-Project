@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Purchasable
-  - FoodSpawn
-  - Spawners
-  - NPC
-  - Waypoint
-  - textBox
-  - ProductInformation
-  - ProductTextBox
-  - ProductPriceBox
-  - SpawnLocation
-  - Food
+  tags: []
   layers:
   - Default
   - TransparentFX
