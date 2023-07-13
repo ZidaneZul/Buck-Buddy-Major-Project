@@ -48,7 +48,7 @@ public class MapOpen : MonoBehaviour
         Debug.Log("HEEEEEEEEEELP" + shoppingCartPanel);
         if (shoppingCartPanel != null)
         {
-            bool cartActive = panel.activeSelf;
+            bool cartActive = shoppingCartPanel.activeSelf;
             shoppingCartPanel.SetActive(!cartActive);
         }
         InventoryManager.Instance.ShowItem();
