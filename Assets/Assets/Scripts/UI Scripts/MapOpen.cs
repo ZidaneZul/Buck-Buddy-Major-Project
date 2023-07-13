@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class MapOpen : MonoBehaviour
 {
-    public GameObject panel, player, buttonPressed;
+    public GameObject panel, player, buttonPressed, shoppingCartPanel;
     public GameObject[] waypoints;
     
 
@@ -14,21 +14,25 @@ public class MapOpen : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         panel = GameObject.Find("MapMenu");
         panel.SetActive(false);
+
+        shoppingCartPanel = GameObject.Find("Cart_Panel");
+        shoppingCartPanel.SetActive(false);
+        Debug.Log("Shopping cart closeeeee");
+
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
     {
-        for (int i = 0; i < waypoints.Length; i++)
-        {
-            waypointString = waypoints[i].ToString();
-            if (waypointString.Contains("Bread"))   {Debug.Log("bread time");}
-            else if (waypointString.Contains("Drink")) { Debug.Log("Drunk"); }
-            else if (waypointString.Contains("bread")) { Debug.Log("Bread but shorter"); }
-                
-        }
+        //for (int i = 0; i < waypoints.Length; i++)
+        //{
+        //    waypointString = waypoints[i].ToString();
+        //    if (waypointString.Contains("Bread"))   {Debug.Log("bread time");}
+        //    else if (waypointString.Contains("Drink")) { Debug.Log("Drunk"); }
+        //    else if (waypointString.Contains("bread")) { Debug.Log("Bread but shorter"); }  
+        //}
     }
     public void OpenPanel()
     {
@@ -39,6 +43,16 @@ public class MapOpen : MonoBehaviour
             panel.SetActive(!isActive);
         }
     }
+    public void ToggleCartPanel()
+    {
+        Debug.Log("HEEEEEEEEEELP" + shoppingCartPanel);
+        if (shoppingCartPanel != null)
+        {
+            bool cartActive = panel.activeSelf;
+            shoppingCartPanel.SetActive(!cartActive);
+        }
+        InventoryManager.Instance.ShowItem();
+    }
 
     public void TeleportToAisleDynamic()
     {
@@ -46,19 +60,22 @@ public class MapOpen : MonoBehaviour
         buttonName = buttonPressed.ToString();
 
 
-        Debug.Log("Button name" + buttonName);
+        //Debug.Log("Button name" + buttonName);
 
         foreach (string aisle in aisles)
         {
-            Debug.Log("Checking for keywords");
+            //Debug.Log("Checking for keywords");
             if (buttonName.Contains(aisle))
             {
-                Debug.Log("The button contains keyword" + aisle);
+               // Debug.Log("The button contains keyword" + aisle);
                 for (int i = 0; i < waypoints.Length; i++)
                 {
+
                     waypointString = waypoints[i].ToString();
+                   // Debug.Log("the string for waypoint is " + waypointString);
                     if (waypointString.Contains(aisle))
                     {
+                        //Debug.Log("TP to " + waypointString);
                         player.transform.position = waypoints[i].transform.position;
                         panel.SetActive(false);
                     }

@@ -16,11 +16,11 @@ TagManager:
   - NPC
   - Waypoint
   - textBox
-  - 1 Dollar
-  - 5 Cents
-  - 10 Cents
-  - 20 Cents
-  - 50 Cents
+  - ProductInformation
+  - ProductTextBox
+  - ProductPriceBox
+  - SpawnLocation
+  - Food
   layers:
   - Default
   - TransparentFX
