@@ -54,7 +54,7 @@ public class ItemScript : MonoBehaviour
             if (Vector3.Distance(transform.position, tempPoint.transform.position) < 3)
             {
                 ShowBubble();
-                Debug.Log("Close to " + tempPoint);
+                //Debug.Log("Close to " + tempPoint);
             }
             else
             {

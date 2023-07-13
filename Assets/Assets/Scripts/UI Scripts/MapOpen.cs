@@ -45,12 +45,13 @@ public class MapOpen : MonoBehaviour
     }
     public void ToggleCartPanel()
     {
-        //Debug.Log("HEEEEEEEEEELP" + shoppingCartPanel);
+        Debug.Log("HEEEEEEEEEELP" + shoppingCartPanel);
         if (shoppingCartPanel != null)
         {
             bool cartActive = panel.activeSelf;
             shoppingCartPanel.SetActive(!cartActive);
         }
+        InventoryManager.Instance.ShowItem();
     }
 
     public void TeleportToAisleDynamic()

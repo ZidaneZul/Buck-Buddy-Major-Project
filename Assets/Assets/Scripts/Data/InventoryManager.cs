@@ -12,6 +12,8 @@ public class InventoryManager : MonoBehaviour
 
     TextMeshProUGUI TMP;
 
+    string listOfCart;
+
     private void Awake()
     {
         Instance = this;
@@ -25,7 +27,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowItem();
+        Debug.Log(Items.Count);
     }
     public void Add(ItemData item)
     {
@@ -34,11 +36,12 @@ public class InventoryManager : MonoBehaviour
 
     public void ShowItem()
     {
-        TMP.text = "IMGAHY";
+
+        Debug.Log("Triggered");
         foreach (var item in Items)
         {
-            Debug.Log("The item is " + item);
-
+            listOfCart += item.itemName + "\n";
         }   
+        TMP.text = listOfCart;
     }
 }

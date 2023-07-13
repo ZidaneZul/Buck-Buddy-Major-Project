@@ -53,6 +53,6 @@ public class ItemAddToCart : MonoBehaviour
     public void AddToCart()
     {
         InventoryManager.Instance.Add(itemData);
-        Debug.Log("Added to cart");
+        Debug.Log("Added " + itemData + " to cart");
     }
 }
