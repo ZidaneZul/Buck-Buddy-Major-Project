@@ -9,7 +9,7 @@ public class ItemScript : MonoBehaviour
     
 
     GameObject[] foodPoints;
-    GameObject tempPoint, pointChildren;
+    GameObject tempPoint, pointChildren; //tempPoint is to store the waypoint gameobject to use.
     Vector3 foodBubblePos;
     string pointChildrenString;
 
@@ -29,6 +29,8 @@ public class ItemScript : MonoBehaviour
     {
         FindClosePoint();
         IsCloseToFood();
+        Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2f, Color.red);
+
     }
 
     void FindClosePoint()
@@ -79,7 +81,15 @@ public class ItemScript : MonoBehaviour
             didTextSpawn = true;
 
             foodBubblePos = pointChildren.transform.position;
-            foodBubblePos.y = pointChildren.transform.position.y - 1.4f;
+
+            if (!CheckForFloor())
+            {
+                foodBubblePos.y = pointChildren.transform.position.y - 1.8f;
+            }
+            else
+            {
+                foodBubblePos.y = pointChildren.transform.position.y + 1.8f;
+            }
 
             foodBubbleClone = Instantiate(infoBubble);
            // Debug.Log("Made new bubble");
@@ -96,6 +106,17 @@ public class ItemScript : MonoBehaviour
         Destroy(foodBubbleClone);
         didTextSpawn=false;
         isPointClose=false;
+    }
+
+    bool CheckForFloor()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(tempPoint.transform.position, transform.TransformDirection(Vector3.down), out hit, 2f))
+        {
+            Debug.Log("The bubble would hit the thing below foodpoint");
+            return true;
+        }
+        else return false;
     }
         
 }
