@@ -41,6 +41,7 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in Items)
         {
             listOfCart += item.itemName + "\n";
+            //listOfCart.
         }   
         TMP.text = listOfCart;
     }
