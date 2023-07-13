@@ -36,7 +36,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ShowItem()
     {
-
+        listOfCart = null;
         Debug.Log("Triggered");
         foreach (var item in Items)
         {
