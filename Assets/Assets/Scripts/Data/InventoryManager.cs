@@ -9,10 +9,21 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
 
     public List<ItemData> itemList = new List<ItemData>();
+
+    //used to make the instantiated prefabs have the correct item data attached to them
+    public List<ItemData> itemSpawnedList = new List<ItemData>();
+
+    public Dictionary<int, int> duplicateCounts;
+
+    //used for finding dups
     List<int> idList = new List<int>();
-    Dictionary<int, int> idDiction = new Dictionary<int, int>();
+
+    //so that the item prefab in cart spawns once per item
+    List<int> spawnedCartIds = new List<int>();
+    public InventoryItemController[] InventoryItem;
 
     public GameObject textPrefab;
+    Toggle cancelToggle;
     Transform itemContent;
 
     bool isCartOpen =false;
@@ -25,6 +36,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         itemContent = GameObject.Find("Content").transform;
+        cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
     }
 
     // Update is called once per frame
@@ -36,6 +48,11 @@ public class InventoryManager : MonoBehaviour
     {
         itemList.Add(item);
     }
+    public void Remove(ItemData item)
+    {
+        Debug.Log("remove item");
+        itemList.Remove(item);
+    }
 
     public void ShowItem()
     {
@@ -45,9 +62,8 @@ public class InventoryManager : MonoBehaviour
         }
 
         FindIDs();
-        Dictionary<int, int> duplicateCounts = CountDuplicates(idList);
 
-
+        duplicateCounts = CountDuplicates(idList);
 
         foreach (var item in itemList)
         {
@@ -55,19 +71,29 @@ public class InventoryManager : MonoBehaviour
             foreach (KeyValuePair<int, int> pair in duplicateCounts)
             {
                 Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
-                GameObject textObj = Instantiate(textPrefab, itemContent);
+                
+                if (pair.Key == item.id && !spawnedCartIds.Contains(item.id))
+                {                
+                    itemSpawnedList.Add(item);
+                    GameObject textObj = Instantiate(textPrefab, itemContent);
+                    spawnedCartIds.Add(pair.Key);
 
-                if (pair.Key == item.id)
-                {
                     var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
                     var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
                     var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
-
                     itemName.text = item.itemName;
                     itemPrice.text = "$" + item.price.ToString();
+
+                    itemQuantity.text = pair.Value + "x";
                 }
             }
         }
+        SetInventoryItems();
+    }
+
+    public void RecountCartItems()
+    {
+        duplicateCounts = CountDuplicates(idList);
     }
 
 
@@ -76,15 +102,17 @@ public class InventoryManager : MonoBehaviour
     {
         Dictionary<int, int> duplicateCounts = new Dictionary<int, int>();
 
-        foreach (int element in CDlist)
+        foreach (int idNumber in CDlist)
         {
-            if (duplicateCounts.ContainsKey(element))
+            if (duplicateCounts.ContainsKey(idNumber))
             {
-                duplicateCounts[element]++;
+                duplicateCounts[idNumber]++;
+                Debug.Log("Duplicate count " + duplicateCounts[idNumber]
+                    + "\n element is " + idNumber );
             }
             else
             {
-                duplicateCounts[element] = 1;
+                duplicateCounts[idNumber] = 1;
             }
         }
 
@@ -105,9 +133,39 @@ public class InventoryManager : MonoBehaviour
         {
             isCartOpen = false;
             idList.Clear();
+            spawnedCartIds.Clear();
+            cancelToggle.isOn = false;
         }
     }
     
+    public void EnableItemsRemove()
+    {
+        if (cancelToggle.isOn)
+        {
+            foreach (Transform item in itemContent)
+            {
+                item.Find("Cancel_Btn").gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (Transform item in itemContent)
+            {
+                item.Find("Cancel_Btn").gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void SetInventoryItems()
+    {
+        InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
+        
+        for (int i = 0; i < spawnedCartIds.Count; i++)
+        {
+            InventoryItem[i].AddItem(itemSpawnedList[i]);
+        }
+    }
+
     //void FindDuplicates()
     //{
     //    if (!isCartOpen)
