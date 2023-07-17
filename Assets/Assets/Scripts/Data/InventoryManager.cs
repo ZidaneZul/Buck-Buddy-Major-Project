@@ -45,54 +45,52 @@ public class InventoryManager : MonoBehaviour
         }
 
         FindIDs();
-        //Dictionary<int, int> duplicateCounts = CountDuplicates(idList);
+        Dictionary<int, int> duplicateCounts = CountDuplicates(idList);
 
 
 
         foreach (var item in itemList)
         {
 
-            //foreach (KeyValuePair<int, int> pair in duplicateCounts)
-            //{
-            //Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
-            //if (pair.Key == item.id)
-            //{
-
-
-
-            //}
-            // }
+            foreach (KeyValuePair<int, int> pair in duplicateCounts)
+            {
+                Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
                 GameObject textObj = Instantiate(textPrefab, itemContent);
-                var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
-                var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
-                var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
 
-                itemName.text = item.itemName;
-                itemPrice.text = "$" + item.price.ToString();
+                if (pair.Key == item.id)
+                {
+                    var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
+                    var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
+                    var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
+
+                    itemName.text = item.itemName;
+                    itemPrice.text = "$" + item.price.ToString();
+                }
+            }
         }
     }
 
 
-    
-    //Dictionary<int, int> CountDuplicates(List<int> CDlist)
-    //{
-    //    Dictionary<int, int> duplicateCounts = new Dictionary<int, int>();
 
-    //    foreach (int element in CDlist)
-    //    {
-    //        if (duplicateCounts.ContainsKey(element))
-    //        {
-    //            duplicateCounts[element]++;
-    //        }
-    //        else
-    //        {
-    //            duplicateCounts[element] = 1;
-    //        }
-    //    }
+    Dictionary<int, int> CountDuplicates(List<int> CDlist)
+    {
+        Dictionary<int, int> duplicateCounts = new Dictionary<int, int>();
 
-    //    return duplicateCounts;
-    //}    
-    
+        foreach (int element in CDlist)
+        {
+            if (duplicateCounts.ContainsKey(element))
+            {
+                duplicateCounts[element]++;
+            }
+            else
+            {
+                duplicateCounts[element] = 1;
+            }
+        }
+
+        return duplicateCounts;
+    }
+
     void FindIDs()
     {
         if (!isCartOpen)
