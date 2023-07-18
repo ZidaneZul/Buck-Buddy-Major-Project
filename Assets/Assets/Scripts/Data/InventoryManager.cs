@@ -59,81 +59,38 @@ public class InventoryManager : MonoBehaviour
 
     public void ShowItem()
     {
+        FindIDs();
         foreach (Transform item in itemContent)
         {
             Destroy(item.gameObject);
         }
-
-       // FindIDs();
-
-        //duplicateCounts = CountDuplicates(idList);
-
         foreach (var item in itemList)
         {
-            //foreach (KeyValuePair<int, int> pair in duplicateCounts)
-            //{
-                //Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
-                
-                //if (pair.Key == item.id && !spawnedCartIds.Contains(item.id))
-                //{                
-                   //itemSpawnedList.Add(item);
-                    GameObject textObj = Instantiate(textPrefab, itemContent);
-                    /*spawnedCartIds.Add(pair.Key)*/;
 
-                    var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
-                    var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
-                    var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
-                    itemName.text = item.itemName;
-                    itemPrice.text = "$" + item.price.ToString();
+            GameObject textObj = Instantiate(textPrefab, itemContent);
+           
+            var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
+            var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
+            //var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
+            itemName.text = item.itemName;
+            itemPrice.text = "$" + item.price.ToString();
 
-                    //itemQuantity.text = pair.Value + "x";
-                //}
-            //}
+           
         }
         SetInventoryItems();
     }
 
-    Dictionary<int, int> CountDuplicates(List<int> CDlist)
-    {
-        Dictionary<int, int> duplicateCounts = new Dictionary<int, int>();
-
-        foreach (int idNumber in CDlist)
-        {
-            if (duplicateCounts.ContainsKey(idNumber))
-            {
-                duplicateCounts[idNumber]++;
-                //Debug.Log("Duplicate count " + duplicateCounts[idNumber]
-                //    + "\n element is " + idNumber );
-            }
-            else
-            {
-                duplicateCounts[idNumber] = 1;
-            }
-        }
-
-        return duplicateCounts;
-    }
 
     void FindIDs()
     {
         if (shoppingCartPanel.activeInHierarchy)
         {
-            isCartOpen = true;
-            Debug.Log("Cart is open");
-            //foreach(var item in itemList)
-            //{
-            //    idList.Add(item.id);
-            //}
+          
         }
         else
         {
-
-            //isCartOpen = false;
-            //idList.Clear();
-            //spawnedCartIds.Clear();
-            //itemSpawnedList.Clear();
             cancelToggle.isOn = false;
-           
+
         }
     }
     
@@ -158,44 +115,10 @@ public class InventoryManager : MonoBehaviour
     public void SetInventoryItems()
     {
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
-        
-        for (int i = 0; i < itemList.Count; i++)
+
+        for(int i = 0; i < itemList.Count; i++)
         {
             InventoryItem[i].AddItem(itemList[i]);
-            Debug.Log(i);
         }
     }
-
-    //void FindDuplicates()
-    //{
-    //    if (!isCartOpen)
-    //    {
-    //        isCartOpen = true;
-    //        Debug.Log("Cart is now open");
-
-    //        foreach (var item in itemList)
-    //        {
-    //            testList.Add(item.id);
-    //            if (uniqueIdList.Contains(item.id))
-    //            {
-    //               // Debug.Log("Duplicate found!");
-    //                duplicatedList.Add(item.id);
-    //               // Debug.Log("item " + item.id + "has be found ");
-    //            }
-    //            else
-    //            {
-    //                //Debug.Log("not a dup!");
-    //                uniqueIdList.Add(item.id);
-    //            }
-    //            //Debug.Log("Unique id: " + uniqueIdList.ToString());
-    //        }
-    //    }
-    //    else
-    //    {
-    //        isCartOpen = false;
-    //        uniqueIdList.Clear();
-    //        testList.Clear();
-    //        Debug.Log("cart is now close");
-    //    }
-    //}
 }
