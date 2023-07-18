@@ -218,9 +218,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList: []
-  itemSpawnedList: []
   InventoryItem: []
   textPrefab: {fileID: 2015360437575155561, guid: 9a00877975f28794b8939c6e6b6efd1b, type: 3}
+  shoppingCartPanel: {fileID: 0}
 --- !u!4 &325228824
 Transform:
   m_ObjectHideFlags: 0
