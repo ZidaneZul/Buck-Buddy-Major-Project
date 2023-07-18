@@ -74,8 +74,6 @@ public class InventoryManager : MonoBehaviour
             //var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
             itemName.text = item.itemName;
             itemPrice.text = "$" + item.price.ToString();
-
-           
         }
         SetInventoryItems();
     }
