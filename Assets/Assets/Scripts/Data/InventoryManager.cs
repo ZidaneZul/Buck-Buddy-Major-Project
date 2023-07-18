@@ -134,6 +134,7 @@ public class InventoryManager : MonoBehaviour
             isCartOpen = false;
             idList.Clear();
             spawnedCartIds.Clear();
+            itemSpawnedList.Clear();
             cancelToggle.isOn = false;
         }
     }
