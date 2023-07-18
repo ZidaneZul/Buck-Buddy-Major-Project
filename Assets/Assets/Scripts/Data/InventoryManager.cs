@@ -9,20 +9,22 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
 
     public List<ItemData> itemList = new List<ItemData>();
-
-    //used to make the instantiated prefabs have the correct item data attached to them
-    public List<ItemData> itemSpawnedList = new List<ItemData>();
-
-    public Dictionary<int, int> duplicateCounts;
-
-    //used for finding dups
-    List<int> idList = new List<int>();
-
-    //so that the item prefab in cart spawns once per item
-    List<int> spawnedCartIds = new List<int>();
     public InventoryItemController[] InventoryItem;
 
-    public GameObject textPrefab;
+    //used to make the instantiated prefabs have the correct item data attached to them
+    //public List<ItemData> itemSpawnedList = new List<ItemData>();
+
+    //public Dictionary<int, int> duplicateCounts;
+
+    //used for finding dups
+    //List<int> idList = new List<int>();
+
+    //so that the item prefab in cart spawns once per item
+    //List<int> spawnedCartIds = new List<int>();
+
+
+    //gameobjects and other variables
+    public GameObject textPrefab, shoppingCartPanel;
     Toggle cancelToggle;
     Transform itemContent;
 
@@ -37,6 +39,7 @@ public class InventoryManager : MonoBehaviour
     {
         itemContent = GameObject.Find("Content").transform;
         cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
+        shoppingCartPanel = GameObject.Find("Cart_Panel");
     }
 
     // Update is called once per frame
@@ -61,22 +64,21 @@ public class InventoryManager : MonoBehaviour
             Destroy(item.gameObject);
         }
 
-        FindIDs();
+       // FindIDs();
 
-        duplicateCounts = CountDuplicates(idList);
+        //duplicateCounts = CountDuplicates(idList);
 
         foreach (var item in itemList)
         {
-
-            foreach (KeyValuePair<int, int> pair in duplicateCounts)
-            {
-                Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
+            //foreach (KeyValuePair<int, int> pair in duplicateCounts)
+            //{
+                //Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
                 
-                if (pair.Key == item.id && !spawnedCartIds.Contains(item.id))
-                {                
-                    itemSpawnedList.Add(item);
+                //if (pair.Key == item.id && !spawnedCartIds.Contains(item.id))
+                //{                
+                   //itemSpawnedList.Add(item);
                     GameObject textObj = Instantiate(textPrefab, itemContent);
-                    spawnedCartIds.Add(pair.Key);
+                    /*spawnedCartIds.Add(pair.Key)*/;
 
                     var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
                     var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
@@ -84,19 +86,12 @@ public class InventoryManager : MonoBehaviour
                     itemName.text = item.itemName;
                     itemPrice.text = "$" + item.price.ToString();
 
-                    itemQuantity.text = pair.Value + "x";
-                }
-            }
+                    //itemQuantity.text = pair.Value + "x";
+                //}
+            //}
         }
         SetInventoryItems();
     }
-
-    public void RecountCartItems()
-    {
-        duplicateCounts = CountDuplicates(idList);
-    }
-
-
 
     Dictionary<int, int> CountDuplicates(List<int> CDlist)
     {
@@ -107,8 +102,8 @@ public class InventoryManager : MonoBehaviour
             if (duplicateCounts.ContainsKey(idNumber))
             {
                 duplicateCounts[idNumber]++;
-                Debug.Log("Duplicate count " + duplicateCounts[idNumber]
-                    + "\n element is " + idNumber );
+                //Debug.Log("Duplicate count " + duplicateCounts[idNumber]
+                //    + "\n element is " + idNumber );
             }
             else
             {
@@ -121,20 +116,24 @@ public class InventoryManager : MonoBehaviour
 
     void FindIDs()
     {
-        if (!isCartOpen)
+        if (shoppingCartPanel.activeInHierarchy)
         {
             isCartOpen = true;
-            foreach(var item in itemList)
-            {
-                idList.Add(item.id);
-            }
+            Debug.Log("Cart is open");
+            //foreach(var item in itemList)
+            //{
+            //    idList.Add(item.id);
+            //}
         }
         else
         {
-            isCartOpen = false;
-            idList.Clear();
-            spawnedCartIds.Clear();
+
+            //isCartOpen = false;
+            //idList.Clear();
+            //spawnedCartIds.Clear();
+            //itemSpawnedList.Clear();
             cancelToggle.isOn = false;
+           
         }
     }
     
@@ -160,9 +159,10 @@ public class InventoryManager : MonoBehaviour
     {
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
         
-        for (int i = 0; i < spawnedCartIds.Count; i++)
+        for (int i = 0; i < itemList.Count; i++)
         {
-            InventoryItem[i].AddItem(itemSpawnedList[i]);
+            InventoryItem[i].AddItem(itemList[i]);
+            Debug.Log(i);
         }
     }
 

@@ -19,7 +19,7 @@ public class MapOpen : MonoBehaviour
 
         shoppingCartPanel = GameObject.Find("Cart_Panel");
         shoppingCartPanel.SetActive(false);
-        Debug.Log("Shopping cart closeeeee");
+        // Debug.Log("Shopping cart closeeeee");
 
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
