@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,12 +17,23 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public float amountAdded = 0f;
 
     public float sumAdded;
+    public Button confirm;
 
+    public GameObject oneStar;
+    public GameObject twoStar;
+    public GameObject threeStar;
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
         //originalPlacement = GameObject.FindGameObjectsWithTag("Original Waypoints");
-        
+
+        confirm.interactable = false;
+
+        oneStar.SetActive(false);
+        twoStar.SetActive(false);
+        threeStar.SetActive(false);
+
+
         randomNumber = Random.Range(1f, 100f);
         randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
         Debug.Log("random amount: " + randomNumber);
@@ -33,8 +45,11 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         //Debug.Log("Sum added " + sumAdded);
         moneyGenerater.text = "Total Amount: " + (amountAdded + sumAdded);
     }
+    
+    
     public void OnDrop(PointerEventData eventData)
     {
+       
         Debug.Log("Dropped"); 
         if(eventData.pointerDrag != null)
         {
@@ -90,10 +105,41 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
                 sumAdded += 0.5f;
             }
 
+            confirm.interactable = true;
+
+            
             //Money Subtracted
         }
 
 
         
+    }
+
+    public void Checker()
+    {
+        if (amountAdded == randomNumber)
+        {
+            threeStar.SetActive(true);
+            twoStar.SetActive(false);
+            threeStar.SetActive(false);
+        }
+        else if (amountAdded - randomNumber < 3f)
+        {
+            threeStar.SetActive(false);
+            twoStar.SetActive(true);
+            threeStar.SetActive(false);
+        }
+        else if (amountAdded - randomNumber < 6f)
+        {
+            threeStar.SetActive(false);
+            twoStar.SetActive(false);
+            threeStar.SetActive(true);
+        }
+        else
+        {
+            oneStar.SetActive(false);
+            twoStar.SetActive(false);
+            threeStar.SetActive(false);
+        }
     }
 }
