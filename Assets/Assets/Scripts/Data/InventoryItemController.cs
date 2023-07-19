@@ -13,10 +13,17 @@ public class InventoryItemController : MonoBehaviour
     public TextMeshProUGUI quantityTxt;
 
     int quantity;
+
+    public bool getItemQuantity;
     private void Start()
     { 
         removeButton = GetComponentInChildren<Button>();
-        quantityTxt = GameObject.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
+        quantityTxt = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void Update()
+    {
+        Debug.Log(getItemQuantity);
     }
 
     public void RemoveOne()
@@ -29,16 +36,22 @@ public class InventoryItemController : MonoBehaviour
             Debug.Log("Going thru dictionary");
             if (pair.Key == item.id)
             {
-                quantity = pair.Value;
-                Debug.Log("Found the id in dic");
+                if (!getItemQuantity)
+                {
+                    quantity = pair.Value;
+                    getItemQuantity = true;
+                    Debug.Log("STOLEN LE VALUE");
+                }
+
+               // Debug.Log("Found the id in dic");
 
                 InventoryManager.Instance.Remove(item);
 
                 quantity--;
 
                  quantityTxt.text = quantity + "x";
-                Debug.Log("quantity var is +" + quantity);
-                Debug.Log("pair value is +" + pair.Value);
+                //Debug.Log("quantity var is +" + quantity);
+                //Debug.Log("pair value is +" + pair.Value);
                 // AFTER DELETING ONE, NEVER UPDATE THE VALUES PLS FIX.
 
                 if (quantity <= 0)

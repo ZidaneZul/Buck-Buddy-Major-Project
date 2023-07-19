@@ -164,6 +164,8 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < spawnedCartIds.Count; i++)
         {
             InventoryItem[i].AddItem(itemSpawnedList[i]);
+            InventoryItem[i].getItemQuantity = false;
+            
         }
     }
 
