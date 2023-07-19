@@ -14,7 +14,7 @@ public class InventoryItemController : MonoBehaviour
 
     int quantity;
 
-    bool getItemQuantity;
+    public bool getItemQuantity;
     private void Start()
     { 
         removeButton = GetComponentInChildren<Button>();
