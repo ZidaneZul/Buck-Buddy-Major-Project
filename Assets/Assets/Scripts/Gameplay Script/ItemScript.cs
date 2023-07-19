@@ -29,7 +29,7 @@ public class ItemScript : MonoBehaviour
     {
         FindClosePoint();
         IsCloseToFood();
-        Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2f, Color.red);
+        //Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2f, Color.red);
 
     }
 
