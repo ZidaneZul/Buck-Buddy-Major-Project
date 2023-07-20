@@ -10,7 +10,7 @@ public class MapOpen : MonoBehaviour
     
 
     string waypointString, buttonName;
-    string[] aisles = { "Bread", "Drink" };
+    string[] aisles = { "Rice", "Drink", "Fruit", "Bakery", "Snack", "Canned", "Frozen", "Dairy", "Meat"};
 
     void Start()
     {
@@ -85,7 +85,3 @@ public class MapOpen : MonoBehaviour
 
     }
 }
-
-
-
-
