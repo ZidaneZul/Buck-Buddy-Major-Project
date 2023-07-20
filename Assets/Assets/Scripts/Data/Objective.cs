@@ -5,6 +5,8 @@ using UnityEngine;
 public class Objective : MonoBehaviour
 {
     public ObjectiveData objectiveData;
+
+
     // Start is called before the first frame update
     void Start()
     {
