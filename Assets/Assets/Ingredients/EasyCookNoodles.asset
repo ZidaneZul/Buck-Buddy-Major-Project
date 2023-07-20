@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Easy-cook Noodles
   price: 1.57
   icon: {fileID: 0}
+  itemType: Noodles

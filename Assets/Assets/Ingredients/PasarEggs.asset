@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Pasar Eggs
   price: 3.75
   icon: {fileID: 0}
+  itemType: Eggs

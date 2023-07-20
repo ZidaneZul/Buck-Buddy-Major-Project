@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Fresh Tomatoes
   price: 1.8
   icon: {fileID: 0}
+  itemType: Tomatoes

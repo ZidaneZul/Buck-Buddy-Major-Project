@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Minced Meat
   price: 5.95
   icon: {fileID: 0}
+  itemType: Meat

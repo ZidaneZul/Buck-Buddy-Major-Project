@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Deluxe Soy Sauce
   price: 5.45
   icon: {fileID: 0}
+  itemType: SoySauce

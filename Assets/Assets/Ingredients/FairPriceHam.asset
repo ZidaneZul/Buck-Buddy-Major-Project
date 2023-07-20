@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: FairPrice Ham
   price: 2.95
   icon: {fileID: 0}
+  itemType: Ham

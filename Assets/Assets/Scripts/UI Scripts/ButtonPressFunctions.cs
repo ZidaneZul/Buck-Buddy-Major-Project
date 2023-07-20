@@ -22,12 +22,22 @@ public class ButtonPressFunctions : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("LevelSelectTest");
     }
 
     public void Back()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("LevelSelectTest");
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("Level" + (buttonDataHolder.LevelSelected + 1));
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 

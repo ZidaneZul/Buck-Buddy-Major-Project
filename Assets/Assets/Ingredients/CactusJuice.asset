@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Cactus Juice
   price: 1.5
   icon: {fileID: 0}
+  itemType: Drink
