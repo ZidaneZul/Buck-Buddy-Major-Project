@@ -29,7 +29,7 @@ public class ItemScript : MonoBehaviour
     {
         FindClosePoint();
         IsCloseToFood();
-        Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2f, Color.red);
+        //Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2.5f, Color.red);
 
     }
 
@@ -111,7 +111,7 @@ public class ItemScript : MonoBehaviour
     bool CheckForFloor()
     {
         RaycastHit hit;
-        if (Physics.Raycast(tempPoint.transform.position, transform.TransformDirection(Vector3.down), out hit, 2f))
+        if (Physics.Raycast(tempPoint.transform.position, transform.TransformDirection(Vector3.down), out hit, 2.5f))
         {
             Debug.Log("The bubble would hit the thing below foodpoint");
             return true;
