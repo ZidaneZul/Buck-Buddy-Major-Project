@@ -1739,7 +1739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &289086428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2996,6 +2996,7 @@ MonoBehaviour:
   oneStar: {fileID: 289086427}
   twoStar: {fileID: 1345918876}
   threeStar: {fileID: 179218841}
+  fail: {fileID: 1760647474}
 --- !u!1 &589954256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3147,7 +3148,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Amount Left: 0'
+  m_Text: 'Amount needed: 0'
 --- !u!222 &622419270
 CanvasRenderer:
   m_ObjectHideFlags: 0

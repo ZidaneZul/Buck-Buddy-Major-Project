@@ -22,6 +22,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public GameObject oneStar;
     public GameObject twoStar;
     public GameObject threeStar;
+    public GameObject fail;
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
@@ -32,18 +33,18 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         oneStar.SetActive(false);
         twoStar.SetActive(false);
         threeStar.SetActive(false);
+        fail.SetActive(false);
 
 
         randomNumber = Random.Range(1f, 100f);
         randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
         Debug.Log("random amount: " + randomNumber);
-        moneyGenerater.text = "Amount Left: " + amountAdded;
+        moneyGenerater.text = "Amount Needed: " + randomNumber;
     }
     public void Update()
     {
         //Debug.Log(i);
         //Debug.Log("Sum added " + sumAdded);
-        moneyGenerater.text = "Total Amount: " + (amountAdded + sumAdded);
     }
     
     
@@ -66,6 +67,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             }
             if (eventData.pointerDrag.CompareTag("2 Dollar"))
             {
+                Debug.Log("added 2 dollars");
                 sumAdded += 2f;
             }
             else if (eventData.pointerDrag.CompareTag("5 Dollar"))
@@ -117,26 +119,29 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
     public void Checker()
     {
-        if (amountAdded == randomNumber)
+        Debug.Log("amount added: " + sumAdded + "\n" + randomNumber);
+        Debug.Log("diff in amts" + (sumAdded - randomNumber));
+        if (sumAdded == randomNumber)
         {
             threeStar.SetActive(true);
             twoStar.SetActive(false);
-            threeStar.SetActive(false);
+            oneStar.SetActive(false);
         }
-        else if (amountAdded - randomNumber < 3f)
+        else if (sumAdded - randomNumber < 3f && sumAdded - randomNumber > -3f)
         {
             threeStar.SetActive(false);
+            oneStar.SetActive(false);
             twoStar.SetActive(true);
-            threeStar.SetActive(false);
         }
-        else if (amountAdded - randomNumber < 6f)
+        else if (sumAdded - randomNumber < 6f && sumAdded - randomNumber > -6)
         {
             threeStar.SetActive(false);
+            oneStar.SetActive(true);
             twoStar.SetActive(false);
-            threeStar.SetActive(true);
         }
-        else
+        else 
         {
+            fail.SetActive(true);
             oneStar.SetActive(false);
             twoStar.SetActive(false);
             threeStar.SetActive(false);
