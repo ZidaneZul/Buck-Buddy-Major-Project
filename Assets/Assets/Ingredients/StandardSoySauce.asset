@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Standard Soy Sauce
   price: 2.9
   icon: {fileID: 0}
+  itemType: SoySauce

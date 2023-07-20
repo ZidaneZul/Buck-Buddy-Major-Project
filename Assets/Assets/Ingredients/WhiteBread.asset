@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: White Bread
   price: 2.6
   icon: {fileID: 0}
+  itemType: Bread

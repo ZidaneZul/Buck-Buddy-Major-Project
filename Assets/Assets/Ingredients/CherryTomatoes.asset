@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Cherry Tomatoes
   price: 2.35
   icon: {fileID: 0}
+  itemType: Tomatoes

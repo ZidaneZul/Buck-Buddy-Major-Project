@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Standard Lettuce
   price: 5
   icon: {fileID: 0}
+  itemType: Lettuce

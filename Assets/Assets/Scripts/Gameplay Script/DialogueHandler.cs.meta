@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Cash Register Scripts/DragDrop.cs.meta
+guid: dcc0751ab110d0848aedd7d0d6602e1e
+========
 guid: 7b32236cd8f2f674cbc810eea6d803fa
+>>>>>>>> main:Assets/Assets/Scripts/Gameplay Script/DialogueHandler.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

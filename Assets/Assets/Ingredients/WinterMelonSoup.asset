@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Wintermelon Soup
   price: 4.2
   icon: {fileID: 0}
+  itemType: Soup
