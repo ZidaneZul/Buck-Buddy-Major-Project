@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Baby Lettuce
   price: 4.5
   icon: {fileID: 0}
+  itemType: Lettuce

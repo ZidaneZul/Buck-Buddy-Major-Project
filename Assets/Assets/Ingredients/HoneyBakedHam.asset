@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: HoneyBaked Ham
   price: 5.9
   icon: {fileID: 0}
+  itemType: Ham

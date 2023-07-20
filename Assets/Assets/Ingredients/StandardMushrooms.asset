@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Standard Mushrooms
   price: 2.35
   icon: {fileID: 0}
+  itemType: Mushrooms

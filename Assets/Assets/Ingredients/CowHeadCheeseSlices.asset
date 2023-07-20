@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: CowHead Cheese Slices
   price: 13.5
   icon: {fileID: 0}
+  itemType: Cheese

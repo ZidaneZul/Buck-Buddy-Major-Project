@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MapOpen : MonoBehaviour
 {
@@ -52,6 +53,11 @@ public class MapOpen : MonoBehaviour
             shoppingCartPanel.SetActive(!cartActive);
         }
         InventoryManager.Instance.ShowItem();
+    }
+
+    public void CheckOut()
+    {
+        SceneManager.LoadScene("CashRegister");
     }
 
     public void TeleportToAisleDynamic()

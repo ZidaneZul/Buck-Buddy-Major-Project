@@ -420,7 +420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71897012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 179218845}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ConfirmSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &71897012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +922,7 @@ GameObject:
   - component: {fileID: 179218842}
   - component: {fileID: 179218844}
   - component: {fileID: 179218843}
+  - component: {fileID: 179218845}
   m_Layer: 5
   m_Name: Scoreboard 3 Star
   m_TagString: Untagged
@@ -982,6 +995,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179218841}
   m_CullTransparentMesh: 1
+--- !u!114 &179218845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179218841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8f9c5dc7c688f4eabcc2ec631b2bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonDataHolder: {fileID: 0}
 --- !u!1 &203770803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1709,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 284333297}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 179218845}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &284333297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,6 +1771,7 @@ GameObject:
   - component: {fileID: 289086428}
   - component: {fileID: 289086430}
   - component: {fileID: 289086429}
+  - component: {fileID: 289086431}
   m_Layer: 5
   m_Name: Scoreboard 1 Star
   m_TagString: Untagged
@@ -1805,6 +1844,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289086427}
   m_CullTransparentMesh: 1
+--- !u!114 &289086431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289086427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8f9c5dc7c688f4eabcc2ec631b2bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonDataHolder: {fileID: 0}
 --- !u!1 &297132952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2178,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 331858930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1345918880}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &331858930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2762,7 +2826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 568752263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1760647478}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &568752263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,7 +3316,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 691008878}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289086431}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &691008878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3565,7 +3653,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 870750410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1760647478}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ConfirmSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &870750410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4077,7 +4177,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 954765616}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289086431}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ConfirmSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &954765616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4199,7 +4311,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 966836880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1345918880}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ConfirmSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &966836880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4877,7 +5001,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1146682808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1345918880}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1146682808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5676,6 +5812,7 @@ GameObject:
   - component: {fileID: 1345918877}
   - component: {fileID: 1345918879}
   - component: {fileID: 1345918878}
+  - component: {fileID: 1345918880}
   m_Layer: 5
   m_Name: Scoreboard 2 Star
   m_TagString: Untagged
@@ -5748,6 +5885,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345918876}
   m_CullTransparentMesh: 1
+--- !u!114 &1345918880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345918876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8f9c5dc7c688f4eabcc2ec631b2bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonDataHolder: {fileID: 0}
 --- !u!1 &1353528706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5831,7 +5981,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1353528709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 289086431}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1353528709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6486,7 +6648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1612609790}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1760647478}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1612609790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6671,6 +6845,7 @@ GameObject:
   - component: {fileID: 1760647475}
   - component: {fileID: 1760647477}
   - component: {fileID: 1760647476}
+  - component: {fileID: 1760647478}
   m_Layer: 5
   m_Name: Scoreboard Level Failed
   m_TagString: Untagged
@@ -6743,6 +6918,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760647474}
   m_CullTransparentMesh: 1
+--- !u!114 &1760647478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760647474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8f9c5dc7c688f4eabcc2ec631b2bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonDataHolder: {fileID: 0}
 --- !u!1 &1797627287
 GameObject:
   m_ObjectHideFlags: 0
@@ -8102,7 +8290,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2084041119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 179218845}
+        m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2084041119
 MonoBehaviour:
   m_ObjectHideFlags: 0

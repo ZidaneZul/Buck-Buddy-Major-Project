@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: White Noodles
   price: 2.2
   icon: {fileID: 0}
+  itemType: Noodles

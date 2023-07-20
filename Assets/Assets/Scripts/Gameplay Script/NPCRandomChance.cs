@@ -63,7 +63,13 @@ public class NPCRandomChance : MonoBehaviour
         {
             TestDialogue();
         }
-       
+        if (GameObject.FindGameObjectWithTag("NPC") == null)
+        {
+            StartCoroutine(NPCSpawner(SceneName));
+
+        }
+
+
 
         SceneChanged();
         TemporaryButton();
@@ -107,15 +113,22 @@ public class NPCRandomChance : MonoBehaviour
     bool PlayerDetection()
     {
         float distance = 5f;
-        foreach (Collider k in collidedObjects)
+
+        if (NPCOnScene != null)
         {
-            if (k.gameObject.tag == "Player")
+            foreach (Collider k in collidedObjects)
             {
-                Player = k.gameObject;
-                character = k.gameObject.GetComponent<CharacterScript>();
-                return true;
+                if (k.gameObject.tag == "Player")
+                {
+                    Player = k.gameObject;
+                    character = k.gameObject.GetComponent<CharacterScript>();
+                    return true;
+                }
+
             }
+
         }
+
         return false;
     }
 
@@ -280,7 +293,7 @@ public class NPCRandomChance : MonoBehaviour
         int NPCTypeHolder = 0;
         dialogueBoxInScene.SetActive(true);
         dialogueBoxInScene.transform.rotation.SetLookRotation(Camera.main.transform.position);
-        dialogueBoxInScene.transform.position = new Vector3(NPCOnScene.transform.position.x, 5f, NPCOnScene.transform.position.z);
+        dialogueBoxInScene.transform.position = new Vector3(NPCOnScene.transform.position.x,(NPCOnScene.transform.position.y+5f), NPCOnScene.transform.position.z);
 
 
         for (int i = 0; i < NPC.Length; i++)

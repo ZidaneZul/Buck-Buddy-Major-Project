@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Fresh Whole Chicken
   price: 11.4
   icon: {fileID: 0}
+  itemType: Meat

@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Farm Fresh Eggs
   price: 3.65
   icon: {fileID: 0}
+  itemType: Eggs
