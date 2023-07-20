@@ -21,6 +21,11 @@ TagManager:
   - ProductPriceBox
   - SpawnLocation
   - Food
+  - 20 Cents
+  - 1 Dollar
+  - 10 Cents
+  - 5 Cents
+  - 50 Cents
   layers:
   - Default
   - TransparentFX
@@ -55,6 +60,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3984839227
+    locked: 0
+  - name: Shelf
+    uniqueID: 3702683015
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
