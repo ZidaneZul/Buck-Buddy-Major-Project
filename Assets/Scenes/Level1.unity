@@ -6808,6 +6808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveData: {fileID: 11400000, guid: bbfaeee359081cd48ac4bf55921a8638, type: 2}
+  textPrefab: {fileID: 2015360437575155561, guid: 8399825ed62b11848aa7e140d1f4ecbd, type: 3}
+  content: {fileID: 0}
 --- !u!4 &1409732985
 Transform:
   m_ObjectHideFlags: 0
