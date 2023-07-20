@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1871992643}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.3052514
+  m_Size: 0.33521473
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2448,6 +2448,7 @@ MonoBehaviour:
   - {r: 0.8745099, g: 0.28235295, b: 0.69411767, a: 0}
   scrollbar: {fileID: 651302362}
   imageContent: {fileID: 1607561250}
+  buttonDataHolder: {fileID: 0}
 --- !u!114 &1177060300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,7 +2462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 1400
+    m_Left: 1200
     m_Right: 2000
     m_Top: 0
     m_Bottom: 0
