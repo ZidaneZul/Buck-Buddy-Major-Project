@@ -9,5 +9,6 @@ public class ItemData : ScriptableObject
     public string itemName;
     public float price;
     public Sprite icon;
+    public string itemType;
 }
 
