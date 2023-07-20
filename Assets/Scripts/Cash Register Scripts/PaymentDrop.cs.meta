@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Cash Register Scripts/PaymentDrop.cs.meta
+guid: cb31237403d42e84dbed3122fdea099b
+========
+guid: 7cd52d5cf027de54088006d8889ca5a3
+>>>>>>>> main:Assets/Assets/Scripts/Gameplay Script/FoodBubble.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
