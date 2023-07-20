@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Milk Bread
   price: 3.3
   icon: {fileID: 0}
+  itemType: Bread

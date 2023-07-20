@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Yellow Noodles
   price: 1.51
   icon: {fileID: 0}
+  itemType: Noodles

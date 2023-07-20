@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: FairPrice Cheese Slices
   price: 8.35
   icon: {fileID: 0}
+  itemType: Cheese

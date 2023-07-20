@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Mini Mushrooms
   price: 1.35
   icon: {fileID: 0}
+  itemType: Mushrooms
