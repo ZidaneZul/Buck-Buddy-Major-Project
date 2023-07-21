@@ -340,7 +340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC:
-  - {fileID: 3349664440978728803, guid: ad9ec79154f415d4a938cbdff5d9a0b0, type: 3}
   - {fileID: 4827143275190198033, guid: 4c7f38e6444402b46be09930c44fa01c, type: 3}
   NPCOnScene: {fileID: 0}
   Dialogues:
@@ -364,6 +363,7 @@ MonoBehaviour:
   dialogueBoxInScene: {fileID: 0}
   NPCText: {fileID: 0}
   yes: 0
+  EndOfPatrol: 0
 --- !u!4 &1889676806
 Transform:
   m_ObjectHideFlags: 0

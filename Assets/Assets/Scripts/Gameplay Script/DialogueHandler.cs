@@ -11,7 +11,7 @@ public class DialogueHandler : MonoBehaviour
     public float textSpeed;
     private int index;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         textPrompt.gameObject.SetActive(false);
         textBox.text = string.Empty;
@@ -42,7 +42,7 @@ public class DialogueHandler : MonoBehaviour
 
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         index = 0;
         StartCoroutine(TypeLine());
