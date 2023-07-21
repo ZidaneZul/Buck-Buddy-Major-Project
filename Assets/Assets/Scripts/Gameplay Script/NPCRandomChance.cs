@@ -26,6 +26,7 @@ public class NPCRandomChance : MonoBehaviour
     public GameObject dialogueBoxInScene;
     public TextMeshPro NPCText;
     public bool yes;
+    public bool EndOfPatrol;
 
     // To preload variables that will stay between transition of scenes
 
@@ -139,7 +140,9 @@ public class NPCRandomChance : MonoBehaviour
         {
             if (NPCOnScene != null)
             {
-                if (SpawnPointLocation == 0)
+
+
+                if ((SpawnPointLocation % 2 == 0) || (SpawnPointLocation == 0))
                 {
                     dialogueBoxInScene.SetActive(false);
                     for (int i = 0; i < 2; i++)
@@ -150,7 +153,7 @@ public class NPCRandomChance : MonoBehaviour
                             target = SpawnPoints[SpawnPointLocation + i].transform;
 
                         }
-                        nma.stoppingDistance = 0f;
+                        nma.stoppingDistance = 0.2f;
 
                         if (nma.destination != nma.transform.position)
                         {
@@ -160,34 +163,22 @@ public class NPCRandomChance : MonoBehaviour
                         if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
                         {
                             target = null;
+
                         }
-                    }
-
-
-                }
-
-                if (SpawnPointLocation % 2 == 0)
-                {
-                    dialogueBoxInScene.SetActive(false);
-                    for (int i = 0; i < 2; i++)
-                    {
-                        if (target == null)
+                        if ((i == 1) && (EndOfPatrol == false))
                         {
-
                             target = SpawnPoints[SpawnPointLocation + i].transform;
-
-                        }
-                        nma.stoppingDistance = 0f;
-
-                        if (nma.destination != nma.transform.position)
-                        {
                             nma.SetDestination(target.position);
+                            EndOfPatrol = true;
                         }
-
-                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
+                        if((!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance) && (EndOfPatrol == true))
                         {
-                            target = null;
-
+                            nma.enabled = false;
+                            SpawnPointLocation = SpawnPointLocation + 3;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true; 
+                            EndOfPatrol = false;
+                            break;
                         }
                     }
 
@@ -206,7 +197,7 @@ public class NPCRandomChance : MonoBehaviour
 
                         }
 
-                        nma.stoppingDistance = 0f;
+                        nma.stoppingDistance = 0.2f;
 
 
                         if (nma.destination != nma.transform.position)
@@ -217,6 +208,21 @@ public class NPCRandomChance : MonoBehaviour
                         if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
                         {
                             target = null;
+                        }
+                        if((target == SpawnPoints[SpawnPointLocation].transform) &&(EndOfPatrol == false))
+                        {
+                            nma.SetDestination(target.position);
+                            EndOfPatrol = true;
+
+                        }
+                        if((!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance) && (EndOfPatrol == true))
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = SpawnPointLocation + 2;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true;
+                            EndOfPatrol = false;
+                            break;
                         }
                     }
 

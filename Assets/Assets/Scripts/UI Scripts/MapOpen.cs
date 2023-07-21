@@ -8,6 +8,7 @@ public class MapOpen : MonoBehaviour
 {
     public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList;
     public GameObject[] waypoints;
+    public DialogueHandler dialogueHandler;
     
 
     string waypointString, buttonName;
@@ -25,7 +26,7 @@ public class MapOpen : MonoBehaviour
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
         shoppingList = GameObject.Find("ShoppingList");
-
+        dialogueHandler = GameObject.Find("NPCAlertTest").GetComponent<DialogueHandler>();
         shoppingList.SetActive(false);
     }
     private void Update()
@@ -89,6 +90,8 @@ public class MapOpen : MonoBehaviour
                         //Debug.Log("TP to " + waypointString);
                         player.transform.position = waypoints[i].transform.position;
                         panel.SetActive(false);
+                        
+
                     }
                 }
             }
