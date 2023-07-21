@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MapOpen : MonoBehaviour
 {
-    public GameObject panel, player, buttonPressed, shoppingCartPanel;
+    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList;
     public GameObject[] waypoints;
     
 
@@ -24,16 +24,20 @@ public class MapOpen : MonoBehaviour
 
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
+        shoppingList = GameObject.Find("ShoppingList");
+
+        shoppingList.SetActive(false);
     }
     private void Update()
     {
-        //for (int i = 0; i < waypoints.Length; i++)
-        //{
-        //    waypointString = waypoints[i].ToString();
-        //    if (waypointString.Contains("Bread"))   {Debug.Log("bread time");}
-        //    else if (waypointString.Contains("Drink")) { Debug.Log("Drunk"); }
-        //    else if (waypointString.Contains("bread")) { Debug.Log("Bread but shorter"); }  
-        //}
+        if (panel.activeInHierarchy || shoppingCartPanel.activeInHierarchy)
+        {
+            shoppingList.SetActive(true);
+        }
+        else
+        {
+            shoppingList.SetActive(false);
+        }
     }
     public void OpenPanel()
     {
@@ -42,15 +46,16 @@ public class MapOpen : MonoBehaviour
         {
             bool isActive = panel.activeSelf;
             panel.SetActive(!isActive);
+            shoppingCartPanel.SetActive(false);
         }
     }
     public void ToggleCartPanel()
     {
-        Debug.Log("HEEEEEEEEEELP" + shoppingCartPanel);
         if (shoppingCartPanel != null)
         {
             bool cartActive = shoppingCartPanel.activeSelf;
             shoppingCartPanel.SetActive(!cartActive);
+            panel.SetActive(false);
         }
         InventoryManager.Instance.ShowItem();
     }
