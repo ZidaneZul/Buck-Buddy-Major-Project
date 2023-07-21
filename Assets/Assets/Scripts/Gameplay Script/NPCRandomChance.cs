@@ -59,6 +59,7 @@ public class NPCRandomChance : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("NPC") != null)
         {
             GotoNextPoint();
+            Debug.Log(nma.remainingDistance);
         }
         if ((PlayerDetection()))
         {
@@ -147,13 +148,21 @@ public class NPCRandomChance : MonoBehaviour
                     dialogueBoxInScene.SetActive(false);
                     for (int i = 0; i < 2; i++)
                     {
+                        nma.stoppingDistance = 0.4f;
+
+                        if (SpawnPointLocation > SpawnPoints.Length)
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = 1;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true;
+                        }
                         if (target == null)
                         {
 
                             target = SpawnPoints[SpawnPointLocation + i].transform;
 
                         }
-                        nma.stoppingDistance = 0.2f;
 
                         if (nma.destination != nma.transform.position)
                         {
@@ -174,12 +183,13 @@ public class NPCRandomChance : MonoBehaviour
                         if((!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance) && (EndOfPatrol == true))
                         {
                             nma.enabled = false;
-                            SpawnPointLocation = SpawnPointLocation + 3;
+                            SpawnPointLocation = 1;
                             nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
                             nma.enabled = true; 
                             EndOfPatrol = false;
                             break;
                         }
+
                     }
 
 
@@ -190,6 +200,15 @@ public class NPCRandomChance : MonoBehaviour
                     dialogueBoxInScene.SetActive(false);
                     for (int i = 0; i < 2; i++)
                     {
+                        nma.stoppingDistance = 0.4f;
+
+                        if (SpawnPointLocation > SpawnPoints.Length)
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = 2;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true;
+                        }
                         if (target == null)
                         {
 
@@ -197,7 +216,6 @@ public class NPCRandomChance : MonoBehaviour
 
                         }
 
-                        nma.stoppingDistance = 0.2f;
 
 
                         if (nma.destination != nma.transform.position)
@@ -224,6 +242,7 @@ public class NPCRandomChance : MonoBehaviour
                             EndOfPatrol = false;
                             break;
                         }
+
                     }
 
 
