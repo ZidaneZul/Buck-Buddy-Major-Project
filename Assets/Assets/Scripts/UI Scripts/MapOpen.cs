@@ -26,7 +26,6 @@ public class MapOpen : MonoBehaviour
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
         shoppingList = GameObject.Find("ShoppingList");
-        dialogueHandler = GameObject.Find("NPCAlertTest").GetComponent<DialogueHandler>();
         shoppingList.SetActive(false);
     }
     private void Update()
