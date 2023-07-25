@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Dialogue
 {
     public string NPCname;
-    public Image NPCimage;
+    public Sprite NPCimage;
 
     [TextArea(3,10)]
     public string[] dialogues;

@@ -4,12 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> dialogues;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
-    public Sprite NPCImage;
+    public Image NPCImage;
     public Animator animator;
     public bool NPCInteracted;
     public GameObject NPCDialogueBox;
@@ -29,7 +30,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if(Random.Range(1,3) == 2)
         {
-
+            NPCInteracted = true;
             StartDialogue(dialogue);
         }
         else
@@ -44,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         Debug.Log("Starting Conversation with" + dialogue.NPCname);
         dialogues.Clear();
-        NPCImage = dialogue.NPCimage.sprite;
+        NPCImage.sprite = dialogue.NPCimage;
         nameText.text = dialogue.NPCname;
         foreach(string sentences in dialogue.dialogues)
         {
