@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        else if(Random.Range(1,3) == 2)
+        else if(Random.Range(1,7) == 6)
         {
             NPCInteracted = true;
             StartDialogue(dialogue);
