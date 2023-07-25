@@ -19,7 +19,10 @@ public class DialogueManager : MonoBehaviour
     public GameObject yesButton;
     public GameObject noButton;
     public GameObject ContinueButton;
-
+    public Button MapBtn;
+    public Button ShopBtn;
+    public GameObject LeftArrow;
+    public GameObject RightArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        MapBtn.enabled = false;
+        ShopBtn.enabled = false;
+        LeftArrow.SetActive(false);
+        RightArrow.SetActive(false);
         NPCDialogueBox.SetActive(true);
         animator.SetBool("IsOpen", true);
         Debug.Log("Starting Conversation with" + npcData.NPCname);
@@ -111,6 +118,10 @@ public class DialogueManager : MonoBehaviour
         noButton.SetActive(false);
         yield return new WaitForSeconds(3.0f);
         NPCDialogueBox.SetActive(false);
+        MapBtn.enabled = true;
+        ShopBtn.enabled = true;
+        LeftArrow.SetActive(true);
+        RightArrow.SetActive(true);
         animator.SetBool("IsOpen", false);
 
     }
