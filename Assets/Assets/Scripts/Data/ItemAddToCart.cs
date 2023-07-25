@@ -47,7 +47,7 @@ public class ItemAddToCart : MonoBehaviour
         //Debug.Log("the item data for food thats close is "+ item.ToString());
        // Debug.Log("The close food in the bubble script is " + itemData.itemName);
 
-        tmp.text = itemData.itemName + "\n" + "$" + itemData.price;
+        tmp.text = itemData.itemName + "\n" + "$" + itemData.price.ToString("F2");
     }
 
     public void AddToCart()
