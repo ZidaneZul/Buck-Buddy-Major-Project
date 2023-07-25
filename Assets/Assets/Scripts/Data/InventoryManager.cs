@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
+    //Things added to cart
     public List<ItemData> itemList = new List<ItemData>();
 
     //used to make the instantiated prefabs have the correct item data attached to them
@@ -20,7 +21,11 @@ public class InventoryManager : MonoBehaviour
 
     //so that the item prefab in cart spawns once per item
     List<int> spawnedCartIds = new List<int>();
+
+    //to attach the data to the item spawned list
     public InventoryItemController[] InventoryItem;
+
+    public string[] itemTypeInCart;
 
     public GameObject textPrefab, cartPanel;
     public Toggle cancelToggle;
@@ -87,13 +92,6 @@ public class InventoryManager : MonoBehaviour
         }
         SetInventoryItems();
     }
-
-    public void RecountCartItems()
-    {
-        duplicateCounts = CountDuplicates(idList);
-    }
-
-
 
     Dictionary<int, int> CountDuplicates(List<int> CDlist)
     {
@@ -181,6 +179,14 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in itemList)
         {
             totalPrice += item.price;            
+        }
+    }
+
+    public bool CheckForObj()
+    {
+        foreach (var item in itemList)
+        {
+            
         }
     }
 
