@@ -27,12 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CashRegister.unity
     guid: 637affa8133aae24ca9f71a0ee4a603d
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: 28fc43b38630cf544a64a6ced17c45c4
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ab31ac864291a08409f0421d9a7bc8c8
   - enabled: 1
     path: Assets/Scenes/LevelSelectTest.unity
     guid: b4a5b16259b916a468e1a191a60db22f
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 28fc43b38630cf544a64a6ced17c45c4
   m_configObjects: {}

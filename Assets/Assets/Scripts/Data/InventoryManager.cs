@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
     List<int> spawnedCartIds = new List<int>();
     public InventoryItemController[] InventoryItem;
 
-    public GameObject textPrefab;
+    public GameObject textPrefab, cartPanel;
     public Toggle cancelToggle;
     public Transform itemContent;
 
@@ -56,10 +56,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ShowItem()
     {
-        foreach (Transform item in itemContent)
-        {
-            Destroy(item.gameObject);
-        }
+        CleanList();
 
         FindIDs();
 
@@ -119,11 +116,24 @@ public class InventoryManager : MonoBehaviour
         return duplicateCounts;
     }
 
+    public void CleanList()
+    {
+        Debug.Log("cleaning clean clean");
+        foreach (Transform item in itemContent)
+        {
+            Destroy(item.gameObject);
+        }
+        idList.Clear();
+        spawnedCartIds.Clear();
+        itemSpawnedList.Clear();
+        
+    }
     void FindIDs()
     {
-        if (!isCartOpen)
+        if (cartPanel.activeInHierarchy)
         {
             isCartOpen = true;
+            Debug.Log("Cart is open");
             foreach(var item in itemList)
             {
                 idList.Add(item.id);
@@ -131,10 +141,8 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Cart is close");
             isCartOpen = false;
-            idList.Clear();
-            spawnedCartIds.Clear();
-            itemSpawnedList.Clear();
             cancelToggle.isOn = false;
         }
     }
@@ -159,6 +167,7 @@ public class InventoryManager : MonoBehaviour
 
     public void SetInventoryItems()
     {
+        Debug.Log("Setting inv items");
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
         
         for (int i = 0; i < spawnedCartIds.Count; i++)
