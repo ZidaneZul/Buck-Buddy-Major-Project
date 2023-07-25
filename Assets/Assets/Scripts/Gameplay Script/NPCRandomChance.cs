@@ -114,7 +114,7 @@ public class NPCRandomChance : MonoBehaviour
     }
     bool PlayerDetection()
     {
-        float distance = 5f;
+        //float distance = 5f;
 
         if (NPCOnScene != null)
         {
