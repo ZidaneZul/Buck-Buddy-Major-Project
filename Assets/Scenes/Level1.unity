@@ -6387,8 +6387,8 @@ MonoBehaviour:
   ContinueButton: {fileID: 1852616238}
   MapBtn: {fileID: 54141437}
   ShopBtn: {fileID: 1321910372}
-  LeftArrow: {fileID: 89547933}
-  RightArrow: {fileID: 1734515775}
+  LeftArrow: {fileID: 89547931}
+  RightArrow: {fileID: 1734515773}
 --- !u!4 &1161876444
 Transform:
   m_ObjectHideFlags: 0
