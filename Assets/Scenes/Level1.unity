@@ -1798,6 +1798,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 54141436}
+        m_TargetAssemblyTypeName: MapOpen, Assembly-CSharp
+        m_MethodName: TeleportToAisleDynamic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &219929585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5025,6 +5037,7 @@ RectTransform:
   - {fileID: 89547932}
   - {fileID: 1734515774}
   - {fileID: 1895104308}
+  - {fileID: 1244897348}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
