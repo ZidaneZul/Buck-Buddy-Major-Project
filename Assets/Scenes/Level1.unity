@@ -2730,6 +2730,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3270555322611193523, guid: 8d3aba92c7716bf4ca5c7f98d4c389a9, type: 3}
+      propertyPath: cartPanel
+      value: 
+      objectReference: {fileID: 1077195223}
+    - target: {fileID: 3270555322611193523, guid: 8d3aba92c7716bf4ca5c7f98d4c389a9, type: 3}
       propertyPath: itemContent
       value: 
       objectReference: {fileID: 2015607679}

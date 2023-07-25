@@ -38,6 +38,10 @@ public class MapOpen : MonoBehaviour
         {
             shoppingList.SetActive(false);
         }
+        if (!shoppingCartPanel.activeInHierarchy)
+        {
+            InventoryManager.Instance.CleanList();
+        }
     }
     public void OpenPanel()
     {
@@ -51,12 +55,14 @@ public class MapOpen : MonoBehaviour
     }
     public void ToggleCartPanel()
     {
+        Debug.Log("Clicked the cart btn");
         if (shoppingCartPanel != null)
         {
             bool cartActive = shoppingCartPanel.activeSelf;
             shoppingCartPanel.SetActive(!cartActive);
             panel.SetActive(false);
         }
+        
         InventoryManager.Instance.ShowItem();
     }
 
