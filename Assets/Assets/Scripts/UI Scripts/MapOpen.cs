@@ -16,7 +16,7 @@ public class MapOpen : MonoBehaviour
 
     void Start()
     {
-        panel = GameObject.Find("MapMenu");
+        panel = GameObject.Find("Map");
         panel.SetActive(false);
 
         shoppingCartPanel = GameObject.Find("Cart_Panel");
