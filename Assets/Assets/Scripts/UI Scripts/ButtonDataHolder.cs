@@ -11,9 +11,19 @@ public class ButtonDataHolder : MonoBehaviour
     public TextMeshProUGUI textMeshProUGUI;
 
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     private void Update()
     {
         scene = SceneManager.GetActiveScene();
+
+        if(scene.name == "PreloadScene")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
 
         if (scene.name == "LevelConfirm")
         {
