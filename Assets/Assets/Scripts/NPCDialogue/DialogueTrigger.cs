@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().NPCRandomChance(dialogue);
+        FindObjectOfType<DialogueManager>().NPCRandomChance();
     }
 }

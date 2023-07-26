@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
     public Toggle cancelToggle;
     public Transform itemContent;
 
-    bool isCartOpen =false;
+    public float totalPrice;
 
     private void Awake()
     {
@@ -79,7 +79,7 @@ public class InventoryManager : MonoBehaviour
                     var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
                     var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
                     itemName.text = item.itemName;
-                    itemPrice.text = "$" + item.price.ToString();
+                    itemPrice.text = "$" + item.price.ToString("F2");
 
                     itemQuantity.text = pair.Value + "x";
                 }
@@ -132,7 +132,6 @@ public class InventoryManager : MonoBehaviour
     {
         if (cartPanel.activeInHierarchy)
         {
-            isCartOpen = true;
             Debug.Log("Cart is open");
             foreach(var item in itemList)
             {
@@ -142,7 +141,6 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Debug.Log("Cart is close");
-            isCartOpen = false;
             cancelToggle.isOn = false;
         }
     }
@@ -175,6 +173,14 @@ public class InventoryManager : MonoBehaviour
             InventoryItem[i].AddItem(itemSpawnedList[i]);
             InventoryItem[i].getItemQuantity = false;
             
+        }
+    }
+
+    public void GetTotalValue()
+    {
+        foreach (var item in itemList)
+        {
+            totalPrice += item.price;            
         }
     }
 
