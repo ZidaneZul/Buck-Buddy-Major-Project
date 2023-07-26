@@ -4114,6 +4114,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8861407411677211331, guid: 3485d889754da6c42b1a888980715075, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1244897347}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4471,8 +4475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1200, y: 0}
-  m_SizeDelta: {x: 2300, y: 180}
+  m_AnchoredPosition: {x: 946.18823, y: -11.4863}
+  m_SizeDelta: {x: 1792.3765, y: 207.9727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762412604
 MonoBehaviour:
@@ -6523,7 +6527,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1d47747e7e1f9147931367d53df373e, type: 2}
   - {fileID: 11400000, guid: bfa89ebcf23aa0744ad996a689e63111, type: 2}
   - {fileID: 11400000, guid: 2db14918d3435ea4b948f39e33e19c02, type: 2}
-  npcData: {fileID: 11400000, guid: 9a4796485ded218479b04e09587bb25d, type: 2}
+  - {fileID: 11400000, guid: bd27f9c5c62b910499012076b460a3f8, type: 2}
+  - {fileID: 11400000, guid: 8dc7927d35b670f4ebf6f837feacf96a, type: 2}
+  - {fileID: 11400000, guid: 9619f7d115debef4d9bb91d39bf3fb9b, type: 2}
+  npcData: {fileID: 0}
   yesButton: {fileID: 632344750}
   noButton: {fileID: 1797211178}
   ContinueButton: {fileID: 1852616238}

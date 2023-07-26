@@ -13,5 +13,5 @@ public class NPCData : ScriptableObject
     public string yesResponse;
     public string noResponse;
     public string[] NPCResponses;
-    public int LineToStopAt;
+
 }

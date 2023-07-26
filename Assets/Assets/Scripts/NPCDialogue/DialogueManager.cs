@@ -82,7 +82,6 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         if(dialogues.Count == 0)
-        //dialogues.Count - npcData.LineToStopAt
         {
             EndDialogue();
             return;
