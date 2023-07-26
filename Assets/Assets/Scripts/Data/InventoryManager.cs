@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     //used to make the instantiated prefabs have the correct item data attached to them
     public List<ItemData> itemSpawnedList = new List<ItemData>();
 
+    //used to get the quantity for each item in the cart
     public Dictionary<int, int> duplicateCounts;
 
     //used for finding dups
@@ -24,6 +25,10 @@ public class InventoryManager : MonoBehaviour
 
     //to attach the data to the item spawned list
     public InventoryItemController[] InventoryItem;
+
+    //List<KeyValuePair<string, int>> cartObjList = new List<KeyValuePair<string, int>>();
+
+    Dictionary<string, int> cartObjList = new Dictionary<string, int>();
 
     public string[] itemTypeInCart;
 
@@ -182,44 +187,37 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public bool CheckForObj()
+    public void CheckForObj()
     {
+        string cartListString = "";
+        string objListString = "";
+
         foreach (var item in itemList)
         {
+            Debug.Log("ITEM");
+            cartListString += item.itemName;
+            foreach(KeyValuePair<string, int> objItem in Objective.Instance.objList)
+            {
+                Debug.Log(objItem.Key + item.itemType);
+                if (objItem.Key == item.itemType)
+                {
+                    cartObjList[objItem.Key]++;
+                    Debug.Log("There is a dupe");
+                }
+                else
+                {
+                    cartObjList[objItem.Key] = 1;
+                    Debug.Log("there is a new food type");
+                }
+            }
             
+
+        }
+        Debug.Log("yESYESYE");
+        foreach(KeyValuePair<string, int> cart in cartObjList)
+        {
+            Debug.Log("HELP");
+            Debug.Log(cart.Key + " " + cart.Value);
         }
     }
-
-    //void FindDuplicates()
-    //{
-    //    if (!isCartOpen)
-    //    {
-    //        isCartOpen = true;
-    //        Debug.Log("Cart is now open");
-
-    //        foreach (var item in itemList)
-    //        {
-    //            testList.Add(item.id);
-    //            if (uniqueIdList.Contains(item.id))
-    //            {
-    //               // Debug.Log("Duplicate found!");
-    //                duplicatedList.Add(item.id);
-    //               // Debug.Log("item " + item.id + "has be found ");
-    //            }
-    //            else
-    //            {
-    //                //Debug.Log("not a dup!");
-    //                uniqueIdList.Add(item.id);
-    //            }
-    //            //Debug.Log("Unique id: " + uniqueIdList.ToString());
-    //        }
-    //    }
-    //    else
-    //    {
-    //        isCartOpen = false;
-    //        uniqueIdList.Clear();
-    //        testList.Clear();
-    //        Debug.Log("cart is now close");
-    //    }
-    //}
 }

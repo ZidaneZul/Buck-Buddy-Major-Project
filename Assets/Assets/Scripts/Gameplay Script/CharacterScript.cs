@@ -22,7 +22,7 @@ public class CharacterScript : MonoBehaviour
     {
         if(!movingRight && !movingLeft)
             horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontal);
+        //Debug.Log(horizontal);
         Flip();
     }
 
