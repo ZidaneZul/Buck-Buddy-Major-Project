@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 206a3f29b65a8894aa1ad4f6c82b7a89, type: 3}
-  m_Name: Zidane NPC
+  m_Name: NTUC Female Helper
   m_EditorClassIdentifier: 
   NPCname:
-  - Zidane
-  - Player
-  - Zidane
+  - NTUC Female Helper
+  - NTUC Female Helper
   NPCimage:
   - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
-  - {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
   - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
   dialogues:
-  - 'Hi
+  - Hello!
+  - 'Do you need help finding [ingredient]?
 
 '
-  - I am Zidane Zulkarnain!
-  - Can u tell me your name?
-  yesResponse: Sure
-  noResponse: No
+  yesResponse: Yes Please!
+  noResponse: No thank you! I appreciate the help though
   NPCResponses:
-  - Nice to meet you [name]
-  - Why wont u tell me your name?
+  - Sure, its at [Location]
+  - Okay, good luck!

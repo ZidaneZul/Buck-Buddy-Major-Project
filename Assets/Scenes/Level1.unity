@@ -740,8 +740,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -100, y: -295}
   m_SizeDelta: {x: 300, y: 240}
+=======
+  m_AnchoredPosition: {x: -100, y: 0}
+  m_SizeDelta: {x: 300, y: 300}
+>>>>>>> Stashed changes
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &57925683
 GameObject:
@@ -6520,7 +6525,9 @@ MonoBehaviour:
   NPCInteracted: 0
   NPCDialogueBox: {fileID: 1244897347}
   NPCDataList:
-  - {fileID: 11400000, guid: 9a4796485ded218479b04e09587bb25d, type: 2}
+  - {fileID: 11400000, guid: b1d47747e7e1f9147931367d53df373e, type: 2}
+  - {fileID: 11400000, guid: bfa89ebcf23aa0744ad996a689e63111, type: 2}
+  - {fileID: 11400000, guid: 2db14918d3435ea4b948f39e33e19c02, type: 2}
   npcData: {fileID: 11400000, guid: 9a4796485ded218479b04e09587bb25d, type: 2}
   yesButton: {fileID: 632344750}
   noButton: {fileID: 1797211178}
@@ -7527,8 +7534,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -400, y: -283}
   m_SizeDelta: {x: 300, y: 240}
+=======
+  m_AnchoredPosition: {x: -400, y: 0}
+  m_SizeDelta: {x: 300, y: 260}
+>>>>>>> Stashed changes
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1321910372
 MonoBehaviour:

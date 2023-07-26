@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 206a3f29b65a8894aa1ad4f6c82b7a89, type: 3}
-  m_Name: Zidane NPC
+  m_Name: NTUC Crew Member
   m_EditorClassIdentifier: 
   NPCname:
-  - Zidane
-  - Player
-  - Zidane
+  - NTUC Crew Member
+  - NTUC Crew Member
   NPCimage:
   - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
-  - {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
   - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
   dialogues:
-  - 'Hi
+  - 'Hello!
 
 '
-  - I am Zidane Zulkarnain!
-  - Can u tell me your name?
-  yesResponse: Sure
-  noResponse: No
+  - You look lost, would u like some help finding your item?
+  yesResponse: Yes Please
+  noResponse: No thank you, i can look for it myself
   NPCResponses:
-  - Nice to meet you [name]
-  - Why wont u tell me your name?
+  - This item is at aisle [aisle name]
+  - Okay, hope you find it!
