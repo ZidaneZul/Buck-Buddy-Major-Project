@@ -218,11 +218,10 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
             }
         }
-        foreach (KeyValuePair<string, int> cart in cartObjDiction)
+        foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
         {
             Debug.Log("HELP");
-            Debug.Log(cart.Key + " " + cart.Value);
-            foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+            foreach (KeyValuePair<string, int> cart in cartObjDiction)
             {
                 Debug.Log("Cart Key is " + cart.Key + "\n OBJ key is " + obj.Key);
                 if (cart.Key.Equals(obj.Key))
@@ -243,8 +242,7 @@ public class InventoryManager : MonoBehaviour
                         break;
                     }
                 }
-                
-
+                 
                 if (breakOuterLoop)
                     break;
             }
