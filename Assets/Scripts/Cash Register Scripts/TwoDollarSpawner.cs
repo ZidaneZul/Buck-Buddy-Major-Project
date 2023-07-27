@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class TwoDollarSpawner : MonoBehaviour
 {
-    public GameObject money2;
+    public GameObject moneyToSpawn;
+    public Transform[] spawnPositions;
     // Start is called before the first frame update
     void Start()
     {
-       
+        SpawnObjects();
     }
-
+    private void SpawnObjects()
+    {
+        foreach(Transform spawnPosition in spawnPositions)
+        {
+            Instantiate(moneyToSpawn, spawnPosition.position, spawnPosition.rotation);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        for (int i = 1; i < 10; i++)
-        {
-            Instantiate(money2, transform.position, Quaternion.identity);
-        }
+        
     }
 }
