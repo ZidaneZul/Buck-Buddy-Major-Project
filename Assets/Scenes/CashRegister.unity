@@ -1999,6 +1999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348516918}
   - component: {fileID: 348516920}
+  - component: {fileID: 348516921}
   - component: {fileID: 348516919}
   m_Layer: 5
   m_Name: SP1
@@ -2065,6 +2066,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348516917}
   m_CullTransparentMesh: 1
+--- !u!114 &348516921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348516917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fab5357812b3a44b51b4bd97581fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money2: {fileID: 1854032283}
 --- !u!1 &353981183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,7 +5201,7 @@ GameObject:
   - component: {fileID: 1259695852}
   - component: {fileID: 1259695851}
   m_Layer: 5
-  m_Name: SP1 (2)
+  m_Name: SP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6080,7 +6094,7 @@ GameObject:
   - component: {fileID: 1671382424}
   - component: {fileID: 1671382423}
   m_Layer: 5
-  m_Name: SP1 (3)
+  m_Name: SP4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6388,7 +6402,7 @@ GameObject:
   - component: {fileID: 1763428988}
   - component: {fileID: 1763428987}
   m_Layer: 5
-  m_Name: SP1 (1)
+  m_Name: SP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7473,7 +7487,7 @@ GameObject:
   - component: {fileID: 2077286012}
   - component: {fileID: 2077286011}
   m_Layer: 5
-  m_Name: SP1 (4)
+  m_Name: SP5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7960,7 +7974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.689}
   m_AnchorMax: {x: 0.5, y: 0.68}
-  m_AnchoredPosition: {x: 0.0017700195, y: -380}
+  m_AnchoredPosition: {x: 0.0017700195, y: 0}
   m_SizeDelta: {x: 88.359985, y: 84.23706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140108444
