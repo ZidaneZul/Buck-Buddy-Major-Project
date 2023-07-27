@@ -28,13 +28,15 @@ public class InventoryManager : MonoBehaviour
 
     //List<KeyValuePair<string, int>> cartObjList = new List<KeyValuePair<string, int>>();
 
-    Dictionary<string, int> cartObjList = new Dictionary<string, int>();
+    Dictionary<string, int> cartObjDiction = new Dictionary<string, int>();
 
     public string[] itemTypeInCart;
 
     public GameObject textPrefab, cartPanel;
     public Toggle cancelToggle;
     public Transform itemContent;
+
+    public bool didCartHaveRequired;
 
     public float totalPrice;
 
@@ -107,8 +109,8 @@ public class InventoryManager : MonoBehaviour
             if (duplicateCounts.ContainsKey(idNumber))
             {
                 duplicateCounts[idNumber]++;
-                Debug.Log("Duplicate count " + duplicateCounts[idNumber]
-                    + "\n element is " + idNumber );
+                //Debug.Log("Duplicate count " + duplicateCounts[idNumber]
+                //    + "\n element is " + idNumber );
             }
             else
             {
@@ -135,7 +137,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (cartPanel.activeInHierarchy)
         {
-            Debug.Log("Cart is open");
+            //Debug.Log("Cart is open");
             foreach(var item in itemList)
             {
                 idList.Add(item.id);
@@ -143,7 +145,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Cart is close");
+           // Debug.Log("Cart is close");
             cancelToggle.isOn = false;
         }
     }
@@ -168,7 +170,7 @@ public class InventoryManager : MonoBehaviour
 
     public void SetInventoryItems()
     {
-        Debug.Log("Setting inv items");
+        //Debug.Log("Setting inv items");
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
         
         for (int i = 0; i < spawnedCartIds.Count; i++)
@@ -192,32 +194,62 @@ public class InventoryManager : MonoBehaviour
         string cartListString = "";
         string objListString = "";
 
+        cartObjDiction.Clear();
+        bool breakOuterLoop = false;
+
         foreach (var item in itemList)
         {
-            Debug.Log("ITEM");
-            cartListString += item.itemName;
-            foreach(KeyValuePair<string, int> objItem in Objective.Instance.objList)
+           Debug.Log("ITEM");
+            //wcartListString += item.itemName;
+      
             {
-                Debug.Log(objItem.Key + item.itemType);
-                if (objItem.Key == item.itemType)
+               //s Debug.Log(objItem.Key + item.itemType + string.Equals(objItem.Key, item.itemType));
+                if (cartObjDiction.ContainsKey(item.itemType))
                 {
-                    cartObjList[objItem.Key]++;
                     Debug.Log("There is a dupe");
+
+                    cartObjDiction[item.itemType]++;
                 }
                 else
                 {
-                    cartObjList[objItem.Key] = 1;
+                    cartObjDiction[item.itemType] = 1;
                     Debug.Log("there is a new food type");
                 }
+                Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
             }
-            
-
         }
-        Debug.Log("yESYESYE");
-        foreach(KeyValuePair<string, int> cart in cartObjList)
+        foreach (KeyValuePair<string, int> cart in cartObjDiction)
         {
             Debug.Log("HELP");
             Debug.Log(cart.Key + " " + cart.Value);
+            foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+            {
+                Debug.Log("Cart Key is " + cart.Key + "\n OBJ key is " + obj.Key);
+                if (cart.Key.Equals(obj.Key))
+                {
+                    if (cart.Value >= obj.Value)
+                    {
+                        didCartHaveRequired = true;
+                    }
+                    else
+                    {
+                        didCartHaveRequired = false;
+                        breakOuterLoop = true;
+                        break;
+                    }
+
+                    if (breakOuterLoop)
+                    {
+                        break;
+                    }
+                }
+                
+
+                if (breakOuterLoop)
+                    break;
+            }
         }
+
+        Debug.Log("Will the player be able to go to cashier? " + didCartHaveRequired);
     }
 }

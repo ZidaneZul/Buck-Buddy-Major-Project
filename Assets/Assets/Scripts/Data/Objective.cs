@@ -23,7 +23,7 @@ public class Objective : MonoBehaviour
     void Start()
     {
         ShoppingListDisplay();
-       foreach(KeyValuePair<string, int> obj in objList)
+        foreach (KeyValuePair<string, int> obj in objList)
         {
             Debug.Log("Require food type is " + obj.Key + " " + obj.Value);
         }
