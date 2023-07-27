@@ -6529,7 +6529,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2db14918d3435ea4b948f39e33e19c02, type: 2}
   - {fileID: 11400000, guid: bd27f9c5c62b910499012076b460a3f8, type: 2}
   - {fileID: 11400000, guid: 8dc7927d35b670f4ebf6f837feacf96a, type: 2}
+  - {fileID: 11400000, guid: 15f1edc03103c4e4cafa27b871b61ab0, type: 2}
   - {fileID: 11400000, guid: 9619f7d115debef4d9bb91d39bf3fb9b, type: 2}
+  - {fileID: 11400000, guid: 769826f7a786f3a449408921302a60c0, type: 2}
   npcData: {fileID: 0}
   yesButton: {fileID: 632344750}
   noButton: {fileID: 1797211178}
