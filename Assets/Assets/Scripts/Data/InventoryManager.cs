@@ -36,8 +36,6 @@ public class InventoryManager : MonoBehaviour
     public Toggle cancelToggle;
     public Transform itemContent;
 
-    public bool didCartHaveRequired;
-
     public float totalPrice;
 
     private void Awake()
@@ -55,6 +53,7 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(itemList.Count);
+        Debug.Log("would the player be able to go to cashier ");
     }
     public void Add(ItemData item)
     {
@@ -123,7 +122,7 @@ public class InventoryManager : MonoBehaviour
 
     public void CleanList()
     {
-        Debug.Log("cleaning clean clean");
+        //Debug.Log("cleaning clean clean");
         foreach (Transform item in itemContent)
         {
             Destroy(item.gameObject);
@@ -189,13 +188,20 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void CheckForObj()
+    public void GoToCashier()
     {
-        string cartListString = "";
-        string objListString = "";
+        if (CheckForObj())
+        {
+            Debug.Log("Go to cashier nownwownwonw");
+        }
+        else
+            Debug.Log("Mising items pls find");
+    }
 
+    public bool CheckForObj()
+    {
         cartObjDiction.Clear();
-        bool breakOuterLoop = false;
+        Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
 
         foreach (var item in itemList)
         {
@@ -207,7 +213,6 @@ public class InventoryManager : MonoBehaviour
                 if (cartObjDiction.ContainsKey(item.itemType))
                 {
                     Debug.Log("There is a dupe");
-
                     cartObjDiction[item.itemType]++;
                 }
                 else
@@ -220,6 +225,8 @@ public class InventoryManager : MonoBehaviour
         }
         foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
         {
+            checkObj.Add(obj.Key, false);
+
             Debug.Log("HELP");
             foreach (KeyValuePair<string, int> cart in cartObjDiction)
             {
@@ -228,26 +235,26 @@ public class InventoryManager : MonoBehaviour
                 {
                     if (cart.Value >= obj.Value)
                     {
-                        didCartHaveRequired = true;
+                        checkObj[obj.Key] = true;
+                        break;
                     }
                     else
                     {
-                        didCartHaveRequired = false;
-                        breakOuterLoop = true;
                         break;
                     }
 
-                    if (breakOuterLoop)
-                    {
-                        break;
-                    }
                 }
-                 
-                if (breakOuterLoop)
-                    break;
             }
         }
-
-        Debug.Log("Will the player be able to go to cashier? " + didCartHaveRequired);
+        foreach(KeyValuePair<string, bool> checks in checkObj)
+        {
+            if (!checks.Value)
+            {
+                Debug.Log("Missing items!");
+                return false;
+            }
+        }
+        Debug.Log("Proceed to cashier");
+        return true;
     }
 }
