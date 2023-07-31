@@ -48,12 +48,15 @@ public class ItemScript : MonoBehaviour
         {
             foreach (GameObject point in foodPoints)
             {
-                if (Vector3.Distance(transform.position, point.transform.position) < 3)
+                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y - 2f, point.transform.position.z);
+                Debug.DrawLine(point.transform.position, LinePoint) ;
+                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down), 2f))
                 {
                     tempPoint = point;
                     isPointClose = true;
                    // Debug.Log("Found a close point");
                 }
+
             }
         }
     }
@@ -62,7 +65,7 @@ public class ItemScript : MonoBehaviour
     {
         if (isPointClose && !talkingToNPC)
         {
-            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 3)
+            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 1.5)
             {
                 ShowBubble();
                 //Debug.Log("Close to " + tempPoint);
