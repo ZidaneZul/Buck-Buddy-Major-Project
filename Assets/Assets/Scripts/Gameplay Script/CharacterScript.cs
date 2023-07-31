@@ -22,7 +22,7 @@ public class CharacterScript : MonoBehaviour
     {
         if(!movingRight && !movingLeft)
             horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontal);
+        //Debug.Log(horizontal);
         Flip();
     }
 
@@ -56,22 +56,22 @@ public class CharacterScript : MonoBehaviour
     public void MoveLeftDown()
     {
         movingLeft = true;
-        Debug.Log("Moving left");
+       // Debug.Log("Moving left");
     }
     public void MoveLeftUp()
     {
         movingLeft = false;
-        Debug.Log("stop left");
+       // Debug.Log("stop left");
     }
     public void MoveRightDown()
     {
         movingRight = true;
-        Debug.Log("Moving right");
+        //Debug.Log("Moving right");
     }
     public void MoveRightUp()
     {
         movingRight = false;
-        Debug.Log("stop right");
+        //Debug.Log("stop right");
     }
     
 }
