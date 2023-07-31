@@ -30,6 +30,9 @@ public class InventoryManager : MonoBehaviour
 
     Dictionary<string, int> cartObjDiction = new Dictionary<string, int>();
 
+    Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
+
+
     public string[] itemTypeInCart;
 
     public GameObject textPrefab, cartPanel;
@@ -200,34 +203,35 @@ public class InventoryManager : MonoBehaviour
 
     public bool CheckForObj()
     {
+        //cartObjDiction is getting the types of food players have added to cart.
         cartObjDiction.Clear();
-        Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
+
+        //checkObj is a dictionary thats a string and bool to check if the player have sufficient 
+        //items from the shopping list.
+        checkObj.Clear();
 
         foreach (var item in itemList)
         {
-           Debug.Log("ITEM");
-            //wcartListString += item.itemName;
-      
+            Debug.Log("ITEM");
+
+            //s Debug.Log(objItem.Key + item.itemType + string.Equals(objItem.Key, item.itemType));
+            if (cartObjDiction.ContainsKey(item.itemType))
             {
-               //s Debug.Log(objItem.Key + item.itemType + string.Equals(objItem.Key, item.itemType));
-                if (cartObjDiction.ContainsKey(item.itemType))
-                {
-                    Debug.Log("There is a dupe");
-                    cartObjDiction[item.itemType]++;
-                }
-                else
-                {
-                    cartObjDiction[item.itemType] = 1;
-                    Debug.Log("there is a new food type");
-                }
-                Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
+                Debug.Log("There is a dupe");
+                cartObjDiction[item.itemType]++;
             }
+            else
+            {
+                cartObjDiction[item.itemType] = 1;
+                Debug.Log("there is a new food type");
+            }
+            Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
         }
+
         foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
         {
             checkObj.Add(obj.Key, false);
 
-            Debug.Log("HELP");
             foreach (KeyValuePair<string, int> cart in cartObjDiction)
             {
                 Debug.Log("Cart Key is " + cart.Key + "\n OBJ key is " + obj.Key);
@@ -251,10 +255,16 @@ public class InventoryManager : MonoBehaviour
             if (!checks.Value)
             {
                 Debug.Log("Missing items!");
+                Debug.Log("doin the function to find whats missing");
                 return false;
             }
         }
         Debug.Log("Proceed to cashier");
         return true;
+    }
+
+    void FindMissingItems()
+    {
+
     }
 }

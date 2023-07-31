@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MapOpen : MonoBehaviour
 {
-    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList;
+    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
+        , objPanel;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
     
@@ -27,6 +28,10 @@ public class MapOpen : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         shoppingList = GameObject.Find("ShoppingList");
         shoppingList.SetActive(false);
+
+        objPanel = GameObject.Find("LevelObj_Panel");
+        objPanel.SetActive(false);
+
     }
     private void Update()
     {
@@ -68,7 +73,14 @@ public class MapOpen : MonoBehaviour
 
     public void CheckOut()
     {
-        SceneManager.LoadScene("CashRegister");
+        if(InventoryManager.Instance.CheckForObj())
+            SceneManager.LoadScene("CashRegister");
+        else
+        {
+            objPanel.SetActive(true);
+            panel.SetActive(false);
+            shoppingCartPanel.SetActive(false);
+        }
     }
 
     public void TeleportToAisleDynamic()
