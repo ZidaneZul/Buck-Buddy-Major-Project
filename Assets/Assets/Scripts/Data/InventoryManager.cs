@@ -32,13 +32,11 @@ public class InventoryManager : MonoBehaviour
 
     Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
 
-
-    public string[] itemTypeInCart;
-
     public GameObject textPrefab, cartPanel;
     public Toggle cancelToggle;
     public Transform itemContent;
 
+    string missingItems;
     public float totalPrice;
 
     private void Awake()
@@ -263,8 +261,23 @@ public class InventoryManager : MonoBehaviour
         return true;
     }
 
-    void FindMissingItems()
+    public string FindMissingItems()
     {
-
+        missingItems = "";
+        foreach (KeyValuePair<string, bool> checks in checkObj)
+        {
+            if (!checks.Value)
+            {
+                Debug.Log(checks.Key);
+                foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+                {
+                    if (obj.Key.Equals(checks.Key))
+                    {
+                        missingItems += ", " + obj.Value + " " + obj.Key;
+                    }
+                }
+            }
+        }
+        return "You need" + missingItems + "!";
     }
 }
