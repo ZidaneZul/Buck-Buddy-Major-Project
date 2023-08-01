@@ -9,9 +9,8 @@ public class ItemScript : MonoBehaviour
     
 
     GameObject[] foodPoints;
-    GameObject tempPoint, pointChildren; //tempPoint is to store the waypoint gameobject to use.
+    GameObject tempPoint; //tempPoint is to store the waypoint gameobject to use.
     Vector3 foodBubblePos;
-    string pointChildrenString;
     public bool talkingToNPC;
     public GameObject dialogueBox;
 
@@ -84,8 +83,6 @@ public class ItemScript : MonoBehaviour
     {
         //pointChildrenString = tempPoint.GetComponentInChildren<GameObject>().ToString();
         
-        pointChildren = tempPoint.transform.GetChild(0).gameObject;
-        pointChildrenString = pointChildren.ToString();
         //Debug.Log("the child object is " + pointChildren);
 
         //foodBubblePos.position = new Vector3(pointChildren.transform.position.x, pointChildren.transform.position.y - 1.4f, pointChildren.transform.position.z);
@@ -96,15 +93,15 @@ public class ItemScript : MonoBehaviour
         {
             didTextSpawn = true;
 
-            foodBubblePos = pointChildren.transform.position;
+            foodBubblePos = tempPoint.transform.position;
 
             if (!CheckForFloor())
             {
-                foodBubblePos.y = pointChildren.transform.position.y - 1.8f;
+                foodBubblePos.y = tempPoint.transform.position.y - 1.8f;
             }
             else
             {
-                foodBubblePos.y = pointChildren.transform.position.y + 1.8f;
+                foodBubblePos.y = tempPoint.transform.position.y + 1.8f;
             }
 
             foodBubbleClone = Instantiate(infoBubble);

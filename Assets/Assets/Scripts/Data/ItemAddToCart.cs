@@ -40,8 +40,8 @@ public class ItemAddToCart : MonoBehaviour
     }
     void GetFoodItemData() 
     { 
-        closeFood = closePoint.transform.GetChild(0).gameObject;
-        itemController = closeFood.GetComponent<ItemController>();
+        //closeFood = closePoint.transform.GetChild(0).gameObject;
+        itemController = closePoint.GetComponent<ItemController>();
         itemData = itemController.item;
 
         //Debug.Log("the item data for food thats close is "+ item.ToString());
