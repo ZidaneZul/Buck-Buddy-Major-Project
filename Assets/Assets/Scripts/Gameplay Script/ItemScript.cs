@@ -49,9 +49,9 @@ public class ItemScript : MonoBehaviour
             {
                 RaycastHit hit;
 
-                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y - 2f, point.transform.position.z);
+                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y - 2.5f, point.transform.position.z);
                 Debug.DrawLine(point.transform.position, LinePoint) ;
-                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2f))
+                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2.5f))
                 {
                     tempPoint = point;
                     isPointClose = true;
