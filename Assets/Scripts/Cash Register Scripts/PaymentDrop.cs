@@ -13,6 +13,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     int j;
 
     public Text moneyGenerater;
+    public Text progressBarText;
     public float randomNumber;
     public float amountAdded = 0f;
 
@@ -23,6 +24,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public GameObject twoStar;
     public GameObject threeStar;
     public GameObject fail;
+
+    public Image mask;
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
@@ -109,7 +112,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
             confirm.interactable = true;
 
-            
+            GetCurrentFill();
+            progressBarText.text = "" + sumAdded;
             //Money Subtracted
         }
 
@@ -146,5 +150,11 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             twoStar.SetActive(false);
             threeStar.SetActive(false);
         }
+    }
+
+    public void GetCurrentFill()
+    {
+        float fillAmount = (float)sumAdded / (float)randomNumber;
+        mask.fillAmount = fillAmount;
     }
 }
