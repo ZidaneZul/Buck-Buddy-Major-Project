@@ -264,6 +264,7 @@ public class InventoryManager : MonoBehaviour
     public string FindMissingItems()
     {
         missingItems = "";
+        bool firstItemAdded = false;
         foreach (KeyValuePair<string, bool> checks in checkObj)
         {
             if (!checks.Value)
@@ -273,7 +274,16 @@ public class InventoryManager : MonoBehaviour
                 {
                     if (obj.Key.Equals(checks.Key))
                     {
-                        missingItems += ", " + obj.Value + " " + obj.Key;
+
+                        if (!firstItemAdded)
+                        {
+                            missingItems += " " + obj.Value + " " + obj.Key;
+                            firstItemAdded = true;
+                        }
+                        else
+                        {
+                            missingItems += ", " + obj.Value + " " + obj.Key;
+                        }
                     }
                 }
             }
