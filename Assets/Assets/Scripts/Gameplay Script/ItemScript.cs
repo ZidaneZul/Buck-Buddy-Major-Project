@@ -65,7 +65,7 @@ public class ItemScript : MonoBehaviour
     {
         if (isPointClose && !talkingToNPC)
         {
-            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 1.5)
+            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2)
             {
                 ShowBubble();
                 //Debug.Log("Close to " + tempPoint);
