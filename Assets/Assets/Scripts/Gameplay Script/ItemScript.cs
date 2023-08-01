@@ -48,12 +48,15 @@ public class ItemScript : MonoBehaviour
         {
             foreach (GameObject point in foodPoints)
             {
+                RaycastHit hit;
+
                 Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y - 2f, point.transform.position.z);
                 Debug.DrawLine(point.transform.position, LinePoint) ;
-                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down), 2f))
+                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2f))
                 {
                     tempPoint = point;
                     isPointClose = true;
+                    Debug.Log(hit.collider.name);
                    // Debug.Log("Found a close point");
                 }
 
@@ -65,7 +68,8 @@ public class ItemScript : MonoBehaviour
     {
         if (isPointClose && !talkingToNPC)
         {
-            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2)
+            Debug.Log(Vector3.Distance(transform.position, tempPoint.transform.position));
+            if (Vector3.Distance(transform.position, tempPoint.transform.position) <= 2.5)
             {
                 ShowBubble();
                 //Debug.Log("Close to " + tempPoint);
