@@ -8,11 +8,13 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
+    //Things added to cart
     public List<ItemData> itemList = new List<ItemData>();
 
     //used to make the instantiated prefabs have the correct item data attached to them
     public List<ItemData> itemSpawnedList = new List<ItemData>();
 
+    //used to get the quantity for each item in the cart
     public Dictionary<int, int> duplicateCounts;
 
     //used for finding dups
@@ -20,13 +22,22 @@ public class InventoryManager : MonoBehaviour
 
     //so that the item prefab in cart spawns once per item
     List<int> spawnedCartIds = new List<int>();
+
+    //to attach the data to the item spawned list
     public InventoryItemController[] InventoryItem;
 
-    public GameObject textPrefab;
+    //List<KeyValuePair<string, int>> cartObjList = new List<KeyValuePair<string, int>>();
+
+    Dictionary<string, int> cartObjDiction = new Dictionary<string, int>();
+
+    Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
+
+    public GameObject textPrefab, cartPanel;
     public Toggle cancelToggle;
     public Transform itemContent;
 
-    bool isCartOpen =false;
+    string missingItems;
+    public float totalPrice;
 
     private void Awake()
     {
@@ -43,6 +54,7 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(itemList.Count);
+        Debug.Log("would the player be able to go to cashier ");
     }
     public void Add(ItemData item)
     {
@@ -56,10 +68,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ShowItem()
     {
-        foreach (Transform item in itemContent)
-        {
-            Destroy(item.gameObject);
-        }
+        CleanList();
 
         FindIDs();
 
@@ -82,7 +91,7 @@ public class InventoryManager : MonoBehaviour
                     var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
                     var itemQuantity = textObj.transform.Find("Quantity_Txt").GetComponent<TextMeshProUGUI>();
                     itemName.text = item.itemName;
-                    itemPrice.text = "$" + item.price.ToString();
+                    itemPrice.text = "$" + item.price.ToString("F2");
 
                     itemQuantity.text = pair.Value + "x";
                 }
@@ -90,13 +99,6 @@ public class InventoryManager : MonoBehaviour
         }
         SetInventoryItems();
     }
-
-    public void RecountCartItems()
-    {
-        duplicateCounts = CountDuplicates(idList);
-    }
-
-
 
     Dictionary<int, int> CountDuplicates(List<int> CDlist)
     {
@@ -107,8 +109,8 @@ public class InventoryManager : MonoBehaviour
             if (duplicateCounts.ContainsKey(idNumber))
             {
                 duplicateCounts[idNumber]++;
-                Debug.Log("Duplicate count " + duplicateCounts[idNumber]
-                    + "\n element is " + idNumber );
+                //Debug.Log("Duplicate count " + duplicateCounts[idNumber]
+                //    + "\n element is " + idNumber );
             }
             else
             {
@@ -119,11 +121,23 @@ public class InventoryManager : MonoBehaviour
         return duplicateCounts;
     }
 
+    public void CleanList()
+    {
+        //Debug.Log("cleaning clean clean");
+        foreach (Transform item in itemContent)
+        {
+            Destroy(item.gameObject);
+        }
+        idList.Clear();
+        spawnedCartIds.Clear();
+        itemSpawnedList.Clear();
+        
+    }
     void FindIDs()
     {
-        if (!isCartOpen)
+        if (cartPanel.activeInHierarchy)
         {
-            isCartOpen = true;
+            //Debug.Log("Cart is open");
             foreach(var item in itemList)
             {
                 idList.Add(item.id);
@@ -131,10 +145,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            isCartOpen = false;
-            idList.Clear();
-            spawnedCartIds.Clear();
-            itemSpawnedList.Clear();
+           // Debug.Log("Cart is close");
             cancelToggle.isOn = false;
         }
     }
@@ -159,6 +170,7 @@ public class InventoryManager : MonoBehaviour
 
     public void SetInventoryItems()
     {
+        //Debug.Log("Setting inv items");
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
         
         for (int i = 0; i < spawnedCartIds.Count; i++)
@@ -169,36 +181,113 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    //void FindDuplicates()
-    //{
-    //    if (!isCartOpen)
-    //    {
-    //        isCartOpen = true;
-    //        Debug.Log("Cart is now open");
+    public void GetTotalValue()
+    {
+        foreach (var item in itemList)
+        {
+            totalPrice += item.price;            
+        }
+    }
 
-    //        foreach (var item in itemList)
-    //        {
-    //            testList.Add(item.id);
-    //            if (uniqueIdList.Contains(item.id))
-    //            {
-    //               // Debug.Log("Duplicate found!");
-    //                duplicatedList.Add(item.id);
-    //               // Debug.Log("item " + item.id + "has be found ");
-    //            }
-    //            else
-    //            {
-    //                //Debug.Log("not a dup!");
-    //                uniqueIdList.Add(item.id);
-    //            }
-    //            //Debug.Log("Unique id: " + uniqueIdList.ToString());
-    //        }
-    //    }
-    //    else
-    //    {
-    //        isCartOpen = false;
-    //        uniqueIdList.Clear();
-    //        testList.Clear();
-    //        Debug.Log("cart is now close");
-    //    }
-    //}
+    public void GoToCashier()
+    {
+        if (CheckForObj())
+        {
+            Debug.Log("Go to cashier nownwownwonw");
+        }
+        else
+            Debug.Log("Mising items pls find");
+    }
+
+    public bool CheckForObj()
+    {
+        //cartObjDiction is getting the types of food players have added to cart.
+        cartObjDiction.Clear();
+
+        //checkObj is a dictionary thats a string and bool to check if the player have sufficient 
+        //items from the shopping list.
+        checkObj.Clear();
+
+        foreach (var item in itemList)
+        {
+            Debug.Log("ITEM");
+
+            //s Debug.Log(objItem.Key + item.itemType + string.Equals(objItem.Key, item.itemType));
+            if (cartObjDiction.ContainsKey(item.itemType))
+            {
+                Debug.Log("There is a dupe");
+                cartObjDiction[item.itemType]++;
+            }
+            else
+            {
+                cartObjDiction[item.itemType] = 1;
+                Debug.Log("there is a new food type");
+            }
+            Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
+        }
+
+        foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+        {
+            checkObj.Add(obj.Key, false);
+
+            foreach (KeyValuePair<string, int> cart in cartObjDiction)
+            {
+                Debug.Log("Cart Key is " + cart.Key + "\n OBJ key is " + obj.Key);
+                if (cart.Key.Equals(obj.Key))
+                {
+                    if (cart.Value >= obj.Value)
+                    {
+                        checkObj[obj.Key] = true;
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+            }
+        }
+        foreach(KeyValuePair<string, bool> checks in checkObj)
+        {
+            if (!checks.Value)
+            {
+                Debug.Log("Missing items!");
+                Debug.Log("doin the function to find whats missing");
+                return false;
+            }
+        }
+        Debug.Log("Proceed to cashier");
+        return true;
+    }
+
+    public string FindMissingItems()
+    {
+        missingItems = "";
+        bool firstItemAdded = false;
+        foreach (KeyValuePair<string, bool> checks in checkObj)
+        {
+            if (!checks.Value)
+            {
+                Debug.Log(checks.Key);
+                foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+                {
+                    if (obj.Key.Equals(checks.Key))
+                    {
+
+                        if (!firstItemAdded)
+                        {
+                            missingItems += " " + obj.Value + " " + obj.Key;
+                            firstItemAdded = true;
+                        }
+                        else
+                        {
+                            missingItems += ", " + obj.Value + " " + obj.Key;
+                        }
+                    }
+                }
+            }
+        }
+        return "You need" + missingItems + "!";
+    }
 }

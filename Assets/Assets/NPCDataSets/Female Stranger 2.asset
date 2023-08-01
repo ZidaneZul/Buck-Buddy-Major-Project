@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206a3f29b65a8894aa1ad4f6c82b7a89, type: 3}
+  m_Name: Female Stranger 2
+  m_EditorClassIdentifier: 
+  NPCname:
+  - Female Stranger
+  - Female Stranger
+  - Player
+  - Female Stranger
+  - Female Stranger
+  - Player
+  - Female Stranger
+  - Female Stranger
+  - Player
+  NPCimage:
+  - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
+  - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
+  - {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
+  - {fileID: 653631045, guid: 78e92a675a61ca94da7bf79ebe2e6469, type: 3}
+  - {fileID: 653631045, guid: 78e92a675a61ca94da7bf79ebe2e6469, type: 3}
+  - {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
+  - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
+  - {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
+  - {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
+  dialogues:
+  - Hello!
+  - Want to know a way to make some more money?
+  - Sure! How?
+  - 'With this! '
+  - This is an Limited Edition Singaporean Note and it is more valuable than your
+    typical Singaporean Dollar. Want to buy it for a cheap price?
+  - Wow that sounds amazing? But may I know why you are doing this?
+  - Because you look like a nice person and I want to be your friend!
+  - "So would you like to purchase this dollar? It\u2019ll make you more money!"
+  - ...
+  yesResponse: Purchase the Dollar
+  noResponse: Do not Purchase
+  NPCResponses:
+  - "Ok! I\u2019ll buy it from you!"
+  - No thank you! That dollar looks fake

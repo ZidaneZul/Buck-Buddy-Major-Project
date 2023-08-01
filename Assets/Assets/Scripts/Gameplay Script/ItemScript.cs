@@ -12,7 +12,8 @@ public class ItemScript : MonoBehaviour
     GameObject tempPoint, pointChildren; //tempPoint is to store the waypoint gameobject to use.
     Vector3 foodBubblePos;
     string pointChildrenString;
-
+    public bool talkingToNPC;
+    public GameObject dialogueBox;
 
     bool didTextSpawn = false;
     bool isPointClose = false;
@@ -27,6 +28,14 @@ public class ItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogueBox.activeInHierarchy)
+        {
+            talkingToNPC = true;
+        }
+        else
+        {
+            talkingToNPC=false;
+        }
         FindClosePoint();
         IsCloseToFood();
         //Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2.5f, Color.red);
@@ -39,21 +48,24 @@ public class ItemScript : MonoBehaviour
         {
             foreach (GameObject point in foodPoints)
             {
-                if (Vector3.Distance(transform.position, point.transform.position) < 3)
+                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y - 2f, point.transform.position.z);
+                Debug.DrawLine(point.transform.position, LinePoint) ;
+                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down), 2f))
                 {
                     tempPoint = point;
                     isPointClose = true;
                    // Debug.Log("Found a close point");
                 }
+
             }
         }
     }
 
     void IsCloseToFood()
     {
-        if (isPointClose)
+        if (isPointClose && !talkingToNPC)
         {
-            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 3)
+            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2)
             {
                 ShowBubble();
                 //Debug.Log("Close to " + tempPoint);

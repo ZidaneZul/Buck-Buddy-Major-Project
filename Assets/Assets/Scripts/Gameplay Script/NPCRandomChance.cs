@@ -26,6 +26,7 @@ public class NPCRandomChance : MonoBehaviour
     public GameObject dialogueBoxInScene;
     public TextMeshPro NPCText;
     public bool yes;
+    public bool EndOfPatrol;
 
     // To preload variables that will stay between transition of scenes
 
@@ -58,6 +59,7 @@ public class NPCRandomChance : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("NPC") != null)
         {
             GotoNextPoint();
+            Debug.Log(nma.remainingDistance);
         }
         if ((PlayerDetection()))
         {
@@ -112,7 +114,7 @@ public class NPCRandomChance : MonoBehaviour
     }
     bool PlayerDetection()
     {
-        float distance = 5f;
+        //float distance = 5f;
 
         if (NPCOnScene != null)
         {
@@ -139,45 +141,28 @@ public class NPCRandomChance : MonoBehaviour
         {
             if (NPCOnScene != null)
             {
-                if (SpawnPointLocation == 0)
+
+
+                if ((SpawnPointLocation % 2 == 0) || (SpawnPointLocation == 0))
                 {
                     dialogueBoxInScene.SetActive(false);
                     for (int i = 0; i < 2; i++)
                     {
+                        nma.stoppingDistance = 0.4f;
+
+                        if (SpawnPointLocation > SpawnPoints.Length)
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = 1;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true;
+                        }
                         if (target == null)
                         {
 
                             target = SpawnPoints[SpawnPointLocation + i].transform;
 
                         }
-                        nma.stoppingDistance = 0f;
-
-                        if (nma.destination != nma.transform.position)
-                        {
-                            nma.SetDestination(target.position);
-                        }
-
-                        if (!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance)
-                        {
-                            target = null;
-                        }
-                    }
-
-
-                }
-
-                if (SpawnPointLocation % 2 == 0)
-                {
-                    dialogueBoxInScene.SetActive(false);
-                    for (int i = 0; i < 2; i++)
-                    {
-                        if (target == null)
-                        {
-
-                            target = SpawnPoints[SpawnPointLocation + i].transform;
-
-                        }
-                        nma.stoppingDistance = 0f;
 
                         if (nma.destination != nma.transform.position)
                         {
@@ -189,6 +174,22 @@ public class NPCRandomChance : MonoBehaviour
                             target = null;
 
                         }
+                        if ((i == 1) && (EndOfPatrol == false))
+                        {
+                            target = SpawnPoints[SpawnPointLocation + i].transform;
+                            nma.SetDestination(target.position);
+                            EndOfPatrol = true;
+                        }
+                        if((!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance) && (EndOfPatrol == true))
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = 1;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true; 
+                            EndOfPatrol = false;
+                            break;
+                        }
+
                     }
 
 
@@ -199,6 +200,15 @@ public class NPCRandomChance : MonoBehaviour
                     dialogueBoxInScene.SetActive(false);
                     for (int i = 0; i < 2; i++)
                     {
+                        nma.stoppingDistance = 0.4f;
+
+                        if (SpawnPointLocation > SpawnPoints.Length)
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = 2;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true;
+                        }
                         if (target == null)
                         {
 
@@ -206,7 +216,6 @@ public class NPCRandomChance : MonoBehaviour
 
                         }
 
-                        nma.stoppingDistance = 0f;
 
 
                         if (nma.destination != nma.transform.position)
@@ -218,6 +227,22 @@ public class NPCRandomChance : MonoBehaviour
                         {
                             target = null;
                         }
+                        if((target == SpawnPoints[SpawnPointLocation].transform) &&(EndOfPatrol == false))
+                        {
+                            nma.SetDestination(target.position);
+                            EndOfPatrol = true;
+
+                        }
+                        if((!nma.pathPending && nma.remainingDistance <= nma.stoppingDistance) && (EndOfPatrol == true))
+                        {
+                            nma.enabled = false;
+                            SpawnPointLocation = SpawnPointLocation + 2;
+                            nma.transform.position = SpawnPoints[SpawnPointLocation].transform.position;
+                            nma.enabled = true;
+                            EndOfPatrol = false;
+                            break;
+                        }
+
                     }
 
 
