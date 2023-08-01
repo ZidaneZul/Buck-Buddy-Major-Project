@@ -23,7 +23,7 @@ public class InventoryItemController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(getItemQuantity);
+        //Debug.Log(getItemQuantity);
     }
 
     public void RemoveOne()

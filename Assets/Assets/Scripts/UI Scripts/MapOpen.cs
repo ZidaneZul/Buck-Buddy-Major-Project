@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MapOpen : MonoBehaviour
 {
-    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList;
+    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
+        , objPanel, helpPanelCtnBtn;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
-    
+
+    public TextMeshProUGUI helpPanelBody_Txt;
 
     string waypointString, buttonName;
     string[] aisles = { "Rice", "Drink", "Fruit", "Bakery", "Snack", "Canned", "Frozen", "Dairy", "Meat"};
@@ -27,6 +30,14 @@ public class MapOpen : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         shoppingList = GameObject.Find("ShoppingList");
         shoppingList.SetActive(false);
+
+        objPanel = GameObject.Find("LevelObj_Panel");
+        helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
+        helpPanelCtnBtn = GameObject.Find("Hint_Btn");
+
+
+        objPanel.SetActive(false);
+
     }
     private void Update()
     {
@@ -68,7 +79,24 @@ public class MapOpen : MonoBehaviour
 
     public void CheckOut()
     {
-        SceneManager.LoadScene("CashRegister");
+        if(InventoryManager.Instance.CheckForObj())
+            SceneManager.LoadScene("CashRegister");
+        else
+        {
+            objPanel.SetActive(true);
+            helpPanelCtnBtn.SetActive(true);
+            helpPanelBody_Txt.text = "Hey! You have missing items from your shopping list test test!";
+
+            panel.SetActive(false);
+            shoppingCartPanel.SetActive(false);
+        }
+    }
+
+    public void GetHelpForMissingCart()
+    {
+        helpPanelBody_Txt.text = InventoryManager.Instance.FindMissingItems();
+;
+        helpPanelCtnBtn.SetActive(false);
     }
 
     public void TeleportToAisleDynamic()
