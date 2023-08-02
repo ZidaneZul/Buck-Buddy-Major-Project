@@ -14,7 +14,8 @@ public class CashSpawnerFiftyC : MonoBehaviour
         {
             int randomCash = Random.Range(0, cash.Length);
             var cashSpawn = Instantiate(cash[randomCash], transform.position, Quaternion.identity);
-            cashSpawn.transform.parent = gameObject.transform;
+            //cashSpawn.transform.parent = gameObject.transform;
+            cashSpawn.transform.SetParent(gameObject.transform, true);
         }
 
     }

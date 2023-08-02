@@ -6,6 +6,8 @@ public class CashSpawnerTen : MonoBehaviour
 {
     public GameObject[] cash;
 
+    public Vector3 cashPos;
+    public float offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,12 @@ public class CashSpawnerTen : MonoBehaviour
         {
             int randomCash = Random.Range(0, cash.Length);
             var cashSpawn = Instantiate(cash[randomCash], transform.position, Quaternion.identity);
-            cashSpawn.transform.parent = gameObject.transform;
+            cashPos = transform.position;
+            offset = i * 10;
+            cashPos.y -= offset;
+            cashPos.x -= offset;
+            cashSpawn.transform.position = cashPos;
+            cashSpawn.transform.SetParent(gameObject.transform, true);
         }
 
     }

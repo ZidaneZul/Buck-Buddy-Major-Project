@@ -8,10 +8,18 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+
+    public Vector3 originalPosition; 
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    void Start()
+    {
+        originalPosition = transform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
