@@ -95,14 +95,14 @@ public class ItemScript : MonoBehaviour
 
             foodBubblePos = tempPoint.transform.position;
 
-            if (!CheckForFloor())
-            {
-                foodBubblePos.y = tempPoint.transform.position.y - 1.8f;
-            }
-            else
-            {
-                foodBubblePos.y = tempPoint.transform.position.y + 1.8f;
-            }
+            //if (!CheckForFloor())
+            //{
+            //    foodBubblePos.y = tempPoint.transform.position.y - 1.8f;
+            //}
+            //else
+            //{
+                foodBubblePos.y = tempPoint.transform.position.y + 2f;
+            //}
 
             foodBubbleClone = Instantiate(infoBubble);
            // Debug.Log("Made new bubble");
@@ -121,15 +121,15 @@ public class ItemScript : MonoBehaviour
         isPointClose=false;
     }
 
-    bool CheckForFloor()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(tempPoint.transform.position, transform.TransformDirection(Vector3.down), out hit, 2.5f))
-        {
-            Debug.Log("The bubble would hit the thing below foodpoint");
-            return true;
-        }
-        else return false;
-    }
+    //bool CheckForFloor()
+    //{
+    //    RaycastHit hit;
+    //    if (Physics.Raycast(tempPoint.transform.position, transform.TransformDirection(Vector3.down), out hit, 2.5f))
+    //    {
+    //        Debug.Log("The bubble would hit the thing below foodpoint");
+    //        return true;
+    //    }
+    //    else return false;
+    //}
         
 }
