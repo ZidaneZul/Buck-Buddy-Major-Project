@@ -44,6 +44,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public Image mask;
     public DragDrop dragdrop;
 
+    public float fillAmount;
     
     
     public void Start()
@@ -257,6 +258,11 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             GetCurrentFill();
             progressBarText.text = "" + sumAdded;
             //Money Subtracted
+            if (sumAdded - randomNumber > 5f)
+            {
+                progressBarText.text = "Too much!";
+            }
+
         }
 
 
@@ -296,8 +302,10 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
     public void GetCurrentFill()
     {
-        float fillAmount = (float)sumAdded / (float)randomNumber;
+        fillAmount = (float)sumAdded / (float)randomNumber;
         mask.fillAmount = fillAmount;
+
+       
     }
 
     public void ResetCash()

@@ -2664,7 +2664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.68}
   m_AnchorMax: {x: 0.5, y: 0.68}
-  m_AnchoredPosition: {x: 280, y: -643}
+  m_AnchoredPosition: {x: 280, y: -624}
   m_SizeDelta: {x: 2000, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588083050
@@ -2743,6 +2743,7 @@ MonoBehaviour:
   fail: {fileID: 1760647474}
   mask: {fileID: 1330346545}
   dragdrop: {fileID: 4740308494410266882, guid: 17801d7fef70edf4ebf3368b83e23a25, type: 3}
+  fillAmount: 0
 --- !u!1 &622419267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7581,7 +7582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.689}
   m_AnchorMax: {x: 0.5, y: 0.68}
-  m_AnchoredPosition: {x: 10, y: -381}
+  m_AnchoredPosition: {x: 10, y: -390}
   m_SizeDelta: {x: 88.359985, y: 84.23706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140108444
@@ -8540,7 +8541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6564284440623568942, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -547
+      value: -532
       objectReference: {fileID: 0}
     - target: {fileID: 6564284440623568942, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8649,7 +8650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276267184726749801, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -244
+      value: -226
       objectReference: {fileID: 0}
     - target: {fileID: 5276267184726749801, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
       propertyPath: m_AnchoredPosition.y

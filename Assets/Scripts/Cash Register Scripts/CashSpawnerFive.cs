@@ -12,7 +12,11 @@ public class CashSpawnerFive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FiveDollarSpawner();
+    }
 
+    public void FiveDollarSpawner()
+    {
         for (int i = 0; i < Random.Range(1, 6); i++)
         {
             int randomCash = Random.Range(0, cash.Length);
@@ -24,6 +28,5 @@ public class CashSpawnerFive : MonoBehaviour
             cashSpawn.transform.position = cashPos;
             cashSpawn.transform.SetParent(gameObject.transform, true);
         }
-
     }
 }
