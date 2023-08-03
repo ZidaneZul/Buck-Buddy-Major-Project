@@ -53,34 +53,45 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(itemList.Count);
-        Debug.Log("would the player be able to go to cashier ");
+        Debug.Log("Total price is " + totalPrice);
     }
     public void Add(ItemData item)
     {
         itemList.Add(item);
+        totalPrice += item.price;
     }
     public void Remove(ItemData item)
     {
         Debug.Log("remove item");
         itemList.Remove(item);
+        totalPrice -= item.price;
     }
 
     public void ShowItem()
     {
+        //cleans all used list before doing code
         CleanList();
 
+        //finds the id number of each item in the list
         FindIDs();
 
+        //Finds the amount of dups an item have
+        //3 ntuc bread, 1 egg, 9 ham etc.
         duplicateCounts = CountDuplicates(idList);
 
+
+        //goes through items list
         foreach (var item in itemList)
         {
-
+            //goes through the pairs in the dup count list
             foreach (KeyValuePair<int, int> pair in duplicateCounts)
             {
                 Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
                 
+                //if the id number in the dup count matches the id in the item list AND
+                //it was the first unique item id to be added, makes a cart slot and adds the
+                //name price and quantity of the item.
+                //Adds to itemSpawnedList so that the cart slot would contain the correct item script.
                 if (pair.Key == item.id && !spawnedCartIds.Contains(item.id))
                 {                
                     itemSpawnedList.Add(item);
@@ -181,14 +192,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void GetTotalValue()
-    {
-        foreach (var item in itemList)
-        {
-            totalPrice += item.price;            
-        }
-    }
-
     public void GoToCashier()
     {
         if (CheckForObj())
@@ -208,6 +211,8 @@ public class InventoryManager : MonoBehaviour
         //items from the shopping list.
         checkObj.Clear();
 
+
+        //this code would get the total amount of food items. 5 bread (of any brand) etc.
         foreach (var item in itemList)
         {
             Debug.Log("ITEM");
@@ -223,18 +228,23 @@ public class InventoryManager : MonoBehaviour
                 cartObjDiction[item.itemType] = 1;
                 Debug.Log("there is a new food type");
             }
-            Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
+           // Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
         }
 
+        //this would check if the player have enuf item type based on the level obj.
         foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
         {
+            //adds the item type with a false bool pair to the dictionary.
             checkObj.Add(obj.Key, false);
 
+            //goes thru the list of the amount of item types in the player's cart
             foreach (KeyValuePair<string, int> cart in cartObjDiction)
             {
+
                 Debug.Log("Cart Key is " + cart.Key + "\n OBJ key is " + obj.Key);
                 if (cart.Key.Equals(obj.Key))
                 {
+                    //makes the bool true if the player has enuf item type for the level obj
                     if (cart.Value >= obj.Value)
                     {
                         checkObj[obj.Key] = true;
@@ -248,6 +258,9 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
+
+        //goes thru the final dictionary to check if the player does have enuf item types
+        // depend on the true or false statement from the dictionary
         foreach(KeyValuePair<string, bool> checks in checkObj)
         {
             if (!checks.Value)

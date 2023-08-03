@@ -32,6 +32,8 @@ public class CharacterScript : MonoBehaviour
         if(!(horizontal == 0))
         {
             anim.SetBool("Walking", true);
+            timer = 0;
+            anim.ResetTrigger("Stop");
         }
         else
         {
@@ -54,12 +56,14 @@ public class CharacterScript : MonoBehaviour
             //rb.velocity = new Vector3(-horizontal * speed, rb.velocity.y);
             horizontal = -1;
             anim.SetBool("Walking", true);
+            timer = 0;
         }
         if (movingRight)
         {
             //rb.velocity = new Vector3(horizontal * speed, rb.velocity.y);
             horizontal = 1;
             anim.SetBool("Walking", true);
+            timer = 0;
         }
     }
 
@@ -74,10 +78,7 @@ public class CharacterScript : MonoBehaviour
                 anim.SetTrigger("Stop");
             }
         }
-        else
-        {
-            timer = 0;
-        }
+        
     }
 
     void Flip()
