@@ -5,21 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Objective", menuName = "ObjectiveData/Create New Objective")]
 public class ObjectiveData : ScriptableObject
 {
-    public int Soup;
-    public int Lettuce;
-    public int Cheese;
-    public int Tomatoes;
-    public int Noodles;
-    public int Eggs;
-    public int Bread;
-    public int Mushrooms;
-    public int Meat;
-    public int SoySauce;
-    public int Ham;
-
-
-
-
-
-
+    [System.Serializable]
+    public class ItemObjListThing
+    {
+        public string itemType;
+        public int amount;
+    }
+    public ItemObjListThing[] dynamicObjList;
 }
