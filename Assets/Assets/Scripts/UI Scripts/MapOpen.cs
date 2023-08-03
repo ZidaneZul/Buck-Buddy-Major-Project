@@ -33,6 +33,7 @@ public class MapOpen : MonoBehaviour
 
         objPanel = GameObject.Find("LevelObj_Panel");
         helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
+
         helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
 
