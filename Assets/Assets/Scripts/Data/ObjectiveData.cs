@@ -16,7 +16,8 @@ public class ObjectiveData : ScriptableObject
     public int Meat;
     public int SoySauce;
     public int Ham;
-
+    public string[] ListOfFoodTypes = { "Soup", "Lettuce", "Cheese", "Tomatoes", "Noodles", "Eggs", "Bread", "Mushrooms", "Meat", "SoySauce", "Ham" };
+    public int[] Quantity = new int[11];
 
 
 
