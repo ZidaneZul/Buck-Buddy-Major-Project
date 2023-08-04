@@ -16,8 +16,12 @@ public class CashBudget : MonoBehaviour
     CashSpawnerFive fiveDollarScript;
     CashSpawnerTen tenDollarScript;
 
+    string textToRemove = "DollarSpawner";
+
+    float twoDollarValue, fiveDollarValue, tenDollarValue;
 
     public GameObject[] spawners;
+    public GameObject oneDollarSpawner;
     // Start is called before the first frame update
     void Start()
     {     
@@ -25,18 +29,23 @@ public class CashBudget : MonoBehaviour
         remainBudget = cashBudget - coinsBudget - cashCfm;
         Debug.Log("Cash: " + cashBudget.ToString("F2"));
         
-        spawners[0] = GameObject.Find("2DollarSpawner");
+        spawners[0].name.Remove(1);
         twoDollarScript = spawners[0].GetComponent<CashSpawner>();
-       
-        spawners[1] = GameObject.Find("5DollarSpawner");
+        
+
+        spawners[1].name.Remove(1);
         fiveDollarScript = spawners[1].GetComponent<CashSpawnerFive>();
 
-        spawners[2] = GameObject.Find("10DollarSpawner");
+        spawners[2].name.Remove(1);
         tenDollarScript = spawners[2].GetComponent<CashSpawnerTen>();   
 
-        spawners[3] = GameObject.Find("1DollarSpawner");
-        oneDollarScript = spawners[3].GetComponent<CashSpawnerOne>();
+        oneDollarSpawner = GameObject.Find("1DollarSpawner");
+        oneDollarScript = oneDollarSpawner.GetComponent<CashSpawnerOne>();
 
+        foreach(GameObject spawner in spawners)
+        {
+            Debug.Log(spawner.name.Remove(1));
+        }
     }
 
 
@@ -45,6 +54,8 @@ public class CashBudget : MonoBehaviour
         for (float i = remainBudget; i == 0; i -= value)
         {
            int random = Random.Range(1, spawners.Length);
+
+            if (float.Parse(spawners[random].name.Replace(textToRemove, "")) < remainBudget) ;
         }
     }
     // Update is called once per frame

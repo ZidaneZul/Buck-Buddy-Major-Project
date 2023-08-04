@@ -2196,7 +2196,11 @@ MonoBehaviour:
   cashBudget: 0
   coinsBudget: 2
   cashCfm: 17
-  spawners: []
+  spawners:
+  - {fileID: 832295346}
+  - {fileID: 1734032826}
+  - {fileID: 425784603}
+  oneDollarSpawner: {fileID: 0}
 --- !u!4 &387742802
 Transform:
   m_ObjectHideFlags: 0
@@ -2288,6 +2292,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406585872}
   m_CullTransparentMesh: 1
+--- !u!1 &425784603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5391430332639473601, guid: 4521310fb48660b478e5d4ac3631ab9d, type: 3}
+  m_PrefabInstance: {fileID: 6086485368008386912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435167506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3252,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798852928}
   m_CullTransparentMesh: 1
+--- !u!1 &832295346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 295936567892147873, guid: 52be4f2faf698d845bf32061e36970f0, type: 3}
+  m_PrefabInstance: {fileID: 3505868288701547997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &850139018
 GameObject:
   m_ObjectHideFlags: 0
@@ -6497,6 +6511,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729940195}
   m_CullTransparentMesh: 1
+--- !u!1 &1734032826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9173443483970961378, guid: 6f7dbc668915afa46a98b769b697da45, type: 3}
+  m_PrefabInstance: {fileID: 6061076260447314828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760647474
 GameObject:
   m_ObjectHideFlags: 0
