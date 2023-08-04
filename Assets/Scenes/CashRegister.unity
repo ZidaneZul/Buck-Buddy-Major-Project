@@ -2205,11 +2205,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cashBudget: 0
   coinsBudget: 2
+  coinsBudgetInCents: 200
   cashCfm: 17
-  spawners:
+  noteSpawners:
   - {fileID: 832295346}
   - {fileID: 1734032826}
   - {fileID: 425784603}
+  coinSpawners:
+  - {fileID: 1396991091}
+  - {fileID: 1122318867}
+  - {fileID: 1503790529}
+  - {fileID: 956795977}
   oneDollarSpawner: {fileID: 0}
 --- !u!4 &387742802
 Transform:
@@ -2832,7 +2838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.68}
   m_AnchorMax: {x: 0.5, y: 0.68}
-  m_AnchoredPosition: {x: 280, y: -624}
+  m_AnchoredPosition: {x: 280, y: -599}
   m_SizeDelta: {x: 2000, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588083050
@@ -4384,6 +4390,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954765613}
   m_CullTransparentMesh: 1
+--- !u!1 &956795977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1951317439454767377, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
+  m_PrefabInstance: {fileID: 7964132260304358548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &966836877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5159,6 +5170,11 @@ CanvasRenderer:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5276267184726749801, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
   m_PrefabInstance: {fileID: 7964132260304358548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1122318867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7619020202440993445, guid: 6c2be727d7213764a875f8a1ddf5693f, type: 3}
+  m_PrefabInstance: {fileID: 4186158273418657888}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1146682805
 GameObject:
@@ -6474,6 +6490,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378443384}
   m_CullTransparentMesh: 1
+--- !u!1 &1396991091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7426387247031931664, guid: 54f9dbd0db08fcd44aaf26e044cd52d3, type: 3}
+  m_PrefabInstance: {fileID: 967233564224637777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1503790529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7003985361571140968, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
+  m_PrefabInstance: {fileID: 7949016823880525061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1566644081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2495243523420707036, guid: e72a990bc4ed04d4088f574bbce6911d, type: 3}
@@ -7318,7 +7344,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2732, y: 2048}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -7982,7 +8008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.689}
   m_AnchorMax: {x: 0.5, y: 0.68}
-  m_AnchoredPosition: {x: 10, y: -390}
+  m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: 88.359985, y: 84.23706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140108444
@@ -8123,6 +8149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5cSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 9102511527494654970, guid: 54f9dbd0db08fcd44aaf26e044cd52d3, type: 3}
+      propertyPath: cash
+      value: 
+      objectReference: {fileID: 4860902592193469358, guid: e17340e8524034847af209cd6c01a615, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8437,6 +8467,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5693657283711432660, guid: 6c2be727d7213764a875f8a1ddf5693f, type: 3}
+      propertyPath: cash
+      value: 
+      objectReference: {fileID: 791315949396133273, guid: a83ae7e7a9f1cc041b4b5be9e0c05051, type: 3}
     - target: {fileID: 7619020202440993445, guid: 6c2be727d7213764a875f8a1ddf5693f, type: 3}
       propertyPath: m_Name
       value: 10cSpawner
@@ -8563,6 +8597,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3135366310386251737, guid: a87f896a334b3ed46a90a293c98e7d0d, type: 3}
+      propertyPath: cash
+      value: 
+      objectReference: {fileID: 704520679551912725, guid: 0dc59ea74b6f5d4429178ffa607a2b3a, type: 3}
     - target: {fileID: 6890239907794832717, guid: a87f896a334b3ed46a90a293c98e7d0d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8889,6 +8927,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1995505025}
     m_Modifications:
     - target: {fileID: 4108110578125406834, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
+      propertyPath: cash
+      value: 
+      objectReference: {fileID: 6317469791564843686, guid: 76d99763fc3fe5945896e7727917e5f2, type: 3}
+    - target: {fileID: 4108110578125406834, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
       propertyPath: cash.Array.data[0]
       value: 
       objectReference: {fileID: 6317469791564843686, guid: 76d99763fc3fe5945896e7727917e5f2, type: 3}
@@ -9089,6 +9131,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6693507385357575365, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
+      propertyPath: cash
+      value: 
+      objectReference: {fileID: 4587327462296098070, guid: b19775723977bbd498588905f514da68, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -20,8 +20,8 @@ public class CashSpawnerFiftyC : MonoBehaviour
     public void FiftyCentSpawner()
     {
 
-        for (int i = 0; i < Random.Range(1, 10); i++)
-        {
+        //for (int i = 0; i < Random.Range(1, 10); i++)
+        //{
             //int randomCash = Random.Range(0, cash.Length);
             var cashSpawn = Instantiate(cash, transform.position, Quaternion.identity);
             cashPos = transform.position;
@@ -32,6 +32,6 @@ public class CashSpawnerFiftyC : MonoBehaviour
             cashSpawn.transform.SetParent(gameObject.transform, true);
 
             offsetCount++;
-        }
+        //}
     }
 }

@@ -22,7 +22,7 @@ public class CashSpawner : MonoBehaviour
     {
         //for (int i = 0; i < Random.Range(1, 7); i++)
         //{
-        Debug.Log("Adding 2 bucks");
+        //Debug.Log("Adding 2 bucks");
         var cashSpawn = Instantiate(cash, transform.position, Quaternion.identity);
         cashPos = transform.position;
         offset = offsetCount * 10;
