@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b8bf5433a45134b93acfd15786a2e3, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  Soup: 0
-  Lettuce: 0
-  Cheese: 1
-  Tomatoes: 0
-  Noodles: 0
-  Eggs: 1
-  Bread: 1
-  Mushrooms: 0
-  Meat: 0
-  SoySauce: 0
-  Ham: 0
+  dynamicObjList:
+  - itemType: Bread
+    amount: 3
+  - itemType: Cheese
+    amount: 2
+  - itemType: Mushrooms
+    amount: 2
+  - itemType: Lettuce
+    amount: 2
+  - itemType: Tomatoes
+    amount: 2
