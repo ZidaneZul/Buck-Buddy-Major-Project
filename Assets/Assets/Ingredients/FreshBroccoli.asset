@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
-  m_Name: Oreo
+  m_Name: FreshBroccoli
   m_EditorClassIdentifier: 
-  id: 31
-  itemName: Oreo
-  price: 3.3
+  id: 40
+  itemName: Fresh Broccoli
+  price: 2.78
   icon: {fileID: 0}
-  itemType: Cookies
+  itemType: Broccoli
