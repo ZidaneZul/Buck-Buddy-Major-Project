@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CashSpawnerFiftyC : MonoBehaviour
 {
-    public GameObject[] cash;
+    public GameObject cash;
 
     public Vector3 cashPos;
     public float offset;
+    public float offsetCount = 1;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        FiftyCentSpawner();
+       // FiftyCentSpawner();
     }
 
     public void FiftyCentSpawner()
@@ -21,14 +22,16 @@ public class CashSpawnerFiftyC : MonoBehaviour
 
         for (int i = 0; i < Random.Range(1, 10); i++)
         {
-            int randomCash = Random.Range(0, cash.Length);
-            var cashSpawn = Instantiate(cash[randomCash], transform.position, Quaternion.identity);
+            //int randomCash = Random.Range(0, cash.Length);
+            var cashSpawn = Instantiate(cash, transform.position, Quaternion.identity);
             cashPos = transform.position;
-            offset = i * 6;
+            offset = offsetCount * 10;
             cashPos.y -= offset;
             cashPos.x -= offset;
             cashSpawn.transform.position = cashPos;
             cashSpawn.transform.SetParent(gameObject.transform, true);
+
+            offsetCount++;
         }
     }
 }

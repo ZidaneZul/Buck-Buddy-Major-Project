@@ -18,7 +18,6 @@ public class CashBudget : MonoBehaviour
 
     string textToRemove = "DollarSpawner";
 
-    float twoDollarValue, fiveDollarValue, tenDollarValue;
 
     public GameObject[] spawners;
     public GameObject oneDollarSpawner;
@@ -26,6 +25,7 @@ public class CashBudget : MonoBehaviour
     void Start()
     {     
         cashBudget = Random.Range(30f, 50f);
+        cashBudget = Mathf.Round((cashBudget * 100.0f) * 0.01f);
         remainBudget = cashBudget - coinsBudget - cashCfm;
         Debug.Log("Cash: " + cashBudget.ToString("F2"));
         
@@ -42,10 +42,12 @@ public class CashBudget : MonoBehaviour
         oneDollarSpawner = GameObject.Find("1DollarSpawner");
         oneDollarScript = oneDollarSpawner.GetComponent<CashSpawnerOne>();
 
-        foreach(GameObject spawner in spawners)
-        {
-            Debug.Log(spawner.name.Remove(1));
-        }
+        BudgetManager();
+
+        //foreach(GameObject spawner in spawners)
+        //{
+        //    Debug.Log(spawner.name.Remove(1));
+        //}
     }
 
 
@@ -54,8 +56,8 @@ public class CashBudget : MonoBehaviour
         for (float i = remainBudget; i == 0; i -= value)
         {
            int random = Random.Range(1, spawners.Length);
-            Debug.Log(remainBudget);
-            if (float.Parse(spawners[random].name.Replace(textToRemove, "")) < remainBudget)
+            Debug.Log("remaining budget" + remainBudget);
+            if (float.Parse(spawners[random].name.Replace(textToRemove, "")) <= remainBudget)
             {
                 remainBudget -= float.Parse(spawners[random].name.Replace(textToRemove, ""));
                 if (random == 0)
@@ -68,6 +70,7 @@ public class CashBudget : MonoBehaviour
             else if(float.Parse(spawners[random].name.Replace(textToRemove, "")) == 1)
             {
                 remainBudget -= 1;
+                oneDollarScript.OneDollarSpawner();
             }
         }
     }
