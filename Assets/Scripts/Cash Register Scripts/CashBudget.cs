@@ -54,8 +54,21 @@ public class CashBudget : MonoBehaviour
         for (float i = remainBudget; i == 0; i -= value)
         {
            int random = Random.Range(1, spawners.Length);
-
-            if (float.Parse(spawners[random].name.Replace(textToRemove, "")) < remainBudget) ;
+            Debug.Log(remainBudget);
+            if (float.Parse(spawners[random].name.Replace(textToRemove, "")) < remainBudget)
+            {
+                remainBudget -= float.Parse(spawners[random].name.Replace(textToRemove, ""));
+                if (random == 0)
+                    twoDollarScript.TwoDollarSpawner();
+                else if (random == 1)
+                    fiveDollarScript.FiveDollarSpawner();
+                else if (random == 2)
+                    tenDollarScript.TenDollarSpawner();
+            }
+            else if(float.Parse(spawners[random].name.Replace(textToRemove, "")) == 1)
+            {
+                remainBudget -= 1;
+            }
         }
     }
     // Update is called once per frame
