@@ -71,9 +71,10 @@ public class InventoryManager : MonoBehaviour
     {
         //cleans all used list before doing code
         CleanList();
+        FindIDs();
 
         //finds the id number of each item in the list
-        FindIDs();
+        //FindIDs();
 
         //Finds the amount of dups an item have
         //3 ntuc bread, 1 egg, 9 ham etc.
@@ -149,35 +150,35 @@ public class InventoryManager : MonoBehaviour
         if (cartPanel.activeInHierarchy)
         {
             //Debug.Log("Cart is open");
-            foreach(var item in itemList)
+            foreach (var item in itemList)
             {
                 idList.Add(item.id);
             }
         }
-        else
-        {
-           // Debug.Log("Cart is close");
-            cancelToggle.isOn = false;
-        }
+        //else
+        //{
+        //    // Debug.Log("Cart is close");
+        //    cancelToggle.isOn = false;
+        //}
     }
-    
-    public void EnableItemsRemove()
-    {
-        if (cancelToggle.isOn)
-        {
-            foreach (Transform item in itemContent)
-            {
-                item.Find("Cancel_Btn").gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            foreach (Transform item in itemContent)
-            {
-                item.Find("Cancel_Btn").gameObject.SetActive(false);
-            }
-        }
-    }
+
+    //public void EnableItemsRemove()
+    //{
+    //    if (cancelToggle.isOn)
+    //    {
+    //        foreach (Transform item in itemContent)
+    //        {
+    //            item.Find("Cancel_Btn").gameObject.SetActive(true);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        foreach (Transform item in itemContent)
+    //        {
+    //            item.Find("Cancel_Btn").gameObject.SetActive(false);
+    //        }
+    //    }
+    //}
 
     public void SetInventoryItems()
     {

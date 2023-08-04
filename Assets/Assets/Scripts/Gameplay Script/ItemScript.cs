@@ -101,7 +101,7 @@ public class ItemScript : MonoBehaviour
             //}
             //else
             //{
-                foodBubblePos.y = tempPoint.transform.position.y + 2f;
+                foodBubblePos.y = gameObject.transform.position.y + 4.5f;
             //}
 
             foodBubbleClone = Instantiate(infoBubble);
