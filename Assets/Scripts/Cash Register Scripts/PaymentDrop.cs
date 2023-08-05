@@ -69,7 +69,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     {
         //Debug.Log(i);
         //Debug.Log("Sum added " + sumAdded);
-        Debug.Log("Magnitude: " + dragdrop.originalPosition.magnitude);
+        //Debug.Log("Magnitude: " + dragdrop.originalPosition.magnitude);
     }
     
     
