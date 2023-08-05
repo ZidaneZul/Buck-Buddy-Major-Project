@@ -8,34 +8,42 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+
+    public Vector3 originalPosition; 
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
+    void Start()
+    {
+        originalPosition = transform.position;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("OnBeginDrag");
+       // Debug.Log("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDragging  ");
+        //Debug.Log("OnDragging  ");
         rectTransform.anchoredPosition += eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
+      //  Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("PointerDown");
+        //Debug.Log("PointerDown");
     }
 }
