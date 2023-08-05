@@ -11,18 +11,20 @@ public class ItemAddToCart : MonoBehaviour
     TextMeshProUGUI tmp;
 
     GameObject[] foodPoint;
-    GameObject closePoint, closeFood, closeText;
+    GameObject closePoint, player;
 
     // Start is called before the first frame update
     void Start()
     {
         foodPoint = GameObject.FindGameObjectsWithTag("FoodSpawn");
         tmp = GetComponentInChildren<TextMeshProUGUI>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("ping poing ping");
         FindCloseFood();
     }
 
@@ -30,9 +32,11 @@ public class ItemAddToCart : MonoBehaviour
     {
         foreach (GameObject point in foodPoint) 
         {
-            if (Vector3.Distance(transform.position, point.transform.position) < 3) 
+           // Debug.Log(Vector3.Distance(transform.position, point.transform.position));
+            if (Vector3.Distance(player.transform.position, point.transform.position) < 2.5) 
             {
                 closePoint = point;
+                Debug.Log(closePoint.name);
                 GetFoodItemData();
             }
 
@@ -45,7 +49,7 @@ public class ItemAddToCart : MonoBehaviour
         itemData = itemController.item;
 
         //Debug.Log("the item data for food thats close is "+ item.ToString());
-       // Debug.Log("The close food in the bubble script is " + itemData.itemName);
+       Debug.Log("The close food in the bubble script is " + itemData.itemName);
 
         tmp.text = itemData.itemName + "\n" + "$" + itemData.price.ToString("F2");
     }
