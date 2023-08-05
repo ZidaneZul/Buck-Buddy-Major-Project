@@ -40,6 +40,10 @@ public class ButtonPressFunctions : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ReturnToGame()
+    {
+        SceneManager.LoadScene("Level" + (buttonDataHolder.LevelSelected));
+    }
 
 
 }
