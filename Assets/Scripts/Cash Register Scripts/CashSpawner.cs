@@ -24,12 +24,16 @@ public class CashSpawner : MonoBehaviour
         //{
         //Debug.Log("Adding 2 bucks");
         var cashSpawn = Instantiate(cash, transform.position, Quaternion.identity);
+
         cashPos = transform.position;
-        offset = offsetCount * 10;
+        offset = offsetCount * 5;
         cashPos.y -= offset;
         cashPos.x -= offset;
         cashSpawn.transform.position = cashPos;
         cashSpawn.transform.SetParent(gameObject.transform, true);
+        cashSpawn.transform.localScale = new Vector3(1, 1, 1);
+
+        //cashSpawn.transform.localScale = new Vector3(1, 1, 1);
 
         offsetCount++;
         //}
