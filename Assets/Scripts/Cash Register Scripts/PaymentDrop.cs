@@ -45,11 +45,14 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public DragDrop dragdrop;
 
     public float fillAmount;
+
+    public Image image;
     
     
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
+        image = GameObject.Find("Fill").GetComponent<Image>();
         //originalPlacement = GameObject.FindGameObjectsWithTag("Original Waypoints");     
         
         confirm.interactable = false;
@@ -60,9 +63,9 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         fail.SetActive(false);
 
         
-        //randomNumber = Random.Range(1f, 100f);
-        //randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
-        randomNumber = InventoryManager.Instance.totalPrice;
+        randomNumber = Random.Range(1f, 100f);
+        randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
+        //randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Cost of Items: " + randomNumber;
     }
@@ -262,8 +265,12 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             if (sumAdded - randomNumber > 5f)
             {
                 progressBarText.text = "Too much!";
+                image.color = Color.red;
             }
-
+            if(sumAdded == randomNumber)
+            {
+                image.color = Color.green;
+            }
         }
 
 
