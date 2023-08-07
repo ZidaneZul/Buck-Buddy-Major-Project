@@ -25,13 +25,14 @@ public class CashSpawnerFiftyC : MonoBehaviour
             //int randomCash = Random.Range(0, cash.Length);
             var cashSpawn = Instantiate(cash, transform.position, Quaternion.identity);
             cashPos = transform.position;
-            offset = offsetCount * 10;
+            offset = offsetCount * 5;
             cashPos.y -= offset;
             cashPos.x -= offset;
             cashSpawn.transform.position = cashPos;
             cashSpawn.transform.SetParent(gameObject.transform, true);
+        cashSpawn.transform.localScale = new Vector3(0.50506f, 1, 1);
 
-            offsetCount++;
+        offsetCount++;
         //}
     }
 }

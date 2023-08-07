@@ -46,8 +46,14 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       //itemContent = GameObject.Find("Content").transform;
-       //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
+        //itemContent = GameObject.Find("Content").transform;
+        //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
+        // itemList = PaymentDrop.storedData;
+        foreach (ItemData item in PaymentDrop.storedData)
+        {
+            itemList.Add(item);
+            totalPrice += item.price;
+        }
     }
 
     // Update is called once per frame
