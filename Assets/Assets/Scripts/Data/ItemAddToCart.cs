@@ -11,7 +11,7 @@ public class ItemAddToCart : MonoBehaviour
     TextMeshProUGUI tmp;
 
     GameObject[] foodPoint;
-    GameObject closePoint, closeFood, closeText;
+    GameObject closePoint, closeFood, closeText,player;
     public GameObject PopOutNotif;
     // Start is called before the first frame update
     void Start()
