@@ -12,14 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b8bf5433a45134b93acfd15786a2e3, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  Soup: 0
-  Lettuce: 0
-  Cheese: 0
-  Tomatoes: 0
-  Noodles: 0
-  Eggs: 0
-  Bread: 1
-  Mushrooms: 0
-  Meat: 0
-  SoySauce: 0
-  Ham: 1
+  dynamicObjList:
+  - itemType: Bread
+    amount: 1
+  - itemType: Ham
+    amount: 1

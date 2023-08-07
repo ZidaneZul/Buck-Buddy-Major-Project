@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5133294697009603957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7253533586053046055}
+  - component: {fileID: 6314005368877452651}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7253533586053046055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133294697009603957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1306.8927, y: 222.7496, z: 6.17498}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6314005368877452651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133294697009603957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eb11d62151d9a4fa1b1f8f9679a8d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  NPCImage: {fileID: 0}
+  animator: {fileID: 0}
+  NPCInteracted: 0
+  NPCDialogueBox: {fileID: 0}
+  NPCDataList:
+  - {fileID: 11400000, guid: b1d47747e7e1f9147931367d53df373e, type: 2}
+  - {fileID: 11400000, guid: bfa89ebcf23aa0744ad996a689e63111, type: 2}
+  - {fileID: 11400000, guid: 2db14918d3435ea4b948f39e33e19c02, type: 2}
+  - {fileID: 11400000, guid: bd27f9c5c62b910499012076b460a3f8, type: 2}
+  - {fileID: 11400000, guid: 8dc7927d35b670f4ebf6f837feacf96a, type: 2}
+  - {fileID: 11400000, guid: 15f1edc03103c4e4cafa27b871b61ab0, type: 2}
+  - {fileID: 11400000, guid: 9619f7d115debef4d9bb91d39bf3fb9b, type: 2}
+  - {fileID: 11400000, guid: 769826f7a786f3a449408921302a60c0, type: 2}
+  npcData: {fileID: 0}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
+  ContinueButton: {fileID: 0}
+  MapBtn: {fileID: 0}
+  ShopBtn: {fileID: 0}
+  LeftArrow: {fileID: 0}
+  RightArrow: {fileID: 0}
