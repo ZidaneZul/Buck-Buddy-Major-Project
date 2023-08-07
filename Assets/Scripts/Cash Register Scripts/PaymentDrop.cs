@@ -336,5 +336,10 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
       
       
     }
+    //used to clear the list before going to the next levels
+    public void ClearList()
+    {
+        storedData.Clear();
+    }
 }
 
