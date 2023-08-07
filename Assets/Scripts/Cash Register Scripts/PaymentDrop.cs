@@ -45,6 +45,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public DragDrop dragdrop;
 
     public float fillAmount;
+
+    public static List<ItemData> storedData;
     
     
     public void Start()
@@ -65,6 +67,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Cost of Items: " + randomNumber;
+
+        storedData = InventoryManager.Instance.itemList;
     }
     public void Update()
     {
@@ -331,6 +335,11 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         oneDollar.Clear();
       
       
+    }
+    //used to clear the list before going to the next levels
+    public void ClearList()
+    {
+        storedData.Clear();
     }
 }
 
