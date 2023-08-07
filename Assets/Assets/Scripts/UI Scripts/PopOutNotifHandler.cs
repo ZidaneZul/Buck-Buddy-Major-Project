@@ -7,7 +7,7 @@ public class PopOutNotifHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 0.7f);
+        Destroy(transform.parent.gameObject, 0.7f);
         transform.localPosition += new Vector3(0, 0.5f, 0);
     }
 
