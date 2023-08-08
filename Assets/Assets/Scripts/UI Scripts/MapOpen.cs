@@ -108,6 +108,8 @@ public class MapOpen : MonoBehaviour
 
     public void TeleportToAisleDynamic()
     {
+        MoveButtonLeft.SetActive(true);
+        MoveButtonRight.SetActive(true);
         buttonPressed = EventSystem.current.currentSelectedGameObject;
         buttonName = buttonPressed.ToString();
 
