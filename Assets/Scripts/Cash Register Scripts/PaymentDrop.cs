@@ -271,6 +271,10 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             {
                 image.color = Color.green;
             }
+            else
+            {
+                image.color = Color.yellow;
+            }
         }
 
 
