@@ -32,9 +32,11 @@ public class InventoryManager : MonoBehaviour
 
     Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
 
-    public GameObject textPrefab, cartPanel;
+    public GameObject textPrefab, cartPanel,cartAmount;
+    public TextMeshProUGUI cartQuantity;
     public Toggle cancelToggle;
     public Transform itemContent;
+    public int itemsInCart;
 
     string missingItems;
     public float totalPrice;
@@ -46,6 +48,7 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cartAmount.SetActive(false);
         //itemContent = GameObject.Find("Content").transform;
         //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
         // itemList = PaymentDrop.storedData;
@@ -59,18 +62,29 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(itemsInCart > 0)
+        {
+            cartAmount.SetActive(true);
+            cartQuantity.text = itemsInCart.ToString();
+            if(itemsInCart >= 9)
+            {
+                cartQuantity.text = "9+";
+            }
+        }
         Debug.Log("Total price is " + totalPrice);
     }
     public void Add(ItemData item)
     {
         itemList.Add(item);
         totalPrice += item.price;
+        itemsInCart++;
     }
     public void Remove(ItemData item)
     {
         Debug.Log("remove item");
         itemList.Remove(item);
         totalPrice -= item.price;
+        itemsInCart--;
     }
 
     public void ShowItem()
