@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
-  m_Name: FairPriceCheeseSlices
+  m_Name: ConeIceCream
   m_EditorClassIdentifier: 
-  id: 8
-  itemName: FairPrice Cheese Slices
-  price: 8.35
+  id: 50
+  itemName: Cone Ice Cream
+  price: 7.27
   icon: {fileID: 0}
-  itemType: Cheese
+  itemType: Frozen

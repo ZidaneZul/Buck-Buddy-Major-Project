@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
-  m_Name: PrimaFlour
+  m_Name: CheddarCheese
   m_EditorClassIdentifier: 
-  id: 38
-  itemName: Prima Flour
-  price: 2.8
+  id: 57
+  itemName: Cheddar Cheese
+  price: 0
   icon: {fileID: 0}
-  itemType: Flour
+  itemType: Cheese

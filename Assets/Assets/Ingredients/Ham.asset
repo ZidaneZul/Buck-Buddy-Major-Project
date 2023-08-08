@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
-  m_Name: FairPriceTomatoPaste
+  m_Name: Ham
   m_EditorClassIdentifier: 
-  id: 39
-  itemName: Fairprice Tomato Paste
-  price: 2.35
+  id: 3
+  itemName: Ham
+  price: 2.95
   icon: {fileID: 0}
-  itemType: TomatoPaste
+  itemType: Ham
