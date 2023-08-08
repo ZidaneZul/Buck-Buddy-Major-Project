@@ -11,8 +11,8 @@ public class ItemAddToCart : MonoBehaviour
     TextMeshProUGUI tmp;
 
     GameObject[] foodPoint;
-    GameObject closePoint, player;
-
+    GameObject closePoint, closeFood, closeText,player;
+    public GameObject PopOutNotif;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +57,9 @@ public class ItemAddToCart : MonoBehaviour
     public void AddToCart()
     {
         InventoryManager.Instance.Add(itemData);
+        Vector3 PopOutOffset = new Vector3(transform.position.x, transform.position.y + 4.5f, transform.position.z);
+        GameObject points = Instantiate(PopOutNotif, PopOutOffset, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = "+1 " + itemData.itemName + " $" + itemData.price.ToString("F2");
         Debug.Log("Added " + itemData + " to cart");
     }
 }

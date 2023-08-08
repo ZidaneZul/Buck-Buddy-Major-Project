@@ -8,7 +8,7 @@ using TMPro;
 public class MapOpen : MonoBehaviour
 {
     public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
-        , objPanel, helpPanelCtnBtn;
+        , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
 
@@ -29,6 +29,8 @@ public class MapOpen : MonoBehaviour
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
         shoppingList = GameObject.Find("ShoppingList");
+        MoveButtonLeft = GameObject.Find("MoveLeft");
+        MoveButtonRight = GameObject.Find("MoveRight");
         shoppingList.SetActive(false);
 
         objPanel = GameObject.Find("LevelObj_Panel");
@@ -62,6 +64,8 @@ public class MapOpen : MonoBehaviour
         {
             bool isActive = panel.activeSelf;
             panel.SetActive(!isActive);
+            MoveButtonLeft.SetActive(isActive);
+            MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
         }
     }
@@ -72,6 +76,8 @@ public class MapOpen : MonoBehaviour
         {
             bool cartActive = shoppingCartPanel.activeSelf;
             shoppingCartPanel.SetActive(!cartActive);
+            MoveButtonLeft.SetActive(cartActive);
+            MoveButtonRight.SetActive(cartActive);
             panel.SetActive(false);
         }
         
@@ -102,6 +108,8 @@ public class MapOpen : MonoBehaviour
 
     public void TeleportToAisleDynamic()
     {
+        MoveButtonLeft.SetActive(true);
+        MoveButtonRight.SetActive(true);
         buttonPressed = EventSystem.current.currentSelectedGameObject;
         buttonName = buttonPressed.ToString();
 
