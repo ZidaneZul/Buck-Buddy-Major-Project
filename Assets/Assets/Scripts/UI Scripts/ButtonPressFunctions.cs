@@ -22,6 +22,10 @@ public class ButtonPressFunctions : MonoBehaviour
 
     public void StartGame()
     {
+        SceneManager.LoadScene("PlayerSelect");
+    }
+    public void SelectLvl()
+    {
         SceneManager.LoadScene("LevelSelectTest");
     }
 
