@@ -264,11 +264,15 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             //Money Subtracted
             if (sumAdded - randomNumber > 5f)
             {
-                progressBarText.text = "Too much!";
                 image.color = Color.red;
+                progressBarText.text = "Too much!";
+               
             }
-
-            if(sumAdded == randomNumber)
+            else if(sumAdded - randomNumber < 2 && sumAdded - randomNumber > 5)
+            {
+                
+            }
+            else if(sumAdded == randomNumber)
             {
                 image.color = Color.green;
             }
