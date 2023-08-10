@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8573799352391734457}
   - component: {fileID: 2988393744323733885}
   - component: {fileID: 2673606466184017668}
+  - component: {fileID: 5672915964407694057}
   m_Layer: 0
   m_Name: PopOutNotification
   m_TagString: Untagged
@@ -77,9 +78,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1148412727
+  m_SortingLayer: 4
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2988393744323733885
 MonoBehaviour:
@@ -110,8 +111,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282050362
+  m_fontColor: {r: 0.22556068, g: 0.9056604, b: 0.22724897, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -128,12 +129,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.35
+  m_fontSize: 10
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 4
-  m_fontSizeMax: 14
+  m_fontSizeMax: 10
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -194,3 +195,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5672915964407694057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287551497947829176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a93475c33ca9434c95e20a17dc40208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
