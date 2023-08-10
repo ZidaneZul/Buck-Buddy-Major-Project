@@ -267,6 +267,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
                 progressBarText.text = "Too much!";
                 image.color = Color.red;
             }
+
             if(sumAdded == randomNumber)
             {
                 image.color = Color.green;
