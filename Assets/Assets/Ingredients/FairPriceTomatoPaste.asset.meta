@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Assets/Ingredients/FairPriceTomatoPaste.asset.meta
 guid: f293a0627fd1d22439e3668ff8efe7b5
+=======
+guid: b77ea54952ab1e1408f7352ad199e581
+>>>>>>> Stashed changes:Assets/Assets/Ingredients/StandardTomatoPaste.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
