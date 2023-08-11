@@ -22,6 +22,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public List<GameObject> twentyCent;
     public List<GameObject> fiftyCent;
 
+    public Animator anim;
+
     public Vector3 cashDropPos;
     public float offset;
     //public GameObject[] originalPlacement;
@@ -62,10 +64,10 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         threeStar.SetActive(false);
         fail.SetActive(false);
 
-        
-        //randomNumber = Random.Range(1f, 100f);
-        //randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
-        randomNumber = InventoryManager.Instance.totalPrice;
+        anim.enabled = false;
+        randomNumber = Random.Range(1f, 100f);
+        randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
+        //randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Cost of Items: " + randomNumber;
     }
@@ -79,13 +81,13 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     
     public void OnDrop(PointerEventData eventData)
     {
-      
-       
+
         Debug.Log("Dropped"); 
         if(eventData.pointerDrag != null)
         {
            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             eventData.pointerDrag.GetComponent<RectTransform>().transform.position = placement[i].transform.position;
+         
             //eventData.pointerDrag.GetComponent<RectTransform>().transform.position = originalPlacement[j].transform.position;
             i++;
             j++;
@@ -258,6 +260,15 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             }
 
             confirm.interactable = true;
+
+            if(sumAdded == randomNumber)
+            {
+                anim.enabled = true;
+            }
+            else
+            {
+                anim.enabled = false;
+            }
 
             GetCurrentFill();
             progressBarText.text = "" + sumAdded;
