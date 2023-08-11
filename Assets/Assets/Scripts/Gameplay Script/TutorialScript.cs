@@ -7,8 +7,15 @@ using TMPro;
 
 public class TutorialScript : MonoBehaviour
 {
-    public GameObject GrayedBox,MapBtn,CartBtn,MovementBtn,TutorialChatBox;
+    public GameObject GrayedBox, MapBtn, CartBtn, MovementBtn, TutorialChatBox,CoinWaypoints,DialogueWaypoints;
     public TextMeshProUGUI TutorialMesssage;
+    public Transform TextPosition;
+    public List<Transform> CoinPositions;
+    public List<Transform> DialoguePositions;
+    public Sprite[] DialogueBoxAssets;
+    public Sprite[] CoinAssets;
+    public Image CoinMascot;
+    public Image DialogueBox;
 
 
     // Start is called before the first frame update
@@ -19,7 +26,21 @@ public class TutorialScript : MonoBehaviour
         CartBtn = GameObject.Find("TutorialCart");
         MovementBtn = GameObject.Find("TutorialMovementArrows");
         TutorialChatBox = GameObject.Find("TutorialMessage");
+        CoinMascot = GameObject.Find("CoinHolder").GetComponent<Image>();
+        DialogueBox = GameObject.Find("Dialogue").GetComponent<Image>();
+        CoinWaypoints = GameObject.Find("CoinWaypoints");
+        DialogueWaypoints = GameObject.Find("SpeechBubbleWaypoint");
+        TextPosition = DialogueBox.transform.Find("TextPosition");
         TutorialMesssage = TutorialChatBox.GetComponent<TextMeshProUGUI>();
+
+        foreach(Transform k in CoinWaypoints.GetComponentInChildren<Transform>())
+        {
+            CoinPositions.Add(k);
+        }
+        foreach (Transform k in DialogueWaypoints.GetComponentInChildren<Transform>())
+        {
+            DialoguePositions.Add(k);
+        }
 
         GrayedBox.SetActive(false);
         MapBtn.SetActive(false);
@@ -48,8 +69,17 @@ public class TutorialScript : MonoBehaviour
     {
         GrayedBox.SetActive(true);
         TutorialChatBox.SetActive(true);
-        TutorialMesssage.text = "Tutorial Message 1 plays";
-        yield return new WaitForSeconds(2f);
+        TutorialMesssage.text = "Hello, Welcome to the first level of Smart Shopper";
+        yield return new WaitForSeconds(3f);
+        CoinMascot.sprite = CoinAssets[1];
+        TutorialMesssage.text = "Are you ready? Lets begin.";
+        yield return new WaitForSeconds(3f);
+        CoinMascot.sprite = CoinAssets[0];
+        CoinMascot.transform.position = CoinPositions[1].transform.position;
+        CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
+        DialogueBox.transform.position = DialoguePositions[1].transform.position;
+        DialogueBox.sprite = DialogueBoxAssets[1];
+        DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y * -1, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
         CartBtn.SetActive(true);
         TutorialMesssage.text = "Explaining Cart Feature";
         yield return new WaitForSeconds(4f);
@@ -57,6 +87,12 @@ public class TutorialScript : MonoBehaviour
         MapBtn.SetActive(true);
         TutorialMesssage.text = "Explaining Map Features";
         yield return new WaitForSeconds(4f);
+        CoinMascot.sprite = CoinAssets[0];
+        DialogueBox.sprite = DialogueBoxAssets[1];
+        CoinMascot.transform.position = CoinPositions[0].transform.position;
+        CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
+        DialogueBox.transform.position = DialoguePositions[0].transform.position;
+        TutorialChatBox.transform.position = TextPosition.transform.position;
         MapBtn.SetActive(false);
         MovementBtn.SetActive(true);
         TutorialMesssage.text = "Explaining how to move";
