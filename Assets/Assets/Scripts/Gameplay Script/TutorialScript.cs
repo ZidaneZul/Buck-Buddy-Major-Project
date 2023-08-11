@@ -17,10 +17,19 @@ public class TutorialScript : MonoBehaviour
     public Image CoinMascot;
     public Image DialogueBox;
 
+    public string[] dialogueHolder;
+    private Queue<string> dialogues;
+    public GameObject ContinueButton;
+    public int Index;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        dialogues = new Queue<string>();
+        
+
+
         GrayedBox = GameObject.Find("TutorialBox");
         MapBtn = GameObject.Find("TutorialMap");
         CartBtn = GameObject.Find("TutorialCart");
@@ -54,7 +63,8 @@ public class TutorialScript : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level1")
         {
-            StartCoroutine(StartTutorial());
+            //StartCoroutine(StartTutorial());
+            StartDialogue();
         }
 
     }
@@ -65,14 +75,109 @@ public class TutorialScript : MonoBehaviour
         
     }
 
+    public void StartDialogue()
+    {
+        TutorialChatBox.SetActive(true);
+        GrayedBox.SetActive(true);
+        dialogues.Clear();
+
+        foreach (string sentences in dialogueHolder)
+        {
+            dialogues.Enqueue(sentences);
+        }
+
+        DisplayNextSentence();
+    }
+    public void DisplayNextSentence()
+    {
+        if (dialogues.Count == 0)
+        {
+            StartCoroutine(CloseTimer());
+            return;
+        }
+
+
+        string sentence = dialogues.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+        Index++;
+
+    }
+    IEnumerator CloseTimer()
+    {
+        yield return new WaitForSeconds(3.0f);
+        GrayedBox.SetActive(false);
+        MapBtn.SetActive(false);
+        CartBtn.SetActive(false);
+        MovementBtn.SetActive(false);
+        TutorialChatBox.SetActive(false);
+
+
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        TutorialMesssage.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            TutorialMesssage.text += letter;
+            yield return null;
+        }
+
+        if (Index == 2)
+        {
+            CoinMascot.sprite = CoinAssets[1];
+            yield return null;
+
+
+        }
+        if (Index == 3)
+        {
+            CoinMascot.sprite = CoinAssets[0];
+            CoinMascot.transform.position = CoinPositions[1].transform.position;
+            CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
+            DialogueBox.transform.position = DialoguePositions[1].transform.position;
+            DialogueBox.sprite = DialogueBoxAssets[1];
+            DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y * -1, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
+            CartBtn.SetActive(true);
+            yield return null;
+            
+        }
+        if(Index == 4)
+        {
+            CartBtn.SetActive(false);
+            MapBtn.SetActive(true);
+        }
+        if (Index == 5)
+        {
+            CoinMascot.sprite = CoinAssets[0];
+            DialogueBox.sprite = DialogueBoxAssets[1];
+            CoinMascot.transform.position = CoinPositions[0].transform.position;
+            CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
+            DialogueBox.transform.position = DialoguePositions[0].transform.position;
+            TutorialChatBox.transform.position = TextPosition.transform.position;
+            DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y * -1, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
+
+            MapBtn.SetActive(false);
+            MovementBtn.SetActive(true);
+            yield return null;
+
+
+        }
+    }
     IEnumerator StartTutorial()
     {
         GrayedBox.SetActive(true);
         TutorialChatBox.SetActive(true);
         TutorialMesssage.text = "Hello, Welcome to the first level of Smart Shopper";
+
+
         yield return new WaitForSeconds(3f);
         CoinMascot.sprite = CoinAssets[1];
         TutorialMesssage.text = "Are you ready? Lets begin.";
+
+
+
         yield return new WaitForSeconds(3f);
         CoinMascot.sprite = CoinAssets[0];
         CoinMascot.transform.position = CoinPositions[1].transform.position;
@@ -82,10 +187,14 @@ public class TutorialScript : MonoBehaviour
         DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y * -1, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
         CartBtn.SetActive(true);
         TutorialMesssage.text = "Explaining Cart Feature";
+
+
         yield return new WaitForSeconds(4f);
         CartBtn.SetActive(false);
         MapBtn.SetActive(true);
         TutorialMesssage.text = "Explaining Map Features";
+
+
         yield return new WaitForSeconds(4f);
         CoinMascot.sprite = CoinAssets[0];
         DialogueBox.sprite = DialogueBoxAssets[1];
@@ -93,12 +202,18 @@ public class TutorialScript : MonoBehaviour
         CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
         DialogueBox.transform.position = DialoguePositions[0].transform.position;
         TutorialChatBox.transform.position = TextPosition.transform.position;
+        DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y * -1, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
+
         MapBtn.SetActive(false);
         MovementBtn.SetActive(true);
         TutorialMesssage.text = "Explaining how to move";
+
+
         yield return new WaitForSeconds(4f);
         MovementBtn.SetActive(false);
         TutorialMesssage.text = "Bye bye";
+
+
         yield return new WaitForSeconds(4f);
         GrayedBox.SetActive(false);
         StopAllCoroutines();
