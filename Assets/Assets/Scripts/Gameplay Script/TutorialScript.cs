@@ -145,8 +145,8 @@ public class TutorialScript : MonoBehaviour
         }
         if(Index == 4)
         {
-            CartBtn.SetActive(false);
-            MapBtn.SetActive(true);
+                    CartBtn.SetActive(false);
+        MapBtn.SetActive(true);
         }
         if (Index == 5)
         {
