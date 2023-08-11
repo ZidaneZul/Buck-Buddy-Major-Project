@@ -7,6 +7,9 @@ public class MapLocation : MonoBehaviour
 
     public GameObject[] sections;
     public GameObject player;
+
+    public float closestDistance;
+    public GameObject closestPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,18 +20,23 @@ public class MapLocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindPlayer();
+        //FindPlayer();
     }
 
-    void FindPlayer()
+    public void FindPlayer()
     {
+        //resets the distance(cant be 0 else the if statement will NEVER run)
+        closestDistance = 1000;
         foreach(GameObject section in sections)
         {
-            Collider[] hit = Physics.OverlapBox(section.transform.position, transform.localScale / 2);
-            if (hit.Equals(player))
+            if(Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)
             {
-                Debug.Log("Player is in " + section.name);
+                closestDistance = Vector3.Distance(section.transform.position, player.transform.position);
+                closestPoint = section;
             }
+
         }
+        Debug.Log(closestPoint.name);
+
     }
 }
