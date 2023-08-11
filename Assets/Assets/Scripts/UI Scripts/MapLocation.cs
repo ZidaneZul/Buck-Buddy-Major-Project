@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MapLocation : MonoBehaviour
 {
-
     public GameObject[] sections;
     public GameObject player;
 
     public float closestDistance;
     public GameObject closestPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class MapLocation : MonoBehaviour
         //FindPlayer();
     }
 
-    public void FindPlayer()
+    public string FindPlayer()
     {
         //resets the distance(cant be 0 else the if statement will NEVER run)
         closestDistance = 1000;
@@ -37,6 +37,7 @@ public class MapLocation : MonoBehaviour
 
         }
         Debug.Log(closestPoint.name);
+        return closestPoint.name;
 
     }
 }
