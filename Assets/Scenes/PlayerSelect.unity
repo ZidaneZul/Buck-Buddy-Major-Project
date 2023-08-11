@@ -869,7 +869,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 434452454}
         m_TargetAssemblyTypeName: SelectCharacterScript, Assembly-CSharp
         m_MethodName: Continue
@@ -881,7 +881,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1110236726
 MonoBehaviour:
   m_ObjectHideFlags: 0
