@@ -31,7 +31,7 @@ public class TutorialScript : MonoBehaviour
         dialogues = new Queue<string>();
 
         TextHint = GameObject.Find("TextHint");
-        AisleButton = GameObject.Find("BakeryAisle_Btn(1)");
+        AisleButton = GameObject.Find("BakeryAisleBtn");
         TutorialMap = GameObject.Find("TutorialMap2");
         GrayedBox = GameObject.Find("TutorialBox");
         MapBtn = GameObject.Find("TutorialMap");

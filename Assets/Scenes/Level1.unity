@@ -31496,7 +31496,7 @@ GameObject:
   - component: {fileID: 734210822}
   - component: {fileID: 734210821}
   m_Layer: 5
-  m_Name: BakeryAisle_Btn(1)
+  m_Name: BakeryAisleBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56368,7 +56368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1320169034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74943,6 +74943,22 @@ MonoBehaviour:
   ContinueButton: {fileID: 1767267454}
   Index: 0
   MapTriggered: 0
+--- !u!114 &1730138425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730138419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506b093eb642d824582f530f8105dae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sections: []
+  player: {fileID: 0}
+  closestDistance: 0
+  closestPoint: {fileID: 0}
 --- !u!1 &1731095731
 GameObject:
   m_ObjectHideFlags: 0
