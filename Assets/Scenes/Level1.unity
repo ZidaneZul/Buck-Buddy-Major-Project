@@ -91156,11 +91156,11 @@ PrefabInstance:
     - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: maleHead
       value: 
-      objectReference: {fileID: 21300000, guid: 5267339d5c5c46f4992a401b0ed65134, type: 3}
+      objectReference: {fileID: -29608267, guid: 3d1b9e32d73997348b19d0b03ff941a7, type: 3}
     - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: femaleHead
       value: 
-      objectReference: {fileID: 21300000, guid: aed69cf215b8db94283107ea1df6f71b, type: 3}
+      objectReference: {fileID: 1396719004, guid: 3d1b9e32d73997348b19d0b03ff941a7, type: 3}
     - target: {fileID: 4176188387488735553, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Name
       value: DairyAisle_Btn
