@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName1: 
   itemName2: Fruits
   itemName3: Vegetables
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 8126208007f95c940995861bcd88a496, type: 3}

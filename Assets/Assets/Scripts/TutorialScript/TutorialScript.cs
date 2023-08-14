@@ -7,7 +7,7 @@ using TMPro;
 
 public class TutorialScript : MonoBehaviour
 {
-    public GameObject GrayedBox, MapBtn, CartBtn, MovementBtn, TutorialChatBox,CoinWaypoints,DialogueWaypoints;
+    public GameObject GrayedBox, MapBtn, CartBtn, MovementBtn, TutorialChatBox,CoinWaypoints,DialogueWaypoints,TutorialMap,AisleButton;
     public TextMeshProUGUI TutorialMesssage;
     public Transform TextPosition;
     public List<Transform> CoinPositions;
@@ -18,18 +18,20 @@ public class TutorialScript : MonoBehaviour
     public Image DialogueBox;
 
     public string[] dialogueHolder;
+    public string[] mapDialogueHolder;
     private Queue<string> dialogues;
     public GameObject ContinueButton;
     public int Index;
+    public bool MapTriggered;
 
     // Start is called before the first frame update
     void Start()
     {
 
         dialogues = new Queue<string>();
-        
 
-
+        AisleButton = GameObject.Find("TutorialAisleButton");
+        TutorialMap = GameObject.Find("TutorialMap2");
         GrayedBox = GameObject.Find("TutorialBox");
         MapBtn = GameObject.Find("TutorialMap");
         CartBtn = GameObject.Find("TutorialCart");
@@ -56,6 +58,8 @@ public class TutorialScript : MonoBehaviour
         CartBtn.SetActive(false);
         MovementBtn.SetActive(false);
         TutorialChatBox.SetActive(false);
+        TutorialMap.SetActive(false);
+        AisleButton.SetActive(false);
         
 
 
@@ -73,6 +77,29 @@ public class TutorialScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void MapTutorialStart()
+    {
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            if (!MapTriggered)
+            {
+                TutorialChatBox.SetActive(true);
+                GrayedBox.SetActive(true);
+                dialogues.Clear();
+
+                foreach (string sentences in mapDialogueHolder)
+                {
+                    dialogues.Enqueue(sentences);
+                }
+
+                DisplayNextSentence();
+
+                MapTriggered = true;
+            }
+        }
+
     }
 
     public void StartDialogue()
@@ -164,6 +191,24 @@ public class TutorialScript : MonoBehaviour
 
 
         }
+        if(Index == 8)
+        {
+            DialogueBox.transform.position = DialoguePositions[2].transform.position;
+            TutorialChatBox.transform.position = TextPosition.transform.position;
+            DialogueBox.sprite = DialogueBoxAssets[2];
+            CoinMascot.enabled = false;
+            TutorialMap.SetActive(true);
+
+        }
+        if(Index == 9)
+        {
+            TutorialMap.SetActive(false);
+            AisleButton.SetActive(true);
+
+        }
+
+
+
     }
     IEnumerator StartTutorial()
     {

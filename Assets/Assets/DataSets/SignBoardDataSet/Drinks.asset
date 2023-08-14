@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName1: 
   itemName2: 
   itemName3: Drinks
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: ade88de126a81ba4ba5aafd19e53bf5f, type: 3}

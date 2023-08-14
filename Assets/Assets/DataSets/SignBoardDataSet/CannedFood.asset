@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName1: 
   itemName2: 
   itemName3: Canned Food
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1c65680880a6c9648b566a1db5be9934, type: 3}

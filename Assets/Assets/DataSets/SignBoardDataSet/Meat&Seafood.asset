@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName1: 
   itemName2: Meat
   itemName3: Seafood
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: e79f17e2b56e1a341a2a2e864a2fe76f, type: 3}
