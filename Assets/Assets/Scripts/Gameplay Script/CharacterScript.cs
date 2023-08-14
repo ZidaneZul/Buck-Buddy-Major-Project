@@ -14,11 +14,17 @@ public class CharacterScript : MonoBehaviour
 
     Rigidbody rb;
     public Animator anim;
+
+    public Animator maleAnim, femaleAnim;
+
+    public Sprite maleStanding, femaleStanding;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
         anim = GetComponentInChildren<Animator>();
+
+
     }
 
     // Update is called once per frame

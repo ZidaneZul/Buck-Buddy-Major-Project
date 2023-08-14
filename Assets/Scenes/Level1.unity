@@ -93652,6 +93652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 4704554224229523044, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
+      propertyPath: m_Name
+      value: PlayerModel
+      objectReference: {fileID: 0}
     - target: {fileID: 6409516590976360011, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
       propertyPath: m_Enabled
       value: 0

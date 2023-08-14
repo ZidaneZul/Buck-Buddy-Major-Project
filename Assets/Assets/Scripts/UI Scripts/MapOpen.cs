@@ -20,6 +20,7 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
+    public  SelectCharacterScript characterScript;
 
     string waypointString, buttonName;
     string[] aisles = { "Rice", "Drink", "Fruit", "Bakery", "Snack", "Canned", "Frozen", "Dairy", "Meat"};
@@ -49,6 +50,8 @@ public class MapOpen : MonoBehaviour
         helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
         mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
+
+        characterScript = GameObject.Find("RandomEventHandler").GetComponent<SelectCharacterScript>();  
 
         objPanel.SetActive(false);
 
