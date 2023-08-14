@@ -7,7 +7,7 @@ using TMPro;
 
 public class TutorialScript : MonoBehaviour
 {
-    public GameObject GrayedBox, MapBtn, CartBtn, MovementBtn, TutorialChatBox,CoinWaypoints,DialogueWaypoints,TutorialMap,AisleButton;
+    public GameObject GrayedBox, MapBtn, CartBtn, MovementBtn, TutorialChatBox,CoinWaypoints,DialogueWaypoints,TutorialMap,AisleButton,TextHint;
     public TextMeshProUGUI TutorialMesssage;
     public Transform TextPosition;
     public List<Transform> CoinPositions;
@@ -30,7 +30,8 @@ public class TutorialScript : MonoBehaviour
 
         dialogues = new Queue<string>();
 
-        AisleButton = GameObject.Find("TutorialAisleButton");
+        TextHint = GameObject.Find("TextHint");
+        AisleButton = GameObject.Find("BakeryAisle_Btn(1)");
         TutorialMap = GameObject.Find("TutorialMap2");
         GrayedBox = GameObject.Find("TutorialBox");
         MapBtn = GameObject.Find("TutorialMap");
@@ -76,7 +77,11 @@ public class TutorialScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public void CloseTutorial()
+    {
+        GrayedBox.SetActive(false);
     }
 
     public void MapTutorialStart()
@@ -123,7 +128,7 @@ public class TutorialScript : MonoBehaviour
             return;
         }
 
-
+        Test();
         string sentence = dialogues.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -148,17 +153,20 @@ public class TutorialScript : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             TutorialMesssage.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.02f);
         }
 
-        if (Index == 2)
+    }
+
+    public void Test()
+    {
+        if (Index == 1)
         {
             CoinMascot.sprite = CoinAssets[1];
-            yield return null;
 
 
         }
-        if (Index == 3)
+        if (Index == 2)
         {
             CoinMascot.sprite = CoinAssets[0];
             CoinMascot.transform.position = CoinPositions[1].transform.position;
@@ -167,15 +175,14 @@ public class TutorialScript : MonoBehaviour
             DialogueBox.sprite = DialogueBoxAssets[1];
             DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y * -1, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
             CartBtn.SetActive(true);
-            yield return null;
-            
+
         }
-        if(Index == 4)
+        if (Index == 3)
         {
             CartBtn.SetActive(false);
             MapBtn.SetActive(true);
         }
-        if (Index == 5)
+        if (Index == 4)
         {
             CoinMascot.sprite = CoinAssets[0];
             DialogueBox.sprite = DialogueBoxAssets[1];
@@ -187,11 +194,10 @@ public class TutorialScript : MonoBehaviour
 
             MapBtn.SetActive(false);
             MovementBtn.SetActive(true);
-            yield return null;
 
 
         }
-        if(Index == 8)
+        if (Index == 7)
         {
             DialogueBox.transform.position = DialoguePositions[2].transform.position;
             TutorialChatBox.transform.position = TextPosition.transform.position;
@@ -200,15 +206,14 @@ public class TutorialScript : MonoBehaviour
             TutorialMap.SetActive(true);
 
         }
-        if(Index == 9)
+        if (Index == 8)
         {
             TutorialMap.SetActive(false);
             AisleButton.SetActive(true);
+            ContinueButton.SetActive(false);
+            TextHint.SetActive(false);
 
         }
-
-
-
     }
     IEnumerator StartTutorial()
     {

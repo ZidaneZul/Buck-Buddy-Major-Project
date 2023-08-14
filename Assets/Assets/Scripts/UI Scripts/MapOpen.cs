@@ -11,7 +11,6 @@ public class MapOpen : MonoBehaviour
         , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
-
     public TextMeshProUGUI helpPanelBody_Txt;
 
     string waypointString, buttonName;
@@ -21,6 +20,7 @@ public class MapOpen : MonoBehaviour
     {
         panel = GameObject.Find("Map");
         panel.SetActive(false);
+
 
         shoppingCartPanel = GameObject.Find("Cart_Panel");
         shoppingCartPanel.SetActive(false);
@@ -108,6 +108,7 @@ public class MapOpen : MonoBehaviour
 
     public void TeleportToAisleDynamic()
     {
+
         MoveButtonLeft.SetActive(true);
         MoveButtonRight.SetActive(true);
         buttonPressed = EventSystem.current.currentSelectedGameObject;
@@ -139,5 +140,9 @@ public class MapOpen : MonoBehaviour
             }
         }
 
+    }
+    public void ClosePanel()
+    {
+        panel.SetActive(false);
     }
 }
