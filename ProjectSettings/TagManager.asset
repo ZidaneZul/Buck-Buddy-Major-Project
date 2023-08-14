@@ -17,8 +17,6 @@ TagManager:
   - 5 Cents
   - 50 Cents
   - 20 Cents
-  - Sections
-  - AisleTpButton
   layers:
   - Default
   - TransparentFX

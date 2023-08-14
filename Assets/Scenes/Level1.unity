@@ -7169,8 +7169,8 @@ GameObject:
   m_Component:
   - component: {fileID: 171653355}
   m_Layer: 0
-  m_Name: SnacksAisle
-  m_TagString: Sections
+  m_Name: SnackSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11946,8 +11946,8 @@ GameObject:
   m_Component:
   - component: {fileID: 280509238}
   m_Layer: 0
-  m_Name: DrinksAisle
-  m_TagString: Sections
+  m_Name: DrinksSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12667,8 +12667,8 @@ GameObject:
   m_Component:
   - component: {fileID: 297518000}
   m_Layer: 0
-  m_Name: FruitsVegetableAisle
-  m_TagString: Sections
+  m_Name: FruitsVeggieSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30862,8 +30862,8 @@ GameObject:
   m_Component:
   - component: {fileID: 735250297}
   m_Layer: 0
-  m_Name: FrozenFoodAisle
-  m_TagString: Sections
+  m_Name: FrozenFoodSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30989,8 +30989,8 @@ GameObject:
   m_Component:
   - component: {fileID: 738187295}
   m_Layer: 0
-  m_Name: RiceAisle
-  m_TagString: Sections
+  m_Name: RiceNoodlesSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31540,8 +31540,8 @@ GameObject:
   m_Component:
   - component: {fileID: 752849611}
   m_Layer: 0
-  m_Name: DairyAisle
-  m_TagString: Sections
+  m_Name: EggsMilkSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31558,13 +31558,12 @@ Transform:
   m_LocalScale: {x: 1.5738516, y: 0.9011444, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2146452536}
   - {fileID: 1821576866}
+  - {fileID: 2146452536}
   - {fileID: 1195949846}
   - {fileID: 885461940}
   - {fileID: 756213014}
   - {fileID: 1433710855}
-  - {fileID: 1147280531}
   m_Father: {fileID: 1072437651}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34296,6 +34295,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812721250}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!1 &815856290
 GameObject:
   m_ObjectHideFlags: 0
@@ -34372,6 +34372,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815856290}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of 7700ef1 (Merge branch 'HeadOnMap')
 --- !u!1 &816146108
 GameObject:
   m_ObjectHideFlags: 0
@@ -37201,140 +37203,6 @@ Transform:
   m_Father: {fileID: 102168070}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &875295118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 875295119}
-  - component: {fileID: 875295122}
-  - component: {fileID: 875295121}
-  - component: {fileID: 875295120}
-  m_Layer: 5
-  m_Name: FindClosestPoint_Btn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &875295119
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875295118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1319222089}
-  m_Father: {fileID: 25826612}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1119, y: 885}
-  m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &875295120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875295118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 875295121}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1730138425}
-        m_TargetAssemblyTypeName: MapLocation, Assembly-CSharp
-        m_MethodName: FindPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &875295121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875295118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &875295122
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875295118}
-  m_CullTransparentMesh: 1
 --- !u!1 &876752673
 GameObject:
   m_ObjectHideFlags: 0
@@ -38022,8 +37890,8 @@ GameObject:
   m_Component:
   - component: {fileID: 891407925}
   m_Layer: 0
-  m_Name: BakeryAisle
-  m_TagString: Sections
+  m_Name: BreadSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46432,37 +46300,6 @@ Transform:
   m_Father: {fileID: 2029819521}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1147280530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1147280531}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1147280531
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147280530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.666667, y: 7.69, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 752849611}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148897310
 GameObject:
   m_ObjectHideFlags: 0
@@ -47705,8 +47542,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1171399866}
   m_Layer: 0
-  m_Name: CannedFoodAisle
-  m_TagString: Sections
+  m_Name: CannedFoodSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50405,11 +50242,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220161741}
   m_CullTransparentMesh: 1
---- !u!224 &1221459867 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8043990698616420063, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-  m_PrefabInstance: {fileID: 2192350107007132648}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1222733014
 GameObject:
   m_ObjectHideFlags: 0
@@ -55225,141 +55057,6 @@ Transform:
   m_Father: {fileID: 280509238}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1319222088
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1319222089}
-  - component: {fileID: 1319222091}
-  - component: {fileID: 1319222090}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1319222089
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319222088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 875295119}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1319222090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319222088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Button
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1319222091
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319222088}
-  m_CullTransparentMesh: 1
 --- !u!1 &1320169033
 GameObject:
   m_ObjectHideFlags: 0
@@ -55377,7 +55074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1320169034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85636,8 +85333,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2029819521}
   m_Layer: 0
-  m_Name: MeatSeafoodAisle
-  m_TagString: Sections
+  m_Name: MeatSection
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91117,81 +90814,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1161876443}
-    - target: {fileID: 2634904034736114167, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_Name
-      value: MeatSeafoodAisle_Btn
-      objectReference: {fileID: 0}
-    - target: {fileID: 2634904034736114167, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2641588708587575698, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2696945379702590677, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911707989084895248, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: maleHead
-      value: 
-      objectReference: {fileID: 21300000, guid: 5267339d5c5c46f4992a401b0ed65134, type: 3}
-    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: femaleHead
-      value: 
-      objectReference: {fileID: 21300000, guid: aed69cf215b8db94283107ea1df6f71b, type: 3}
-    - target: {fileID: 4176188387488735553, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_Name
-      value: DairyAisle_Btn
-      objectReference: {fileID: 0}
-    - target: {fileID: 4176188387488735553, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5190269854427315706, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5400769767844997886, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5879807760183325683, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000806966
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031281346125019435, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6258297935461020744, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_Name
-      value: FruitsVegetableAisle_Btn
-      objectReference: {fileID: 0}
-    - target: {fileID: 6258297935461020744, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
+      value: -0.000067335335
       objectReference: {fileID: 0}
     - target: {fileID: 6266417580413535252, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1161876443}
-    - target: {fileID: 6704719782705908909, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6837057681032305064, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1161876443}
     - target: {fileID: 8370165605973543276, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Pivot.x
@@ -91293,10 +90930,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 910563700338484102}
-    - target: {fileID: 8763149864464150854, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      propertyPath: m_TagString
-      value: AisleTpButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8973473291602635273, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -91309,12 +90942,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1320169034}
-    - targetCorrespondingSourceObject: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 875295119}
-    - targetCorrespondingSourceObject: {fileID: 8043990698616420063, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 815856291}
     - targetCorrespondingSourceObject: {fileID: 5046294746886961185, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1612036855}
@@ -93413,9 +93040,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5734865821988013673, guid: db39b424dfadc534ea15d7759f2e9898, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1730138422}
-    - targetCorrespondingSourceObject: {fileID: 5734865821988013673, guid: db39b424dfadc534ea15d7759f2e9898, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1730138425}
   m_SourcePrefab: {fileID: 100100000, guid: db39b424dfadc534ea15d7759f2e9898, type: 3}
 --- !u!1001 &6523329185577400005
 PrefabInstance:
