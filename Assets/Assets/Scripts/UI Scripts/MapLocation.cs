@@ -36,7 +36,7 @@ public class MapLocation : MonoBehaviour
             }
 
         }
-        Debug.Log(closestPoint.name);
+        //Debug.Log(closestPoint.name);
         return closestPoint.name;
 
     }

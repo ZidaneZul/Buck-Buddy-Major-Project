@@ -85,11 +85,16 @@ public class MapOpen : MonoBehaviour
             MoveButtonLeft.SetActive(isActive);
             MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
+
             foreach(GameObject button in aislePoint)
             {
-                if (mapLocationScript.FindPlayer().Contains(button.name))
+                //button.name.Replace("_Btn", "");
+                Debug.Log("the player is in " + mapLocationScript.FindPlayer() + "\n buttun name is " + button.name);
+
+                if (mapLocationScript.FindPlayer().Contains(button.name.Replace("_Btn", "")))
                 {
-                    selectedHead = button.transform.position;
+                    selectedHead.transform.position = button.transform.position;
+                    Debug.Log("Head now on button");
                 }
             }
 

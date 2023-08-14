@@ -7055,7 +7055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171653355}
   m_Layer: 0
-  m_Name: SnackSection
+  m_Name: SnacksAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11832,7 +11832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280509238}
   m_Layer: 0
-  m_Name: DrinksSection
+  m_Name: DrinksAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12553,7 +12553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 297518000}
   m_Layer: 0
-  m_Name: FruitsVeggieSection
+  m_Name: FruitsVegetableAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30674,7 +30674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 735250297}
   m_Layer: 0
-  m_Name: FrozenFoodSection
+  m_Name: FrozenFoodAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30801,7 +30801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738187295}
   m_Layer: 0
-  m_Name: RiceNoodlesSection
+  m_Name: RiceAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31352,7 +31352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752849611}
   m_Layer: 0
-  m_Name: EggsMilkSection
+  m_Name: DairyAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37833,7 +37833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891407925}
   m_Layer: 0
-  m_Name: BreadSection
+  m_Name: BakeryAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47516,7 +47516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171399866}
   m_Layer: 0
-  m_Name: CannedFoodSection
+  m_Name: CannedFoodAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84982,7 +84982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029819521}
   m_Layer: 0
-  m_Name: MeatSection
+  m_Name: MeatSeafoodAisle
   m_TagString: Sections
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90428,6 +90428,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1161876443}
     - target: {fileID: 2634904034736114167, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_Name
+      value: MeatSeafoodAisle_Btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634904034736114167, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
       value: AisleTpButton
       objectReference: {fileID: 0}
@@ -90443,6 +90447,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: AisleTpButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: maleHead
+      value: 
+      objectReference: {fileID: 21300000, guid: 5267339d5c5c46f4992a401b0ed65134, type: 3}
+    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: femaleHead
+      value: 
+      objectReference: {fileID: 21300000, guid: aed69cf215b8db94283107ea1df6f71b, type: 3}
+    - target: {fileID: 4176188387488735553, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_Name
+      value: DairyAisle_Btn
+      objectReference: {fileID: 0}
     - target: {fileID: 4176188387488735553, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
       value: AisleTpButton
@@ -90457,11 +90473,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879807760183325683, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000067335335
+      value: 0.0000806966
       objectReference: {fileID: 0}
     - target: {fileID: 6031281346125019435, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
       value: AisleTpButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258297935461020744, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_Name
+      value: FruitsVegetableAisle_Btn
       objectReference: {fileID: 0}
     - target: {fileID: 6258297935461020744, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
@@ -90481,7 +90501,7 @@ PrefabInstance:
       objectReference: {fileID: 1161876443}
     - target: {fileID: 8370165605973543276, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Pivot.x
