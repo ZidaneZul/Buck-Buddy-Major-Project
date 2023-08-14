@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class MapOpen : MonoBehaviour
 {
@@ -13,12 +14,21 @@ public class MapOpen : MonoBehaviour
     public DialogueHandler dialogueHandler;
     public TextMeshProUGUI helpPanelBody_Txt;
 
+    MapLocation mapLocationScript;
+
+    public Sprite maleHead, femaleHead;
+    public GameObject selectedHead;
+    public bool isMaleTest;
+
     string waypointString, buttonName;
     string[] aisles = { "Rice", "Drink", "Fruit", "Bakery", "Snack", "Canned", "Frozen", "Dairy", "Meat"};
+    GameObject[] aislePoint;
 
     void Start()
     {
         panel = GameObject.Find("Map");
+        aislePoint = GameObject.FindGameObjectsWithTag("AisleTpButton");
+        selectedHead = GameObject.Find("Head_Img");
         panel.SetActive(false);
 
 
@@ -38,8 +48,15 @@ public class MapOpen : MonoBehaviour
 
         helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
+        mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
 
         objPanel.SetActive(false);
+
+        if (isMaleTest)
+        {
+            selectedHead.GetComponent<Image>().sprite = maleHead;
+        }
+        else selectedHead.GetComponent<Image>().sprite = femaleHead;
 
     }
     private void Update()
@@ -62,11 +79,26 @@ public class MapOpen : MonoBehaviour
         
         if (panel != null)
         {
+            
             bool isActive = panel.activeSelf;
             panel.SetActive(!isActive);
             MoveButtonLeft.SetActive(isActive);
             MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
+
+            foreach(GameObject button in aislePoint)
+            {
+                //button.name.Replace("_Btn", "");
+                Debug.Log("the player is in " + mapLocationScript.FindPlayer() + "\n buttun name is " + button.name);
+
+                if (mapLocationScript.FindPlayer().Contains(button.name.Replace("_Btn", "")))
+                {
+                    selectedHead.transform.position = button.transform.position;
+                    Debug.Log("Head now on button");
+                }
+            }
+
+            
         }
     }
     public void ToggleCartPanel()
