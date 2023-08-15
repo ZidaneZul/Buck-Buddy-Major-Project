@@ -20,7 +20,7 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
-    public  SelectCharacterScript characterScript;
+    public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
     string[] aisles = { "Rice", "Drink", "Fruit", "Bakery", "Snack", "Canned", "Frozen", "Dairy", "Meat"};
@@ -51,11 +51,11 @@ public class MapOpen : MonoBehaviour
 
         mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
 
-        characterScript = GameObject.Find("RandomEventHandler").GetComponent<SelectCharacterScript>();  
+        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();  
 
         objPanel.SetActive(false);
 
-        if (isMaleTest)
+        if (selectedModelScript.isMale)
         {
             selectedHead.GetComponent<Image>().sprite = maleHead;
         }
