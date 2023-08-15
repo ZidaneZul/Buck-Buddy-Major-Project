@@ -462,8 +462,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 520.3148, y: 163.4504}
+  m_AnchoredPosition: {x: -32, y: 40.863}
+  m_SizeDelta: {x: 982.1866, y: 81.725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108308144
 MonoBehaviour:
@@ -3212,8 +3212,9 @@ MonoBehaviour:
   fail: {fileID: 1760647474}
   mask: {fileID: 1330346545}
   dragdrop: {fileID: 4740308494410266882, guid: 17801d7fef70edf4ebf3368b83e23a25, type: 3}
-  fillAmount: 0
   image: {fileID: 674277225}
+  fillAmount: 0
+  anim: {fileID: 991326848}
 --- !u!1 &622419267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.15100981, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.70219785, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4837,6 +4838,7 @@ GameObject:
   - component: {fileID: 991326847}
   - component: {fileID: 991326846}
   - component: {fileID: 991326845}
+  - component: {fileID: 991326848}
   m_Layer: 5
   m_Name: Confirm
   m_TagString: Untagged
@@ -4959,6 +4961,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991326843}
   m_CullTransparentMesh: 1
+--- !u!95 &991326848
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991326843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1946dd843c7185e4f83e32dc29ea7ea7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &1048688743 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 885382108321715105, guid: 54f9dbd0db08fcd44aaf26e044cd52d3, type: 3}
