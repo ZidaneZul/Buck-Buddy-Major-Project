@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterScript : MonoBehaviour
 {
     float horizontal;
-    public float speed = 3f;
+    public float speed = 5f;
     float timer, seconds;
     public bool isFacingRight = true;
     bool isAFK;
@@ -14,11 +14,33 @@ public class CharacterScript : MonoBehaviour
 
     Rigidbody rb;
     public Animator anim;
+
+    public Animator maleAnim, femaleAnim;
+    public GameObject maleModel, femaleModel;
+
+    public PlayerSelectOption selectedCharScript;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
-        anim = GetComponentInChildren<Animator>();
+        maleModel = GameObject.Find("MaleModel");
+        maleAnim = maleModel.GetComponent<Animator>();
+
+        femaleModel = GameObject.Find("FemaleModel");
+        femaleAnim = femaleModel.GetComponent<Animator>();
+
+        selectedCharScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
+
+        if (selectedCharScript.isMale)
+        {
+            anim = maleAnim;
+            femaleModel.SetActive(false);
+        }
+        else
+        {
+            anim = femaleAnim;
+            maleModel.SetActive(false);
+        }
     }
 
     // Update is called once per frame

@@ -4,23 +4,34 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class MapOpen : MonoBehaviour
 {
     public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
-        , objPanel, helpPanelCtnBtn;
+        , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
-
     public TextMeshProUGUI helpPanelBody_Txt;
+
+    MapLocation mapLocationScript;
+
+    public Sprite maleHead, femaleHead;
+    public GameObject selectedHead;
+    public bool isMaleTest;
+    public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
     string[] aisles = { "Rice", "Drink", "Fruit", "Bakery", "Snack", "Canned", "Frozen", "Dairy", "Meat"};
+    GameObject[] aislePoint;
 
     void Start()
     {
         panel = GameObject.Find("Map");
+        aislePoint = GameObject.FindGameObjectsWithTag("AisleTpButton");
+        selectedHead = GameObject.Find("Head_Img");
         panel.SetActive(false);
+
 
         shoppingCartPanel = GameObject.Find("Cart_Panel");
         shoppingCartPanel.SetActive(false);
@@ -29,6 +40,8 @@ public class MapOpen : MonoBehaviour
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
         shoppingList = GameObject.Find("ShoppingList");
+        MoveButtonLeft = GameObject.Find("MoveLeft");
+        MoveButtonRight = GameObject.Find("MoveRight");
         shoppingList.SetActive(false);
 
         objPanel = GameObject.Find("LevelObj_Panel");
@@ -36,8 +49,17 @@ public class MapOpen : MonoBehaviour
 
         helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
+        mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
+
+        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();  
 
         objPanel.SetActive(false);
+
+        if (selectedModelScript.isMale)
+        {
+            selectedHead.GetComponent<Image>().sprite = maleHead;
+        }
+        else selectedHead.GetComponent<Image>().sprite = femaleHead;
 
     }
     private void Update()
@@ -60,9 +82,26 @@ public class MapOpen : MonoBehaviour
         
         if (panel != null)
         {
+            
             bool isActive = panel.activeSelf;
             panel.SetActive(!isActive);
+            MoveButtonLeft.SetActive(isActive);
+            MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
+
+            foreach(GameObject button in aislePoint)
+            {
+                //button.name.Replace("_Btn", "");
+                Debug.Log("the player is in " + mapLocationScript.FindPlayer() + "\n buttun name is " + button.name);
+
+                if (mapLocationScript.FindPlayer().Contains(button.name.Replace("_Btn", "")))
+                {
+                    selectedHead.transform.position = button.transform.position;
+                    Debug.Log("Head now on button");
+                }
+            }
+
+            
         }
     }
     public void ToggleCartPanel()
@@ -72,6 +111,8 @@ public class MapOpen : MonoBehaviour
         {
             bool cartActive = shoppingCartPanel.activeSelf;
             shoppingCartPanel.SetActive(!cartActive);
+            MoveButtonLeft.SetActive(cartActive);
+            MoveButtonRight.SetActive(cartActive);
             panel.SetActive(false);
         }
         
@@ -102,6 +143,9 @@ public class MapOpen : MonoBehaviour
 
     public void TeleportToAisleDynamic()
     {
+
+        MoveButtonLeft.SetActive(true);
+        MoveButtonRight.SetActive(true);
         buttonPressed = EventSystem.current.currentSelectedGameObject;
         buttonName = buttonPressed.ToString();
 
@@ -131,5 +175,9 @@ public class MapOpen : MonoBehaviour
             }
         }
 
+    }
+    public void ClosePanel()
+    {
+        panel.SetActive(false);
     }
 }

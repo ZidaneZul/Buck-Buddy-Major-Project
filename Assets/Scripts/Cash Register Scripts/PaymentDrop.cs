@@ -22,8 +22,6 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public List<GameObject> twentyCent;
     public List<GameObject> fiftyCent;
 
-    public Animator anim;
-
     public Vector3 cashDropPos;
     public float offset;
     //public GameObject[] originalPlacement;
@@ -48,13 +46,12 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
     public float fillAmount;
 
-    public Image image;
+    public static List<ItemData> storedData;
     
     
     public void Start()
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
-        image = GameObject.Find("Fill").GetComponent<Image>();
         //originalPlacement = GameObject.FindGameObjectsWithTag("Original Waypoints");     
         
         confirm.interactable = false;
@@ -64,12 +61,14 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         threeStar.SetActive(false);
         fail.SetActive(false);
 
-        anim.enabled = false;
-        randomNumber = Random.Range(1f, 100f);
-        randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
-        //randomNumber = InventoryManager.Instance.totalPrice;
+        
+        //randomNumber = Random.Range(1f, 100f);
+        //randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
+        randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Cost of Items: " + randomNumber;
+
+        storedData = InventoryManager.Instance.itemList;
     }
     public void Update()
     {
@@ -81,13 +80,13 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     
     public void OnDrop(PointerEventData eventData)
     {
-
+      
+       
         Debug.Log("Dropped"); 
         if(eventData.pointerDrag != null)
         {
            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             eventData.pointerDrag.GetComponent<RectTransform>().transform.position = placement[i].transform.position;
-         
             //eventData.pointerDrag.GetComponent<RectTransform>().transform.position = originalPlacement[j].transform.position;
             i++;
             j++;
@@ -261,37 +260,14 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
 
             confirm.interactable = true;
 
-            if(sumAdded == randomNumber)
-            {
-                anim.enabled = true;
-            }
-            else
-            {
-                anim.enabled = false;
-            }
-
             GetCurrentFill();
             progressBarText.text = "" + sumAdded;
             //Money Subtracted
             if (sumAdded - randomNumber > 5f)
             {
-                image.color = Color.red;
                 progressBarText.text = "Too much!";
-               
             }
-            else if(sumAdded - randomNumber > 2 && sumAdded - randomNumber < 5)
-            {
-                image.color = new Color(1, 0.5651493f, 0);
-                progressBarText.text = "A little too much!";
-            }
-            else if(sumAdded == randomNumber)
-            {          
-                image.color = Color.green;
-            }
-            else
-            {
-                image.color = Color.yellow;
-            }
+
         }
 
 
@@ -359,6 +335,11 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         oneDollar.Clear();
       
       
+    }
+    //used to clear the list before going to the next levels
+    public void ClearList()
+    {
+        storedData.Clear();
     }
 }
 
