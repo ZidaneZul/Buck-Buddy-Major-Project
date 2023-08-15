@@ -21,13 +21,15 @@ public class DialogueManager : MonoBehaviour
     public GameObject yesButton;
     public GameObject noButton;
     public GameObject ContinueButton;
-    public Button MapBtn;
-    public Button ShopBtn;
+    public Button MapBtn, ShopBtn;
     public GameObject LeftArrow;
     public GameObject RightArrow;
+    public NPCSpawning npcSpawning;
+    public bool talkingToNpc;
     // Start is called before the first frame update
     void Start()
     {
+        npcSpawning = GameObject.Find("GameManager").GetComponent<NPCSpawning>();
         dialogues = new Queue<string>();
         dialogueNames = new Queue<string>();
         NpcImages = new Queue<Sprite>();
@@ -54,6 +56,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        talkingToNpc = true;
         MapBtn.enabled = false;
         ShopBtn.enabled = false;
         LeftArrow.SetActive(false);
@@ -108,7 +111,6 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-
         yesButton.SetActive(true);
         noButton.SetActive(true);
         ContinueButton.SetActive(false);
@@ -141,6 +143,9 @@ public class DialogueManager : MonoBehaviour
         LeftArrow.SetActive(true);
         RightArrow.SetActive(true);
         animator.SetBool("IsOpen", false);
+        npcSpawning.spawnedNpc.SetActive(false);
+        talkingToNpc = false;
+
 
     }
 }

@@ -7,12 +7,13 @@ public class NPCSpawning : MonoBehaviour
     public GameObject Player,NPC,spawnedNpc;
     public List<GameObject> NPCspawnerLocations;
     public int numberHolder;
-    
+    public DialogueManager dialogueManager;
+
     // Start is called before the first frame update
     void Start()
     {
         NPCspawnerLocations = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
-
+        dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
         
         FindClosestWaypoint();
@@ -21,6 +22,16 @@ public class NPCSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(dialogueManager.NPCInteracted == false)
+        {
+            if (PlayerInVicinity())
+            {
+                dialogueManager.StartDialogue();
+                dialogueManager.NPCInteracted = true;
+            }
+        }
+
 
     }
 
@@ -50,4 +61,18 @@ public class NPCSpawning : MonoBehaviour
         numberHolder = Random.Range(0, NPCspawnerLocations.Count);
         spawnedNpc = Instantiate(NPC, NPCspawnerLocations[numberHolder].transform);
     }
+
+    bool PlayerInVicinity()
+    {
+        if(Vector3.Distance(Player.transform.position, spawnedNpc.transform.position) <= 5f)
+        {
+            return true;
+
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
+
