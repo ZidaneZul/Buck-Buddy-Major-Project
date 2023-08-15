@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCSpawning : MonoBehaviour
 {
-    public GameObject Player,NPC;
+    public GameObject Player,NPC,spawnedNpc;
     public List<GameObject> NPCspawnerLocations;
     public int numberHolder;
     
@@ -48,6 +48,6 @@ public class NPCSpawning : MonoBehaviour
     void SpawnNPC()
     {
         numberHolder = Random.Range(0, NPCspawnerLocations.Count);
-        Instantiate(NPC, NPCspawnerLocations[numberHolder].transform);
+        spawnedNpc = Instantiate(NPC, NPCspawnerLocations[numberHolder].transform);
     }
 }
