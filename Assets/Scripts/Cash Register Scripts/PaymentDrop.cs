@@ -62,9 +62,9 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         fail.SetActive(false);
 
         
-        //randomNumber = Random.Range(1f, 100f);
-        //randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
-        randomNumber = InventoryManager.Instance.totalPrice;
+        randomNumber = Random.Range(1f, 100f);
+        randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
+        //randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Cost of Items: " + randomNumber;
 
@@ -266,6 +266,22 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             if (sumAdded - randomNumber > 5f)
             {
                 progressBarText.text = "Too much!";
+<<<<<<< HEAD
+=======
+               
+            }
+            else if(sumAdded - randomNumber < 2 && sumAdded - randomNumber > 5)
+            {
+                
+            }
+            else if(sumAdded == randomNumber)
+            {
+                image.color = Color.green;
+            }
+            else
+            {
+                image.color = Color.yellow;
+>>>>>>> parent of eca6b69 (Change of colors in progress barbabrabrabarbarb)
             }
 
         }
