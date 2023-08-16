@@ -9,6 +9,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
+    private Canvas canvas;
+
     public Vector3 originalPosition; 
 
     private void Awake()
