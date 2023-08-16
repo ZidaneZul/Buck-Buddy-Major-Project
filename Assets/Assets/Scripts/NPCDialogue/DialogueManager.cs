@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject RightArrow;
     public NPCSpawning npcSpawning;
     public bool talkingToNpc;
+    public Button arrowTest;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class DialogueManager : MonoBehaviour
         NpcImages = new Queue<Sprite>();
         NPCDialogueBox.SetActive(false);
         npcData = NPCDataList[Random.Range(0, NPCDataList.Length)];
+        arrowTest = RightArrow.GetComponent<Button>();
     }
 
     public void NPCRandomChance()
@@ -56,6 +58,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
+        EventSystem.current.currentSelectedGameObject.SetActive(false);
         talkingToNpc = true;
         MapBtn.enabled = false;
         ShopBtn.enabled = false;
@@ -148,4 +151,5 @@ public class DialogueManager : MonoBehaviour
 
 
     }
+
 }

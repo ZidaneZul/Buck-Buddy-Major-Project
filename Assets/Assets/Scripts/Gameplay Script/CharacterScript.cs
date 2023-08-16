@@ -12,7 +12,7 @@ public class CharacterScript : MonoBehaviour
     public DialogueManager dialogueManager;
     float speedHolder;
     public bool movingLeft, movingRight;
-
+    public GameObject dialogueBox;
     Rigidbody rb;
     public Animator anim;
     // Start is called before the first frame update
@@ -27,10 +27,7 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueManager.talkingToNpc)
-        {
-            StartTimer();
-        }
+
         if(!movingRight && !movingLeft)
             horizontal = Input.GetAxisRaw("Horizontal");
         //Debug.Log(horizontal);
@@ -51,6 +48,17 @@ public class CharacterScript : MonoBehaviour
         {
             anim.SetBool("Walking", false);
             StartTimer();
+        }
+        if (!dialogueBox.activeInHierarchy)
+        {
+            return;
+
+        }
+        if (dialogueBox.activeInHierarchy)
+        {
+            MoveRightUp();
+
+            MoveLeftUp();
         }
     }
 
