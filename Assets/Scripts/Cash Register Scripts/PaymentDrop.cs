@@ -44,9 +44,12 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public Image mask;
     public DragDrop dragdrop;
 
+    public Image image;
     public float fillAmount;
 
     public static List<ItemData> storedData;
+
+    public Animator anim;
     
     
     public void Start()
@@ -69,6 +72,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         moneyGenerater.text = "Cost of Items: " + randomNumber;
 
         storedData = InventoryManager.Instance.itemList;
+        anim.enabled = false;
     }
     public void Update()
     {
@@ -263,11 +267,33 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             GetCurrentFill();
             progressBarText.text = "" + sumAdded;
             //Money Subtracted
-            if (sumAdded - randomNumber > 5f)
+            if(sumAdded - randomNumber > 5f)
             {
+                image.color = Color.red;
                 progressBarText.text = "Too much!";
             }
+            else if(sumAdded - randomNumber > 2 && sumAdded - randomNumber < 5)
+            {
+                image.color = new Color(1, 0.5651493f, 0);
+                progressBarText.text = "A little too much!";
+            }
+            else if(sumAdded == randomNumber)
+            {
+                image.color = Color.green;
+            }
+            else
+            {
+                image.color = Color.yellow;
+            }
 
+            if(sumAdded == randomNumber)
+            {
+                anim.enabled = true;
+            }
+            else
+            {
+                anim.enabled = false;
+            }
         }
 
 
