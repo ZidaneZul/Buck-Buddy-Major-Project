@@ -7,26 +7,18 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> dialogues;
-    private Queue<string> dialogueNames;
+    private Queue<string> dialogues, dialogueNames;
     private Queue<Sprite> NpcImages;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText, dialogueText;
     public Image NPCImage;
     public Animator animator;
-    public bool NPCInteracted;
-    public GameObject NPCDialogueBox;
     public NPCData[] NPCDataList;
     public NPCData npcData;
-    public GameObject yesButton;
-    public GameObject noButton;
-    public GameObject ContinueButton;
-    public Button MapBtn, ShopBtn;
-    public GameObject LeftArrow;
-    public GameObject RightArrow;
+    public GameObject yesButton, noButton, ContinueButton, LeftArrow, RightArrow, NPCDialogueBox;
+    public Button MapBtn, ShopBtn, arrowTest;
     public NPCSpawning npcSpawning;
-    public bool talkingToNpc;
-    public Button arrowTest;
+    public bool talkingToNpc, NPCInteracted;
+    
     // Start is called before the first frame update
     void Start()
     {
