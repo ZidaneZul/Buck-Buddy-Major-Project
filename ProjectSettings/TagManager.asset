@@ -19,6 +19,9 @@ TagManager:
   - 20 Cents
   - Sections
   - AisleTpButton
+  - NPC
+  - SpawnLocation
+  - textBox
   layers:
   - Default
   - TransparentFX
@@ -73,6 +76,9 @@ TagManager:
     locked: 0
   - name: FoodPopout
     uniqueID: 1148412727
+    locked: 0
+  - name: NPC
+    uniqueID: 1414035971
     locked: 0
   - name: Player
     uniqueID: 2470588271

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b06dcbb1cf17af45871b86ac86b3978
+guid: 14bbcee9ae6fe8e42996449e4bdb2bbc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,211 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Female_0
+      name: wind animation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 501.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 170.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96cebc86e862ca14e997b2657fd6f174
-      internalID: -1374627334
+      spriteID: feb6c56dfe94a634ea54895e5ab4e03c
+      internalID: 1775813487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Female_1
+      name: wind animation_1
       rect:
         serializedVersion: 2
-        x: 185
-        y: 501.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 170.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f0abda328b4e6444b198e3ffeb5e481
-      internalID: 696886205
+      spriteID: 8babc809a23cbda4ea8a3f96c8177415
+      internalID: -656138600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Female_2
-      rect:
-        serializedVersion: 2
-        x: 370
-        y: 501.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 351e75df3f332f941b145deccfe832aa
-      internalID: 1441483133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Female_3
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 501.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d06bea98588abd49b1ec6264c2ba59a
-      internalID: -387055339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Female_4
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 501.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9dc6a624b4d8e144babaf0e4b1fdb95
-      internalID: 1431458445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Female_5
+      name: wind animation_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 183
-        height: 502
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 85.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 104d645d927c37d4bb276f557e96fc66
-      internalID: 601079108
+      spriteID: 1c50f4d6b41563145b166900d6b01646
+      internalID: 1620076370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Female_6
+      name: wind animation_3
       rect:
         serializedVersion: 2
-        x: 185
-        y: 0.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 85.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 724833ab3717bbc439b0acda4d289848
-      internalID: -308875797
+      spriteID: ae38fbfa4debfcd45a6b11b9e10e0536
+      internalID: 253643201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Female_7
+      name: wind animation_4
       rect:
         serializedVersion: 2
-        x: 370
-        y: 0.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0.6666641
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f95e3709fdb726a47b57a5321bb6edcc
-      internalID: 1410675294
+      spriteID: 95675ea966a1e75499dd446faf2d5ae6
+      internalID: -78862724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Female_8
+      name: wind animation_5
       rect:
         serializedVersion: 2
-        x: 555
-        y: 0.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 0.6666641
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83b659db4a01cb640b562ee5ac8ac435
-      internalID: -1359724026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Female_9
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 0.5
-        width: 185.2
-        height: 501.5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaa549a8219db5f4391023d7b0516bc8
-      internalID: 1273773744
+      spriteID: 01ae042935de7d6449ed53ba92234597
+      internalID: 679063486
       vertices: []
       indices: 
       edges: []
@@ -335,7 +251,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c0c0cb4e105867a4b9346a5734057dca
+    spriteID: 5274ea1204db6d74986b2a8a1685f9d9
     internalID: 0
     vertices: []
     indices: 
@@ -343,16 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Female_0: -1374627334
-      Female_1: 696886205
-      Female_2: 1441483133
-      Female_3: -387055339
-      Female_4: 1431458445
-      Female_5: 601079108
-      Female_6: -308875797
-      Female_7: 1410675294
-      Female_8: -1359724026
-      Female_9: 1273773744
+      wind animation_0: 1775813487
+      wind animation_1: -656138600
+      wind animation_2: 1620076370
+      wind animation_3: 253643201
+      wind animation_4: -78862724
+      wind animation_5: 679063486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

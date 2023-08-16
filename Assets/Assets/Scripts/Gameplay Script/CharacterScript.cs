@@ -9,9 +9,10 @@ public class CharacterScript : MonoBehaviour
     float timer, seconds;
     public bool isFacingRight = true;
     bool isAFK;
-    
+    public DialogueManager dialogueManager;
+    float speedHolder;
     public bool movingLeft, movingRight;
-
+    public GameObject dialogueBox;
     Rigidbody rb;
     public Animator anim;
 
@@ -22,6 +23,7 @@ public class CharacterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speedHolder = speed;
         rb = GetComponent<Rigidbody>(); 
         maleModel = GameObject.Find("MaleModel");
         maleAnim = maleModel.GetComponent<Animator>();
@@ -46,6 +48,7 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(!movingRight && !movingLeft)
             horizontal = Input.GetAxisRaw("Horizontal");
         //Debug.Log(horizontal);
@@ -67,11 +70,24 @@ public class CharacterScript : MonoBehaviour
             anim.SetBool("Walking", false);
             StartTimer();
         }
+        if (!dialogueBox.activeInHierarchy)
+        {
+            return;
+
+        }
+        if (dialogueBox.activeInHierarchy)
+        {
+            MoveRightUp();
+
+            MoveLeftUp();
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(horizontal * speed, rb.velocity.y);
+            rb.velocity = new Vector3(horizontal * speed, rb.velocity.y);
+
+        
 
         if (movingLeft)
         {
