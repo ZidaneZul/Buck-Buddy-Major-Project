@@ -10,6 +10,7 @@ public class ObjectiveData : ScriptableObject
     {
         public string itemType;
         public int amount;
+        public Sprite iconSprite;
     }
     public ItemObjListThing[] dynamicObjList;
 }

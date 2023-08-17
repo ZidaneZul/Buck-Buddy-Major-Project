@@ -15,11 +15,16 @@ MonoBehaviour:
   dynamicObjList:
   - itemType: Bread
     amount: 3
+    iconSprite: {fileID: 21300000, guid: 430ee972cfc3ab049aeefad4a7400a79, type: 3}
   - itemType: Cheese
     amount: 2
+    iconSprite: {fileID: 21300000, guid: d89d485a122f26b4b8b551f90571fd61, type: 3}
   - itemType: Mushrooms
     amount: 2
+    iconSprite: {fileID: 21300000, guid: 4c740a79d64ea534a8cfdfcfb84b590f, type: 3}
   - itemType: Lettuce
     amount: 2
+    iconSprite: {fileID: 21300000, guid: 2c6925e1323fd43408da87661852b797, type: 3}
   - itemType: Tomatoes
     amount: 2
+    iconSprite: {fileID: 21300000, guid: 166defe09a967294197809970573e0c2, type: 3}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Objective : MonoBehaviour
 {
@@ -40,9 +41,11 @@ public class Objective : MonoBehaviour
             GameObject shoppingListItems = Instantiate(textPrefab, shoppingListContent.transform);
             var itemName = shoppingListItems.transform.Find("FoodNameCart_Txt").GetComponent<TextMeshProUGUI>();
             var itemQuantity = shoppingListItems.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
+            var itemSprite = shoppingListItems.transform.Find("FoodType_Img").GetComponent<Image>();
 
             itemName.text = obj.itemType;
             itemQuantity.text  = obj.amount.ToString();
+            itemSprite.sprite = obj.iconSprite;
 
             objList.Add(new KeyValuePair<string, int>(obj.itemType, obj.amount));
 
