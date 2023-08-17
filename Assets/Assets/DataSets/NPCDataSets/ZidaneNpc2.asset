@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206a3f29b65a8894aa1ad4f6c82b7a89, type: 3}
+  m_Name: ZidaneNpc2
+  m_EditorClassIdentifier: 
+  ScenarioType: 0
+  FirstPersonName: Zidane
+  SecondPersonName: Wraith
+  FirstPerson: {fileID: -655641097, guid: 9bc1a3c92ee05d8449c6ebe750b97a50, type: 3}
+  SecondPerson: {fileID: 601079108, guid: 7b06dcbb1cf17af45871b86ac86b3978, type: 3}
+  yes:
+  - test1yes
+  - test2yes
+  no:
+  - test1no
+  - test2no
+  DynamicNpcScenario:
+  - dialogue: Hi Im Zidane
+    FirstImage: 1
+    SecondImage: 0
+    PlayerInteraction: 0
+  - dialogue: Hi im bald
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: Yes You are
+    FirstImage: 1
+    SecondImage: 0
+    PlayerInteraction: 0
+  - dialogue: Testing Options
+    FirstImage: 1
+    SecondImage: 0
+    PlayerInteraction: 1
+  - dialogue: POST CONVO RAWR
+    FirstImage: 1
+    SecondImage: 0
+    PlayerInteraction: 0
+  - dialogue: Buffer
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 1
+  - dialogue: thank help yes
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: why no help sad
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0

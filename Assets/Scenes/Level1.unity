@@ -92872,6 +92872,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 910563700338484102}
+    - target: {fileID: 976039092267913851, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1182118272067298433, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -92942,7 +92946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879807760183325683, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0003062928
+      value: -0.00008527832
       objectReference: {fileID: 0}
     - target: {fileID: 6031281346125019435, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
@@ -93698,6 +93702,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 89547931}
     - target: {fileID: 6314005368877452651, guid: 889c463a221a1024786dd4c89744f620, type: 3}
+      propertyPath: NPCImage1
+      value: 
+      objectReference: {fileID: 1604534994}
+    - target: {fileID: 6314005368877452651, guid: 889c463a221a1024786dd4c89744f620, type: 3}
+      propertyPath: NPCImage2
+      value: 
+      objectReference: {fileID: 2045491174}
+    - target: {fileID: 6314005368877452651, guid: 889c463a221a1024786dd4c89744f620, type: 3}
       propertyPath: yesButton
       value: 
       objectReference: {fileID: 632344750}
@@ -93717,6 +93729,14 @@ PrefabInstance:
       propertyPath: NPCDialogueBox
       value: 
       objectReference: {fileID: 1244897347}
+    - target: {fileID: 6314005368877452651, guid: 889c463a221a1024786dd4c89744f620, type: 3}
+      propertyPath: NPCDataList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314005368877452651, guid: 889c463a221a1024786dd4c89744f620, type: 3}
+      propertyPath: NPCDataList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88e3f3b5a4747564a8f64323b892635a, type: 2}
     - target: {fileID: 7253533586053046055, guid: 889c463a221a1024786dd4c89744f620, type: 3}
       propertyPath: m_RootOrder
       value: 6
