@@ -5,16 +5,21 @@ using UnityEngine;
 public class MapLocation : MonoBehaviour
 {
     public GameObject[] sections;
+    public List<GameObject> sectionsClone;
+
     public GameObject player;
 
     public float closestDistance;
-    public GameObject closestPoint;
+    public GameObject closestPoint, leftClosestPoint, rightClosestPoint;
+
+    public MapLocation mapLocationScript;
 
     // Start is called before the first frame update
     void Start()
     {
         sections = GameObject.FindGameObjectsWithTag("Sections");
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -36,8 +41,59 @@ public class MapLocation : MonoBehaviour
             }
 
         }
+      //  sectionsClone = sections.Clone();
+     //   sectionsClone.
         //Debug.Log(closestPoint.name);
         return closestPoint.name;
 
+    }
+
+    public string FindLeftAdjecentAisle()
+    {
+        float closestLeftDistance = 10000;
+
+        foreach(GameObject section in sections)
+        {
+            //checks if the aisle is to the left of the player and is the current closest point
+            if(Vector3.Distance(section.transform.position, player.transform.position) < 0f && 
+                (Vector3.Distance(section.transform.position, player.transform.position) < closestLeftDistance))
+            {
+                closestLeftDistance = Vector3.Distance(section.transform.position, player.transform.position);
+                leftClosestPoint = section;
+            }
+
+        }
+        //if(leftClosestPoint == null)
+        //{
+        //    return null;
+        //}
+        //else
+        //{
+            return leftClosestPoint.name;
+        //}
+    }
+    public string FindRightAdjecentAisle()
+    {
+        float closestRightDistance = 10000;
+
+        foreach (GameObject section in sections)
+        {
+            //checks if the aisle is to the right of the player and is the current closest point
+            if (Vector3.Distance(section.transform.position, player.transform.position) > 0f &&
+                (Vector3.Distance(section.transform.position, player.transform.position) < closestRightDistance))
+            {
+                closestRightDistance = Vector3.Distance(section.transform.position, player.transform.position);
+                rightClosestPoint = section;
+            }
+
+        }
+        //if (rightClosestPoint == null)
+        //{
+        //    return null;
+        //}
+        //else
+        //{
+            return rightClosestPoint.name;
+       // }
     }
 }
