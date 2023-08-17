@@ -28,3 +28,4 @@ MonoBehaviour:
   - itemType: Tomatoes
     amount: 2
     iconSprite: {fileID: 21300000, guid: 166defe09a967294197809970573e0c2, type: 3}
+  budget: 30

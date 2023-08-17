@@ -13,4 +13,5 @@ public class ObjectiveData : ScriptableObject
         public Sprite iconSprite;
     }
     public ItemObjListThing[] dynamicObjList;
+    public float budget;
 }

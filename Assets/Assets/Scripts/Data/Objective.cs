@@ -13,6 +13,8 @@ public class Objective : MonoBehaviour
     public GameObject textPrefab, shoppingListContent;
     public List<KeyValuePair<string, int>> objList = new List<KeyValuePair<string, int>>();
 
+    public TextMeshProUGUI levelBudget_Txt;
+
     private void Awake()
     {
         Instance = this;
@@ -21,16 +23,19 @@ public class Objective : MonoBehaviour
     void Start()
     {
         ShoppingListDisplay();
-       foreach(KeyValuePair<string, int> obj in objList)
+        foreach (KeyValuePair<string, int> obj in objList)
         {
             Debug.Log("Require food type is " + obj.Key + " " + obj.Value);
         }
+        levelBudget_Txt = GameObject.Find("LevelBudget_Txt").GetComponent<TextMeshProUGUI>();
+
+        ShowBudget();
     }
 
     // Update is called once per frame
     void Update()
     {
-    }
+    }   
 
    
     public void ShoppingListDisplay()
@@ -65,5 +70,14 @@ public class Objective : MonoBehaviour
         //}
 
         
+    }
+    public void ShowBudget()
+    {
+        levelBudget_Txt.text = "Budget: $" + objectiveData.budget.ToString("F2"); 
+    }
+
+    public float GetBudget()
+    {
+        return objectiveData.budget;
     }
 }

@@ -19,3 +19,4 @@ MonoBehaviour:
   - itemType: Ham
     amount: 1
     iconSprite: {fileID: 21300000, guid: 06030bb59b13daa4caa9d6996ec709f3, type: 3}
+  budget: 15
