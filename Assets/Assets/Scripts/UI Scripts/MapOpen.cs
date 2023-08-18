@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class MapOpen : MonoBehaviour
 {
     public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
-        , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight;
+        , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight, budgetRemainderPanel;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
     public TextMeshProUGUI helpPanelBody_Txt;
