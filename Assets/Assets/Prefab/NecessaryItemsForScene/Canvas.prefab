@@ -4882,7 +4882,7 @@ RectTransform:
   - {fileID: 6536376496140606214}
   - {fileID: 4758706071151109747}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5564,9 +5564,17 @@ MonoBehaviour:
   shoppingList: {fileID: 0}
   objPanel: {fileID: 0}
   helpPanelCtnBtn: {fileID: 0}
+  MoveButtonLeft: {fileID: 0}
+  MoveButtonRight: {fileID: 0}
+  budgetRemainderPanel: {fileID: 0}
   waypoints: []
   dialogueHandler: {fileID: 0}
   helpPanelBody_Txt: {fileID: 0}
+  maleHead: {fileID: 0}
+  femaleHead: {fileID: 0}
+  selectedHead: {fileID: 0}
+  isMaleTest: 0
+  selectedModelScript: {fileID: 0}
 --- !u!1001 &2919046161299082354
 PrefabInstance:
   m_ObjectHideFlags: 0
