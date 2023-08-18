@@ -137,7 +137,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (npcData.ScenarioType.ToString() == "Helper")
             {
-                sentence += "bread";
+                sentence += InventoryManager.Instance.NPCFindMissingItem();
 
             }
             StartPlayerInteraction();
