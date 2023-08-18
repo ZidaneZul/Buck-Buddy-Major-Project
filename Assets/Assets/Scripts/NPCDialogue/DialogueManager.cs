@@ -39,7 +39,6 @@ public class DialogueManager : MonoBehaviour
         //NpcImages = new Queue<Sprite>();
         NPCDialogueBox.SetActive(false);
         npcData = NPCDataList[Random.Range(0, NPCDataList.Length)];
-        arrowTest = RightArrow.GetComponent<Button>();
         Debug.Log(npcData.ScenarioType);
     }
 
@@ -59,14 +58,23 @@ public class DialogueManager : MonoBehaviour
             return;
         }
     }
+    public void Update()
+    {
+        if (talkingToNpc)
+        {
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);
+        }
+
+    }
 
     public void StartDialogue()
     {
+        LeftArrow.SetActive(false);
+        RightArrow.SetActive(false);
         talkingToNpc = true;
         MapBtn.enabled = false;
         ShopBtn.enabled = false;
-        LeftArrow.SetActive(false);
-        RightArrow.SetActive(false);
         NPCDialogueBox.SetActive(true);
         animator.SetBool("IsOpen", true);
         //Debug.Log("Starting Conversation with" + npcData.);
@@ -117,6 +125,7 @@ public class DialogueManager : MonoBehaviour
         {
             StartingOptions.Enqueue(DecisionStarter.PlayerInteraction);
         }
+
         DisplayNextSentence();
     }
     public void DisplayNextSentence()
@@ -194,7 +203,6 @@ public class DialogueManager : MonoBehaviour
     }
     public void LeftPersonTalking()
     {
-        dialogueText.text = yesResponses.Peek();
         nameText.text = npcData.FirstPersonName;
         NPCImage2.color = new Color(0.5f, 0.5f, 0.5f);
         NPCImage1.color = Color.white;
@@ -255,7 +263,7 @@ public class DialogueManager : MonoBehaviour
     public void NoChoice()
     {
         dialogueText.text = noResponses.Peek();
-        RightPersonTalking();
+        LeftPersonTalking();
 
         if (dialogues.Count == 0)
         {
@@ -287,6 +295,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         Debug.Log("HE'S A HELPER");
                         dialogues.Dequeue();
+
                         break;
                     }
 
@@ -298,7 +307,7 @@ public class DialogueManager : MonoBehaviour
     {
         yesButton.SetActive(false);
         noButton.SetActive(false);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         NPCDialogueBox.SetActive(false);
         MapBtn.enabled = true;
         ShopBtn.enabled = true;
