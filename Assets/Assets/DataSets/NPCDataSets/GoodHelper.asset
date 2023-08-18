@@ -30,3 +30,11 @@ MonoBehaviour:
     FirstImage: 0
     SecondImage: 1
     PlayerInteraction: 1
+  - dialogue: Okay its at [Location]
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: Okay Goodluck!
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0

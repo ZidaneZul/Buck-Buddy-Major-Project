@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ZidaneNpc2
   m_EditorClassIdentifier: 
   ScenarioType: 0
-  FirstPersonName: Zidane
-  SecondPersonName: Wraith
+  FirstPersonName: You
+  SecondPersonName: Worker
   FirstPerson: {fileID: -655641097, guid: 9bc1a3c92ee05d8449c6ebe750b97a50, type: 3}
   SecondPerson: {fileID: 601079108, guid: 7b06dcbb1cf17af45871b86ac86b3978, type: 3}
   yes:

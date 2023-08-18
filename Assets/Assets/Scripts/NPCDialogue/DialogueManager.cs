@@ -132,31 +132,37 @@ public class DialogueManager : MonoBehaviour
         bool WhosTalking1 = leftSideTalking.Dequeue();
         bool WhosTalking2 = rightSideTalking.Dequeue();
         bool DecisionStarter = StartingOptions.Dequeue();
-        if (DecisionStarter)
+
+            if (DecisionStarter)
         {
             if (npcData.ScenarioType.ToString() == "Helper")
             {
                 sentence += "bread";
+
             }
             StartPlayerInteraction();
         }
         if (WhosTalking1)
         {
-            nameText.text = npcData.FirstPersonName;
-            NPCImage2.color = new Color(0.5f, 0.5f, 0.5f);
-            NPCImage1.color = Color.white;
+            LeftPersonTalking();
 
         }
 
         if (WhosTalking2)
         {
-            nameText.text = npcData.SecondPersonName;
-            NPCImage1.color = new Color(0.5f, 0.5f, 0.5f);
-            NPCImage2.color = Color.white;
+            RightPersonTalking();
+
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        if(index == 2)
+        if (npcData.ScenarioType.ToString() == "Helper")
+        {
+            if (index == 1)
+            {
+                dialogues.Dequeue();
+            }
+        }
+        if (index == 2)
         {
             dialogues.Dequeue();
         }
@@ -186,13 +192,27 @@ public class DialogueManager : MonoBehaviour
         noButton.GetComponentInChildren<TextMeshProUGUI>().text = noResponses.Peek();
 
     }
+    public void LeftPersonTalking()
+    {
+        dialogueText.text = yesResponses.Peek();
+        nameText.text = npcData.FirstPersonName;
+        NPCImage2.color = new Color(0.5f, 0.5f, 0.5f);
+        NPCImage1.color = Color.white;
+    }
+
+    public void RightPersonTalking()
+    {
+        nameText.text = npcData.SecondPersonName;
+        NPCImage1.color = new Color(0.5f, 0.5f, 0.5f);
+        NPCImage2.color = Color.white;
+    }
 
     public void YesChoice()
     {
-        dialogueText.text = yesResponses.Peek(); 
+        dialogueText.text = yesResponses.Peek();
+        LeftPersonTalking();
 
-
-        if(dialogues.Count == 0)
+        if (dialogues.Count == 0)
         {
             StartCoroutine(CloseTimer());
         }
@@ -217,6 +237,8 @@ public class DialogueManager : MonoBehaviour
                 case "Helper":
                     {
                         Debug.Log("HE'S A HELPER");
+                        index++;
+
 
                         break;
                     }
@@ -233,6 +255,8 @@ public class DialogueManager : MonoBehaviour
     public void NoChoice()
     {
         dialogueText.text = noResponses.Peek();
+        RightPersonTalking();
+
         if (dialogues.Count == 0)
         {
             StartCoroutine(CloseTimer());
@@ -262,6 +286,7 @@ public class DialogueManager : MonoBehaviour
                 case "Helper":
                     {
                         Debug.Log("HE'S A HELPER");
+                        dialogues.Dequeue();
                         break;
                     }
 
