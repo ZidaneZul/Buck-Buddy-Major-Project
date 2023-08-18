@@ -63,8 +63,8 @@ public class MapLocation : MonoBehaviour
         foreach(GameObject section in sectionsClone)
         {
             //checks if the aisle is to the left of the player and is the current closest point
-            if(Vector3.Distance(section.transform.position, player.transform.position) < 0f && 
-                (Vector3.Distance(section.transform.position, player.transform.position) < closestLeftDistance))
+            if((Vector3.Distance(section.transform.position, player.transform.position) < closestLeftDistance) &&
+                section.transform.position.x <= player.transform.position.x)
             {
                 closestLeftDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 leftClosestPoint = section;
@@ -87,8 +87,8 @@ public class MapLocation : MonoBehaviour
         foreach (GameObject section in sectionsClone)
         {
             //checks if the aisle is to the right of the player and is the current closest point
-            if (Vector3.Distance(section.transform.position, player.transform.position) > 0f &&
-                (Vector3.Distance(section.transform.position, player.transform.position) < closestRightDistance))
+            if (Vector3.Distance(section.transform.position, player.transform.position) < closestRightDistance &&
+                section.transform.position.x >= player.transform.position.x)
             {
                 closestRightDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 rightClosestPoint = section;

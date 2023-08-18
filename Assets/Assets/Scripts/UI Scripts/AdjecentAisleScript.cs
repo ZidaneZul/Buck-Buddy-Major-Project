@@ -40,7 +40,7 @@ public class AdjecentAisleScript : MonoBehaviour
         DisplayCurrentAisle();
 
         DisplayRightSide();
-      DisplayLeftSide();
+        DisplayLeftSide();
     }
 
     void DisplayCurrentAisle()
