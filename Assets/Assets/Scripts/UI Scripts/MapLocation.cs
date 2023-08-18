@@ -14,6 +14,8 @@ public class MapLocation : MonoBehaviour
 
     public MapLocation mapLocationScript;
 
+    public GameObject currentAisleSection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,17 +34,23 @@ public class MapLocation : MonoBehaviour
     {
         //resets the distance(cant be 0 else the if statement will NEVER run)
         closestDistance = 1000;
-        foreach(GameObject section in sections)
+        foreach (GameObject section in sections)
         {
-            if(Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)
+            sectionsClone.Add(section);
+            if (Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)
             {
                 closestDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 closestPoint = section;
             }
 
         }
-      //  sectionsClone = sections.Clone();
-     //   sectionsClone.
+        currentAisleSection = closestPoint;
+
+        if (currentAisleSection != null)
+        {
+
+        }
+        sectionsClone.Remove(closestPoint);
         //Debug.Log(closestPoint.name);
         return closestPoint.name;
 
@@ -52,7 +60,7 @@ public class MapLocation : MonoBehaviour
     {
         float closestLeftDistance = 10000;
 
-        foreach(GameObject section in sections)
+        foreach(GameObject section in sectionsClone)
         {
             //checks if the aisle is to the left of the player and is the current closest point
             if(Vector3.Distance(section.transform.position, player.transform.position) < 0f && 
@@ -76,7 +84,7 @@ public class MapLocation : MonoBehaviour
     {
         float closestRightDistance = 10000;
 
-        foreach (GameObject section in sections)
+        foreach (GameObject section in sectionsClone)
         {
             //checks if the aisle is to the right of the player and is the current closest point
             if (Vector3.Distance(section.transform.position, player.transform.position) > 0f &&
