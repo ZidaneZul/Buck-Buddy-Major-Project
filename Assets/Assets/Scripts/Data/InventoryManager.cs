@@ -335,4 +335,42 @@ public class InventoryManager : MonoBehaviour
         }
         return "You need" + missingItems + "!";
     }
+    public string NPCFindMissingItem()
+    {
+
+        CheckForObj();
+
+        bool breakLoops = false;
+        Debug.Log("NPC Finding missing items" + breakLoops);
+        missingItems = "";
+        foreach (KeyValuePair<string, bool> checks in checkObj)
+        {
+            Debug.Log(checks.Key + checks.Value);
+            if (!checks.Value)
+            {
+
+                Debug.Log(checks.Key);
+                foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+                {
+                    if (obj.Key.Equals(checks.Key))
+                    {
+                        Debug.Log("Found missing item" + obj.Key);
+                       missingItems += obj.Key;
+
+                        breakLoops = true;
+                        break;
+                    }
+                }
+                if (breakLoops)
+                {
+                    break;
+                }
+            }
+            if (breakLoops)
+            {
+                break;
+            }
+        }
+        return missingItems;
+    }
 }

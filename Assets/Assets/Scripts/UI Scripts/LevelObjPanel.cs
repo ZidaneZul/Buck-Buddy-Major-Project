@@ -13,7 +13,7 @@ public class LevelObjPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject);
+       // Debug.Log(gameObject);
     }
 
     public void ClosePanel()
