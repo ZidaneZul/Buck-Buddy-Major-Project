@@ -92843,6 +92843,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 724
       objectReference: {fileID: 0}
+    - target: {fileID: 2149881850551873001, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2634904034736114167, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Name
       value: MeatSeafoodAisle_Btn
@@ -92967,9 +92971,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1161876443}
+    - target: {fileID: 6512514159384947532, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6561303907415802756, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6704719782705908909, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
