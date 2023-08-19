@@ -76354,6 +76354,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   NPC: {fileID: 7706066848012365821, guid: ebb4abc68280098459869966dce97b91, type: 3}
   spawnedNpc: {fileID: 0}
+  TypesOfNpc:
+  - {fileID: 7706066848012365821, guid: ebb4abc68280098459869966dce97b91, type: 3}
+  - {fileID: 7706066848012365821, guid: 28468f4c48f17f4438f040b7156f9096, type: 3}
   NPCspawnerLocations: []
   numberHolder: 0
   dialogueManager: {fileID: 0}
