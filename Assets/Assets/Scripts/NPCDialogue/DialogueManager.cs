@@ -142,7 +142,7 @@ public class DialogueManager : MonoBehaviour
         bool WhosTalking2 = rightSideTalking.Dequeue();
         bool DecisionStarter = StartingOptions.Dequeue();
 
-            if (DecisionStarter)
+        if (DecisionStarter)
         {
             if (npcData.ScenarioType.ToString() == "Helper")
             {
@@ -164,17 +164,14 @@ public class DialogueManager : MonoBehaviour
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        if (npcData.ScenarioType.ToString() == "Helper")
-        {
-            if (index == 1)
-            {
-                dialogues.Dequeue();
-            }
-        }
-        if (index == 2)
+
+        if (index == 1)
         {
             dialogues.Dequeue();
         }
+
+
+
 
 
         //NPCImage.sprite = images;
@@ -217,7 +214,7 @@ public class DialogueManager : MonoBehaviour
 
     public void YesChoice()
     {
-        dialogueText.text = yesResponses.Peek();
+
         LeftPersonTalking();
 
         if (dialogues.Count == 0)
@@ -229,14 +226,16 @@ public class DialogueManager : MonoBehaviour
             yesButton.SetActive(false);
             noButton.SetActive(false);
             ContinueButton.SetActive(true);
-            yesResponses.Dequeue();
-            noResponses.Dequeue();
 
             switch (npcData.ScenarioType.ToString())
             {
                 case "Scammer":
                     {
                         Debug.Log("HE'S A SCAMMER");
+                        dialogueText.text = "Okay, heres all my money";
+                        yesResponses.Dequeue();
+                        noResponses.Dequeue();
+
                         index++;
 
 
@@ -245,7 +244,12 @@ public class DialogueManager : MonoBehaviour
                 case "Helper":
                     {
                         Debug.Log("HE'S A HELPER");
+                        dialogueText.text = yesResponses.Peek();
+                        yesResponses.Dequeue();
+                        noResponses.Dequeue();
                         index++;
+
+                        // ZIDANE PUT MONEY DEDUCTION TO BUDGET HERE
 
 
                         break;
@@ -282,13 +286,8 @@ public class DialogueManager : MonoBehaviour
                 case "Scammer":
                     {
                         Debug.Log("HE'S A SCAMMER");
-                        index++;
-                        Debug.Log(index);
-                        if(index == 2)
-                        {
-                            dialogues.Dequeue();
+                        dialogues.Dequeue();
 
-                        }
                         break;
                     }
                 case "Helper":

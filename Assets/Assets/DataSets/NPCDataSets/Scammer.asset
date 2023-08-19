@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206a3f29b65a8894aa1ad4f6c82b7a89, type: 3}
+  m_Name: Scammer
+  m_EditorClassIdentifier: 
+  ScenarioType: 0
+  FirstPersonName: You
+  SecondPersonName: Stranger
+  FirstPerson: {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
+  SecondPerson: {fileID: 21300000, guid: 8a753548a25e8cb44b585b86238778c3, type: 3}
+  yes:
+  - '*Agree to pay*'
+  no:
+  - '*Ignore stranger*'
+  DynamicNpcScenario:
+  - dialogue: Hello friend!
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: I seem to have lost my wallet...
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: Are you able to help me pay for my groceries?
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: I'll pay you back tomorrow! I promise!
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 1
+  - dialogue: Thank you! You're a saviour
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0
+  - dialogue: Fine, ill try someone else
+    FirstImage: 0
+    SecondImage: 1
+    PlayerInteraction: 0

@@ -44,8 +44,9 @@ public class TutorialScript : MonoBehaviour
         DialogueWaypoints = GameObject.Find("SpeechBubbleWaypoint");
         TextPosition = DialogueBox.transform.Find("TextPosition");
         TutorialMesssage = TutorialChatBox.GetComponent<TextMeshProUGUI>();
+        ContinueButton = GameObject.Find("ContinueBtnTutorial");
 
-        foreach(Transform k in CoinWaypoints.GetComponentInChildren<Transform>())
+        foreach (Transform k in CoinWaypoints.GetComponentInChildren<Transform>())
         {
             CoinPositions.Add(k);
         }
