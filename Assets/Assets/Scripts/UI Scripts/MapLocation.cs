@@ -18,7 +18,7 @@ public class MapLocation : MonoBehaviour
 
     public GameObject currentAisleSection;
 
-    public string currentAisle_string, leftAisle_string, rightAisle_string;
+    public string currentAisle_string, leftAisle_string, rightAisle_string, furthestAisle_string;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,7 @@ public class MapLocation : MonoBehaviour
         rightClosestPoint = null;
         leftAisle_string = null;
         rightAisle_string = null;
+        furthestAisle_string = null;
         foreach(GameObject section in sections)
         {
             sectionsClone.Add(section);
@@ -92,7 +93,7 @@ public class MapLocation : MonoBehaviour
         }
         if (leftClosestPoint == null)
         {
-            return null;
+            return FindFurthestAilse();
         }
         else
         {
@@ -118,12 +119,31 @@ public class MapLocation : MonoBehaviour
         }
         if (rightClosestPoint == null)
         {
-            return null;
+            return FindFurthestAilse();
         }
         else
         {
             rightAisle_string = string.Concat(rightAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
             return rightAisle_string;
         }
+    }
+
+    public string FindFurthestAilse()
+    {
+        float furthestDistance = 0;
+
+        foreach (GameObject section in sectionsClone)
+        {
+            //checks if the aisle is to the right of the player and is the current closest point
+            if (Vector3.Distance(section.transform.position, player.transform.position) > furthestDistance)
+            {
+                furthestDistance = Vector3.Distance(section.transform.position, player.transform.position);
+                furthestAisle_string = section.name;
+            }
+        }
+
+        furthestAisle_string = string.Concat(furthestAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+        return furthestAisle_string;
+
     }
 }
