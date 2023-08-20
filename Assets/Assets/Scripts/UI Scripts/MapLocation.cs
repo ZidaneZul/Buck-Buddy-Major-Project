@@ -71,6 +71,7 @@ public class MapLocation : MonoBehaviour
 
         currentAisle_string = string.Concat(currentAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
 
+        Debug.LogError(currentAisle_string);
         return currentAisle_string;
 
     }
