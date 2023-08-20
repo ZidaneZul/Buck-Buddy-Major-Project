@@ -50,10 +50,6 @@ public class InventoryItemController : MonoBehaviour
                 quantity--;
 
                  quantityTxt.text = quantity + "x";
-                //Debug.Log("quantity var is +" + quantity);
-                //Debug.Log("pair value is +" + pair.Value);
-                // AFTER DELETING ONE, NEVER UPDATE THE VALUES PLS FIX.
-
                 if (quantity <= 0)
                 {
                     Debug.Log("Deleting from list" + gameObject);

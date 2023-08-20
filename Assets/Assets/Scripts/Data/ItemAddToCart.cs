@@ -24,7 +24,7 @@ public class ItemAddToCart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("ping poing ping");
+       // Debug.Log("ping poing ping");
         FindCloseFood();
     }
 
