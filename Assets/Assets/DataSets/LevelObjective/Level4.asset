@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30b8bf5433a45134b93acfd15786a2e3, type: 3}
-  m_Name: Level3
+  m_Name: Level4
   m_EditorClassIdentifier: 
   dynamicObjList:
   - itemType: Noodles
-    amount: 2
+    amount: 3
     iconSprite: {fileID: 21300000, guid: 595d194787215de4e914bd56b8ae6146, type: 3}
   - itemType: Meat
-    amount: 2
+    amount: 3
     iconSprite: {fileID: 21300000, guid: 4e72031241e73a343ba85f85afd6a6ed, type: 3}
-  - itemType: Soysauce
-    amount: 2
-    iconSprite: {fileID: 21300000, guid: 0b2b67dbda0b053448d313f395c647cb, type: 3}
+  - itemType: Soup
+    amount: 3
+    iconSprite: {fileID: 21300000, guid: d568fdc939997444e96b002497ecf46f, type: 3}
+  - itemType: Lettuce
+    amount: 3
+    iconSprite: {fileID: 21300000, guid: 2c6925e1323fd43408da87661852b797, type: 3}
   budget: 0
