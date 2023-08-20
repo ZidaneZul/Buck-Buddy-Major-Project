@@ -93902,7 +93902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 27.501953, y: -9.804932}
+  m_AnchoredPosition: {x: 27.501953, y: 0}
   m_SizeDelta: {x: 56.753174, y: 21.617798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146981953
@@ -94936,7 +94936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046294746886961185, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5058764122287335758, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_text
@@ -95064,7 +95064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8370165605973543276, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Pivot.x
@@ -96454,10 +96454,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdjecentAisles
       objectReference: {fileID: 0}
+    - target: {fileID: 811143906568952241, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 1236547197535539729, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
       propertyPath: aisleIconsList.Array.data[3].icon
       value: 
       objectReference: {fileID: 21300000, guid: 32db2a1fedccba74bacc66006a0b1f68, type: 3}
+    - target: {fileID: 4860927541279369681, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860927541279369681, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8876769936810594116, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -96488,7 +96500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8876769936810594116, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1500
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 8876769936810594116, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
       propertyPath: m_SizeDelta.y
