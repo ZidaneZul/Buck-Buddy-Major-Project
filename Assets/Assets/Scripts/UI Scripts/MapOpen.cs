@@ -19,6 +19,7 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
+    bool isActive;
     public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
@@ -65,6 +66,10 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
+        isActive = panel.activeSelf;
+        MoveButtonLeft.SetActive(!isActive);
+        MoveButtonRight.SetActive(!isActive);
+
         if (panel.activeInHierarchy || shoppingCartPanel.activeInHierarchy)
         {
             shoppingList.SetActive(true);
@@ -84,10 +89,7 @@ public class MapOpen : MonoBehaviour
         if (panel != null)
         {
             
-            bool isActive = panel.activeSelf;
             panel.SetActive(!isActive);
-            MoveButtonLeft.SetActive(isActive);
-            MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
 
             foreach(GameObject button in aislePoint)
