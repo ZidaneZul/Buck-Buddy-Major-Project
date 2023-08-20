@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
 
 public class MapLocation : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class MapLocation : MonoBehaviour
 
     public GameObject currentAisleSection;
 
+    public string currentAisle_string, leftAisle_string, rightAisle_string;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,29 +34,43 @@ public class MapLocation : MonoBehaviour
         //FindPlayer();
     }
 
+    public void ResetCloneList()
+    {
+        sectionsClone.Clear();
+        leftClosestPoint = null;
+        rightClosestPoint = null;
+        leftAisle_string = null;
+        rightAisle_string = null;
+        foreach(GameObject section in sections)
+        {
+            sectionsClone.Add(section);
+        }
+    }
+
     public string FindPlayer()
     {
         //resets the distance(cant be 0 else the if statement will NEVER run)
         closestDistance = 1000;
         foreach (GameObject section in sections)
         {
-            sectionsClone.Add(section);
             if (Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)
             {
                 closestDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 closestPoint = section;
+                currentAisle_string = section.name;
             }
-
         }
-        currentAisleSection = closestPoint;
 
-        if (currentAisleSection != null)
+        if (currentAisleSection != closestPoint)
         {
-
+            ResetCloneList();
+            currentAisleSection = closestPoint;
+            sectionsClone.Remove(closestPoint);
         }
-        sectionsClone.Remove(closestPoint);
-        //Debug.Log(closestPoint.name);
-        return closestPoint.name;
+
+        currentAisle_string = string.Concat(currentAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+
+        return currentAisle_string;
 
     }
 
@@ -68,17 +86,19 @@ public class MapLocation : MonoBehaviour
             {
                 closestLeftDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 leftClosestPoint = section;
+                leftAisle_string = section.name;
             }
 
         }
-        //if(leftClosestPoint == null)
-        //{
-        //    return null;
-        //}
-        //else
-        //{
-            return leftClosestPoint.name;
-        //}
+        if (leftClosestPoint == null)
+        {
+            return null;
+        }
+        else
+        {
+            leftAisle_string = string.Concat(leftAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            return leftAisle_string;
+        }
     }
     public string FindRightAdjecentAisle()
     {
@@ -92,16 +112,18 @@ public class MapLocation : MonoBehaviour
             {
                 closestRightDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 rightClosestPoint = section;
+                rightAisle_string = section.name;
             }
 
         }
-        //if (rightClosestPoint == null)
-        //{
-        //    return null;
-        //}
-        //else
-        //{
-            return rightClosestPoint.name;
-       // }
+        if (rightClosestPoint == null)
+        {
+            return null;
+        }
+        else
+        {
+            rightAisle_string = string.Concat(rightAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            return rightAisle_string;
+        }
     }
 }
