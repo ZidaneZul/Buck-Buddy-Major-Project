@@ -48,6 +48,11 @@ public class MapLocation : MonoBehaviour
         }
     }
 
+    public string FindPlayerMap()
+    {
+        return "amp";
+    }
+
     public string FindPlayer()
     {
         //resets the distance(cant be 0 else the if statement will NEVER run)
@@ -71,7 +76,7 @@ public class MapLocation : MonoBehaviour
 
         currentAisle_string = string.Concat(currentAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
 
-        Debug.LogError(currentAisle_string);
+       // Debug.LogError(currentAisle_string);
         return currentAisle_string;
 
     }

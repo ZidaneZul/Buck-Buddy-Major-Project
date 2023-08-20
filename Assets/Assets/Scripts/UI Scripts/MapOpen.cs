@@ -66,6 +66,7 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
+        //Debug.Log(mapLocationScript);
         isActive = panel.activeSelf;
         MoveButtonLeft.SetActive(!isActive);
         MoveButtonRight.SetActive(!isActive);
@@ -95,7 +96,7 @@ public class MapOpen : MonoBehaviour
             foreach(GameObject button in aislePoint)
             {
                 Debug.Log("Goin thru buttons");
-                Debug.Log("the player is in " + mapLocationScript.FindPlayer() +
+                Debug.Log("the player is in " + mapLocationScript.closestDistance +
                     "\n buttun name is " + button.name);
 
                 if (mapLocationScript.FindPlayer().Replace(" Aisle", "").Contains(button.name.Replace("Aisle_Btn", "")))
