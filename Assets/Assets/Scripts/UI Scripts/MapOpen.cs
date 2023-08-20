@@ -45,6 +45,8 @@ public class MapOpen : MonoBehaviour
         shoppingList.SetActive(false);
 
         objPanel = GameObject.Find("LevelObj_Panel");
+        objPanel.SetActive(false);
+
         helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
 
         helpPanelCtnBtn = GameObject.Find("Hint_Btn");
@@ -53,7 +55,6 @@ public class MapOpen : MonoBehaviour
 
         selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();  
 
-        objPanel.SetActive(false);
 
         if (selectedModelScript.isMale)
         {
