@@ -16,7 +16,7 @@ MonoBehaviour:
   FirstPersonName: You
   SecondPersonName: Stranger
   FirstPerson: {fileID: 21300000, guid: b4d3d30b411c3b246ab587fbf0c22bf5, type: 3}
-  SecondPerson: {fileID: 21300000, guid: 84819e4e2491dc5419483001ef569fd4, type: 3}
+  SecondPerson: {fileID: 21300000, guid: 0a7e5ebe71f10244794910210e90aceb, type: 3}
   yes:
   - '*Agree to pay*'
   no:
