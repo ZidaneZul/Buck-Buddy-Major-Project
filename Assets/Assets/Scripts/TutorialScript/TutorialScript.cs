@@ -44,8 +44,9 @@ public class TutorialScript : MonoBehaviour
         DialogueWaypoints = GameObject.Find("SpeechBubbleWaypoint");
         TextPosition = DialogueBox.transform.Find("TextPosition");
         TutorialMesssage = TutorialChatBox.GetComponent<TextMeshProUGUI>();
+        ContinueButton = GameObject.Find("ContinueBtnTutorial");
 
-        foreach(Transform k in CoinWaypoints.GetComponentInChildren<Transform>())
+        foreach (Transform k in CoinWaypoints.GetComponentInChildren<Transform>())
         {
             CoinPositions.Add(k);
         }
@@ -137,7 +138,7 @@ public class TutorialScript : MonoBehaviour
     }
     IEnumerator CloseTimer()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         GrayedBox.SetActive(false);
         MapBtn.SetActive(false);
         CartBtn.SetActive(false);

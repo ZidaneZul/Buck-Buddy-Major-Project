@@ -5,9 +5,11 @@ using UnityEngine;
 public class NPCSpawning : MonoBehaviour
 {
     public GameObject Player,NPC,spawnedNpc;
+    public GameObject[] TypesOfNpc;
     public List<GameObject> NPCspawnerLocations;
     public int numberHolder;
     public DialogueManager dialogueManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +60,14 @@ public class NPCSpawning : MonoBehaviour
 
     void SpawnNPC()
     {
+        if(dialogueManager.npcData.name == "Scammer")
+        {
+            NPC = TypesOfNpc[1];
+        }
+        if (dialogueManager.npcData.name == "GoodHelper")
+        {
+            NPC = TypesOfNpc[0];
+        }
         numberHolder = Random.Range(0, NPCspawnerLocations.Count);
         spawnedNpc = Instantiate(NPC, NPCspawnerLocations[numberHolder].transform);
     }

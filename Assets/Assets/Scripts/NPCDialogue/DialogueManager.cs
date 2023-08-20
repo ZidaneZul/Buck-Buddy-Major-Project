@@ -39,7 +39,6 @@ public class DialogueManager : MonoBehaviour
         //NpcImages = new Queue<Sprite>();
         NPCDialogueBox.SetActive(false);
         npcData = NPCDataList[Random.Range(0, NPCDataList.Length)];
-        arrowTest = RightArrow.GetComponent<Button>();
         Debug.Log(npcData.ScenarioType);
     }
 
@@ -49,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        else if(Random.Range(1,2) == 1)
+        else if(Random.Range(1,10) == 1)
         {
             NPCInteracted = true;
             StartDialogue();
@@ -59,14 +58,23 @@ public class DialogueManager : MonoBehaviour
             return;
         }
     }
+    public void Update()
+    {
+        if (talkingToNpc)
+        {
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);
+        }
+
+    }
 
     public void StartDialogue()
     {
+        LeftArrow.SetActive(false);
+        RightArrow.SetActive(false);
         talkingToNpc = true;
         MapBtn.enabled = false;
         ShopBtn.enabled = false;
-        LeftArrow.SetActive(false);
-        RightArrow.SetActive(false);
         NPCDialogueBox.SetActive(true);
         animator.SetBool("IsOpen", true);
         //Debug.Log("Starting Conversation with" + npcData.);
@@ -117,6 +125,7 @@ public class DialogueManager : MonoBehaviour
         {
             StartingOptions.Enqueue(DecisionStarter.PlayerInteraction);
         }
+
         DisplayNextSentence();
     }
     public void DisplayNextSentence()
@@ -133,11 +142,11 @@ public class DialogueManager : MonoBehaviour
         bool WhosTalking2 = rightSideTalking.Dequeue();
         bool DecisionStarter = StartingOptions.Dequeue();
 
-            if (DecisionStarter)
+        if (DecisionStarter)
         {
             if (npcData.ScenarioType.ToString() == "Helper")
             {
-                sentence += "bread";
+                sentence += InventoryManager.Instance.NPCFindMissingItem();
 
             }
             StartPlayerInteraction();
@@ -155,17 +164,14 @@ public class DialogueManager : MonoBehaviour
         }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        if (npcData.ScenarioType.ToString() == "Helper")
-        {
-            if (index == 1)
-            {
-                dialogues.Dequeue();
-            }
-        }
-        if (index == 2)
+
+        if (index == 1)
         {
             dialogues.Dequeue();
         }
+
+
+
 
 
         //NPCImage.sprite = images;
@@ -194,7 +200,6 @@ public class DialogueManager : MonoBehaviour
     }
     public void LeftPersonTalking()
     {
-        dialogueText.text = yesResponses.Peek();
         nameText.text = npcData.FirstPersonName;
         NPCImage2.color = new Color(0.5f, 0.5f, 0.5f);
         NPCImage1.color = Color.white;
@@ -209,7 +214,7 @@ public class DialogueManager : MonoBehaviour
 
     public void YesChoice()
     {
-        dialogueText.text = yesResponses.Peek();
+
         LeftPersonTalking();
 
         if (dialogues.Count == 0)
@@ -221,14 +226,16 @@ public class DialogueManager : MonoBehaviour
             yesButton.SetActive(false);
             noButton.SetActive(false);
             ContinueButton.SetActive(true);
-            yesResponses.Dequeue();
-            noResponses.Dequeue();
 
             switch (npcData.ScenarioType.ToString())
             {
                 case "Scammer":
                     {
                         Debug.Log("HE'S A SCAMMER");
+                        dialogueText.text = "Okay, heres all my money";
+                        yesResponses.Dequeue();
+                        noResponses.Dequeue();
+
                         index++;
 
 
@@ -237,7 +244,12 @@ public class DialogueManager : MonoBehaviour
                 case "Helper":
                     {
                         Debug.Log("HE'S A HELPER");
+                        dialogueText.text = yesResponses.Peek();
+                        yesResponses.Dequeue();
+                        noResponses.Dequeue();
                         index++;
+
+                        // ZIDANE PUT MONEY DEDUCTION TO BUDGET HERE
 
 
                         break;
@@ -255,7 +267,7 @@ public class DialogueManager : MonoBehaviour
     public void NoChoice()
     {
         dialogueText.text = noResponses.Peek();
-        RightPersonTalking();
+        LeftPersonTalking();
 
         if (dialogues.Count == 0)
         {
@@ -274,19 +286,15 @@ public class DialogueManager : MonoBehaviour
                 case "Scammer":
                     {
                         Debug.Log("HE'S A SCAMMER");
-                        index++;
-                        Debug.Log(index);
-                        if(index == 2)
-                        {
-                            dialogues.Dequeue();
+                        dialogues.Dequeue();
 
-                        }
                         break;
                     }
                 case "Helper":
                     {
                         Debug.Log("HE'S A HELPER");
                         dialogues.Dequeue();
+
                         break;
                     }
 
@@ -298,7 +306,7 @@ public class DialogueManager : MonoBehaviour
     {
         yesButton.SetActive(false);
         noButton.SetActive(false);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         NPCDialogueBox.SetActive(false);
         MapBtn.enabled = true;
         ShopBtn.enabled = true;

@@ -48,8 +48,14 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogueBox.activeInHierarchy)
+        {
+            MoveRightUp();
+            MoveLeftUp();
+        }
 
-        if(!movingRight && !movingLeft)
+
+        if (!movingRight && !movingLeft)
             horizontal = Input.GetAxisRaw("Horizontal");
         //Debug.Log(horizontal);
         Flip();
@@ -70,17 +76,9 @@ public class CharacterScript : MonoBehaviour
             anim.SetBool("Walking", false);
             StartTimer();
         }
-        if (!dialogueBox.activeInHierarchy)
-        {
-            return;
 
-        }
-        if (dialogueBox.activeInHierarchy)
-        {
-            MoveRightUp();
 
-            MoveLeftUp();
-        }
+
     }
 
     private void FixedUpdate()
