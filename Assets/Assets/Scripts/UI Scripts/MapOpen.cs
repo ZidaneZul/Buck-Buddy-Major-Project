@@ -54,7 +54,6 @@ public class MapOpen : MonoBehaviour
 
         //mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
 
-        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();  
 
 
         if (selectedModelScript.isMale)
@@ -66,6 +65,13 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
+        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
+        if (selectedModelScript.isMale)
+        {
+            selectedHead.GetComponent<Image>().sprite = maleHead;
+        }
+        else { selectedHead.GetComponent<Image>().sprite = femaleHead; }
+
         //Debug.Log(mapLocationScript);
         isActive = panel.activeSelf;
         MoveButtonLeft.SetActive(!isActive);
