@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1366800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4159246701165928337, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+  m_PrefabInstance: {fileID: 2192350107007132648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370083
 GameObject:
   m_ObjectHideFlags: 0
@@ -66227,6 +66238,17 @@ Transform:
   m_Father: {fileID: 280509238}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516866160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6512514159384947532, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+  m_PrefabInstance: {fileID: 2192350107007132648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc0751ab110d0848aedd7d0d6602e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1517531599
 GameObject:
   m_ObjectHideFlags: 0
@@ -94312,6 +94334,18 @@ PrefabInstance:
       propertyPath: femaleHead
       value: 
       objectReference: {fileID: 1396719004, guid: 3d1b9e32d73997348b19d0b03ff941a7, type: 3}
+    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 1516866160}
+    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: helpPanelBody_Txt
+      value: 
+      objectReference: {fileID: 1366800}
+    - target: {fileID: 3747187216734490956, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: mapLocationScript
+      value: 
+      objectReference: {fileID: 1730138425}
     - target: {fileID: 3790495825041619806, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -46
@@ -97180,6 +97214,10 @@ PrefabInstance:
       propertyPath: isFacingRight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3807705451041923063, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1161876443}
     - target: {fileID: 4704554224229523044, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
       propertyPath: m_Name
       value: MaleModel

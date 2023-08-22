@@ -8,7 +8,10 @@ public class ButtonDataHolder : MonoBehaviour
 {
     public int LevelSelected;
     public Scene scene;
-    public TextMeshProUGUI textMeshProUGUI;
+    public TextMeshProUGUI levelNumberHolder, recipeName, ingredientText;
+    public Image levelRecipe;
+    public LevelData levelData;
+    public bool stopper;
 
 
     private void Start()
@@ -24,11 +27,28 @@ public class ButtonDataHolder : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
+        if(scene.name == "LevelSelectTest")
+        {
+            stopper = false;    
+        }
 
         if (scene.name == "LevelConfirm")
         {
-           textMeshProUGUI = GameObject.Find("LevelNumber").GetComponent<TextMeshProUGUI>();
-           textMeshProUGUI.text = "Level " + LevelSelected;
+           levelNumberHolder = GameObject.Find("LevelNumber").GetComponent<TextMeshProUGUI>();
+           recipeName = GameObject.Find("LevelRecipe").GetComponent<TextMeshProUGUI>();
+           ingredientText = GameObject.Find("ObjectiveInformation").GetComponent<TextMeshProUGUI>();
+           levelRecipe = GameObject.Find("LevelRecipeIcon").GetComponent<Image>();
+           levelNumberHolder.text = "Level " + LevelSelected;
+            foreach (LevelData.LevelDataHolder data in levelData.levelDataHolder)
+            {
+                if(data.levelNumber == LevelSelected)
+                {
+                    recipeName.text = data.foodName;
+                    levelRecipe.sprite = data.itemToMake;
+
+                }
+            }
+
         }
     }
 

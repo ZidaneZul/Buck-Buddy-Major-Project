@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214646b0ce9550d488962034234110cc, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  levelDataHolder:
+  - levelNumber: 1
+    foodName: Ham Sandwich
+    itemToMake: {fileID: 21300000, guid: 738a7defd41d6c343b81876227db7afc, type: 3}
+    ingredients:
+    - Bread
+    - Ham
+  - levelNumber: 2
+    foodName: Egg Cheese Sandwich
+    itemToMake: {fileID: 21300000, guid: 14d2be13465df9c41aba9a2ad7c44962, type: 3}
+    ingredients:
+    - test
+    - test
+    - test
+    - test
+  - levelNumber: 3
+    foodName: Fried Noodles
+    itemToMake: {fileID: 21300000, guid: 6ad7069e6d10d164c9799868fc614689, type: 3}
+    ingredients: []
+  - levelNumber: 4
+    foodName: Chicken Soup
+    itemToMake: {fileID: 21300000, guid: 03d7d7ab66b34104c98ec4ae3775bc5a, type: 3}
+    ingredients: []

@@ -14,7 +14,7 @@ public class MapOpen : MonoBehaviour
     public DialogueHandler dialogueHandler;
     public TextMeshProUGUI helpPanelBody_Txt;
 
-    MapLocation mapLocationScript;
+    public MapLocation mapLocationScript;
 
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
