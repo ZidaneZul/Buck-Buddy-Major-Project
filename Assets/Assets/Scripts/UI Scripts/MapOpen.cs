@@ -28,31 +28,31 @@ public class MapOpen : MonoBehaviour
 
     void Start()
     {
-        panel = GameObject.Find("Map");
+        //panel = GameObject.Find("Map");
         aislePoint = GameObject.FindGameObjectsWithTag("AisleTpButton");
-        selectedHead = GameObject.Find("Head_Img");
+       // selectedHead = GameObject.Find("Head_Img");
         panel.SetActive(false);
 
 
-        shoppingCartPanel = GameObject.Find("Cart_Panel");
+        //shoppingCartPanel = GameObject.Find("Cart_Panel");
         shoppingCartPanel.SetActive(false);
-        Debug.Log("Shopping cart closeeeee");
+       // Debug.Log("Shopping cart closeeeee");
 
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
-        shoppingList = GameObject.Find("ShoppingList");
-        MoveButtonLeft = GameObject.Find("MoveLeft");
-        MoveButtonRight = GameObject.Find("MoveRight");
+       // shoppingList = GameObject.Find("ShoppingList");
+       // MoveButtonLeft = GameObject.Find("MoveLeft");
+       // MoveButtonRight = GameObject.Find("MoveRight");
         shoppingList.SetActive(false);
 
-        objPanel = GameObject.Find("LevelObj_Panel");
+        //objPanel = GameObject.Find("LevelObj_Panel");
         objPanel.SetActive(false);
 
         helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
 
-        helpPanelCtnBtn = GameObject.Find("Hint_Btn");
+        //helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
-        mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
+        //mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
 
         selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();  
 
@@ -132,7 +132,7 @@ public class MapOpen : MonoBehaviour
         {
             objPanel.SetActive(true);
             helpPanelCtnBtn.SetActive(true);
-            helpPanelBody_Txt.text = "Hey! You have missing items from your shopping list test test!";
+            helpPanelBody_Txt.text = "Hey! You have missing items from your shopping list!";
 
             panel.SetActive(false);
             shoppingCartPanel.SetActive(false);
