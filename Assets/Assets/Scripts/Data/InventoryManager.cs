@@ -40,6 +40,7 @@ public class InventoryManager : MonoBehaviour
 
     string missingItems;
     public float totalPrice;
+    public float budget;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class InventoryManager : MonoBehaviour
             itemList.Add(item);
             totalPrice += item.price;
         }
+        budget = Objective.Instance.GetBudget();
     }
 
     // Update is called once per frame
@@ -72,12 +74,15 @@ public class InventoryManager : MonoBehaviour
             }
         }
         Debug.Log("Total price is " + totalPrice);
+
+        BudgetRemainder();
     }
     public void Add(ItemData item)
     {
         itemList.Add(item);
         totalPrice += item.price;
         itemsInCart++;
+        budget -= item.price;
     }
     public void Remove(ItemData item)
     {
@@ -85,6 +90,15 @@ public class InventoryManager : MonoBehaviour
         itemList.Remove(item);
         totalPrice -= item.price;
         itemsInCart--;
+        budget += item.price;
+    }
+
+    public void BudgetRemainder()
+    {
+        if ((budget - totalPrice) <= 5f)
+        {
+            Debug.Log("Getting close to budget!");
+        }
     }
 
     public void ShowItem()
@@ -92,9 +106,6 @@ public class InventoryManager : MonoBehaviour
         //cleans all used list before doing code
         CleanList();
         FindIDs();
-
-        //finds the id number of each item in the list
-        //FindIDs();
 
         //Finds the amount of dups an item have
         //3 ntuc bread, 1 egg, 9 ham etc.
@@ -323,5 +334,43 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return "You need" + missingItems + "!";
+    }
+    public string NPCFindMissingItem()
+    {
+
+        CheckForObj();
+
+        bool breakLoops = false;
+        Debug.Log("NPC Finding missing items" + breakLoops);
+        missingItems = "";
+        foreach (KeyValuePair<string, bool> checks in checkObj)
+        {
+            Debug.Log(checks.Key + checks.Value);
+            if (!checks.Value)
+            {
+
+                Debug.Log(checks.Key);
+                foreach (KeyValuePair<string, int> obj in Objective.Instance.objList)
+                {
+                    if (obj.Key.Equals(checks.Key))
+                    {
+                        Debug.Log("Found missing item" + obj.Key);
+                       missingItems += obj.Key;
+
+                        breakLoops = true;
+                        break;
+                    }
+                }
+                if (breakLoops)
+                {
+                    break;
+                }
+            }
+            if (breakLoops)
+            {
+                break;
+            }
+        }
+        return missingItems;
     }
 }

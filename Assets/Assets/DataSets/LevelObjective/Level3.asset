@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b8bf5433a45134b93acfd15786a2e3, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  Soup: 0
-  Lettuce: 1
-  Cheese: 0
-  Tomatoes: 0
-  Noodles: 1
-  Eggs: 0
-  Bread: 0
-  Mushrooms: 0
-  Meat: 1
-  SoySauce: 1
-  Ham: 0
+  dynamicObjList:
+  - itemType: Noodles
+    amount: 2
+    iconSprite: {fileID: 21300000, guid: 595d194787215de4e914bd56b8ae6146, type: 3}
+  - itemType: Meat
+    amount: 2
+    iconSprite: {fileID: 21300000, guid: 4e72031241e73a343ba85f85afd6a6ed, type: 3}
+  - itemType: Soysauce
+    amount: 2
+    iconSprite: {fileID: 21300000, guid: 0b2b67dbda0b053448d313f395c647cb, type: 3}
+  budget: 0

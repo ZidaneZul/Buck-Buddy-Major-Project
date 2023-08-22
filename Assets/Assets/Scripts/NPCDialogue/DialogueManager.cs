@@ -3,36 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> dialogues;
-    private Queue<string> dialogueNames;
-    private Queue<Sprite> NpcImages;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
-    public Image NPCImage;
+    public Queue<string> dialogues, dialogueNames,yesResponses,noResponses;
+    public Queue<bool> leftSideTalking,StartingOptions;
+    public Queue<bool> rightSideTalking;
+    public TextMeshProUGUI nameText, dialogueText;
+    public Image NPCImage1,NPCImage2;
     public Animator animator;
-    public bool NPCInteracted;
-    public GameObject NPCDialogueBox;
     public NPCData[] NPCDataList;
     public NPCData npcData;
-    public GameObject yesButton;
-    public GameObject noButton;
-    public GameObject ContinueButton;
-    public Button MapBtn;
-    public Button ShopBtn;
-    public GameObject LeftArrow;
-    public GameObject RightArrow;
+    public GameObject yesButton, noButton, ContinueButton, LeftArrow, RightArrow, NPCDialogueBox;
+    public Button MapBtn, ShopBtn, arrowTest;
+    public NPCSpawning npcSpawning;
+    public bool talkingToNpc, NPCInteracted;
+    public int index;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        npcSpawning = GameObject.Find("GameManager").GetComponent<NPCSpawning>();
         dialogues = new Queue<string>();
         dialogueNames = new Queue<string>();
-        NpcImages = new Queue<Sprite>();
+        leftSideTalking = new Queue<bool>();
+        rightSideTalking = new Queue<bool>();
+        StartingOptions = new Queue<bool>();
+        yesResponses = new Queue<string>{};
+        noResponses = new Queue<string> {};
+
+
+        //NpcImages = new Queue<Sprite>();
         NPCDialogueBox.SetActive(false);
         npcData = NPCDataList[Random.Range(0, NPCDataList.Length)];
+        Debug.Log(npcData.ScenarioType);
     }
 
     public void NPCRandomChance()
@@ -41,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        else if(Random.Range(1,2) == 1)
+        else if(Random.Range(1,10) == 1)
         {
             NPCInteracted = true;
             StartDialogue();
@@ -51,30 +58,72 @@ public class DialogueManager : MonoBehaviour
             return;
         }
     }
+    public void Update()
+    {
+        if (talkingToNpc)
+        {
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);
+        }
+
+    }
 
     public void StartDialogue()
     {
-        MapBtn.enabled = false;
-        ShopBtn.enabled = false;
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
+        talkingToNpc = true;
+        MapBtn.enabled = false;
+        ShopBtn.enabled = false;
         NPCDialogueBox.SetActive(true);
         animator.SetBool("IsOpen", true);
-        Debug.Log("Starting Conversation with" + npcData.NPCname);
+        //Debug.Log("Starting Conversation with" + npcData.);
         dialogues.Clear();
         yesButton.SetActive(false);
         noButton.SetActive(false);
-        foreach (string sentences in npcData.dialogues)
+        NPCImage1.sprite = npcData.FirstPerson;
+        NPCImage2.sprite = npcData.SecondPerson;
+
+        foreach (NPCData.NpcScenario sentences in npcData.DynamicNpcScenario) 
         {
-            dialogues.Enqueue(sentences);
+            dialogues.Enqueue(sentences.dialogue);
+            Debug.Log(sentences.dialogue);
         }
-        foreach(string names in npcData.NPCname)
+
+        //foreach(string sentences in npcData)
+        //{
+        //    dialogues.Enqueue(sentences);
+        //}
+        //foreach(NPCData.NpcScenario names in npcData.DynamicNpcScenario)
+        //{
+        //    dialogueNames.Enqueue();
+        //}
+        foreach (string yesOptions in npcData.yes)
         {
-            dialogueNames.Enqueue(names);
+
+            yesResponses.Enqueue(yesOptions);
+
         }
-        foreach(Sprite images in npcData.NPCimage)
+        foreach (string noOptions in npcData.no)
         {
-            NpcImages.Enqueue(images);
+
+            noResponses.Enqueue(noOptions);
+
+        }
+        foreach (NPCData.NpcScenario WhosTalking1 in npcData.DynamicNpcScenario)
+        {
+            Debug.Log(WhosTalking1.FirstImage);
+
+            leftSideTalking.Enqueue(WhosTalking1.FirstImage);
+
+        }
+        foreach (NPCData.NpcScenario WhosTalking2 in npcData.DynamicNpcScenario)
+        {
+            rightSideTalking.Enqueue(WhosTalking2.SecondImage);
+        }
+        foreach (NPCData.NpcScenario DecisionStarter in npcData.DynamicNpcScenario)
+        {
+            StartingOptions.Enqueue(DecisionStarter.PlayerInteraction);
         }
 
         DisplayNextSentence();
@@ -83,16 +132,49 @@ public class DialogueManager : MonoBehaviour
     {
         if(dialogues.Count == 0)
         {
-            EndDialogue();
+            StartCoroutine(CloseTimer());
             return;
         }
+
+
         string sentence = dialogues.Dequeue();
-        string names = dialogueNames.Dequeue();
-        Sprite images = NpcImages.Dequeue();
+        bool WhosTalking1 = leftSideTalking.Dequeue();
+        bool WhosTalking2 = rightSideTalking.Dequeue();
+        bool DecisionStarter = StartingOptions.Dequeue();
+
+        if (DecisionStarter)
+        {
+            if (npcData.ScenarioType.ToString() == "Helper")
+            {
+                sentence += InventoryManager.Instance.NPCFindMissingItem();
+
+            }
+            StartPlayerInteraction();
+        }
+        if (WhosTalking1)
+        {
+            LeftPersonTalking();
+
+        }
+
+        if (WhosTalking2)
+        {
+            RightPersonTalking();
+
+        }
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        nameText.text = names;
-        NPCImage.sprite = images;
+
+        if (index == 1)
+        {
+            dialogues.Dequeue();
+        }
+
+
+
+
+
+        //NPCImage.sprite = images;
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -104,43 +186,137 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
 
+
     }
 
-    public void EndDialogue()
+    public void StartPlayerInteraction()
     {
-
         yesButton.SetActive(true);
         noButton.SetActive(true);
         ContinueButton.SetActive(false);
-        yesButton.GetComponentInChildren<TextMeshProUGUI>().text = npcData.yesResponse;
-        noButton.GetComponentInChildren<TextMeshProUGUI>().text = npcData.noResponse;
+        yesButton.GetComponentInChildren<TextMeshProUGUI>().text = yesResponses.Peek();
+        noButton.GetComponentInChildren<TextMeshProUGUI>().text = noResponses.Peek();
 
+    }
+    public void LeftPersonTalking()
+    {
+        nameText.text = npcData.FirstPersonName;
+        NPCImage2.color = new Color(0.5f, 0.5f, 0.5f);
+        NPCImage1.color = Color.white;
+    }
+
+    public void RightPersonTalking()
+    {
+        nameText.text = npcData.SecondPersonName;
+        NPCImage1.color = new Color(0.5f, 0.5f, 0.5f);
+        NPCImage2.color = Color.white;
     }
 
     public void YesChoice()
     {
-        dialogueText.text = npcData.NPCResponses[0];
-        StartCoroutine(CloseTimer());
 
-       
+        LeftPersonTalking();
+
+        if (dialogues.Count == 0)
+        {
+            StartCoroutine(CloseTimer());
+        }
+        else
+        {
+            yesButton.SetActive(false);
+            noButton.SetActive(false);
+            ContinueButton.SetActive(true);
+
+            switch (npcData.ScenarioType.ToString())
+            {
+                case "Scammer":
+                    {
+                        Debug.Log("HE'S A SCAMMER");
+                        dialogueText.text = "Okay, heres all my money";
+                        yesResponses.Dequeue();
+                        noResponses.Dequeue();
+
+                        index++;
+
+
+                        break;
+                    }
+                case "Helper":
+                    {
+                        Debug.Log("HE'S A HELPER");
+                        dialogueText.text = yesResponses.Peek();
+                        yesResponses.Dequeue();
+                        noResponses.Dequeue();
+                        index++;
+
+                        // ZIDANE PUT MONEY DEDUCTION TO BUDGET HERE
+
+
+                        break;
+                    }
+
+            }
+
+
+
+        }
+
+
     }
 
     public void NoChoice()
     {
-        dialogueText.text=npcData.NPCResponses[1];
-        StartCoroutine(CloseTimer());
+        dialogueText.text = noResponses.Peek();
+        LeftPersonTalking();
+
+        if (dialogues.Count == 0)
+        {
+            StartCoroutine(CloseTimer());
+        }
+        else
+        {
+            yesButton.SetActive(false);
+            noButton.SetActive(false);
+            ContinueButton.SetActive(true);
+            noResponses.Dequeue();
+            yesResponses.Dequeue();
+
+            switch (npcData.ScenarioType.ToString())
+            {
+                case "Scammer":
+                    {
+                        Debug.Log("HE'S A SCAMMER");
+                        dialogues.Dequeue();
+
+                        break;
+                    }
+                case "Helper":
+                    {
+                        Debug.Log("HE'S A HELPER");
+                        dialogues.Dequeue();
+
+                        break;
+                    }
+
+            }
+        }
+
     }
     IEnumerator CloseTimer()
     {
         yesButton.SetActive(false);
         noButton.SetActive(false);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         NPCDialogueBox.SetActive(false);
         MapBtn.enabled = true;
         ShopBtn.enabled = true;
         LeftArrow.SetActive(true);
         RightArrow.SetActive(true);
         animator.SetBool("IsOpen", false);
+        npcSpawning.spawnedNpc.SetActive(false);
+        talkingToNpc = false;
+
 
     }
+
 }

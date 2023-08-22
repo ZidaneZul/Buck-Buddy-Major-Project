@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class MapOpen : MonoBehaviour
 {
     public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
-        , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight;
+        , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight, budgetRemainderPanel;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
     public TextMeshProUGUI helpPanelBody_Txt;
@@ -19,6 +19,7 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
+    bool isActive;
     public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
@@ -45,6 +46,8 @@ public class MapOpen : MonoBehaviour
         shoppingList.SetActive(false);
 
         objPanel = GameObject.Find("LevelObj_Panel");
+        objPanel.SetActive(false);
+
         helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
 
         helpPanelCtnBtn = GameObject.Find("Hint_Btn");
@@ -53,7 +56,6 @@ public class MapOpen : MonoBehaviour
 
         selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();  
 
-        objPanel.SetActive(false);
 
         if (selectedModelScript.isMale)
         {
@@ -64,6 +66,11 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
+        //Debug.Log(mapLocationScript);
+        isActive = panel.activeSelf;
+        MoveButtonLeft.SetActive(!isActive);
+        MoveButtonRight.SetActive(!isActive);
+
         if (panel.activeInHierarchy || shoppingCartPanel.activeInHierarchy)
         {
             shoppingList.SetActive(true);
@@ -83,18 +90,16 @@ public class MapOpen : MonoBehaviour
         if (panel != null)
         {
             
-            bool isActive = panel.activeSelf;
             panel.SetActive(!isActive);
-            MoveButtonLeft.SetActive(isActive);
-            MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
 
             foreach(GameObject button in aislePoint)
             {
-                //button.name.Replace("_Btn", "");
-                Debug.Log("the player is in " + mapLocationScript.FindPlayer() + "\n buttun name is " + button.name);
+                Debug.Log("Goin thru buttons");
+                Debug.Log("the player is in " + mapLocationScript.closestDistance +
+                    "\n buttun name is " + button.name);
 
-                if (mapLocationScript.FindPlayer().Contains(button.name.Replace("_Btn", "")))
+                if (mapLocationScript.FindPlayer().Replace(" Aisle", "").Contains(button.name.Replace("Aisle_Btn", "")))
                 {
                     selectedHead.transform.position = button.transform.position;
                     Debug.Log("Head now on button");
@@ -143,9 +148,6 @@ public class MapOpen : MonoBehaviour
 
     public void TeleportToAisleDynamic()
     {
-
-        MoveButtonLeft.SetActive(true);
-        MoveButtonRight.SetActive(true);
         buttonPressed = EventSystem.current.currentSelectedGameObject;
         buttonName = buttonPressed.ToString();
 
