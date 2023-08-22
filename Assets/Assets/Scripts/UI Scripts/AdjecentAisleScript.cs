@@ -10,12 +10,14 @@ public class AdjecentAisleScript : MonoBehaviour
     public TextMeshProUGUI currentAisle_txt, leftAisle_txt, rightAisle_txt;
     public Image currentAisle_img, leftAisle_img, rightAisle_img;
 
-    public GameObject[] aisles;
-    public GameObject[] aislesClone;
+    public Image[] uiAislesImages;
 
     public MapLocation mapLocationScript;
 
     public MatchAisleIcons[] aisleIconsList;
+
+    public string[] aisleOrder;
+    public List<string> aisleNames;
 
     [System.Serializable]
     public class MatchAisleIcons
@@ -27,7 +29,6 @@ public class AdjecentAisleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        aisles = GameObject.FindGameObjectsWithTag("Sections");
         go = GameObject.Find("AdjecentAisles");
 
         currentObject = go.transform.GetChild(1).gameObject;
@@ -38,22 +39,40 @@ public class AdjecentAisleScript : MonoBehaviour
         leftAisle_txt = leftObject.GetComponentInChildren<TextMeshProUGUI>();
         leftAisle_img = leftObject.GetComponentInChildren<Image>();
 
-
         rightObject = go.transform.GetChild(3).gameObject;
         rightAisle_txt = rightObject.GetComponentInChildren<TextMeshProUGUI>();
         rightAisle_img = rightObject.GetComponentInChildren<Image>();
 
         mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
+
+        SetAislesIcons();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(mapLocationScript);
-        DisplayCurrentAisle();
+        //SetAislesIcons();
+        //DisplayCurrentAisle();
 
-        DisplayRightSide();
-        DisplayLeftSide();
+        //DisplayRightSide();
+        //DisplayLeftSide();
+    }
+
+    void SetAislesIcons()
+    {
+        string aisleorder_string = "";
+        aisleNames= mapLocationScript.GetAislesOrder();
+
+        foreach(string aisle in aisleNames)
+        {
+            aisleorder_string += aisle;
+        }
+
+        Debug.LogWarning(aisleorder_string);
+        
+
+      
     }
 
     void DisplayCurrentAisle()

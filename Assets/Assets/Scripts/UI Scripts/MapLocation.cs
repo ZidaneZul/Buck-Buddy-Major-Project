@@ -7,6 +7,7 @@ using System.Linq;
 public class MapLocation : MonoBehaviour
 {
     public GameObject[] sections;
+    public GameObject[] testSections;
     public List<GameObject> sectionsClone;
 
     public GameObject player;
@@ -24,6 +25,8 @@ public class MapLocation : MonoBehaviour
     void Start()
     {
         sections = GameObject.FindGameObjectsWithTag("Sections");
+
+        List<GameObject> sectionClone = new List<GameObject>(sections);
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -46,6 +49,33 @@ public class MapLocation : MonoBehaviour
         {
             sectionsClone.Add(section);
         }
+    }
+
+    public List<string> GetAislesOrder()
+    {
+        Debug.LogWarning("Running functions");
+        List<string> ailseOrder = new List<string>();
+        closestDistance = 1000;
+
+        for (int i = 0; i <= 8; i++)
+        {
+            Debug.LogWarning("goin thru for loop");
+            foreach (GameObject section in sectionsClone)
+            {
+                Debug.LogWarning("Going thru section clone");
+                if (Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)
+                {
+                    closestDistance = Vector3.Distance(section.transform.position, player.transform.position);
+                    closestPoint = section;
+                    currentAisle_string = section.name;
+                    Debug.LogWarning(currentAisle_string);
+                }
+            }
+            ailseOrder.Add(currentAisle_string);
+            sectionsClone.Remove(closestPoint);
+
+        }
+        return null;
     }
 
     public string FindPlayerMap()

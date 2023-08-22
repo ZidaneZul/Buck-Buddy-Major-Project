@@ -97,7 +97,7 @@ public class InventoryManager : MonoBehaviour
     {
         if ((budget - totalPrice) <= 5f)
         {
-            Debug.Log("Getting close to budget!");
+            Debug.Log("Getting close to budget!" + budget + " \n totalprice is "+  totalPrice);
         }
     }
 
