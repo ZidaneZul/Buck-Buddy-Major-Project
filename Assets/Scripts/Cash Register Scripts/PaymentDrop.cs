@@ -56,7 +56,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     {
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
         //originalPlacement = GameObject.FindGameObjectsWithTag("Original Waypoints");     
-        
+        anim.enabled = false;
         confirm.interactable = false;
 
         oneStar.SetActive(false);
@@ -65,14 +65,14 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         fail.SetActive(false);
 
         
-        //randomNumber = Random.Range(1f, 100f);
-        //randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
-        randomNumber = InventoryManager.Instance.totalPrice;
+        randomNumber = Random.Range(1f, 100f);
+        randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
+        //randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
         moneyGenerater.text = "Cost of Items: " + randomNumber;
 
         storedData = InventoryManager.Instance.itemList;
-        anim.enabled = false;
+    
     }
     public void Update()
     {
