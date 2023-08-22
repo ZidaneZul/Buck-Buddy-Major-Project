@@ -19,7 +19,7 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
-    bool isActive;
+    bool isActive,shoppingCartActive,cartActive;
     public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
@@ -66,6 +66,7 @@ public class MapOpen : MonoBehaviour
     private void Update()
     {
         selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
+
         if (selectedModelScript.isMale)
         {
             selectedHead.GetComponent<Image>().sprite = maleHead;
@@ -73,33 +74,34 @@ public class MapOpen : MonoBehaviour
         else { selectedHead.GetComponent<Image>().sprite = femaleHead; }
 
         //Debug.Log(mapLocationScript);
-        isActive = panel.activeSelf;
-        MoveButtonLeft.SetActive(!isActive);
-        MoveButtonRight.SetActive(!isActive);
 
-        if (panel.activeInHierarchy || shoppingCartPanel.activeInHierarchy)
-        {
-            shoppingList.SetActive(true);
-        }
-        else
-        {
-            shoppingList.SetActive(false);
-        }
+
+
         if (!shoppingCartPanel.activeInHierarchy)
         {
             InventoryManager.Instance.CleanList();
         }
+        else
+        {
+  
+            shoppingList.SetActive(false);
+        }
+
     }
     public void OpenPanel()
     {
         
         if (panel != null)
         {
-            
+            bool isActive = panel.activeInHierarchy;
+
             panel.SetActive(!isActive);
+            MoveButtonLeft.SetActive(isActive);
+            MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
 
-            foreach(GameObject button in aislePoint)
+
+            foreach (GameObject button in aislePoint)
             {
                 Debug.Log("Goin thru buttons");
                 Debug.Log("the player is in " + mapLocationScript.closestDistance +
@@ -120,7 +122,7 @@ public class MapOpen : MonoBehaviour
         Debug.Log("Clicked the cart btn");
         if (shoppingCartPanel != null)
         {
-            bool cartActive = shoppingCartPanel.activeSelf;
+            bool cartActive = shoppingCartPanel.activeInHierarchy;
             shoppingCartPanel.SetActive(!cartActive);
             MoveButtonLeft.SetActive(cartActive);
             MoveButtonRight.SetActive(cartActive);
@@ -150,6 +152,8 @@ public class MapOpen : MonoBehaviour
         helpPanelBody_Txt.text = InventoryManager.Instance.FindMissingItems();
 ;
         helpPanelCtnBtn.SetActive(false);
+
+
     }
 
     public void TeleportToAisleDynamic()
@@ -176,7 +180,11 @@ public class MapOpen : MonoBehaviour
                         //Debug.Log("TP to " + waypointString);
                         player.transform.position = waypoints[i].transform.position;
                         panel.SetActive(false);
-                        
+                        MoveButtonLeft.SetActive(true);
+                        MoveButtonRight.SetActive(true);
+
+
+
 
                     }
                 }
