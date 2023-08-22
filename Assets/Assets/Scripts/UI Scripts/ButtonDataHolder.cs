@@ -32,7 +32,7 @@ public class ButtonDataHolder : MonoBehaviour
             stopper = false;    
         }
 
-        if (scene.name == "LevelConfirm")
+        if(stopper == false && scene.name == "LevelConfirm")
         {
            levelNumberHolder = GameObject.Find("LevelNumber").GetComponent<TextMeshProUGUI>();
            recipeName = GameObject.Find("LevelRecipe").GetComponent<TextMeshProUGUI>();
@@ -45,6 +45,21 @@ public class ButtonDataHolder : MonoBehaviour
                 {
                     recipeName.text = data.foodName;
                     levelRecipe.sprite = data.itemToMake;
+                    for (int i = 0; i < data.ingredients.Length; i++)
+                    {
+                        if(i == 0)
+                        {
+                            ingredientText.text += data.ingredients[i];
+                      
+                        }
+
+                        else
+                        {
+                            ingredientText.text += " | " + data.ingredients[i];
+
+                        }
+                    }
+                    stopper = true;
 
                 }
             }
