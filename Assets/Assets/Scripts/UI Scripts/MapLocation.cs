@@ -25,8 +25,8 @@ public class MapLocation : MonoBehaviour
     void Start()
     {
         sections = GameObject.FindGameObjectsWithTag("Sections");
+        Debug.LogWarning(sections.Length);
 
-        List<GameObject> sectionClone = new List<GameObject>(sections);
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -35,10 +35,12 @@ public class MapLocation : MonoBehaviour
     void Update()
     {
         //FindPlayer();
+        Debug.LogWarning("update " + testSections.Length);
     }
 
     public void ResetCloneList()
     {
+        Debug.LogWarning("Reseting everything");
         sectionsClone.Clear();
         leftClosestPoint = null;
         rightClosestPoint = null;
@@ -48,19 +50,29 @@ public class MapLocation : MonoBehaviour
         foreach(GameObject section in sections)
         {
             sectionsClone.Add(section);
+            Debug.LogWarning("Adding section to clone list");
         }
     }
 
     public List<string> GetAislesOrder()
     {
+        List<GameObject> testSection = new List<GameObject>(sections);
+        Debug.LogWarning("test section after the thingy " + testSection.Count 
+            + "\n sections count is" + sections.Length);
         Debug.LogWarning("Running functions");
+        ResetCloneList();
         List<string> ailseOrder = new List<string>();
         closestDistance = 1000;
 
         for (int i = 0; i <= 8; i++)
         {
+            Debug.LogWarning(sectionsClone.Count);
+
+
             Debug.LogWarning("goin thru for loop");
-            foreach (GameObject section in sectionsClone)
+
+            Debug.LogWarning("testSections in function" + testSections.Length);
+            foreach (var section in testSections)
             {
                 Debug.LogWarning("Going thru section clone");
                 if (Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)

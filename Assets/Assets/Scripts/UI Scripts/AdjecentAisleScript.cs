@@ -69,7 +69,7 @@ public class AdjecentAisleScript : MonoBehaviour
             aisleorder_string += aisle;
         }
 
-        Debug.LogWarning(aisleorder_string);
+        Debug.LogWarning("aisle order is " + aisleorder_string);
         
 
       
