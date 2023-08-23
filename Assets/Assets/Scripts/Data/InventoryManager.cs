@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
 
     Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
 
-    public GameObject textPrefab, cartPanel,cartAmount;
+    public GameObject textPrefab, cartPanel,cartAmount, budgetReminder;
     public TextMeshProUGUI cartQuantity;
     public Toggle cancelToggle;
     public Transform itemContent;
@@ -93,14 +93,14 @@ public class InventoryManager : MonoBehaviour
         totalPrice -= item.price;
         itemsInCart--;
         budget += item.price;
-    }
-
+    } 
     public void BudgetRemainder()
     {
         if (budget <= 5f)
         {
-            Debug.Log("Getting close to budget!");
+            budgetReminder.SetActive(true);
         }
+        else { budgetReminder.SetActive(false); }
     }
 
     public void ShowItem()
