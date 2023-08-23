@@ -48,7 +48,7 @@ public class MapOpen : MonoBehaviour
         //objPanel = GameObject.Find("LevelObj_Panel");
         objPanel.SetActive(false);
 
-        helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
+        //helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
 
         //helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
@@ -192,8 +192,16 @@ public class MapOpen : MonoBehaviour
         }
 
     }
+
     public void ClosePanel()
     {
         panel.SetActive(false);
+    }
+    public void CloseObjPanel()
+    {
+        objPanel.SetActive(false);
+        MoveButtonLeft.SetActive(true);
+        MoveButtonRight.SetActive(true);
+
     }
 }
