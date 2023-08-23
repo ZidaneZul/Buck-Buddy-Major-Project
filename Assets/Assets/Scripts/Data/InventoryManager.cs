@@ -50,6 +50,8 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         cartAmount.SetActive(false);
+        budget = Objective.Instance.GetBudget();
+
         //itemContent = GameObject.Find("Content").transform;
         //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
         // itemList = PaymentDrop.storedData;
@@ -58,12 +60,12 @@ public class InventoryManager : MonoBehaviour
             itemList.Add(item);
             totalPrice += item.price;
         }
-        budget = Objective.Instance.GetBudget();
     }
 
     // Update is called once per frame
     void Update()
     {
+       // Debug.LogWarning("BUdget of level is" + budget);    
         if(itemsInCart > 0)
         {
             cartAmount.SetActive(true);
@@ -73,7 +75,7 @@ public class InventoryManager : MonoBehaviour
                 cartQuantity.text = "9+";
             }
         }
-        Debug.Log("Total price is " + totalPrice);
+       // Debug.Log("Total price is " + totalPrice);
 
         BudgetRemainder();
     }
@@ -95,7 +97,7 @@ public class InventoryManager : MonoBehaviour
 
     public void BudgetRemainder()
     {
-        if ((budget - totalPrice) <= 5f)
+        if (budget <= 5f)
         {
             Debug.Log("Getting close to budget!");
         }
@@ -365,10 +367,6 @@ public class InventoryManager : MonoBehaviour
                 {
                     break;
                 }
-            }
-            if (breakLoops)
-            {
-                break;
             }
         }
         return missingItems;
