@@ -23,15 +23,124 @@ MonoBehaviour:
     foodName: Egg Cheese Sandwich
     itemToMake: {fileID: 21300000, guid: 14d2be13465df9c41aba9a2ad7c44962, type: 3}
     ingredients:
-    - test
-    - test
-    - test
-    - test
+    - Bread
+    - Egg
+    - Cheese
   - levelNumber: 3
     foodName: Fried Noodles
     itemToMake: {fileID: 21300000, guid: 6ad7069e6d10d164c9799868fc614689, type: 3}
-    ingredients: []
+    ingredients:
+    - Noodles
+    - Chicken
+    - Soy Sauce
   - levelNumber: 4
     foodName: Chicken Soup
     itemToMake: {fileID: 21300000, guid: 03d7d7ab66b34104c98ec4ae3775bc5a, type: 3}
-    ingredients: []
+    ingredients:
+    - Noodles
+    - Chicken
+    - Packet Soup
+    - Lettuce
+  - levelNumber: 5
+    foodName: Cheeseburger
+    itemToMake: {fileID: 21300000, guid: d593824eab3ad85478ccefbe17aecfa9, type: 3}
+    ingredients:
+    - Bread
+    - Cheese
+    - Chicken
+    - Lettuce
+  - levelNumber: 6
+    foodName: Mushroom Burger
+    itemToMake: {fileID: 21300000, guid: fe8a5fddb4c3d7142b476c4a2015572e, type: 3}
+    ingredients:
+    - Bread
+    - Cheese
+    - Mushroom
+    - Lettuce
+  - levelNumber: 7
+    foodName: BBQ Chicken Pizza
+    itemToMake: {fileID: 21300000, guid: 051e9393d87b0c4468b2923ee8b3a884, type: 3}
+    ingredients:
+    - Pizza Dough
+    - Chicken
+    - BBQ Sauce
+    - Cheese
+    - Onions
+  - levelNumber: 8
+    foodName: Mushroom Pizza
+    itemToMake: {fileID: 21300000, guid: 32e6851ad0d0a5044b65139dae1bc52a, type: 3}
+    ingredients:
+    - Pizza Dough
+    - Tomato Sauce
+    - Mushroom
+    - Cheese
+    - Onions
+  - levelNumber: 9
+    foodName: Chocolate Cake
+    itemToMake: {fileID: 21300000, guid: 817f34fd9c6a7e9409a9aa1cd2d15d87, type: 3}
+    ingredients:
+    - Flour
+    - Sugar
+    - Chocolate
+    - Vanilla Cream
+    - Milk
+  - levelNumber: 10
+    foodName: Pineapple Citrus Juice
+    itemToMake: {fileID: 21300000, guid: c3c2843025ebbe34e923f231a3865571, type: 3}
+    ingredients:
+    - Pineapple
+    - Orange
+    - Lemon
+    - Sugar
+    - Mint
+    - Ginger
+  - levelNumber: 11
+    foodName: Sausage Egg Sandwich
+    itemToMake: {fileID: 21300000, guid: 57e8ca72e5c745d4dad2889545ae223a, type: 3}
+    ingredients:
+    - Bread
+    - Sausage
+    - Egg
+    - Cheese
+    - Lettuce
+    - Tomato
+  - levelNumber: 12
+    foodName: Vegetable Fruit Salad
+    itemToMake: {fileID: 21300000, guid: f117af8ed72f39843a9c4474a140aa66, type: 3}
+    ingredients:
+    - Broccoli
+    - Lettuce
+    - Tomato
+    - Cucumber
+    - Onion
+    - Orange
+  - levelNumber: 13
+    foodName: Chicken Vegetable Sandwich
+    itemToMake: {fileID: 21300000, guid: 4c0ac0a29edcfd8438763e8928ad0670, type: 3}
+    ingredients:
+    - Bread
+    - Chicken
+    - Lettuce
+    - Tomato
+    - Cheese
+    - Cucumber
+  - levelNumber: 14
+    foodName: Spaghetti
+    itemToMake: {fileID: 21300000, guid: 843dd476e5ca22746a7f929dcad402a1, type: 3}
+    ingredients:
+    - Noodles
+    - Tomato Paste
+    - Minced Chicken
+    - Cheese
+    - Salt
+    - Onion
+  - levelNumber: 15
+    foodName: Rainbow Cake
+    itemToMake: {fileID: 21300000, guid: 3aa2b3bffe24c604a85af09ea9ffc031, type: 3}
+    ingredients:
+    - Flour
+    - Sugar
+    - Vanilla Cream
+    - Red Syrup
+    - Green Syrup
+    - Blue Syrup
