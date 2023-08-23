@@ -304,6 +304,11 @@ public class InventoryManager : MonoBehaviour
                 return false;
             }
         }
+
+        if(budget <= 0)
+        {
+            return false;
+        }
         Debug.Log("Proceed to cashier");
         return true;
     }
