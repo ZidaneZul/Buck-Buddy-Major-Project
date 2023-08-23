@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14971,7 +14971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 69, y: -49.296875}
+  m_AnchoredPosition: {x: 69, y: 0}
   m_SizeDelta: {x: 317.2223, y: 294.17285}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &332785740
@@ -25821,7 +25821,7 @@ GameObject:
   - component: {fileID: 591403579}
   - component: {fileID: 591403578}
   m_Layer: 0
-  m_Name: supermarketBGDraft@2x (6)
+  m_Name: SnacksBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25868,7 +25868,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25887,8 +25887,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591403577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.6246, y: 1.0229, z: 0}
+  m_LocalScale: {x: 0.5013204, y: 0.43443134, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 171653355}
@@ -40706,7 +40706,7 @@ GameObject:
   - component: {fileID: 935679072}
   - component: {fileID: 935679071}
   m_Layer: 0
-  m_Name: supermarketBGDraft@2x (9)
+  m_Name: FruitsBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40753,7 +40753,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40772,8 +40772,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935679070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.8157, y: 1.067, z: 0}
+  m_LocalScale: {x: 0.75051725, y: 0.4325148, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 297518000}
@@ -42946,7 +42946,7 @@ GameObject:
   - component: {fileID: 1000328793}
   - component: {fileID: 1000328792}
   m_Layer: 0
-  m_Name: supermarketBGDraft@2x (8)
+  m_Name: riceBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42993,7 +42993,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -43012,8 +43012,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000328791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.1144, y: 1.039, z: 0}
+  m_LocalScale: {x: 0.48829418, y: 0.43444434, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 738187295}
@@ -45060,7 +45060,7 @@ GameObject:
   - component: {fileID: 1052433837}
   - component: {fileID: 1052433836}
   m_Layer: 0
-  m_Name: supermarketBGDraft@2x (5)
+  m_Name: CannedFoodBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45107,7 +45107,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -45126,8 +45126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052433835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.636, y: 1.0278, z: 0}
+  m_LocalScale: {x: 0.5008457, y: 0.43492618, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1171399866}
@@ -46973,8 +46973,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115886984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.609, y: 0.9724, z: 0}
+  m_LocalScale: {x: 0.5018847, y: 0.4386903, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 735250297}
@@ -47021,7 +47021,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -68525,7 +68525,7 @@ GameObject:
   - component: {fileID: 1562027843}
   - component: {fileID: 1562027842}
   m_Layer: 0
-  m_Name: supermarketBGDraft@2x (7)
+  m_Name: BakeryBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68572,7 +68572,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -68591,8 +68591,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562027841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.9444, y: 0.9963, z: 0}
+  m_LocalScale: {x: 0.25566834, y: 0.437276, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 891407925}
@@ -89996,7 +89996,7 @@ GameObject:
   - component: {fileID: 2064798047}
   - component: {fileID: 2064798046}
   m_Layer: 0
-  m_Name: supermarketBGDraft@2x (4)
+  m_Name: DrinksBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90043,7 +90043,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90062,8 +90062,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064798045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.9546, y: 1.0534, z: 0}
+  m_LocalScale: {x: 0.7454004, y: 0.4337462, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 280509238}
@@ -91888,7 +91888,7 @@ SpriteRenderer:
   m_SortingLayerID: -310128069
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b56c7c96f954d642b62fa0b05c34d8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91907,8 +91907,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109806000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.1946, y: 1.0368, z: 0}
+  m_LocalScale: {x: 0.62685144, y: 0.43429196, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2029819521}
@@ -93512,19 +93512,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740410789902845761, guid: 989ff6e2bc6bc3648b364d7b4e93ee11, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.6240952
       objectReference: {fileID: 0}
     - target: {fileID: 3740410789902845761, guid: 989ff6e2bc6bc3648b364d7b4e93ee11, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.43058068
       objectReference: {fileID: 0}
     - target: {fileID: 3740410789902845761, guid: 989ff6e2bc6bc3648b364d7b4e93ee11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.1778
       objectReference: {fileID: 0}
     - target: {fileID: 3740410789902845761, guid: 989ff6e2bc6bc3648b364d7b4e93ee11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.0974
       objectReference: {fileID: 0}
     - target: {fileID: 3740410789902845761, guid: 989ff6e2bc6bc3648b364d7b4e93ee11, type: 3}
       propertyPath: m_LocalPosition.z
@@ -93558,6 +93558,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6048589019225901165, guid: 989ff6e2bc6bc3648b364d7b4e93ee11, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93740,6 +93744,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvisBarrier
       objectReference: {fileID: 0}
+    - target: {fileID: 2559750484336907421, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
+    - target: {fileID: 3630759377587474198, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b7f2d1fb98d9944ba110602f285ee9, type: 3}
     - target: {fileID: 3979229554942867305, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -93783,6 +93795,38 @@ PrefabInstance:
     - target: {fileID: 3979229554942867305, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872459260991265713, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.78830254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872459260991265713, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.024538554
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872459260991265713, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.1489
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872459260991265713, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14969
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943467329609154618, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7876698
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943467329609154618, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.024411019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943467329609154618, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 41.0274
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943467329609154618, guid: 1937c2d1b8f94b245a452889a58b99d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15246
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -94449,7 +94493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3998522780782079150, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -49.296875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4058104398817697557, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_ScaleFactor
@@ -94517,7 +94561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046294746886961185, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5058764122287335758, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_text
@@ -94581,7 +94625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879807760183325683, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0007569963
+      value: 12400745
       objectReference: {fileID: 0}
     - target: {fileID: 6031281346125019435, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
@@ -94645,7 +94689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8370165605973543276, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Pivot.x
