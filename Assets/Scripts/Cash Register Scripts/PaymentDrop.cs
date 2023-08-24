@@ -69,7 +69,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
         //randomNumber = InventoryManager.Instance.totalPrice;
         Debug.Log("random amount: " + randomNumber);
-        moneyGenerater.text = "Cost of Items: " + randomNumber;
+        moneyGenerater.text = "Total: " + randomNumber;
 
         storedData = InventoryManager.Instance.itemList;
     
