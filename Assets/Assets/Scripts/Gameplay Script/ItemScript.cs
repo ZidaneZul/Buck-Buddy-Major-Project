@@ -17,11 +17,12 @@ public class ItemScript : MonoBehaviour
     bool didTextSpawn = false;
     bool isPointClose = false;
 
+    Vector3 boxSize = new Vector3(1, 2, 2);
+
     // Start is called before the first frame update
     void Start()
     {
         foodPoints = GameObject.FindGameObjectsWithTag("FoodSpawn");   
-
     }
 
     // Update is called once per frame
@@ -37,8 +38,6 @@ public class ItemScript : MonoBehaviour
         }
         FindClosePoint();
         IsCloseToFood();
-        //Debug.DrawRay(tempPoint.transform.position, transform.TransformDirection(Vector3.down) * 2.5f, Color.red);
-
     }
 
     void FindClosePoint()
@@ -49,14 +48,18 @@ public class ItemScript : MonoBehaviour
             {
                 RaycastHit hit;
 
-                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y - 2.5f, point.transform.position.z);
+                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y
+                    - 2.5f, point.transform.position.z);
                 Debug.DrawLine(point.transform.position, LinePoint) ;
-                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2.5f))
+
+                Debug.Log(Vector3.Distance(point.transform.position, transform.position));
+
+//                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2.5f))
+                if (Vector3.Distance(transform.position, point.transform.position) < 2.2)
                 {
                     tempPoint = point;
                     isPointClose = true;
-                    Debug.Log(hit.collider.name);
-                   // Debug.Log("Found a close point");
+
                 }
 
             }
@@ -67,11 +70,9 @@ public class ItemScript : MonoBehaviour
     {
         if (isPointClose && !talkingToNPC)
         {
-            //Debug.Log(Vector3.Distance(transform.position, tempPoint.transform.position));
-            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2.5)
+            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2.2)
             {
                 ShowBubble();
-                //Debug.Log("Close to " + tempPoint);
             }
             else
             {
@@ -81,36 +82,18 @@ public class ItemScript : MonoBehaviour
     }
     void ShowBubble()
     {
-        //pointChildrenString = tempPoint.GetComponentInChildren<GameObject>().ToString();
-        
-        //Debug.Log("the child object is " + pointChildren);
-
-        //foodBubblePos.position = new Vector3(pointChildren.transform.position.x, pointChildren.transform.position.y - 1.4f, pointChildren.transform.position.z);
-        
-
-
         if (!didTextSpawn)
         {
             didTextSpawn = true;
 
             foodBubblePos = tempPoint.transform.position;
 
-            //if (!CheckForFloor())
-            //{
-            //    foodBubblePos.y = tempPoint.transform.position.y - 1.8f;
-            //}
-            //else
-            //{
-                foodBubblePos.y = gameObject.transform.position.y + 4.5f;
-            //}
+            foodBubblePos.y = gameObject.transform.position.y + 4.5f;
 
             foodBubbleClone = Instantiate(infoBubble);
-           // Debug.Log("Made new bubble");
 
             foodBubbleClone.transform.position = foodBubblePos;
-            //Debug.Log("pos of point is " + pointChildren.transform.position + "\n" +
-            //"pos of food bubble is " + foodBubblePos);
-
+          
         }
     }
 
@@ -120,16 +103,5 @@ public class ItemScript : MonoBehaviour
         didTextSpawn=false;
         isPointClose=false;
     }
-
-    //bool CheckForFloor()
-    //{
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(tempPoint.transform.position, transform.TransformDirection(Vector3.down), out hit, 2.5f))
-    //    {
-    //        Debug.Log("The bubble would hit the thing below foodpoint");
-    //        return true;
-    //    }
-    //    else return false;
-    //}
         
 }
