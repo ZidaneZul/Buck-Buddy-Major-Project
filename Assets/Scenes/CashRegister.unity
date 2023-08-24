@@ -295,6 +295,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 588083052}
+        m_TargetAssemblyTypeName: PaymentDrop, Assembly-CSharp
+        m_MethodName: ClearList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &71897012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1685,6 +1697,18 @@ MonoBehaviour:
       - m_Target: {fileID: 179218845}
         m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
         m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 588083052}
+        m_TargetAssemblyTypeName: PaymentDrop, Assembly-CSharp
+        m_MethodName: ClearList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3488,6 +3512,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 588083052}
+        m_TargetAssemblyTypeName: PaymentDrop, Assembly-CSharp
+        m_MethodName: ClearList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &691008878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4154,6 +4190,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 588083052}
+        m_TargetAssemblyTypeName: PaymentDrop, Assembly-CSharp
+        m_MethodName: ClearList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &870750410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4647,6 +4695,18 @@ MonoBehaviour:
       - m_Target: {fileID: 289086431}
         m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
         m_MethodName: ConfirmSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 588083052}
+        m_TargetAssemblyTypeName: PaymentDrop, Assembly-CSharp
+        m_MethodName: ClearList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6349,12 +6409,12 @@ RectTransform:
   - {fileID: 331858928}
   - {fileID: 966836878}
   - {fileID: 1146682806}
-  m_Father: {fileID: 1949652642}
+  m_Father: {fileID: 4037597830583286879}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -613, y: 334}
+  m_AnchoredPosition: {x: 293, y: -188}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345918878
@@ -7011,6 +7071,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1760647478}
         m_TargetAssemblyTypeName: ButtonPressFunctions, Assembly-CSharp
         m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 588083052}
+        m_TargetAssemblyTypeName: PaymentDrop, Assembly-CSharp
+        m_MethodName: ClearList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8568,7 +8640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 885382108321715105, guid: 54f9dbd0db08fcd44aaf26e044cd52d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 243
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 885382108321715105, guid: 54f9dbd0db08fcd44aaf26e044cd52d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8830,10 +8902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6259305732835958084, guid: d737f237325cc4c41aef12f31066ee1c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1345918877}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d737f237325cc4c41aef12f31066ee1c, type: 3}
 --- !u!224 &4037597830583286879
@@ -8868,6 +8937,7 @@ RectTransform:
   - {fileID: 2138171797}
   - {fileID: 449416197}
   - {fileID: 289086428}
+  - {fileID: 1345918877}
   - {fileID: 179218842}
   - {fileID: 1760647475}
   - {fileID: 1977376950}
@@ -8957,7 +9027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2382615822066268452, guid: 6c2be727d7213764a875f8a1ddf5693f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 243
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 2382615822066268452, guid: 6c2be727d7213764a875f8a1ddf5693f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9221,7 +9291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890239907794832717, guid: a87f896a334b3ed46a90a293c98e7d0d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 243
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 6890239907794832717, guid: a87f896a334b3ed46a90a293c98e7d0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9558,7 +9628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6564284440623568942, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 243
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 6564284440623568942, guid: 102760d1b39d4e8499d9696e46f92718, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9667,7 +9737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276267184726749801, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 243
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 5276267184726749801, guid: 2b7b25e8850dfa748bfb5d34723455e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
