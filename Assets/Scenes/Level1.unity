@@ -94835,6 +94835,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6704719782705908909, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_Name
+      value: FrozenFoodAisle_Btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704719782705908909, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
       value: AisleTpButton
       objectReference: {fileID: 0}
