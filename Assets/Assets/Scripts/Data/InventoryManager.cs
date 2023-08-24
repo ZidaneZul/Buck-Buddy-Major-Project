@@ -77,7 +77,7 @@ public class InventoryManager : MonoBehaviour
         }
        // Debug.Log("Total price is " + totalPrice);
 
-        BudgetRemainder();
+        //BudgetReminder();
     }
     public void Add(ItemData item)
     {
@@ -94,14 +94,14 @@ public class InventoryManager : MonoBehaviour
         itemsInCart--;
         budget += item.price;
     } 
-    public void BudgetRemainder()
-    {
-        if (budget <= 5f)
-        {
-            budgetReminder.SetActive(true);
-        }
-        else { budgetReminder.SetActive(false); }
-    }
+    //public void BudgetReminder()
+    //{
+    //    if (budget <= 5f)
+    //    {
+    //        budgetReminder.SetActive(true);
+    //    }
+    //    else { budgetReminder.SetActive(false); }
+    //}
 
     public void ShowItem()
     {

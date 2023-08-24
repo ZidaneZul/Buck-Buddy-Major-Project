@@ -12,7 +12,7 @@ public class MapOpen : MonoBehaviour
         , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight, budgetRemainderPanel;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
-    public TextMeshProUGUI helpPanelBody_Txt;
+    public TextMeshProUGUI helpPanelBody_Txt, budgetReminder_Txt;
 
     public MapLocation mapLocationScript;
 
@@ -48,7 +48,7 @@ public class MapOpen : MonoBehaviour
         //objPanel = GameObject.Find("LevelObj_Panel");
         objPanel.SetActive(false);
 
-        helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
+        //helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
 
         //helpPanelCtnBtn = GameObject.Find("Hint_Btn");
 
@@ -83,6 +83,8 @@ public class MapOpen : MonoBehaviour
         {
             InventoryManager.Instance.CleanList();
         }
+
+        BudgetReminder();
     }
     public void OpenPanel()
     {
@@ -126,8 +128,17 @@ public class MapOpen : MonoBehaviour
 
     public void CheckOut()
     {
-        if(InventoryManager.Instance.CheckForObj())
-            SceneManager.LoadScene("CashRegister");
+        if (InventoryManager.Instance.budget < 0)
+        {
+            objPanel.SetActive(true);
+            helpPanelCtnBtn.SetActive(false);
+            helpPanelBody_Txt.text = "Hey! You are over budget! Remove items you don't need! " +
+                "\n $" + Mathf.Abs(InventoryManager.Instance.budget).ToString("F2") + " over!";
+
+
+        }
+        else if (InventoryManager.Instance.CheckForObj())
+                     SceneManager.LoadScene("CashRegister");
         else
         {
             objPanel.SetActive(true);
@@ -181,5 +192,27 @@ public class MapOpen : MonoBehaviour
     public void ClosePanel()
     {
         panel.SetActive(false);
+    }
+
+    public void BudgetReminder()
+    {
+        if(InventoryManager.Instance.budget < 0)
+        {
+            budgetRemainderPanel.SetActive(true);
+            budgetReminder_Txt.text = "You are over budget! Please return items! " +
+                "\n $" + Mathf.Abs(InventoryManager.Instance.budget) + " over!";
+            budgetReminder_Txt.color = Color.red;
+        }
+        else if (InventoryManager.Instance.budget <= 5)
+        {
+            budgetRemainderPanel.SetActive(true);
+            budgetReminder_Txt.text = "Hey! You're cutting it close to the budget! " +
+                "\n $" + InventoryManager.Instance.budget.ToString("F2") + " left!";
+            budgetReminder_Txt.color = Color.yellow;
+        }
+        else
+        {
+            budgetRemainderPanel.SetActive(false);
+        }
     }
 }
