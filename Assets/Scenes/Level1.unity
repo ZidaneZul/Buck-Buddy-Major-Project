@@ -76199,6 +76199,7 @@ MonoBehaviour:
   ContinueButton: {fileID: 0}
   Index: 0
   MapTriggered: 0
+  sentence: 
 --- !u!114 &1730138425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94661,7 +94662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879807760183325683, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0009562618
+      value: -0.0000767457
       objectReference: {fileID: 0}
     - target: {fileID: 6031281346125019435, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString

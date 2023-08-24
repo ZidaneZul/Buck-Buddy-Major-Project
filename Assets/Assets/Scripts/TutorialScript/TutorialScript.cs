@@ -23,6 +23,9 @@ public class TutorialScript : MonoBehaviour
     public GameObject ContinueButton;
     public int Index;
     public bool MapTriggered;
+    public string sentence;
+    bool firstTime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +48,6 @@ public class TutorialScript : MonoBehaviour
         TextPosition = DialogueBox.transform.Find("TextPosition");
         TutorialMesssage = TutorialChatBox.GetComponent<TextMeshProUGUI>();
         ContinueButton = GameObject.Find("ContinueBtnTutorial");
-
         foreach (Transform k in CoinWaypoints.GetComponentInChildren<Transform>())
         {
             CoinPositions.Add(k);
@@ -63,8 +65,7 @@ public class TutorialScript : MonoBehaviour
         TutorialMap.SetActive(false);
         AisleButton.SetActive(false);
         
-
-
+        
 
 
         if (SceneManager.GetActiveScene().name == "Level1")
@@ -118,22 +119,36 @@ public class TutorialScript : MonoBehaviour
         {
             dialogues.Enqueue(sentences);
         }
-
         DisplayNextSentence();
     }
     public void DisplayNextSentence()
     {
+        if (!firstTime)
+        {
+            sentence = dialogues.Dequeue();
+            firstTime = true;
+        }
         if (dialogues.Count == 0)
         {
             StartCoroutine(CloseTimer());
             return;
         }
-
-        Test();
-        string sentence = dialogues.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-        Index++;
+        if (TutorialMesssage.text == sentence)
+        {
+            Test();
+            sentence = dialogues.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+            Index++;
+            return;
+        }
+        if (TutorialMesssage.text != sentence)
+        {
+            StopAllCoroutines();
+            TutorialMesssage.text = sentence;
+            return;
+            
+        }
 
     }
     IEnumerator CloseTimer()
@@ -151,6 +166,7 @@ public class TutorialScript : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         TutorialMesssage.text = "";
+
         foreach (char letter in sentence.ToCharArray())
         {
             TutorialMesssage.text += letter;
@@ -198,7 +214,7 @@ public class TutorialScript : MonoBehaviour
 
 
         }
-        if (Index == 7)
+        if (Index == 6)
         {
             DialogueBox.transform.position = DialoguePositions[2].transform.position;
             TutorialChatBox.transform.position = TextPosition.transform.position;
@@ -207,7 +223,7 @@ public class TutorialScript : MonoBehaviour
             TutorialMap.SetActive(true);
 
         }
-        if (Index == 8)
+        if (Index == 7)
         {
             TutorialMap.SetActive(false);
             AisleButton.SetActive(true);
