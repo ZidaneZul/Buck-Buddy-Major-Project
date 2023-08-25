@@ -17,12 +17,17 @@ public class ItemScript : MonoBehaviour
     bool didTextSpawn = false;
     bool isPointClose = false;
 
-    Vector3 boxSize = new Vector3(1, 2, 2);
+    bool testingGizmos = false;
+
+    Vector3 boxSize = new Vector3(1.7f, 3, 2);
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        foodPoints = GameObject.FindGameObjectsWithTag("FoodSpawn");   
+        foodPoints = GameObject.FindGameObjectsWithTag("FoodSpawn");
+        testingGizmos = true;
     }
 
     // Update is called once per frame
@@ -36,10 +41,51 @@ public class ItemScript : MonoBehaviour
         {
             talkingToNPC=false;
         }
-        FindClosePoint();
-        IsCloseToFood();
+        // FindClosePoint();
+        // IsCloseToFood();
+       // FindPlayer();
+
     }
 
+    void FindPlayer()
+    {
+        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, boxSize);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Player") && !talkingToNPC)
+            {
+                Debug.Log("Showing bubble");
+                Debug.LogWarning(didTextSpawn);
+                ShowBubble();
+            }
+            else
+            {
+                Debug.LogWarning("Deleting bubble");
+                Debug.Log("HELP");
+                DeleteBubble();
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player") && !talkingToNPC)
+        {
+            ShowBubble();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        DeleteBubble();
+    }
+    private void OnDrawGizmos()
+    {
+        if (testingGizmos)
+        {
+            Gizmos.DrawWireCube(transform.position, boxSize * 2);
+
+        }
+    }
     void FindClosePoint()
     {
         if (!isPointClose)
@@ -84,13 +130,15 @@ public class ItemScript : MonoBehaviour
     {
         if (!didTextSpawn)
         {
+            Debug.Log("Spawn bubble!");
             didTextSpawn = true;
 
-            foodBubblePos = tempPoint.transform.position;
+            foodBubblePos = transform.position;
 
-            foodBubblePos.y = gameObject.transform.position.y + 4.5f;
+            foodBubblePos.y = gameObject.transform.position.y + 2.5f;
 
-            foodBubbleClone = Instantiate(infoBubble);
+            foodBubbleClone = Instantiate(infoBubble, gameObject.transform);
+            Debug.LogWarning("Food bubble is now in" + foodBubbleClone.transform.position);
 
             foodBubbleClone.transform.position = foodBubblePos;
           
