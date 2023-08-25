@@ -106,10 +106,10 @@ public class MapOpen : MonoBehaviour
             foreach (GameObject button in aislePoint)
             {
                 Debug.Log("Goin thru buttons");
-                Debug.Log("the player is in " + mapLocationScript.closestDistance +
+                Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
                     "\n buttun name is " + button.name);
 
-                if (mapLocationScript.FindPlayer().Replace(" Aisle", "").Contains(button.name.Replace("Aisle_Btn", "")))
+                if (button.name.Replace("_Btn", "").Contains(mapLocationScript.FindPlayer().Replace(" ", "")))
                 {
                     selectedHead.transform.position = button.transform.position;
                     Debug.Log("Head now on button");

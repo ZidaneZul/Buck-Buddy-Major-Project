@@ -633,6 +633,8 @@ GameObject:
   m_Component:
   - component: {fileID: 19294497}
   - component: {fileID: 19294498}
+  - component: {fileID: 19294499}
+  - component: {fileID: 19294500}
   m_Layer: 0
   m_Name: MilkWaypoint (1)
   m_TagString: FoodSpawn
@@ -668,6 +670,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e31315ac0d4a61442b366e823495de7e, type: 2}
+--- !u!114 &19294499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19294496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &19294500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19294496}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &19315487
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +973,8 @@ GameObject:
   m_Component:
   - component: {fileID: 27112669}
   - component: {fileID: 27112670}
+  - component: {fileID: 27112671}
+  - component: {fileID: 27112672}
   m_Layer: 0
   m_Name: FarmEggWaypoint (32)
   m_TagString: FoodSpawn
@@ -970,6 +1010,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e64ac1732c9c68841b548ed72a28a3c4, type: 2}
+--- !u!114 &27112671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27112668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &27112672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27112668}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &27528015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,6 +2777,8 @@ GameObject:
   m_Component:
   - component: {fileID: 52764518}
   - component: {fileID: 52764519}
+  - component: {fileID: 52764520}
+  - component: {fileID: 52764521}
   m_Layer: 0
   m_Name: FarmEggWaypoint (33)
   m_TagString: FoodSpawn
@@ -2736,6 +2814,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 350f51a557a94974dbf9377e75bf4255, type: 2}
+--- !u!114 &52764520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52764517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &52764521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52764517}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &54141437 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9016881393048207211, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
@@ -3222,11 +3336,6 @@ Transform:
   m_Father: {fileID: 280509238}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &67499725 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 44154997443221361, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
-  m_PrefabInstance: {fileID: 6879455345770813760}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76879736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6283,6 +6392,8 @@ GameObject:
   m_Component:
   - component: {fileID: 143406180}
   - component: {fileID: 143406179}
+  - component: {fileID: 143406181}
+  - component: {fileID: 143406182}
   m_Layer: 0
   m_Name: FarmEggWaypoint (17)
   m_TagString: FoodSpawn
@@ -6318,6 +6429,42 @@ Transform:
   m_Father: {fileID: 297518000}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &143406181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143406178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &143406182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143406178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &145010092
 GameObject:
   m_ObjectHideFlags: 0
@@ -7625,6 +7772,8 @@ GameObject:
   m_Component:
   - component: {fileID: 177635779}
   - component: {fileID: 177635778}
+  - component: {fileID: 177635780}
+  - component: {fileID: 177635781}
   m_Layer: 0
   m_Name: HoneyBakedHamWaypoint
   m_TagString: FoodSpawn
@@ -7660,6 +7809,42 @@ Transform:
   m_Father: {fileID: 189109117}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177635780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177635777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &177635781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177635777}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &178245450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5651324230019314685, guid: 35d16cc68172fee44bedae5b91892f07, type: 3}
@@ -9810,6 +9995,8 @@ GameObject:
   m_Component:
   - component: {fileID: 221388687}
   - component: {fileID: 221388686}
+  - component: {fileID: 221388688}
+  - component: {fileID: 221388689}
   m_Layer: 0
   m_Name: BrandHamWaypoint
   m_TagString: FoodSpawn
@@ -9845,6 +10032,42 @@ Transform:
   m_Father: {fileID: 323480482}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &221388688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221388685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &221388689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221388685}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &222615308
 GameObject:
   m_ObjectHideFlags: 0
@@ -12629,6 +12852,8 @@ GameObject:
   m_Component:
   - component: {fileID: 268309106}
   - component: {fileID: 268309107}
+  - component: {fileID: 268309108}
+  - component: {fileID: 268309109}
   m_Layer: 0
   m_Name: MilkWaypoint
   m_TagString: FoodSpawn
@@ -12664,6 +12889,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 5e036f150cb433f489de48390a92407f, type: 2}
+--- !u!114 &268309108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268309105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &268309109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268309105}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &277382247
 GameObject:
   m_ObjectHideFlags: 0
@@ -13133,6 +13394,7 @@ Transform:
   - {fileID: 423170853}
   - {fileID: 2064798047}
   - {fileID: 1311356575}
+  - {fileID: 1267267546}
   m_Father: {fileID: 1072437651}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13383,6 +13645,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 891407925}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &287167095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 287167096}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &287167096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287167095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.18, y: -3.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1267267546}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289754250
@@ -14338,6 +14631,8 @@ GameObject:
   m_Component:
   - component: {fileID: 311653987}
   - component: {fileID: 311653988}
+  - component: {fileID: 311653989}
+  - component: {fileID: 311653990}
   m_Layer: 0
   m_Name: IceCreamWaypoint
   m_TagString: FoodSpawn
@@ -14373,6 +14668,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: df42c64e4ebd8904f8ddca7b8e6955e6, type: 2}
+--- !u!114 &311653989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311653986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &311653990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311653986}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &312170162
 GameObject:
   m_ObjectHideFlags: 0
@@ -14383,6 +14714,8 @@ GameObject:
   m_Component:
   - component: {fileID: 312170163}
   - component: {fileID: 312170164}
+  - component: {fileID: 312170165}
+  - component: {fileID: 312170166}
   m_Layer: 0
   m_Name: FarmEggWaypoint (30)
   m_TagString: FoodSpawn
@@ -14418,6 +14751,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: c90bb007172016f49b9e9b73f0d34769, type: 2}
+--- !u!114 &312170165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312170162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &312170166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312170162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &312385826
 GameObject:
   m_ObjectHideFlags: 0
@@ -16102,6 +16471,8 @@ GameObject:
   m_Component:
   - component: {fileID: 352010143}
   - component: {fileID: 352010142}
+  - component: {fileID: 352010144}
+  - component: {fileID: 352010145}
   m_Layer: 0
   m_Name: FarmEggWaypoint (7)
   m_TagString: FoodSpawn
@@ -16137,6 +16508,42 @@ Transform:
   m_Father: {fileID: 1171399866}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352010144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352010141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &352010145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352010141}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &353047382
 GameObject:
   m_ObjectHideFlags: 0
@@ -18847,6 +19254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 423170853}
   - component: {fileID: 423170854}
+  - component: {fileID: 423170855}
+  - component: {fileID: 423170856}
   m_Layer: 0
   m_Name: FarmEggWaypoint (38)
   m_TagString: FoodSpawn
@@ -18882,6 +19291,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: afa551adf6b8d7c4fa1c98196200a0d7, type: 2}
+--- !u!114 &423170855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423170852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &423170856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423170852}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &427466375
 GameObject:
   m_ObjectHideFlags: 0
@@ -22315,6 +22760,8 @@ GameObject:
   m_Component:
   - component: {fileID: 498882092}
   - component: {fileID: 498882093}
+  - component: {fileID: 498882094}
+  - component: {fileID: 498882095}
   m_Layer: 0
   m_Name: FarmEggWaypoint (25)
   m_TagString: FoodSpawn
@@ -22350,6 +22797,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 5bf8911d763ec4a46aa575ce44a2124a, type: 2}
+--- !u!114 &498882094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498882091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &498882095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498882091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &501628381
 GameObject:
   m_ObjectHideFlags: 0
@@ -24570,6 +25053,8 @@ GameObject:
   m_Component:
   - component: {fileID: 560108811}
   - component: {fileID: 560108812}
+  - component: {fileID: 560108813}
+  - component: {fileID: 560108814}
   m_Layer: 0
   m_Name: FarmEggWaypoint (34)
   m_TagString: FoodSpawn
@@ -24605,6 +25090,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 437aaab70e58c274c8f19f9eb4580cc6, type: 2}
+--- !u!114 &560108813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560108810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &560108814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560108810}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &566728730
 GameObject:
   m_ObjectHideFlags: 0
@@ -26242,6 +26763,8 @@ GameObject:
   m_Component:
   - component: {fileID: 600102298}
   - component: {fileID: 600102297}
+  - component: {fileID: 600102299}
+  - component: {fileID: 600102300}
   m_Layer: 0
   m_Name: CheeseWaypoint (1)
   m_TagString: FoodSpawn
@@ -26277,6 +26800,42 @@ Transform:
   m_Father: {fileID: 756213014}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &600102299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600102296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &600102300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600102296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &601877970
 GameObject:
   m_ObjectHideFlags: 0
@@ -28314,6 +28873,8 @@ GameObject:
   m_Component:
   - component: {fileID: 644994987}
   - component: {fileID: 644994986}
+  - component: {fileID: 644994988}
+  - component: {fileID: 644994989}
   m_Layer: 0
   m_Name: FarmEggWaypoint (14)
   m_TagString: FoodSpawn
@@ -28349,6 +28910,42 @@ Transform:
   m_Father: {fileID: 738187295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &644994988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644994985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &644994989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644994985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &651511974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1401383353440128593, guid: 2918b787563d6eb4cbd36bbff0f3097d, type: 3}
@@ -35116,6 +35713,8 @@ GameObject:
   m_Component:
   - component: {fileID: 806567778}
   - component: {fileID: 806567777}
+  - component: {fileID: 806567779}
+  - component: {fileID: 806567780}
   m_Layer: 0
   m_Name: FarmEggWaypoint (12)
   m_TagString: FoodSpawn
@@ -35151,6 +35750,42 @@ Transform:
   m_Father: {fileID: 891407925}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806567779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806567776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &806567780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806567776}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &807126067
 GameObject:
   m_ObjectHideFlags: 0
@@ -36390,6 +37025,8 @@ GameObject:
   m_Component:
   - component: {fileID: 820385885}
   - component: {fileID: 820385884}
+  - component: {fileID: 820385886}
+  - component: {fileID: 820385887}
   m_Layer: 0
   m_Name: FarmEggWaypoint (15)
   m_TagString: FoodSpawn
@@ -36425,6 +37062,42 @@ Transform:
   m_Father: {fileID: 297518000}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820385886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820385883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &820385887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820385883}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &822079374
 GameObject:
   m_ObjectHideFlags: 0
@@ -37448,6 +38121,8 @@ GameObject:
   m_Component:
   - component: {fileID: 851504523}
   - component: {fileID: 851504524}
+  - component: {fileID: 851504525}
+  - component: {fileID: 851504526}
   m_Layer: 0
   m_Name: FarmEggWaypoint (26)
   m_TagString: FoodSpawn
@@ -37483,6 +38158,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a5a387d40e27fff44a5f9b82511c2126, type: 2}
+--- !u!114 &851504525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851504522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &851504526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851504522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &851734339
 GameObject:
   m_ObjectHideFlags: 0
@@ -37493,6 +38204,8 @@ GameObject:
   m_Component:
   - component: {fileID: 851734340}
   - component: {fileID: 851734341}
+  - component: {fileID: 851734342}
+  - component: {fileID: 851734343}
   m_Layer: 0
   m_Name: FarmEggWaypoint (31)
   m_TagString: FoodSpawn
@@ -37528,6 +38241,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e64ac1732c9c68841b548ed72a28a3c4, type: 2}
+--- !u!114 &851734342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851734339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &851734343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851734339}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &852812959
 GameObject:
   m_ObjectHideFlags: 0
@@ -41043,6 +41792,8 @@ GameObject:
   m_Component:
   - component: {fileID: 939826510}
   - component: {fileID: 939826511}
+  - component: {fileID: 939826512}
+  - component: {fileID: 939826513}
   m_Layer: 0
   m_Name: FrozenFriesWaypoint
   m_TagString: FoodSpawn
@@ -41078,6 +41829,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a710117db808796499596b495c1166b3, type: 2}
+--- !u!114 &939826512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939826509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &939826513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939826509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &942142146
 GameObject:
   m_ObjectHideFlags: 0
@@ -42734,6 +43521,8 @@ GameObject:
   m_Component:
   - component: {fileID: 991270659}
   - component: {fileID: 991270658}
+  - component: {fileID: 991270660}
+  - component: {fileID: 991270661}
   m_Layer: 0
   m_Name: FarmEggWaypoint (20)
   m_TagString: FoodSpawn
@@ -42769,6 +43558,42 @@ Transform:
   m_Father: {fileID: 738187295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &991270660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991270657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &991270661
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991270657}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &991760411
 GameObject:
   m_ObjectHideFlags: 0
@@ -47296,6 +48121,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1123526036}
   - component: {fileID: 1123526035}
+  - component: {fileID: 1123526037}
+  - component: {fileID: 1123526038}
   m_Layer: 0
   m_Name: FarmEggWaypoint (16)
   m_TagString: FoodSpawn
@@ -47331,6 +48158,42 @@ Transform:
   m_Father: {fileID: 297518000}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123526037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123526034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1123526038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123526034}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1127776249
 GameObject:
   m_ObjectHideFlags: 0
@@ -48138,6 +49001,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1145711076}
   - component: {fileID: 1145711075}
+  - component: {fileID: 1145711077}
+  - component: {fileID: 1145711078}
   m_Layer: 0
   m_Name: FarmEggWaypoint (9)
   m_TagString: FoodSpawn
@@ -48173,6 +49038,42 @@ Transform:
   m_Father: {fileID: 171653355}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145711077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145711074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1145711078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145711074}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1146691642
 GameObject:
   m_ObjectHideFlags: 0
@@ -48976,6 +49877,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1163182451}
   - component: {fileID: 1163182450}
+  - component: {fileID: 1163182452}
+  - component: {fileID: 1163182453}
   m_Layer: 0
   m_Name: FarmEggWaypoint (8)
   m_TagString: FoodSpawn
@@ -49011,6 +49914,42 @@ Transform:
   m_Father: {fileID: 1171399866}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1163182452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163182449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1163182453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163182449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1163903206
 GameObject:
   m_ObjectHideFlags: 0
@@ -51140,6 +52079,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1201279305}
   - component: {fileID: 1201279306}
+  - component: {fileID: 1201279307}
+  - component: {fileID: 1201279308}
   m_Layer: 0
   m_Name: FarmEggWaypoint (24)
   m_TagString: FoodSpawn
@@ -51175,6 +52116,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 8af37e622d026954480e62d4f8964963, type: 2}
+--- !u!114 &1201279307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201279304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1201279308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201279304}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1203367336
 GameObject:
   m_ObjectHideFlags: 0
@@ -51773,6 +52750,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1212409360}
   - component: {fileID: 1212409359}
+  - component: {fileID: 1212409361}
+  - component: {fileID: 1212409362}
   m_Layer: 0
   m_Name: FarmEggWaypoint (1)
   m_TagString: FoodSpawn
@@ -51808,6 +52787,42 @@ Transform:
   m_Father: {fileID: 1195949846}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212409361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212409358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1212409362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212409358}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1213353976
 GameObject:
   m_ObjectHideFlags: 0
@@ -54309,6 +55324,39 @@ Transform:
   m_Father: {fileID: 624983629}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.65}
+--- !u!1 &1267267545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267267546}
+  m_Layer: 0
+  m_Name: testing point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1267267546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267267545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 287167096}
+  - {fileID: 2104279504}
+  m_Father: {fileID: 280509238}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270417306
 GameObject:
   m_ObjectHideFlags: 0
@@ -57688,6 +58736,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1329059875}
   - component: {fileID: 1329059874}
+  - component: {fileID: 1329059876}
+  - component: {fileID: 1329059877}
   m_Layer: 0
   m_Name: FarmEggWaypoint (13)
   m_TagString: FoodSpawn
@@ -57723,6 +58773,42 @@ Transform:
   m_Father: {fileID: 738187295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1329059876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329059873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1329059877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329059873}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1330858525
 GameObject:
   m_ObjectHideFlags: 0
@@ -57905,6 +58991,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1333006627}
   - component: {fileID: 1333006628}
+  - component: {fileID: 1333006629}
+  - component: {fileID: 1333006630}
   m_Layer: 0
   m_Name: FarmEggWaypoint (23)
   m_TagString: FoodSpawn
@@ -57940,6 +59028,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ed52082fecbd70e449d127f04c363a86, type: 2}
+--- !u!114 &1333006629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333006626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1333006630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333006626}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1334017141
 GameObject:
   m_ObjectHideFlags: 0
@@ -61837,6 +62961,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1427133784}
   - component: {fileID: 1427133783}
+  - component: {fileID: 1427133785}
+  - component: {fileID: 1427133786}
   m_Layer: 0
   m_Name: CheeseWaypoint
   m_TagString: FoodSpawn
@@ -61872,6 +62998,42 @@ Transform:
   m_Father: {fileID: 756213014}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427133785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427133782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1427133786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427133782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1427656182
 GameObject:
   m_ObjectHideFlags: 0
@@ -62888,6 +64050,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1444094343}
   - component: {fileID: 1444094342}
+  - component: {fileID: 1444094344}
+  - component: {fileID: 1444094345}
   m_Layer: 0
   m_Name: FarmEggWaypoint
   m_TagString: FoodSpawn
@@ -62923,6 +64087,42 @@ Transform:
   m_Father: {fileID: 1195949846}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444094344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444094341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1444094345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444094341}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1447366825
 GameObject:
   m_ObjectHideFlags: 0
@@ -72887,6 +74087,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1670559234}
   - component: {fileID: 1670559233}
+  - component: {fileID: 1670559235}
+  - component: {fileID: 1670559236}
   m_Layer: 0
   m_Name: BrandPizzaDoughWaypoint
   m_TagString: FoodSpawn
@@ -72922,6 +74124,42 @@ Transform:
   m_Father: {fileID: 1594557736}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1670559235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670559232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1670559236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670559232}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1677263446
 GameObject:
   m_ObjectHideFlags: 0
@@ -74360,6 +75598,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1697826255}
   - component: {fileID: 1697826254}
+  - component: {fileID: 1697826256}
+  - component: {fileID: 1697826257}
   m_Layer: 0
   m_Name: FarmEggWaypoint (21)
   m_TagString: FoodSpawn
@@ -74395,6 +75635,42 @@ Transform:
   m_Father: {fileID: 738187295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697826256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697826253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1697826257
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697826253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1697942250
 GameObject:
   m_ObjectHideFlags: 0
@@ -75470,6 +76746,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1714076183}
   - component: {fileID: 1714076184}
+  - component: {fileID: 1714076185}
+  - component: {fileID: 1714076186}
   m_Layer: 0
   m_Name: FarmEggWaypoint (39)
   m_TagString: FoodSpawn
@@ -75505,6 +76783,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a4e6ee2d9f701e749b8d127936074bd5, type: 2}
+--- !u!114 &1714076185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714076182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1714076186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714076182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1717521933
 GameObject:
   m_ObjectHideFlags: 0
@@ -76072,6 +77386,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1725980267}
   - component: {fileID: 1725980268}
+  - component: {fileID: 1725980269}
+  - component: {fileID: 1725980270}
   m_Layer: 0
   m_Name: FarmEggWaypoint (29)
   m_TagString: FoodSpawn
@@ -76107,6 +77423,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4f48ca4a00a216b44bb27a56589e6768, type: 2}
+--- !u!114 &1725980269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725980266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1725980270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725980266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1727144005
 GameObject:
   m_ObjectHideFlags: 0
@@ -76567,6 +77919,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1731767209}
   - component: {fileID: 1731767210}
+  - component: {fileID: 1731767211}
+  - component: {fileID: 1731767212}
   m_Layer: 0
   m_Name: FarmEggWaypoint (37)
   m_TagString: FoodSpawn
@@ -76602,6 +77956,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a4cf9e5cf4aaf8d4fa19fdf0e3b4f79d, type: 2}
+--- !u!114 &1731767211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731767208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1731767212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731767208}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1733264789
 GameObject:
   m_ObjectHideFlags: 0
@@ -76785,6 +78175,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1734737097}
   - component: {fileID: 1734737096}
+  - component: {fileID: 1734737098}
+  - component: {fileID: 1734737099}
   m_Layer: 0
   m_Name: FarmEggWaypoint (19)
   m_TagString: FoodSpawn
@@ -76820,6 +78212,42 @@ Transform:
   m_Father: {fileID: 297518000}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734737098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734737095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1734737099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734737095}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1738271231
 GameObject:
   m_ObjectHideFlags: 0
@@ -77680,6 +79108,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1763121547}
   - component: {fileID: 1763121546}
+  - component: {fileID: 1763121548}
+  - component: {fileID: 1763121549}
   m_Layer: 0
   m_Name: FarmEggWaypoint (18)
   m_TagString: FoodSpawn
@@ -77715,6 +79145,42 @@ Transform:
   m_Father: {fileID: 891407925}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763121548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763121545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1763121549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763121545}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1767267454
 GameObject:
   m_ObjectHideFlags: 0
@@ -80533,6 +81999,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1846413333}
   - component: {fileID: 1846413332}
+  - component: {fileID: 1846413334}
+  - component: {fileID: 1846413335}
   m_Layer: 0
   m_Name: WholeChickenWaypoint
   m_TagString: FoodSpawn
@@ -80568,6 +82036,42 @@ Transform:
   m_Father: {fileID: 1598321566}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846413334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846413331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1846413335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846413331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1848747392
 GameObject:
   m_ObjectHideFlags: 0
@@ -82403,6 +83907,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1884019910}
   - component: {fileID: 1884019911}
+  - component: {fileID: 1884019912}
+  - component: {fileID: 1884019913}
   m_Layer: 0
   m_Name: FarmEggWaypoint (28)
   m_TagString: FoodSpawn
@@ -82438,6 +83944,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4ca608320437fbc478082c41e38b5513, type: 2}
+--- !u!114 &1884019912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884019909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1884019913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884019909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1884022642
 GameObject:
   m_ObjectHideFlags: 0
@@ -82616,6 +84158,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1888684048}
   - component: {fileID: 1888684049}
+  - component: {fileID: 1888684050}
+  - component: {fileID: 1888684051}
   m_Layer: 0
   m_Name: FarmEggWaypoint (35)
   m_TagString: FoodSpawn
@@ -82651,6 +84195,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 5bfb07ee09c94ae488fdd7f4e89da85d, type: 2}
+--- !u!114 &1888684050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888684047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1888684051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888684047}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1892718903
 GameObject:
   m_ObjectHideFlags: 0
@@ -87406,6 +88986,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1994890295}
   - component: {fileID: 1994890296}
+  - component: {fileID: 1994890297}
+  - component: {fileID: 1994890298}
   m_Layer: 0
   m_Name: FarmEggWaypoint (36)
   m_TagString: FoodSpawn
@@ -87441,6 +89023,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 11c785dd5ab7a8244a36e35fd0d71224, type: 2}
+--- !u!114 &1994890297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994890294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &1994890298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994890294}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1995462541
 GameObject:
   m_ObjectHideFlags: 0
@@ -92046,6 +93664,37 @@ Transform:
   m_Father: {fileID: 297518000}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2104279503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2104279504}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2104279504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104279503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.13, y: -5.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1267267546}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109806000
 GameObject:
   m_ObjectHideFlags: 0
@@ -92140,6 +93789,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2110062955}
   - component: {fileID: 2110062956}
+  - component: {fileID: 2110062957}
+  - component: {fileID: 2110062958}
   m_Layer: 0
   m_Name: ChickenSausageWaypoint
   m_TagString: FoodSpawn
@@ -92175,6 +93826,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f6104b1ecae22ba489a1dd141b4ed132, type: 2}
+--- !u!114 &2110062957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110062954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &2110062958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110062954}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2110205581
 GameObject:
   m_ObjectHideFlags: 0
@@ -92857,6 +94544,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2124773696}
   - component: {fileID: 2124773697}
+  - component: {fileID: 2124773698}
+  - component: {fileID: 2124773699}
   m_Layer: 0
   m_Name: ABCPizzaDoughWaypoint
   m_TagString: FoodSpawn
@@ -92892,6 +94581,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 15b718d94c1d01e42be85c0ae4b75df9, type: 2}
+--- !u!114 &2124773698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124773695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818210bcbe1a4874d868f9f15107dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
+  talkingToNPC: 0
+  dialogueBox: {fileID: 1244897347}
+--- !u!65 &2124773699
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124773695}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2125249145
 GameObject:
   m_ObjectHideFlags: 0
@@ -93861,22 +95586,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3807705451041923063, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
   m_PrefabInstance: {fileID: 6879455345770813760}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67499725}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78303a37d94e7ab418100163e7e1922f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &910563700338484109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67499725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38c68a99ba100f44acfbc538fa68797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &994187918834081465
@@ -94946,6 +96659,10 @@ PrefabInstance:
     - target: {fileID: 6561303907415802756, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704719782705908909, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
+      propertyPath: m_Name
+      value: FrozenFoodAisle_Btn
       objectReference: {fileID: 0}
     - target: {fileID: 6704719782705908909, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
@@ -97732,14 +99449,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7290095060155371659, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4132568654314498307, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 44154997443221361, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 910563700338484109}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4b2675a46c05a48a345d1f19b6d3bc, type: 3}
 --- !u!1001 &6922753609772622305
 PrefabInstance:
