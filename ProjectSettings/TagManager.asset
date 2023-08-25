@@ -22,6 +22,7 @@ TagManager:
   - NPC
   - SpawnLocation
   - textBox
+  - Tutorial
   layers:
   - Default
   - TransparentFX

@@ -13,11 +13,12 @@ public class ItemScript : MonoBehaviour
     Vector3 foodBubblePos;
     public bool talkingToNPC;
     public GameObject dialogueBox;
+    public GameObject tutorialBox;
 
     bool didTextSpawn = false;
     bool isPointClose = false;
-
     bool testingGizmos = false;
+    bool otherFoodBubbleOpen = false;
 
     Vector3 boxSize = new Vector3(1.7f, 3, 2);
 
@@ -27,6 +28,7 @@ public class ItemScript : MonoBehaviour
     void Start()
     {
         foodPoints = GameObject.FindGameObjectsWithTag("FoodSpawn");
+        tutorialBox = GameObject.FindGameObjectWithTag("Tutorial");
         testingGizmos = true;
     }
 
@@ -67,15 +69,32 @@ public class ItemScript : MonoBehaviour
         }
     }
 
+    private void OnMouseUpAsButton()
+    {
+        if(talkingToNPC || tutorialBox.activeInHierarchy || otherFoodBubbleOpen)
+        {
+            return;
+        }
+        if(didTextSpawn == true)
+        {
+            DeleteBubble();
+        }
+        else
+        {
+            ShowBubble();
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") && !talkingToNPC)
         {
+            otherFoodBubbleOpen = true;
             ShowBubble();
         }
     }
     private void OnTriggerExit(Collider other)
     {
+        otherFoodBubbleOpen = false;
         DeleteBubble();
     }
     private void OnDrawGizmos()

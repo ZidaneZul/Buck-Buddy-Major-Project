@@ -685,6 +685,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &19294500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1025,6 +1026,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &27112672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2829,6 +2831,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &52764521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6444,6 +6447,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &143406182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7824,6 +7828,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &177635781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10047,6 +10052,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &221388689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12904,6 +12910,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &268309109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14683,6 +14690,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &311653990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14766,6 +14774,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &312170166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16523,6 +16532,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &352010145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19306,6 +19316,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &423170856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22812,6 +22823,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &498882095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25105,6 +25117,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &560108814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26815,6 +26828,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &600102300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28925,6 +28939,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &644994989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35765,6 +35780,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &806567780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37077,6 +37093,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &820385887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38173,6 +38190,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &851504526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38256,6 +38274,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &851734343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41844,6 +41863,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &939826513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43573,6 +43593,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &991270661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48173,6 +48194,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1123526038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49053,6 +49075,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1145711078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49929,6 +49952,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1163182453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52131,6 +52155,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1201279308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52802,6 +52827,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1212409362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58106,7 +58132,7 @@ GameObject:
   - component: {fileID: 1320169035}
   m_Layer: 5
   m_Name: TutorialBox
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58788,6 +58814,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1329059877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59043,6 +59070,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1333006630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63013,6 +63041,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1427133786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64102,6 +64131,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1444094345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74139,6 +74169,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1670559236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75650,6 +75681,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1697826257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76798,6 +76830,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1714076186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77438,6 +77471,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1725980270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77971,6 +78005,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1731767212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78227,6 +78262,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1734737099
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79160,6 +79196,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1763121549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82051,6 +82088,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1846413335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83959,6 +83997,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1884019913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84210,6 +84249,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1888684051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89038,6 +89078,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &1994890298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93841,6 +93882,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &2110062958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94596,6 +94638,7 @@ MonoBehaviour:
   infoBubble: {fileID: 871161463725332919, guid: 18a18dc0963e63c40994309a202568d0, type: 3}
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
+  tutorialBox: {fileID: 0}
 --- !u!65 &2124773699
 BoxCollider:
   m_ObjectHideFlags: 0
