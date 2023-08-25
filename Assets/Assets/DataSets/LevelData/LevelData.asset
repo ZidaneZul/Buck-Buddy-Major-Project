@@ -35,7 +35,7 @@ MonoBehaviour:
     - Soy Sauce
   - levelNumber: 4
     foodName: Chicken Soup
-    itemToMake: {fileID: 21300000, guid: 03d7d7ab66b34104c98ec4ae3775bc5a, type: 3}
+    itemToMake: {fileID: 21300000, guid: f047ed6bc4d7968499632b73800d66c2, type: 3}
     ingredients:
     - Noodles
     - Chicken
