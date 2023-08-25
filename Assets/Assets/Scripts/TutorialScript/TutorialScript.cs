@@ -177,13 +177,13 @@ public class TutorialScript : MonoBehaviour
 
     public void Test()
     {
-        if (Index == 1)
+        if (Index == 0)
         {
             CoinMascot.sprite = CoinAssets[1];
 
 
         }
-        if (Index == 2)
+        if (Index == 1)
         {
             CoinMascot.sprite = CoinAssets[0];
             CoinMascot.transform.position = CoinPositions[1].transform.position;
@@ -194,12 +194,12 @@ public class TutorialScript : MonoBehaviour
             CartBtn.SetActive(true);
 
         }
-        if (Index == 3)
+        if (Index == 2)
         {
             CartBtn.SetActive(false);
             MapBtn.SetActive(true);
         }
-        if (Index == 4)
+        if (Index == 3)
         {
             CoinMascot.sprite = CoinAssets[0];
             DialogueBox.sprite = DialogueBoxAssets[1];
