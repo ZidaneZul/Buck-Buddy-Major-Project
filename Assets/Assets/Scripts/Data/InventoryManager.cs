@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
 
     Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
 
-    public GameObject textPrefab, cartPanel,cartAmount;
+    public GameObject textPrefab, cartPanel,cartAmount, budgetReminder;
     public TextMeshProUGUI cartQuantity;
     public Toggle cancelToggle;
     public Transform itemContent;
@@ -50,6 +50,8 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         cartAmount.SetActive(false);
+        budget = Objective.Instance.GetBudget();
+
         //itemContent = GameObject.Find("Content").transform;
         //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
         // itemList = PaymentDrop.storedData;
@@ -58,12 +60,12 @@ public class InventoryManager : MonoBehaviour
             itemList.Add(item);
             totalPrice += item.price;
         }
-        budget = Objective.Instance.GetBudget();
     }
 
     // Update is called once per frame
     void Update()
     {
+       // Debug.LogWarning("BUdget of level is" + budget);    
         if(itemsInCart > 0)
         {
             cartAmount.SetActive(true);
@@ -73,9 +75,9 @@ public class InventoryManager : MonoBehaviour
                 cartQuantity.text = "9+";
             }
         }
-        Debug.Log("Total price is " + totalPrice);
+       // Debug.Log("Total price is " + totalPrice);
 
-        BudgetRemainder();
+        //BudgetReminder();
     }
     public void Add(ItemData item)
     {
@@ -91,15 +93,15 @@ public class InventoryManager : MonoBehaviour
         totalPrice -= item.price;
         itemsInCart--;
         budget += item.price;
-    }
-
-    public void BudgetRemainder()
-    {
-        if ((budget - totalPrice) <= 5f)
-        {
-            Debug.Log("Getting close to budget!");
-        }
-    }
+    } 
+    //public void BudgetReminder()
+    //{
+    //    if (budget <= 5f)
+    //    {
+    //        budgetReminder.SetActive(true);
+    //    }
+    //    else { budgetReminder.SetActive(false); }
+    //}
 
     public void ShowItem()
     {
@@ -302,6 +304,11 @@ public class InventoryManager : MonoBehaviour
                 return false;
             }
         }
+
+        if(budget <= 0)
+        {
+            return false;
+        }
         Debug.Log("Proceed to cashier");
         return true;
     }
@@ -365,10 +372,6 @@ public class InventoryManager : MonoBehaviour
                 {
                     break;
                 }
-            }
-            if (breakLoops)
-            {
-                break;
             }
         }
         return missingItems;
