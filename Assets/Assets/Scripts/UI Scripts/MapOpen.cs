@@ -54,6 +54,7 @@ public class MapOpen : MonoBehaviour
 
         //mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
 
+        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
 
 
         if (selectedModelScript.isMale)
@@ -65,7 +66,6 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
-        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
 
         if (selectedModelScript.isMale)
         {
@@ -89,6 +89,15 @@ public class MapOpen : MonoBehaviour
 
 
         BudgetReminder();
+        ShowMainShoppingList();
+    }
+    public void ShowMainShoppingList()
+    {
+        if(panel.activeInHierarchy || shoppingCartPanel.activeInHierarchy)
+        {
+            shoppingList.SetActive(true);
+        }
+        else shoppingList.SetActive(false);
     }
     public void OpenPanel()
     {
