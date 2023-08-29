@@ -67,14 +67,13 @@ public class MapOpen : MonoBehaviour
     private void Update()
     {
 
-        if (selectedModelScript.isMale)
-        {
-            selectedHead.GetComponent<Image>().sprite = maleHead;
-        }
-        else { selectedHead.GetComponent<Image>().sprite = femaleHead; }
 
         //Debug.Log(mapLocationScript);
 
+
+
+        Debug.Log(shoppingList.name + "testest");
+        Debug.Log("HELP");
 
 
         if (!shoppingCartPanel.activeInHierarchy)
@@ -90,6 +89,13 @@ public class MapOpen : MonoBehaviour
 
         BudgetReminder();
         ShowMainShoppingList();
+
+        if (selectedModelScript.isMale)
+        {
+            selectedHead.GetComponent<Image>().sprite = maleHead;
+        }
+        else { selectedHead.GetComponent<Image>().sprite = femaleHead; }
+
     }
     public void ShowMainShoppingList()
     {
