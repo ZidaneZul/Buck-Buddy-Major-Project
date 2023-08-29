@@ -9,43 +9,23 @@ public class ItemAddToCart : MonoBehaviour
     ItemData itemData;
 
     TextMeshProUGUI tmp;
-
-    GameObject[] foodPoint;
-    GameObject closePoint, closeFood, closeText,player;
     public GameObject PopOutNotif;
     // Start is called before the first frame update
     void Start()
     {
-        foodPoint = GameObject.FindGameObjectsWithTag("FoodSpawn");
         tmp = GetComponentInChildren<TextMeshProUGUI>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        GetFoodItemData();
     }
 
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log("ping poing ping");
-        FindCloseFood();
-    }
 
-    void FindCloseFood()
-    {
-        foreach (GameObject point in foodPoint) 
-        {
-           // Debug.Log(Vector3.Distance(transform.position, point.transform.position));
-            if (Vector3.Distance(player.transform.position, point.transform.position) < 2.5) 
-            {
-                closePoint = point;
-                Debug.Log(closePoint.name);
-                GetFoodItemData();
-            }
-
-        }
     }
     void GetFoodItemData() 
     { 
         //closeFood = closePoint.transform.GetChild(0).gameObject;
-        itemController = closePoint.GetComponent<ItemController>();
+        itemController = GetComponentInParent<ItemController>();
         itemData = itemController.item;
 
         //Debug.Log("the item data for food thats close is "+ item.ToString());
