@@ -10,10 +10,16 @@ public class Objective : MonoBehaviour
     
     public ObjectiveData objectiveData;
 
-    public GameObject textPrefab, shoppingListContent;
+    List<ObjectiveDataHolder> dynamicOBjList = new List<ObjectiveDataHolder>();
+
+    public GameObject textPrefab, shoppingListContent, dynamicShoppingList;
     public List<KeyValuePair<string, int>> objList = new List<KeyValuePair<string, int>>();
 
     public TextMeshProUGUI levelBudget_Txt;
+
+    public MapLocation mapLocationSript;
+
+    string playerLocation;
 
     private void Awake()
     {
@@ -37,7 +43,31 @@ public class Objective : MonoBehaviour
     {
     }   
 
-   
+    public void GetCurrentAisleItem()
+    {
+        string location = mapLocationSript.FindPlayer().Replace(" Aisle", "");
+        foreach(KeyValuePair<string,int>    obj in objList)
+        {
+            //if(obj)
+        }
+
+
+
+    }
+
+    private int SortFunc(ObjectiveDataHolder a)
+    {
+
+      //  if (a.typeOfItem == null)
+            return 0;
+    }
+
+   public void SortShoppingList()
+    {
+        playerLocation = mapLocationSript.FindPlayer().Split(' ')[0];
+    //    objectiveList;
+    }
+
     public void ShoppingListDisplay()
     {
         
@@ -48,29 +78,20 @@ public class Objective : MonoBehaviour
             var itemQuantity = shoppingListItems.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
             var itemSprite = shoppingListItems.transform.Find("FoodType_Img").GetComponent<Image>();
 
+            ObjectiveDataHolder objDataHolder = shoppingListItems.GetComponent<ObjectiveDataHolder>();
+
             itemName.text = obj.itemType;
+            objDataHolder.typeOfItem = obj.itemType;
+
             itemQuantity.text  = obj.amount.ToString();
+            objDataHolder.quantity = obj.amount;
+
             itemSprite.sprite = obj.iconSprite;
 
             objList.Add(new KeyValuePair<string, int>(obj.itemType, obj.amount));
-
-        }
-        //if(objectiveData.Soup > 0)
-        //{
-        //    Debug.Log("Soup Needed: " + objectiveData.Soup);
-
-        //    GameObject shoppingListItems = Instantiate(textPrefab, shoppingListContent.transform);
-        //    var itemName = shoppingListItems.transform.Find("FoodNameCart_Txt").GetComponent<TextMeshProUGUI>();
-        //    var itemQuantity = shoppingListItems.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
-
-        //    itemName.text = "Soup ";
-        //    itemQuantity.text = objectiveData.Soup + "x";
-
-        //    objList.Add(new KeyValuePair<string, int>("Soup", objectiveData.Soup));
-        //}
-
-        
+        }        
     }
+
     public void ShowBudget()
     {
         levelBudget_Txt.text = "Budget: $" + objectiveData.budget.ToString("F2"); 

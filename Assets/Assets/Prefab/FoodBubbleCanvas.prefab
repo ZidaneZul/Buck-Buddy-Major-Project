@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2104393487018469190}
   - component: {fileID: 6908915670505945390}
   - component: {fileID: 9052767313960054840}
+  - component: {fileID: 1217929393330420146}
   m_Layer: 0
   m_Name: FoodBubbleCanvas
   m_TagString: Untagged
@@ -88,7 +89,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6908915670505945390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +120,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopOutNotif: {fileID: 1919331042169057478, guid: 55602b90459f01d45851d1ccee47797b, type: 3}
+--- !u!114 &1217929393330420146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871161463725332919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50daa8f3ff06dff48a0f4a3aa1c61c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfItem: 
+  quantity: 0
 --- !u!1 &997512009849814140
 GameObject:
   m_ObjectHideFlags: 0

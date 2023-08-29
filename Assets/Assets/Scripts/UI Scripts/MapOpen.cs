@@ -28,35 +28,19 @@ public class MapOpen : MonoBehaviour
 
     void Start()
     {
-        //panel = GameObject.Find("Map");
         aislePoint = GameObject.FindGameObjectsWithTag("AisleTpButton");
-       // selectedHead = GameObject.Find("Head_Img");
         panel.SetActive(false);
 
 
-        //shoppingCartPanel = GameObject.Find("Cart_Panel");
         shoppingCartPanel.SetActive(false);
-       // Debug.Log("Shopping cart closeeeee");
 
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
-       // shoppingList = GameObject.Find("ShoppingList");
-       // MoveButtonLeft = GameObject.Find("MoveLeft");
-       // MoveButtonRight = GameObject.Find("MoveRight");
         shoppingList.SetActive(false);
 
-        //objPanel = GameObject.Find("LevelObj_Panel");
         objPanel.SetActive(false);
 
-        //helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
-
-        //helpPanelCtnBtn = GameObject.Find("Hint_Btn");
-
-        //mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
-
         selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
-
-
         if (selectedModelScript.isMale)
         {
             selectedHead.GetComponent<Image>().sprite = maleHead;
@@ -66,36 +50,17 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
-
-
-        //Debug.Log(mapLocationScript);
-
-
-
-        Debug.Log(shoppingList.name + "testest");
-        Debug.Log("HELP");
-
-
         if (!shoppingCartPanel.activeInHierarchy)
         {
             InventoryManager.Instance.CleanList();
         }
         else
         {
-  
             shoppingList.SetActive(false);
         }
 
-
         BudgetReminder();
         ShowMainShoppingList();
-
-        if (selectedModelScript.isMale)
-        {
-            selectedHead.GetComponent<Image>().sprite = maleHead;
-        }
-        else { selectedHead.GetComponent<Image>().sprite = femaleHead; }
-
     }
     public void ShowMainShoppingList()
     {
@@ -187,36 +152,24 @@ public class MapOpen : MonoBehaviour
         buttonPressed = EventSystem.current.currentSelectedGameObject;
         buttonName = buttonPressed.ToString();
 
-
-        //Debug.Log("Button name" + buttonName);
-
         foreach (string aisle in aisles)
         {
-            //Debug.Log("Checking for keywords");
             if (buttonName.Contains(aisle))
             {
-               // Debug.Log("The button contains keyword" + aisle);
                 for (int i = 0; i < waypoints.Length; i++)
                 {
-
                     waypointString = waypoints[i].ToString();
-                   // Debug.Log("the string for waypoint is " + waypointString);
+
                     if (waypointString.Contains(aisle))
                     {
-                        //Debug.Log("TP to " + waypointString);
                         player.transform.position = waypoints[i].transform.position;
                         panel.SetActive(false);
                         MoveButtonLeft.SetActive(true);
                         MoveButtonRight.SetActive(true);
-
-
-
-
                     }
                 }
             }
         }
-
     }
 
     public void ClosePanel()
