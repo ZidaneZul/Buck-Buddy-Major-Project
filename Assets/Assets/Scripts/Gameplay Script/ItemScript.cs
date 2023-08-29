@@ -19,8 +19,9 @@ public class ItemScript : MonoBehaviour
     bool isPointClose = false;
     bool testingGizmos = false;
     bool otherFoodBubbleOpen = false;
+    bool foodBubbleClicked = false;
 
-    Vector3 boxSize = new Vector3(1.7f, 3, 2);
+    Vector3 boxSize = new Vector3(1.7f, 1.5f, 2);
 
 
 
@@ -35,6 +36,28 @@ public class ItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(foodBubbleClone != null)
+        {
+            foodBubbleClone.transform.position = foodBubblePos;
+        }
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                Debug.Log(hit.transform.GetChild(0).transform.parent);
+                if (hit.transform.gameObject.tag == "FoodSpawn")
+                {
+                    foodBubbleClone.transform.DetachChildren();
+                    foodBubbleClicked = true;
+                    return;
+                }
+            }
+        }
         if (dialogueBox.activeInHierarchy)
         {
             talkingToNPC = true;
@@ -43,9 +66,11 @@ public class ItemScript : MonoBehaviour
         {
             talkingToNPC=false;
         }
+
+        
         // FindClosePoint();
         // IsCloseToFood();
-       // FindPlayer();
+        // FindPlayer();
 
     }
 
@@ -71,17 +96,20 @@ public class ItemScript : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
+
         if(talkingToNPC || tutorialBox.activeInHierarchy || otherFoodBubbleOpen)
         {
             return;
         }
-        if(didTextSpawn == true)
+
+        if(didTextSpawn)
         {
             DeleteBubble();
         }
         else
         {
             ShowBubble();
+
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -156,11 +184,14 @@ public class ItemScript : MonoBehaviour
 
             foodBubblePos.y = gameObject.transform.position.y + 2.5f;
 
-            foodBubbleClone = Instantiate(infoBubble, gameObject.transform);
+            foodBubbleClone = Instantiate(infoBubble);
             Debug.LogWarning("Food bubble is now in" + foodBubbleClone.transform.position);
 
             foodBubbleClone.transform.position = foodBubblePos;
-          
+       
+
+
+
         }
     }
 
