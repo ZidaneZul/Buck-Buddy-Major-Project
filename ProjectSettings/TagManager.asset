@@ -23,6 +23,7 @@ TagManager:
   - SpawnLocation
   - textBox
   - Tutorial
+  - FoodBubble
   layers:
   - Default
   - TransparentFX

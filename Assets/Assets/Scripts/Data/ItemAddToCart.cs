@@ -7,6 +7,7 @@ public class ItemAddToCart : MonoBehaviour
 {
     ItemController itemController;
     ItemData itemData;
+    ItemScript itemScript;
     Vector3 boxSize = new Vector3(1.7f, 1.5f, 2);
 
     TextMeshProUGUI tmp;
@@ -23,6 +24,7 @@ public class ItemAddToCart : MonoBehaviour
     {
 
     }
+
     void Testing()
     {
         Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, boxSize);
@@ -42,6 +44,7 @@ public class ItemAddToCart : MonoBehaviour
 
         //closeFood = closePoint.transform.GetChild(0).gameObject;
         itemController = dataToTake.GetComponent<ItemController>();
+        itemScript = dataToTake.GetComponent<ItemScript>();
         itemData = itemController.item;
 
         //Debug.Log("the item data for food thats close is "+ item.ToString());

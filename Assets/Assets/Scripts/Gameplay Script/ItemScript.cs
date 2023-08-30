@@ -15,11 +15,13 @@ public class ItemScript : MonoBehaviour
     public GameObject dialogueBox;
     public GameObject tutorialBox;
 
-    bool didTextSpawn = false;
-    bool isPointClose = false;
+    public bool didTextSpawn = false;
+    public bool isPointClose = false;
     bool testingGizmos = false;
     bool otherFoodBubbleOpen = false;
     bool foodBubbleClicked = false;
+    bool spawnerClicked=false;
+    bool close = false; 
 
     Vector3 boxSize = new Vector3(1.7f, 1.5f, 2);
 
@@ -40,8 +42,6 @@ public class ItemScript : MonoBehaviour
         {
             foodBubbleClone.transform.position = foodBubblePos;
         }
-
-
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -49,15 +49,19 @@ public class ItemScript : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Debug.Log(hit.transform.GetChild(0).transform.parent);
                 if (hit.transform.gameObject.tag == "FoodSpawn")
                 {
-                    foodBubbleClone.transform.DetachChildren();
-                    foodBubbleClicked = true;
-                    return;
+                    spawnerClicked = !spawnerClicked;
                 }
+                if (hit.transform.gameObject.tag != "FoodBubble")
+                {
+                    foodBubbleClicked = !foodBubbleClicked;
+                    
+                }
+
             }
         }
+
         if (dialogueBox.activeInHierarchy)
         {
             talkingToNPC = true;
@@ -101,16 +105,20 @@ public class ItemScript : MonoBehaviour
         {
             return;
         }
-
-        if(didTextSpawn)
-        {
-            DeleteBubble();
-        }
         else
         {
-            ShowBubble();
-
+            if (!spawnerClicked)
+            {
+                ShowBubble();
+            }
+            if (foodBubbleClicked)
+            {
+                DeleteBubble();
+            }
         }
+
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -173,7 +181,7 @@ public class ItemScript : MonoBehaviour
             }
         }
     }
-    void ShowBubble()
+    public void ShowBubble()
     {
         if (!didTextSpawn)
         {
@@ -195,7 +203,7 @@ public class ItemScript : MonoBehaviour
         }
     }
 
-    void DeleteBubble()
+    public void DeleteBubble()
     {
         Destroy(foodBubbleClone);
         didTextSpawn=false;

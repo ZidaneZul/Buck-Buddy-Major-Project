@@ -686,6 +686,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &19294500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -705,7 +707,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &19315487
 GameObject:
@@ -1027,6 +1029,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &27112672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1046,7 +1050,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &27528015
 GameObject:
@@ -2832,6 +2836,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &52764521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2851,7 +2857,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &54141437 stripped
 MonoBehaviour:
@@ -6448,6 +6454,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &143406182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6467,7 +6475,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &145010092
 GameObject:
@@ -7829,6 +7837,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &177635781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7848,7 +7858,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &178245450 stripped
 Transform:
@@ -10053,6 +10063,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &221388689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10072,7 +10084,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &222615308
 GameObject:
@@ -12911,6 +12923,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &268309109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12930,7 +12944,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &277382247
 GameObject:
@@ -14691,6 +14705,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &311653990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14710,7 +14726,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &312170162
 GameObject:
@@ -14775,6 +14791,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &312170166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14794,7 +14812,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &312385826
 GameObject:
@@ -16533,6 +16551,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &352010145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16552,7 +16572,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &353047382
 GameObject:
@@ -19317,6 +19337,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &423170856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19336,7 +19358,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &427466375
 GameObject:
@@ -22824,6 +22846,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &498882095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22843,7 +22867,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &501628381
 GameObject:
@@ -25118,6 +25142,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &560108814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25137,7 +25163,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &566728730
 GameObject:
@@ -26829,6 +26855,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &600102300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26848,7 +26876,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &601877970
 GameObject:
@@ -28940,6 +28968,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &644994989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28959,7 +28989,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &651511974 stripped
 Transform:
@@ -35781,6 +35811,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &806567780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35800,7 +35832,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &807126067
 GameObject:
@@ -37094,6 +37126,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &820385887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37113,7 +37147,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &822079374
 GameObject:
@@ -38191,6 +38225,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &851504526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38210,7 +38246,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &851734339
 GameObject:
@@ -38275,6 +38311,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &851734343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38294,7 +38332,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &852812959
 GameObject:
@@ -41864,6 +41902,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &939826513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41883,7 +41923,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &942142146
 GameObject:
@@ -43594,6 +43634,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &991270661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43613,7 +43655,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &991760411
 GameObject:
@@ -48195,6 +48237,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1123526038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48214,7 +48258,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1127776249
 GameObject:
@@ -49076,6 +49120,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1145711078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49095,7 +49141,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1146691642
 GameObject:
@@ -49953,6 +49999,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1163182453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49972,7 +50020,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1163903206
 GameObject:
@@ -52156,6 +52204,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1201279308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52175,7 +52225,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1203367336
 GameObject:
@@ -52828,6 +52878,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1212409362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52847,7 +52899,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1213353976
 GameObject:
@@ -58815,6 +58867,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1329059877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58834,7 +58888,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1330858525
 GameObject:
@@ -59071,6 +59125,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1333006630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59090,7 +59146,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1334017141
 GameObject:
@@ -63042,6 +63098,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1427133786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63061,7 +63119,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1427656182
 GameObject:
@@ -64132,6 +64190,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1444094345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64151,7 +64211,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1447366825
 GameObject:
@@ -74170,6 +74230,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1670559236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74189,7 +74251,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1677263446
 GameObject:
@@ -75682,6 +75744,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1697826257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75701,7 +75765,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1697942250
 GameObject:
@@ -76831,6 +76895,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1714076186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76850,7 +76916,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1717521933
 GameObject:
@@ -77472,6 +77538,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1725980270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77491,7 +77559,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1727144005
 GameObject:
@@ -78006,6 +78074,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1731767212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78025,7 +78095,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1733264789
 GameObject:
@@ -78263,6 +78333,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1734737099
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78282,7 +78354,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1738271231
 GameObject:
@@ -79197,6 +79269,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1763121549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79216,7 +79290,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1767267454
 GameObject:
@@ -82089,6 +82163,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1846413335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82108,7 +82184,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1848747392
 GameObject:
@@ -83998,6 +84074,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1884019913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84017,7 +84095,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1884022642
 GameObject:
@@ -84250,6 +84328,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1888684051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84269,7 +84349,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1892718903
 GameObject:
@@ -89079,6 +89159,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &1994890298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89098,7 +89180,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1995462541
 GameObject:
@@ -93883,6 +93965,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &2110062958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93902,7 +93986,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2110205581
 GameObject:
@@ -94639,6 +94723,8 @@ MonoBehaviour:
   talkingToNPC: 0
   dialogueBox: {fileID: 1244897347}
   tutorialBox: {fileID: 0}
+  didTextSpawn: 0
+  isPointClose: 0
 --- !u!65 &2124773699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94658,7 +94744,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 6, z: 2}
+  m_Size: {x: 3.2, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2125249145
 GameObject:
