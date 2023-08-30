@@ -138,7 +138,7 @@ public class ItemScript : MonoBehaviour
             foodBubblePos.y = gameObject.transform.position.y + 2.5f;
 
             foodBubbleClone = Instantiate(infoBubble, gameObject.transform);
-            Debug.LogWarning("Food bubble is now in" + foodBubbleClone.transform.position);
+            //Debug.LogWarning("Food bubble is now in" + foodBubbleClone.transform.position);
 
             foodBubbleClone.transform.position = foodBubblePos;
           

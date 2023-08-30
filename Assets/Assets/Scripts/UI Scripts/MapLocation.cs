@@ -20,11 +20,6 @@ public class MapLocation : MonoBehaviour
 
     public string currentAisle_string, leftAisle_string, rightAisle_string, furthestAisle_string;
 
-    public string[] BakeryType = { "Bread" };
-    private string[] MeatSeafoodType = { "Meat", "Ham" };
-
-    public string[] AisleTypeList = {BakeryType, MeatSeafoodType };
-
     // Start is called before the first frame update
     void Start()
     {

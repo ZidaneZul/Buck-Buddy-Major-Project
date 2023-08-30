@@ -86,8 +86,8 @@ public class MapOpen : MonoBehaviour
             foreach (GameObject button in aislePoint)
             {
                 Debug.Log("Goin thru buttons");
-                Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
-                    "\n buttun name is " + button.name);
+               // Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
+             //       "\n buttun name is " + button.name);
 
                 if (button.name.Replace("_Btn", "").Contains(mapLocationScript.FindPlayer().Replace(" ", "")))
                 {

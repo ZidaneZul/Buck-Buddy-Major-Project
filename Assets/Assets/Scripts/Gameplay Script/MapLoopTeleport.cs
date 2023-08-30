@@ -25,9 +25,9 @@ public class MapLoopTeleport : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Hit something" + other.name);
+     //   Debug.Log("Hit something" + other.name);
 
-        Debug.Log("other is " + other + "\n while left is " + leftBarrier);
+      //  Debug.Log("other is " + other + "\n while left is " + leftBarrier);
 
         if(other.name == leftBarrier.name)
         {
