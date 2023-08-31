@@ -37,14 +37,20 @@ public class Objective : MonoBehaviour
 
         ShowBudget();
         GetBudget();
+        GetContentListType();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Debug.LogWarning(GetCurrentAisleItem());
-        GetContentListType();
-        SortShoppingList();
+        
+        if (mapLocationSript.DidPlayerChangeAisle())
+        {
+            SortShoppingList();
+
+        }
     }
 
     public string GetCurrentAisleItem()
@@ -89,23 +95,36 @@ public class Objective : MonoBehaviour
     public void SortShoppingList()
     {
         int ordernumber = 0;
-        Debug.Log(dynamicOBjList.Count());
+        int reverseOrderNumber = objList.Count();
+        Debug.Log("reverse order number is "+ reverseOrderNumber + "\n dynamic " + dynamicOBjList.Count());
         foreach(Transform obj in dynamicShoppingListContent.transform)
         {
             Debug.LogWarning(obj.name);
-            
+
             ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
+
             if (objScript.typeOfItem == GetCurrentAisleItem())
             {
                 objScript.isItemHere = true;
                 obj.SetSiblingIndex(ordernumber);
                 ordernumber++;
             }
+            else
+            {
+                obj.SetSiblingIndex(reverseOrderNumber);
+                reverseOrderNumber--;
+            }
+
+
+
         }
 
-        foreach(var dynamicItem in dynamicOBjList)
+        foreach(ObjectiveDataHolder dynamicItem in dynamicOBjList)
         {
-
+            if (!dynamicItem.isItemHere)
+            {
+               // dynamicItem
+            }
         }
 
         
