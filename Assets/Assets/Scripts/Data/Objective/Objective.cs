@@ -29,10 +29,10 @@ public class Objective : MonoBehaviour
     void Start()
     {
         ShoppingListDisplay();
-        foreach (KeyValuePair<string, int> obj in objList)
-        {
-            Debug.Log("Require food type is " + obj.Key + " " + obj.Value);
-        }
+        //foreach (KeyValuePair<string, int> obj in objList)
+        //{
+        //    Debug.Log("Require food type is " + obj.Key + " " + obj.Value);
+        //}
         levelBudget_Txt = GameObject.Find("LevelBudget_Txt").GetComponent<TextMeshProUGUI>();
 
         ShowBudget();
@@ -75,7 +75,7 @@ public class Objective : MonoBehaviour
                 //if there is an item type obj there, run if statement
                 if (obj.Key == aisleType)
                 {
-                    Debug.LogWarning("Something is needed here");
+                    //Debug.LogWarning("Something is needed here");
                     //return the specific food type (lettuce / ham etc)
                     return aisleType;
                 }
@@ -95,40 +95,40 @@ public class Objective : MonoBehaviour
     public void SortShoppingList()
     {
         int ordernumber = 0;
+        Debug.LogWarning(ordernumber + " order number");
         int reverseOrderNumber = objList.Count();
-        Debug.Log("reverse order number is "+ reverseOrderNumber + "\n dynamic " + dynamicOBjList.Count());
+       // Debug.LogWarning("reverse order number is "+ reverseOrderNumber + "\n dynamic " + dynamicOBjList.Count());
         foreach(Transform obj in dynamicShoppingListContent.transform)
         {
-            Debug.LogWarning(obj.name);
+          //  Debug.LogWarning(obj.name);
 
             ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
 
             if (objScript.typeOfItem == GetCurrentAisleItem())
             {
                 objScript.isItemHere = true;
-                obj.SetSiblingIndex(ordernumber);
+                objScript.orderNumber = ordernumber;
+                //obj.SetSiblingIndex(ordernumber);
+                Debug.Log("something is needed here! " + objScript.typeOfItem + ordernumber);
                 ordernumber++;
+
             }
             else
             {
-                obj.SetSiblingIndex(reverseOrderNumber);
+                Debug.LogWarning("script tpe and number" + objScript.typeOfItem + reverseOrderNumber);
+                objScript.orderNumber = reverseOrderNumber;
+               // obj.SetSiblingIndex(reverseOrderNumber);
                 reverseOrderNumber--;
             }
 
 
-
         }
-
-        foreach(ObjectiveDataHolder dynamicItem in dynamicOBjList)
+        foreach(Transform obj in dynamicShoppingListContent.transform)
         {
-            if (!dynamicItem.isItemHere)
-            {
-               // dynamicItem
-            }
+            ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
+            obj.SetSiblingIndex(objScript.orderNumber);
+            Debug.LogWarning(objScript.orderNumber + objScript.typeOfItem + "HELP");
         }
-
-        
-
 
 
     }
@@ -167,7 +167,7 @@ public class Objective : MonoBehaviour
             var itemSprite = shoppingListItems.transform.Find("FoodType_Img").GetComponent<Image>();
             var dynItemSprite = dynamicShoppingListItem.transform.Find("FoodType_Img").GetComponent<Image>();
 
-            ObjectiveDataHolder objDataHolder = shoppingListItems.GetComponent<ObjectiveDataHolder>();
+            ObjectiveDataHolder objDataHolder = dynamicShoppingListItem.GetComponent<ObjectiveDataHolder>();
 
             itemName.text = obj.itemType;
             dynItemName.text = obj.itemType;
