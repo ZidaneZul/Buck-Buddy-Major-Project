@@ -24,6 +24,7 @@ TagManager:
   - textBox
   - Tutorial
   - FoodBubble
+  - GameManager
   layers:
   - Default
   - TransparentFX
