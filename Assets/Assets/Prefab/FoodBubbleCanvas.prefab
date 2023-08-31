@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9052767313960054840}
   m_Layer: 0
   m_Name: FoodBubbleCanvas
-  m_TagString: Untagged
+  m_TagString: FoodBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopOutNotif: {fileID: 1919331042169057478, guid: 55602b90459f01d45851d1ccee47797b, type: 3}
+  dataToTake: {fileID: 0}
 --- !u!1 &997512009849814140
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ GameObject:
   - component: {fileID: 4563314466048638457}
   m_Layer: 0
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: FoodBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +269,7 @@ GameObject:
   - component: {fileID: 5880194514072767840}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: FoodBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,7 +402,7 @@ GameObject:
   - component: {fileID: 2946799755320376388}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: FoodBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,7 +478,7 @@ GameObject:
   - component: {fileID: 3234757879198541516}
   m_Layer: 0
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: FoodBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,13 +13,17 @@ public class ItemScript : MonoBehaviour
     Vector3 foodBubblePos;
     public bool talkingToNPC;
     public GameObject dialogueBox;
+    public GameObject tutorialBox;
 
-    bool didTextSpawn = false;
-    bool isPointClose = false;
-
+    public bool didTextSpawn = false;
+    public bool isPointClose = false;
     bool testingGizmos = false;
+    bool otherFoodBubbleOpen = false;
+    bool foodBubbleClicked = false;
+    bool spawnerClicked=false;
+    bool close = false; 
 
-    Vector3 boxSize = new Vector3(1.7f, 3, 2);
+    Vector3 boxSize = new Vector3(1.7f, 1.5f, 2);
 
 
 
@@ -27,12 +31,37 @@ public class ItemScript : MonoBehaviour
     void Start()
     {
         foodPoints = GameObject.FindGameObjectsWithTag("FoodSpawn");
+        tutorialBox = GameObject.FindGameObjectWithTag("Tutorial");
         testingGizmos = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(foodBubbleClone != null)
+        {
+            foodBubbleClone.transform.position = foodBubblePos;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                if (hit.transform.gameObject.tag == "FoodSpawn")
+                {
+                    spawnerClicked = !spawnerClicked;
+                }
+                if (hit.transform.gameObject.tag != "FoodBubble")
+                {
+                    foodBubbleClicked = !foodBubbleClicked;
+                    
+                }
+
+            }
+        }
+
         if (dialogueBox.activeInHierarchy)
         {
             talkingToNPC = true;
@@ -41,9 +70,11 @@ public class ItemScript : MonoBehaviour
         {
             talkingToNPC=false;
         }
+
+        
         // FindClosePoint();
         // IsCloseToFood();
-       // FindPlayer();
+        // FindPlayer();
 
     }
 
@@ -67,15 +98,39 @@ public class ItemScript : MonoBehaviour
         }
     }
 
+    private void OnMouseUpAsButton()
+    {
+
+        if(talkingToNPC || tutorialBox.activeInHierarchy || otherFoodBubbleOpen)
+        {
+            return;
+        }
+        else
+        {
+            if (!spawnerClicked)
+            {
+                ShowBubble();
+            }
+            if (foodBubbleClicked)
+            {
+                DeleteBubble();
+            }
+        }
+
+
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") && !talkingToNPC)
         {
+            otherFoodBubbleOpen = true;
             ShowBubble();
         }
     }
     private void OnTriggerExit(Collider other)
     {
+        otherFoodBubbleOpen = false;
         DeleteBubble();
     }
     private void OnDrawGizmos()
@@ -126,7 +181,7 @@ public class ItemScript : MonoBehaviour
             }
         }
     }
-    void ShowBubble()
+    public void ShowBubble()
     {
         if (!didTextSpawn)
         {
@@ -137,15 +192,18 @@ public class ItemScript : MonoBehaviour
 
             foodBubblePos.y = gameObject.transform.position.y + 2.5f;
 
-            foodBubbleClone = Instantiate(infoBubble, gameObject.transform);
+            foodBubbleClone = Instantiate(infoBubble);
             Debug.LogWarning("Food bubble is now in" + foodBubbleClone.transform.position);
 
             foodBubbleClone.transform.position = foodBubblePos;
-          
+       
+
+
+
         }
     }
 
-    void DeleteBubble()
+    public void DeleteBubble()
     {
         Destroy(foodBubbleClone);
         didTextSpawn=false;

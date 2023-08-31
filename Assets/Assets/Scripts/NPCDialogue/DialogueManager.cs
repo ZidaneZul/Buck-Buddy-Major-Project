@@ -18,9 +18,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject yesButton, noButton, ContinueButton, LeftArrow, RightArrow, NPCDialogueBox;
     public Button MapBtn, ShopBtn, arrowTest;
     public NPCSpawning npcSpawning;
-    public bool talkingToNpc, NPCInteracted;
+    public bool talkingToNpc, NPCInteracted,Scammed;
     public int index;
-
+    public GameOverScript gameOverScript;
 
 
     // Start is called before the first frame update
@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour
         StartingOptions = new Queue<bool>();
         yesResponses = new Queue<string>{};
         noResponses = new Queue<string> {};
+        gameOverScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameOverScript>();
 
 
         //NpcImages = new Queue<Sprite>();
@@ -235,7 +236,7 @@ public class DialogueManager : MonoBehaviour
                         dialogueText.text = "Okay, heres all my money";
                         yesResponses.Dequeue();
                         noResponses.Dequeue();
-
+                        Scammed = true;
                         index++;
 
 
@@ -315,6 +316,10 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         npcSpawning.spawnedNpc.SetActive(false);
         talkingToNpc = false;
+        if (Scammed)
+        {
+            gameOverScript.levelBudget -= gameOverScript.levelBudget;
+        }
 
 
     }

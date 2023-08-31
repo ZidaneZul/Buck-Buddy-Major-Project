@@ -7,9 +7,11 @@ public class ItemAddToCart : MonoBehaviour
 {
     ItemController itemController;
     ItemData itemData;
+    ItemScript itemScript;
+    Vector3 boxSize = new Vector3(1.7f, 1.5f, 2);
 
     TextMeshProUGUI tmp;
-    public GameObject PopOutNotif;
+    public GameObject PopOutNotif,dataToTake;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,27 @@ public class ItemAddToCart : MonoBehaviour
     {
 
     }
+
+    void Testing()
+    {
+        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, boxSize);
+        
+        foreach (Collider collider in colliders)
+        {
+            if((collider.gameObject.GetComponent<ItemController>()) && (collider.gameObject.transform.position.x == gameObject.transform.position.x))
+            {
+                dataToTake = collider.gameObject;
+            }
+        }
+
+    }
     void GetFoodItemData() 
-    { 
+    {
+        Testing();
+
         //closeFood = closePoint.transform.GetChild(0).gameObject;
-        itemController = GetComponentInParent<ItemController>();
+        itemController = dataToTake.GetComponent<ItemController>();
+        itemScript = dataToTake.GetComponent<ItemScript>();
         itemData = itemController.item;
 
         //Debug.Log("the item data for food thats close is "+ item.ToString());

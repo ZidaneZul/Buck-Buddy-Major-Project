@@ -22,6 +22,9 @@ TagManager:
   - NPC
   - SpawnLocation
   - textBox
+  - Tutorial
+  - FoodBubble
+  - GameManager
   layers:
   - Default
   - TransparentFX
