@@ -95,8 +95,8 @@ public class Objective : MonoBehaviour
     public void SortShoppingList()
     {
         int ordernumber = 0;
-        Debug.LogWarning(ordernumber + " order number");
         int reverseOrderNumber = objList.Count();
+        bool didOrderChange = false;
        // Debug.LogWarning("reverse order number is "+ reverseOrderNumber + "\n dynamic " + dynamicOBjList.Count());
         foreach(Transform obj in dynamicShoppingListContent.transform)
         {
@@ -111,6 +111,7 @@ public class Objective : MonoBehaviour
                 //obj.SetSiblingIndex(ordernumber);
                 Debug.Log("something is needed here! " + objScript.typeOfItem + ordernumber);
                 ordernumber++;
+                didOrderChange = true;
 
             }
             else
@@ -120,16 +121,17 @@ public class Objective : MonoBehaviour
                // obj.SetSiblingIndex(reverseOrderNumber);
                 reverseOrderNumber--;
             }
-
-
         }
-        foreach(Transform obj in dynamicShoppingListContent.transform)
+
+        if (didOrderChange)
         {
-            ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
-            obj.SetSiblingIndex(objScript.orderNumber);
-            Debug.LogWarning(objScript.orderNumber + objScript.typeOfItem + "HELP");
+            foreach (Transform obj in dynamicShoppingListContent.transform)
+            {
+                ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
+                obj.SetSiblingIndex(objScript.orderNumber);
+                Debug.LogWarning(objScript.orderNumber + objScript.typeOfItem + "HELP");
+            }
         }
-
 
     }
 
