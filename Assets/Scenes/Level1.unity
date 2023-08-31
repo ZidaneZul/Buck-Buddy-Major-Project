@@ -46658,13 +46658,6 @@ Transform:
   - {fileID: 27112669}
   - {fileID: 1052433837}
   - {fileID: 227962572}
-  - {fileID: 566728732}
-  - {fileID: 568443627}
-  - {fileID: 1127776251}
-  - {fileID: 1677263448}
-  - {fileID: 1892718905}
-  - {fileID: 2110205583}
-  - {fileID: 2125249147}
   m_Father: {fileID: 1072437651}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90890,6 +90883,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdjecentAisles
       objectReference: {fileID: 0}
+    - target: {fileID: 8568055341523526875, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568055341523526875, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b0435775b96dbe643892ad79729ebdb0, type: 3}
     - target: {fileID: 8876769936810594116, guid: bc72205950dafca4d906b11c0adbca1c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
