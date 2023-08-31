@@ -18,7 +18,7 @@ public class MapLocation : MonoBehaviour
 
     public GameObject currentAisleSection;
 
-    public string currentAisle_string, leftAisle_string, rightAisle_string, furthestAisle_string;
+    public string currentAisle_string, leftAisle_string, rightAisle_string, furthestAisle_string, currentAisleCheck_string;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class MapLocation : MonoBehaviour
         //FindPlayer();
     }
 
+    
     public void ResetCloneList()
     {
         sectionsClone.Clear();
@@ -151,5 +152,21 @@ public class MapLocation : MonoBehaviour
         furthestAisle_string = string.Concat(furthestAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         return furthestAisle_string;
 
+    }
+
+    public bool DidPlayerChangeAisle()
+    {
+        if(currentAisleCheck_string == null)
+        {
+            currentAisleCheck_string = FindPlayer();
+        }
+
+
+        if(currentAisleCheck_string != FindPlayer())
+        {
+            currentAisleCheck_string = FindPlayer();
+            return true;
+        }
+        else return false;
     }
 }
