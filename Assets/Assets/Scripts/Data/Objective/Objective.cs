@@ -36,29 +36,41 @@ public class Objective : MonoBehaviour
         levelBudget_Txt = GameObject.Find("LevelBudget_Txt").GetComponent<TextMeshProUGUI>();
 
         ShowBudget();
+        GetBudget();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetCurrentAisleItem();
+        Debug.LogWarning(GetCurrentAisleItem());
+        GetContentListType();
+        SortShoppingList();
     }
 
     public string GetCurrentAisleItem()
     {
+        //get the first word of where the player is (Meat Seafood Aisle ==> Meat)
         string location = mapLocationSript.FindPlayer().Split(' ')[0];
         Debug.Log(location);
+
+        //Get a list of different item types in that aisle (Veggie aisle has "onion, lettuce, carrot etc")
         string[] aisleItemType = MapDataList.instance.GetAisleTypes(location);
+
         Debug.Log(objList.Count);
+        //goes thru the item type required for obj
         foreach (KeyValuePair<string, int> obj in objList)
         {
             Debug.Log("help me");
+            //goes thru the diff item types in that aisle
             foreach (var aisleType in aisleItemType)
             {
                 Debug.Log(obj.Key + "\n" + aisleType);
+
+                //if there is an item type obj there, run if statement
                 if (obj.Key == aisleType)
                 {
                     Debug.LogWarning("Something is needed here");
+                    //return the specific food type (lettuce / ham etc)
                     return aisleType;
                 }
             }
@@ -72,23 +84,53 @@ public class Objective : MonoBehaviour
         dynamicOBjList = dynamicObj.ToList();
     }
 
-
-
+ 
+   
     public void SortShoppingList()
     {
-        //   playerLocation = mapLocationSript.FindPlayer().Split(' ')[0];
-        //    objectiveList;
-    //    dynamicOBjList.Sort(SortFunc(GetCurrentAisleItem()));
+        int ordernumber = 0;
+        Debug.Log(dynamicOBjList.Count());
+        foreach(Transform obj in dynamicShoppingListContent.transform)
+        {
+            Debug.LogWarning(obj.name);
+            
+            ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
+            if (objScript.typeOfItem == GetCurrentAisleItem())
+            {
+                objScript.isItemHere = true;
+                obj.SetSiblingIndex(ordernumber);
+                ordernumber++;
+            }
+        }
+
+        foreach(var dynamicItem in dynamicOBjList)
+        {
+
+        }
+
+        
+
+
+
     }
 
 
-    private int SortFunc(ObjectiveDataHolder a)
-    {
+    //private int SortFunc(ObjectiveDataHolder a, ObjectiveDataHolder b)
+    //{
 
-        //  if (a.typeOfItem == null)
-        if (a.typeOfItem == GetCurrentAisleItem()) { return 1; }
-        else { return -1; }
-    }
+    //    //  if (a.typeOfItem == null)
+    //    if (a.typeOfItem == GetCurrentAisleItem()) { return 1; }
+    //    else { return -1; }
+    //}
+
+    //private bool SortEquals(ObjectiveDataHolder a)
+    //{
+    //    if(a.typeOfItem == GetCurrentAisleItem())
+    //    {
+    //        return true;
+    //    }
+    //    else return false;
+    //}
 
     public void ShoppingListDisplay()
     {
@@ -96,19 +138,28 @@ public class Objective : MonoBehaviour
         foreach (var obj in objectiveData.dynamicObjList)
         {
             GameObject shoppingListItems = Instantiate(textPrefab, shoppingListContent.transform);
+            GameObject dynamicShoppingListItem = Instantiate(textPrefab, dynamicShoppingListContent.transform);
             var itemName = shoppingListItems.transform.Find("FoodNameCart_Txt").GetComponent<TextMeshProUGUI>();
+            var dynItemName = dynamicShoppingListItem.transform.Find("FoodNameCart_Txt").GetComponent<TextMeshProUGUI>();
+
             var itemQuantity = shoppingListItems.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
+            var dynItemQuantity = dynamicShoppingListItem.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
+           
             var itemSprite = shoppingListItems.transform.Find("FoodType_Img").GetComponent<Image>();
+            var dynItemSprite = dynamicShoppingListItem.transform.Find("FoodType_Img").GetComponent<Image>();
 
             ObjectiveDataHolder objDataHolder = shoppingListItems.GetComponent<ObjectiveDataHolder>();
 
             itemName.text = obj.itemType;
+            dynItemName.text = obj.itemType;
             objDataHolder.typeOfItem = obj.itemType;
 
             itemQuantity.text = obj.amount.ToString();
+            dynItemQuantity.text = obj.amount.ToString();
             objDataHolder.quantity = obj.amount;
 
             itemSprite.sprite = obj.iconSprite;
+            dynItemSprite.sprite = obj.iconSprite;
 
             objList.Add(new KeyValuePair<string, int>(obj.itemType, obj.amount));
         }

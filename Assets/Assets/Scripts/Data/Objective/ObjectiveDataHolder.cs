@@ -7,6 +7,7 @@ public class ObjectiveDataHolder : MonoBehaviour
 
     public string typeOfItem;
     public int quantity;
+    public bool isItemHere;
     // Start is called before the first frame update
     void Start()
     {

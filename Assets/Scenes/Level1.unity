@@ -99189,6 +99189,10 @@ PrefabInstance:
       propertyPath: shoppingListContent
       value: 
       objectReference: {fileID: 336165971}
+    - target: {fileID: 9204406199794908545, guid: db39b424dfadc534ea15d7759f2e9898, type: 3}
+      propertyPath: dynamicShoppingListContent
+      value: 
+      objectReference: {fileID: 1018604584}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
