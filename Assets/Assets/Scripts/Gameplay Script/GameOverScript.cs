@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
 public class GameOverScript : MonoBehaviour
 {
     public Objective objectiveData;
@@ -11,6 +10,7 @@ public class GameOverScript : MonoBehaviour
     public GameObject gameOverMenu;
     public float timeStart;
     public TextMeshProUGUI timerText;
+    public TimeData timeData;
 
 
     private void Start()
@@ -67,5 +67,10 @@ public class GameOverScript : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+    }
+
+    private void OnDisable()
+    {
+        timeData.mainLevelTime = timeStart;
     }
 }

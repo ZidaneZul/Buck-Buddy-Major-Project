@@ -72250,6 +72250,7 @@ MonoBehaviour:
   gameOverMenu: {fileID: 596182190}
   timeStart: 0
   timerText: {fileID: 1844368321}
+  timeData: {fileID: 11400000, guid: df43a2fb04b3c8f4cb70a16d8833cf92, type: 2}
 --- !u!1 &1731095731
 GameObject:
   m_ObjectHideFlags: 0
@@ -92061,7 +92062,7 @@ PrefabInstance:
     - target: {fileID: 9204406199794908545, guid: db39b424dfadc534ea15d7759f2e9898, type: 3}
       propertyPath: objectiveData
       value: 
-      objectReference: {fileID: 11400000, guid: be206363499a4b04f9493e99e035c715, type: 2}
+      objectReference: {fileID: 11400000, guid: bbfaeee359081cd48ac4bf55921a8638, type: 2}
     - target: {fileID: 9204406199794908545, guid: db39b424dfadc534ea15d7759f2e9898, type: 3}
       propertyPath: mapLocationSript
       value: 
