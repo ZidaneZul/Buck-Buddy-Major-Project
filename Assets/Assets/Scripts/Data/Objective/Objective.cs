@@ -16,6 +16,7 @@ public class Objective : MonoBehaviour
 
     public GameObject textPrefab, shoppingListContent, dynamicShoppingListContent;
     public List<KeyValuePair<string, int>> objList = new List<KeyValuePair<string, int>>();
+    public List<string> requiredAisleItems = new List<string>();
 
     public TextMeshProUGUI levelBudget_Txt;
 
@@ -44,7 +45,7 @@ public class Objective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.LogWarning(GetCurrentAisleItem());
+        //Debug.LogWarning(GetCurrentAisleItem());
         
         if (mapLocationSript.DidPlayerChangeAisle())
         {
@@ -53,8 +54,10 @@ public class Objective : MonoBehaviour
         }
     }
 
-    public string GetCurrentAisleItem()
+    public List<string> GetCurrentAisleItem()
     {
+        requiredAisleItems.Clear();
+        
         //get the first word of where the player is (Meat Seafood Aisle ==> Meat)
         string location = mapLocationSript.FindPlayer().Split(' ')[0];
         Debug.Log(location);
@@ -66,22 +69,19 @@ public class Objective : MonoBehaviour
         //goes thru the item type required for obj
         foreach (KeyValuePair<string, int> obj in objList)
         {
-            Debug.Log("help me");
             //goes thru the diff item types in that aisle
             foreach (var aisleType in aisleItemType)
             {
-                Debug.Log(obj.Key + "\n" + aisleType);
-
                 //if there is an item type obj there, run if statement
                 if (obj.Key == aisleType)
                 {
                     //Debug.LogWarning("Something is needed here");
                     //return the specific food type (lettuce / ham etc)
-                    return aisleType;
+                    requiredAisleItems.Add(aisleType);
                 }
             }
         }
-        return null;
+        return requiredAisleItems;
     }
 
     public void GetContentListType()
@@ -90,68 +90,29 @@ public class Objective : MonoBehaviour
         dynamicOBjList = dynamicObj.ToList();
     }
 
- 
-   
+
+
     public void SortShoppingList()
     {
         int ordernumber = 0;
-        int reverseOrderNumber = objList.Count();
-        bool didOrderChange = false;
-       // Debug.LogWarning("reverse order number is "+ reverseOrderNumber + "\n dynamic " + dynamicOBjList.Count());
-        foreach(Transform obj in dynamicShoppingListContent.transform)
+        foreach (Transform obj in dynamicShoppingListContent.transform)
         {
-          //  Debug.LogWarning(obj.name);
-
             ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
-
-            if (objScript.typeOfItem == GetCurrentAisleItem())
+            foreach (string requireItemType in GetCurrentAisleItem())
             {
-                objScript.isItemHere = true;
-                objScript.orderNumber = ordernumber;
-                //obj.SetSiblingIndex(ordernumber);
-                Debug.Log("something is needed here! " + objScript.typeOfItem + ordernumber);
-                ordernumber++;
-                didOrderChange = true;
-
-            }
-            else
-            {
-                Debug.LogWarning("script tpe and number" + objScript.typeOfItem + reverseOrderNumber);
-                objScript.orderNumber = reverseOrderNumber;
-               // obj.SetSiblingIndex(reverseOrderNumber);
-                reverseOrderNumber--;
-            }
-        }
-
-        if (didOrderChange)
-        {
-            foreach (Transform obj in dynamicShoppingListContent.transform)
-            {
-                ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
-                obj.SetSiblingIndex(objScript.orderNumber);
-                Debug.LogWarning(objScript.orderNumber + objScript.typeOfItem + "HELP");
+                if (objScript.typeOfItem == requireItemType)
+                {
+                    objScript.isItemHere = true;
+                    objScript.orderNumber = ordernumber;
+                    obj.SetSiblingIndex(ordernumber);
+                    Debug.Log("something is needed here! " + objScript.typeOfItem + ordernumber);
+                    ordernumber++;
+                }
             }
         }
 
     }
 
-
-    //private int SortFunc(ObjectiveDataHolder a, ObjectiveDataHolder b)
-    //{
-
-    //    //  if (a.typeOfItem == null)
-    //    if (a.typeOfItem == GetCurrentAisleItem()) { return 1; }
-    //    else { return -1; }
-    //}
-
-    //private bool SortEquals(ObjectiveDataHolder a)
-    //{
-    //    if(a.typeOfItem == GetCurrentAisleItem())
-    //    {
-    //        return true;
-    //    }
-    //    else return false;
-    //}
 
     public void ShoppingListDisplay()
     {
