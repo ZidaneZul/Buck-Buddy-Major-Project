@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2104393487018469190}
   - component: {fileID: 6908915670505945390}
   - component: {fileID: 9052767313960054840}
+  - component: {fileID: 1217929393330420146}
   m_Layer: 0
   m_Name: FoodBubbleCanvas
   m_TagString: FoodBubble

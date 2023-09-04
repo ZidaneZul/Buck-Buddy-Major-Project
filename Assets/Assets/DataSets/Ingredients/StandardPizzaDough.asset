@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Standard Pizza Dough
   price: 18.9
   icon: {fileID: 0}
-  itemType: PizzaDough
+  itemType: Pizza Dough

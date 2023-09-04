@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Standard Tomato Paste
   price: 1.8
   icon: {fileID: 0}
-  itemType: TomatoPaste
+  itemType: Tomato Paste
