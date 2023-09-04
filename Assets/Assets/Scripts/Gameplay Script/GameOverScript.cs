@@ -9,7 +9,7 @@ public class GameOverScript : MonoBehaviour
     public Objective objectiveData;
     public float levelBudget;
     public GameObject gameOverMenu;
-    public float timeLeft;
+    public float timeStart;
     public TextMeshProUGUI timerText;
 
 
@@ -18,24 +18,24 @@ public class GameOverScript : MonoBehaviour
         objectiveData = GameObject.Find("GameManager").GetComponent<Objective>();
         levelBudget = objectiveData.GetBudget();
         gameOverMenu.SetActive(false);
-        timeLeft = 10;
+        timeStart = 0;
     }
 
     private void Update()
     {
-        if (levelBudget <= 0 || timeLeft <= 0)
+
+        timeStart += Time.deltaTime;
+        Timer(timeStart);
+
+        if (levelBudget <= 0)
         {
             GameOver(true);
+            return; 
         }
-        if(timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            Timer(timeLeft);
-        }
-
         else
         {
             GameOver(false);
+            return;
         }
     }
     public void Timer(float currentTime)
