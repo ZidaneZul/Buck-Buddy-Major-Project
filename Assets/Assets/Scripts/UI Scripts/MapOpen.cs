@@ -28,34 +28,19 @@ public class MapOpen : MonoBehaviour
 
     void Start()
     {
-        //panel = GameObject.Find("Map");
         aislePoint = GameObject.FindGameObjectsWithTag("AisleTpButton");
-       // selectedHead = GameObject.Find("Head_Img");
         panel.SetActive(false);
 
 
-        //shoppingCartPanel = GameObject.Find("Cart_Panel");
         shoppingCartPanel.SetActive(false);
-       // Debug.Log("Shopping cart closeeeee");
 
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         player = GameObject.FindGameObjectWithTag("Player");
-       // shoppingList = GameObject.Find("ShoppingList");
-       // MoveButtonLeft = GameObject.Find("MoveLeft");
-       // MoveButtonRight = GameObject.Find("MoveRight");
         shoppingList.SetActive(false);
 
-        //objPanel = GameObject.Find("LevelObj_Panel");
         objPanel.SetActive(false);
 
-        //helpPanelBody_Txt = GameObject.Find("BodyHelpPanel_Txt").GetComponent<TextMeshProUGUI>();
-
-        //helpPanelCtnBtn = GameObject.Find("Hint_Btn");
-
-        //mapLocationScript = GameObject.Find("GameManager").GetComponent<MapLocation>();
-
-
-
+        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
         if (selectedModelScript.isMale)
         {
             selectedHead.GetComponent<Image>().sprite = maleHead;
@@ -65,30 +50,25 @@ public class MapOpen : MonoBehaviour
     }
     private void Update()
     {
-        selectedModelScript = GameObject.Find("RandomEventHandler").GetComponent<PlayerSelectOption>();
-
-        if (selectedModelScript.isMale)
-        {
-            selectedHead.GetComponent<Image>().sprite = maleHead;
-        }
-        else { selectedHead.GetComponent<Image>().sprite = femaleHead; }
-
-        //Debug.Log(mapLocationScript);
-
-
-
         if (!shoppingCartPanel.activeInHierarchy)
         {
             InventoryManager.Instance.CleanList();
         }
         else
         {
-  
             shoppingList.SetActive(false);
         }
 
-
         BudgetReminder();
+        ShowMainShoppingList();
+    }
+    public void ShowMainShoppingList()
+    {
+        if(panel.activeInHierarchy || shoppingCartPanel.activeInHierarchy)
+        {
+            shoppingList.SetActive(true);
+        }
+        else shoppingList.SetActive(false);
     }
     public void OpenPanel()
     {
@@ -106,8 +86,8 @@ public class MapOpen : MonoBehaviour
             foreach (GameObject button in aislePoint)
             {
                 Debug.Log("Goin thru buttons");
-                Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
-                    "\n buttun name is " + button.name);
+               // Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
+             //       "\n buttun name is " + button.name);
 
                 if (button.name.Replace("_Btn", "").Contains(mapLocationScript.FindPlayer().Replace(" ", "")))
                 {
@@ -172,36 +152,24 @@ public class MapOpen : MonoBehaviour
         buttonPressed = EventSystem.current.currentSelectedGameObject;
         buttonName = buttonPressed.ToString();
 
-
-        //Debug.Log("Button name" + buttonName);
-
         foreach (string aisle in aisles)
         {
-            //Debug.Log("Checking for keywords");
             if (buttonName.Contains(aisle))
             {
-               // Debug.Log("The button contains keyword" + aisle);
                 for (int i = 0; i < waypoints.Length; i++)
                 {
-
                     waypointString = waypoints[i].ToString();
-                   // Debug.Log("the string for waypoint is " + waypointString);
+
                     if (waypointString.Contains(aisle))
                     {
-                        //Debug.Log("TP to " + waypointString);
                         player.transform.position = waypoints[i].transform.position;
                         panel.SetActive(false);
                         MoveButtonLeft.SetActive(true);
                         MoveButtonRight.SetActive(true);
-
-
-
-
                     }
                 }
             }
         }
-
     }
 
     public void ClosePanel()
