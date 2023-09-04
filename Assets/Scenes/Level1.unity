@@ -623,8 +623,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.34, y: 17.01, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.1283524, y: 3.2761056, z: 2}
+  m_Center: {x: -0.31947735, y: -0.24491383, z: 0}
 --- !u!1 &19315487
 GameObject:
   m_ObjectHideFlags: 0
@@ -12035,8 +12035,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.34, y: 17.01, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.6098652, y: 3.3783338, z: 2}
+  m_Center: {x: 0.5725472, y: -0.2178572, z: 0}
 --- !u!1 &277382247
 GameObject:
   m_ObjectHideFlags: 0
@@ -24783,8 +24783,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.34, y: 17.01, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.2558472, y: 3.377395, z: 2}
+  m_Center: {x: -0.380259, y: -0.34046984, z: 0}
 --- !u!1 &601877970
 GameObject:
   m_ObjectHideFlags: 0
@@ -58204,8 +58204,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.34, y: 17.01, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.2834742, y: 2.7481687, z: 2}
+  m_Center: {x: 0.8312878, y: -0.3123799, z: 0}
 --- !u!1 &1427656182
 GameObject:
   m_ObjectHideFlags: 0
@@ -72248,7 +72248,7 @@ MonoBehaviour:
   objectiveData: {fileID: 0}
   levelBudget: 0
   gameOverMenu: {fileID: 596182190}
-  timeLeft: 0
+  timeStart: 0
   timerText: {fileID: 1844368321}
 --- !u!1 &1731095731
 GameObject:
@@ -89674,7 +89674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8516942941214905451, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8547861874096833393, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
