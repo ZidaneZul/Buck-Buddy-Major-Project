@@ -24,19 +24,31 @@ public class GameOverScript : MonoBehaviour
     private void Update()
     {
 
-        timeStart += Time.deltaTime;
-        Timer(timeStart);
 
-        if (levelBudget <= 0)
+
+        if(SceneManager.GetActiveScene().name != "CashRegister")
         {
-            GameOver(true);
-            return; 
+            timeStart += Time.deltaTime;
+            Timer(timeStart);
+            timeData.mainLevelTime = timeStart;
+            if (levelBudget <= 0)
+            {
+                GameOver(true);
+                return;
+            }
+            else
+            {
+                GameOver(false);
+                return;
+            }
         }
         else
         {
-            GameOver(false);
-            return;
+            timeStart += Time.deltaTime;
+            Timer(timeStart);
+            timeData.cashierTime = timeStart;
         }
+
     }
     public void Timer(float currentTime)
     {
@@ -69,8 +81,5 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
 
-    private void OnDisable()
-    {
-        timeData.mainLevelTime = timeStart;
-    }
+
 }
