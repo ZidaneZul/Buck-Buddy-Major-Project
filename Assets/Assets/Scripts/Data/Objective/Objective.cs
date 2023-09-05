@@ -14,7 +14,7 @@ public class Objective : MonoBehaviour
     List<ObjectiveDataHolder> dynamicOBjList = new List<ObjectiveDataHolder>();
     ObjectiveDataHolder[] dynamicObj;
 
-    public GameObject textPrefab, shoppingListContent, dynamicShoppingListContent;
+    public GameObject textPrefab, dynamicTextPrefab, shoppingListContent, dynamicShoppingListContent, dynamicShoppingList;
     public List<KeyValuePair<string, int>> objList = new List<KeyValuePair<string, int>>();
     public List<string> requiredAisleItems = new List<string>();
 
@@ -95,19 +95,35 @@ public class Objective : MonoBehaviour
     public void SortShoppingList()
     {
         int ordernumber = 0;
+        bool isSomethingHere = false;
         foreach (Transform obj in dynamicShoppingListContent.transform)
         {
             ObjectiveDataHolder objScript = obj.GetComponent<ObjectiveDataHolder>();
+            objScript.isItemHere = false;
+
             foreach (string requireItemType in GetCurrentAisleItem())
             {
                 if (objScript.typeOfItem == requireItemType)
                 {
-                    objScript.isItemHere = true;
-                    objScript.orderNumber = ordernumber;
+                    obj.gameObject.SetActive(true);
                     obj.SetSiblingIndex(ordernumber);
-                    Debug.Log("something is needed here! " + objScript.typeOfItem + ordernumber);
                     ordernumber++;
+                    objScript.isItemHere = true;
+                    isSomethingHere = true;
                 }
+            }
+
+            if (!objScript.isItemHere)
+            {
+                obj.gameObject.SetActive(false);
+            }
+            if (!isSomethingHere)
+            {
+                dynamicShoppingList.SetActive(false);
+            }
+            else
+            {
+                dynamicShoppingList.SetActive(true);
             }
         }
 
@@ -120,9 +136,8 @@ public class Objective : MonoBehaviour
         foreach (var obj in objectiveData.dynamicObjList)
         {
             GameObject shoppingListItems = Instantiate(textPrefab, shoppingListContent.transform);
-            GameObject dynamicShoppingListItem = Instantiate(textPrefab, dynamicShoppingListContent.transform);
+            GameObject dynamicShoppingListItem = Instantiate(dynamicTextPrefab, dynamicShoppingListContent.transform);
             var itemName = shoppingListItems.transform.Find("FoodNameCart_Txt").GetComponent<TextMeshProUGUI>();
-            var dynItemName = dynamicShoppingListItem.transform.Find("FoodNameCart_Txt").GetComponent<TextMeshProUGUI>();
 
             var itemQuantity = shoppingListItems.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
             var dynItemQuantity = dynamicShoppingListItem.transform.Find("QuantityCart_Txt").GetComponent<TextMeshProUGUI>();
@@ -133,11 +148,10 @@ public class Objective : MonoBehaviour
             ObjectiveDataHolder objDataHolder = dynamicShoppingListItem.GetComponent<ObjectiveDataHolder>();
 
             itemName.text = obj.itemType;
-            dynItemName.text = obj.itemType;
             objDataHolder.typeOfItem = obj.itemType;
 
             itemQuantity.text = obj.amount.ToString();
-            dynItemQuantity.text = obj.amount.ToString();
+            dynItemQuantity.text = "x" + obj.amount.ToString();
             objDataHolder.quantity = obj.amount;
 
             itemSprite.sprite = obj.iconSprite;
