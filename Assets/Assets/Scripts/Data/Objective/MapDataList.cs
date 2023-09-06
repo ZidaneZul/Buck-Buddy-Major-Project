@@ -33,12 +33,18 @@ public class MapDataList : MonoBehaviour
                 string[] frozen = { "PizzaDough", "Frozen" };
                 return frozen;
             case "Dairy":
-                string[] dairy = { "Egg" };
+                string[] dairy = { "Egg" ,"Cheese"};
                 return dairy;   
           //  case "Canned":
             case "Meat":
                 string[] meat = { "Ham", "Chicken" };
                 return meat;
+            case "Rice":
+                string[] rice = { "Noodles" , "Flour", "SoySauce", "Soup", "Rice"};
+                return rice;
+            case "Canned":
+                string[] canned = { "TomtatoPaste" };
+                return canned;
             default:
                 return null;
           //  case "Rice":
