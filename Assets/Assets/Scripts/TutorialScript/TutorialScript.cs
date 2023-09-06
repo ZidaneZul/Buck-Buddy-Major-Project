@@ -190,7 +190,7 @@ public class TutorialScript : MonoBehaviour
             CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
             DialogueBox.transform.position = DialoguePositions[1].transform.position;
             DialogueBox.sprite = DialogueBoxAssets[1];
-            DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
+            DialogueBox.transform.localScale = new Vector3(0.9f, DialogueBox.transform.localScale.y, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
             CartBtn.SetActive(true);
 
         }
@@ -202,12 +202,13 @@ public class TutorialScript : MonoBehaviour
         if (Index == 3)
         {
             CoinMascot.sprite = CoinAssets[0];
-            DialogueBox.sprite = DialogueBoxAssets[1];
+            DialogueBox.sprite = DialogueBoxAssets[0];
             CoinMascot.transform.position = CoinPositions[0].transform.position;
             CoinMascot.transform.localScale = new Vector3(CoinMascot.transform.localScale.x * -1, CoinMascot.transform.localScale.y, CoinMascot.transform.localScale.z);
-            DialogueBox.transform.position = DialoguePositions[0].transform.position;
+            DialogueBox.transform.position = DialoguePositions[3].transform.position;
             TutorialChatBox.transform.position = TextPosition.transform.position;
-            DialogueBox.transform.localScale = new Vector3(DialogueBox.transform.localScale.x, DialogueBox.transform.localScale.y, DialogueBox.transform.localScale.z); TutorialChatBox.transform.position = TextPosition.transform.position;
+            DialogueBox.transform.localScale = new Vector3(0.9f, DialogueBox.transform.localScale.y, DialogueBox.transform.localScale.z); 
+            TutorialChatBox.transform.position = TextPosition.transform.position;
 
             MapBtn.SetActive(false);
             MovementBtn.SetActive(true);
