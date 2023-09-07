@@ -18,7 +18,7 @@ public class ItemAddToCart : MonoBehaviour
     void Start()
     {
         tmp = GetComponentInChildren<TextMeshProUGUI>();
-        GetFoodItemData();
+        DisplayFoodData();
         testingGizmos = true;
     }
 
@@ -28,7 +28,7 @@ public class ItemAddToCart : MonoBehaviour
 
     }
 
-    void Testing()
+    void GetFoodItemData()
     {
         Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, boxSize);
         
@@ -51,9 +51,9 @@ public class ItemAddToCart : MonoBehaviour
 
         }
     }
-    void GetFoodItemData() 
+    void DisplayFoodData() 
     {
-        Testing();
+        GetFoodItemData();
 
         //closeFood = closePoint.transform.GetChild(0).gameObject;
         itemController = dataToTake.GetComponent<ItemController>();
