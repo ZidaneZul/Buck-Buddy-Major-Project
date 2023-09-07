@@ -8,15 +8,18 @@ public class ItemAddToCart : MonoBehaviour
     ItemController itemController;
     ItemData itemData;
     ItemScript itemScript;
-    Vector3 boxSize = new Vector3(1.7f, 1.5f, 2);
+    Vector3 boxSize = new Vector3(1.7f, 3f, 2);
 
     TextMeshProUGUI tmp;
     public GameObject PopOutNotif,dataToTake;
+
+    bool testingGizmos;
     // Start is called before the first frame update
     void Start()
     {
         tmp = GetComponentInChildren<TextMeshProUGUI>();
         GetFoodItemData();
+        testingGizmos = true;
     }
 
     // Update is called once per frame
@@ -31,12 +34,22 @@ public class ItemAddToCart : MonoBehaviour
         
         foreach (Collider collider in colliders)
         {
-            if((collider.gameObject.GetComponent<ItemController>()) && (collider.gameObject.transform.position.x == gameObject.transform.position.x))
+            if((collider.gameObject.GetComponent<ItemController>()) && 
+                (collider.gameObject.transform.position.x == gameObject.transform.position.x))
             {
                 dataToTake = collider.gameObject;
             }
         }
 
+    }
+    private void OnDrawGizmos()
+    {
+        if (testingGizmos)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(gameObject.transform.position, boxSize * 2);
+
+        }
     }
     void GetFoodItemData() 
     {
