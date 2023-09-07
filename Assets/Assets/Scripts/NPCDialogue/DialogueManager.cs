@@ -151,6 +151,7 @@ public class DialogueManager : MonoBehaviour
 
             }
             StartPlayerInteraction();
+
         }
         if (WhosTalking1)
         {
@@ -163,13 +164,29 @@ public class DialogueManager : MonoBehaviour
             RightPersonTalking();
 
         }
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-
         if (index == 1)
         {
             dialogues.Dequeue();
+            switch (npcData.ScenarioType.ToString())
+            {
+                case "Scammer":
+                    {
+
+                        break;
+                    }
+                case "Helper":
+                    {
+
+                        sentence += MapDataList.instance.GetAisle(InventoryManager.Instance.NPCFindMissingItem());
+
+                        break;
+                    }
+            }
         }
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+
+        
 
 
 
@@ -249,9 +266,6 @@ public class DialogueManager : MonoBehaviour
                         yesResponses.Dequeue();
                         noResponses.Dequeue();
                         index++;
-
-                        // ZIDANE PUT MONEY DEDUCTION TO BUDGET HERE
-
 
                         break;
                     }
