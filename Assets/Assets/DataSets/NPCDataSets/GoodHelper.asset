@@ -30,7 +30,7 @@ MonoBehaviour:
     FirstImage: 0
     SecondImage: 1
     PlayerInteraction: 1
-  - dialogue: Okay its at [Location]
+  - dialogue: 'Okay its at '
     FirstImage: 0
     SecondImage: 1
     PlayerInteraction: 0
