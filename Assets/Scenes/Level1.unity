@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 27112671}
   - component: {fileID: 27112672}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (32)
+  m_Name: ABCTomatoPasteWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -909,7 +909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27112668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.035683, y: -3.043374, z: -1.9499998}
+  m_LocalPosition: {x: 6.08, y: -3.043374, z: -1.9499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2450,7 +2450,7 @@ GameObject:
   - component: {fileID: 52764520}
   - component: {fileID: 52764521}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (33)
+  m_Name: 'GreenTeaWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6035,7 +6035,7 @@ GameObject:
   - component: {fileID: 143406181}
   - component: {fileID: 143406182}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (17)
+  m_Name: 'BabyLettuceWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13744,7 +13744,7 @@ GameObject:
   - component: {fileID: 312170165}
   - component: {fileID: 312170166}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (30)
+  m_Name: 'YellowNoodlesWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -15420,7 +15420,7 @@ GameObject:
   - component: {fileID: 352010144}
   - component: {fileID: 352010145}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (7)
+  m_Name: StandardTPasteWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -15438,7 +15438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91a7a2c93d557c408d5ef31abe1417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 962e6dffe316806488ad82a61210ff40, type: 2}
+  item: {fileID: 11400000, guid: 34e243b122ba4514db2a47e4a84f136b, type: 2}
 --- !u!4 &352010143
 Transform:
   m_ObjectHideFlags: 0
@@ -17803,7 +17803,7 @@ GameObject:
   - component: {fileID: 423170855}
   - component: {fileID: 423170856}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (38)
+  m_Name: RibenaWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -20959,7 +20959,7 @@ GameObject:
   - component: {fileID: 498882094}
   - component: {fileID: 498882095}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (25)
+  m_Name: 'ABCFlourWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -23339,7 +23339,7 @@ GameObject:
   - component: {fileID: 560108813}
   - component: {fileID: 560108814}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (34)
+  m_Name: OrangeJuiceWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -26694,7 +26694,7 @@ GameObject:
   - component: {fileID: 644994988}
   - component: {fileID: 644994989}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (14)
+  m_Name: WinterMelonSoupWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -33098,7 +33098,7 @@ GameObject:
   - component: {fileID: 806567779}
   - component: {fileID: 806567780}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (12)
+  m_Name: 'MilkBreadWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -34413,7 +34413,7 @@ GameObject:
   - component: {fileID: 820385886}
   - component: {fileID: 820385887}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (15)
+  m_Name: CherryTomatoesWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -35339,7 +35339,7 @@ GameObject:
   - component: {fileID: 851504525}
   - component: {fileID: 851504526}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (26)
+  m_Name: WhiteNoodlesWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -35425,7 +35425,7 @@ GameObject:
   - component: {fileID: 851734342}
   - component: {fileID: 851734343}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (31)
+  m_Name: 'ABCTomatoPasteWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -35439,7 +35439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851734339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.909593, y: -3.043374, z: -1.9499998}
+  m_LocalPosition: {x: 4.01, y: -3.043374, z: -1.9499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40324,7 +40324,7 @@ GameObject:
   - component: {fileID: 991270660}
   - component: {fileID: 991270661}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (20)
+  m_Name: 'StandardSoySauceWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44428,7 +44428,7 @@ GameObject:
   - component: {fileID: 1123526037}
   - component: {fileID: 1123526038}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (16)
+  m_Name: 'StandardLettuceWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45143,7 +45143,7 @@ GameObject:
   - component: {fileID: 1145711077}
   - component: {fileID: 1145711078}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (9)
+  m_Name: 'ChocChipCookiesWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -46022,7 +46022,7 @@ GameObject:
   - component: {fileID: 1163182452}
   - component: {fileID: 1163182453}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (8)
+  m_Name: StandardTPasteWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -46040,7 +46040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91a7a2c93d557c408d5ef31abe1417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 962e6dffe316806488ad82a61210ff40, type: 2}
+  item: {fileID: 11400000, guid: 34e243b122ba4514db2a47e4a84f136b, type: 2}
 --- !u!4 &1163182451
 Transform:
   m_ObjectHideFlags: 0
@@ -46049,7 +46049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163182449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.817453, y: -3.043374, z: -1.9499998}
+  m_LocalPosition: {x: 0.88, y: -3.043374, z: -1.9499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48200,7 +48200,7 @@ GameObject:
   - component: {fileID: 1201279307}
   - component: {fileID: 1201279308}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (24)
+  m_Name: StandardFlourWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -48874,7 +48874,7 @@ GameObject:
   - component: {fileID: 1212409361}
   - component: {fileID: 1212409362}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (1)
+  m_Name: 'WhiteEggWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -54443,7 +54443,7 @@ GameObject:
   - component: {fileID: 1329059876}
   - component: {fileID: 1329059877}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (13)
+  m_Name: 'DSoySauceWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -54701,7 +54701,7 @@ GameObject:
   - component: {fileID: 1333006629}
   - component: {fileID: 1333006630}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (23)
+  m_Name: WhiteBreadWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -70296,7 +70296,7 @@ GameObject:
   - component: {fileID: 1697826256}
   - component: {fileID: 1697826257}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (21)
+  m_Name: 'EasyCookNoodlesWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -71355,7 +71355,7 @@ GameObject:
   - component: {fileID: 1714076185}
   - component: {fileID: 1714076186}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (39)
+  m_Name: PlainChipsWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -71998,7 +71998,7 @@ GameObject:
   - component: {fileID: 1725980269}
   - component: {fileID: 1725980270}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (29)
+  m_Name: MiniMushroomsWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72553,7 +72553,7 @@ GameObject:
   - component: {fileID: 1731767211}
   - component: {fileID: 1731767212}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (37)
+  m_Name: MiloPacketsWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72812,7 +72812,7 @@ GameObject:
   - component: {fileID: 1734737098}
   - component: {fileID: 1734737099}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (19)
+  m_Name: 'FreshTomatoesWaypoint '
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -73664,7 +73664,7 @@ GameObject:
   - component: {fileID: 1763121548}
   - component: {fileID: 1763121549}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (18)
+  m_Name: FineGrainBreadWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -76244,7 +76244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 172, y: -53}
+  m_AnchoredPosition: {x: 172, y: -54}
   m_SizeDelta: {x: 282.1093, y: 99.8521}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1844368321
@@ -78100,7 +78100,7 @@ GameObject:
   - component: {fileID: 1884019912}
   - component: {fileID: 1884019913}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (28)
+  m_Name: FreshBroccoliWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -78270,7 +78270,7 @@ GameObject:
   - component: {fileID: 1888684050}
   - component: {fileID: 1888684051}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (35)
+  m_Name: LycheeTeaWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -82742,7 +82742,7 @@ GameObject:
   - component: {fileID: 1994890297}
   - component: {fileID: 1994890298}
   m_Layer: 0
-  m_Name: FarmEggWaypoint (36)
+  m_Name: LemonTeaPacketsWaypoint
   m_TagString: FoodSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -84388,7 +84388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 379472294820300907, guid: 41db8e783a9901f42bb624ad30e4c527, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -344
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 379472294820300907, guid: 41db8e783a9901f42bb624ad30e4c527, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -88232,10 +88232,10 @@ RectTransform:
   m_Father: {fileID: 25826612}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.43823242, y: -6.9414062}
-  m_SizeDelta: {x: 0.8767, y: 7.7349}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.43823242, y: 0}
+  m_SizeDelta: {x: 2732.877, y: 2055.7349}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146981953
 MonoBehaviour:
@@ -89230,7 +89230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1664269287207152904, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 32
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1834710902574995014, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -89582,7 +89582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046294746886961185, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 310
+      value: 318.7
       objectReference: {fileID: 0}
     - target: {fileID: 5058764122287335758, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_text
@@ -89658,7 +89658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5523838919397095310, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 32
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5526738451887008066, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_SizeDelta.y
@@ -89714,7 +89714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879807760183325683, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00053554325
+      value: 0.0000716274
       objectReference: {fileID: 0}
     - target: {fileID: 6031281346125019435, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_TagString
@@ -89850,7 +89850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8370165605973543276, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 310
+      value: 330
       objectReference: {fileID: 0}
     - target: {fileID: 8497454304966427936, guid: 55ba084d93ed2e444b8f07494aab3fa1, type: 3}
       propertyPath: m_Pivot.x
