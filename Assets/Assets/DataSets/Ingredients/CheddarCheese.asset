@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 57
   itemName: Cheddar Cheese
-  price: 0
+  price: 6.75
   icon: {fileID: 0}
   itemType: Cheese
