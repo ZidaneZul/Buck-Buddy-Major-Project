@@ -1910,6 +1910,8 @@ MonoBehaviour:
   stars:
   - {fileID: 21300000, guid: d978d1452b6786f458b880700c73f680, type: 3}
   - {fileID: 21300000, guid: 40c33b324bfd01b438f20df326695c09, type: 3}
+  levelData: {fileID: 11400000, guid: 28cce03899a254940b902f0fba7700f0, type: 2}
+  buttonDataHolder: {fileID: 0}
   cashDropPos: {x: 0, y: 0, z: 0}
   offset: 0
   moneyGenerater: {fileID: 622419269}
@@ -5476,6 +5478,7 @@ MonoBehaviour:
   timeData: {fileID: 11400000, guid: df43a2fb04b3c8f4cb70a16d8833cf92, type: 2}
   scoreBoard: {fileID: 2026210352}
   timeReport: {fileID: 609737403}
+  levelData: {fileID: 11400000, guid: 28cce03899a254940b902f0fba7700f0, type: 2}
 --- !u!1 &2138171796
 GameObject:
   m_ObjectHideFlags: 0

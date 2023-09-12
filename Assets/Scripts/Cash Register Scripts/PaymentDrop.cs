@@ -324,7 +324,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
                 {
                     if(data.levelStarAmount < 3)
                     {
-                        data.levelStarAmount = 3;
+                        levelData.levelDataHolder[data.levelNumber].levelStarAmount = 3;
                     }
                 }
             }
@@ -342,7 +342,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
                 {
                     if (data.levelStarAmount < 2)
                     {
-                        data.levelStarAmount = 2;
+                        levelData.levelDataHolder[data.levelNumber].levelStarAmount = 2;
                     }
                 }
             }
@@ -360,7 +360,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
                 {
                     if (data.levelStarAmount < 1)
                     {
-                        data.levelStarAmount = 1;
+                        levelData.levelDataHolder[data.levelNumber].levelStarAmount = 1;
                     }
                 }
             }
