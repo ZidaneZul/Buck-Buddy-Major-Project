@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class PaymentDrop : MonoBehaviour, IDropHandler
 {
@@ -21,6 +22,10 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public List<GameObject> tenCent;
     public List<GameObject> twentyCent;
     public List<GameObject> fiftyCent;
+    public GameObject star1, star2, star3;
+    public Image star1Image,star2Image,star3Image;
+    public TextMeshProUGUI scoreboardText;
+    public Sprite[] stars;
 
     public Vector3 cashDropPos;
     public float offset;
@@ -36,10 +41,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public float sumAdded;
     public Button confirm;
 
-    public GameObject oneStar;
-    public GameObject twoStar;
-    public GameObject threeStar;
-    public GameObject fail;
+    public GameObject scoreBoard;
+
 
     public Image mask;
     public DragDrop dragdrop;
@@ -54,17 +57,18 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     
     public void Start()
     {
+        star1Image = star1.GetComponent<Image>();
+        star2Image = star2.GetComponent<Image>();
+        star3Image = star3.GetComponent<Image>();
         placement = GameObject.FindGameObjectsWithTag("Waypoint");
         //originalPlacement = GameObject.FindGameObjectsWithTag("Original Waypoints");     
         anim.enabled = false;
         confirm.interactable = false;
 
-        oneStar.SetActive(false);
-        twoStar.SetActive(false);
-        threeStar.SetActive(false);
-        fail.SetActive(false);
+        scoreBoard.SetActive(false);
 
-        
+
+
         //randomNumber = Random.Range(1f, 100f);
         //randomNumber = Mathf.Round((randomNumber * 100.0f) * 0.01f);
         randomNumber = InventoryManager.Instance.totalPrice;
@@ -306,28 +310,35 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
         Debug.Log("diff in amts" + (sumAdded - randomNumber));
         if (sumAdded == randomNumber)
         {
-            threeStar.SetActive(true);
-            twoStar.SetActive(false);
-            oneStar.SetActive(false);
+            scoreBoard.SetActive(true);
+            star1Image.sprite = stars[1];
+            star2Image.sprite = stars[1];
+            star3Image.sprite = stars[1];
+            scoreboardText.text = "Perfect! Nice Job";
         }
         else if (sumAdded - randomNumber < 3f && sumAdded - randomNumber > -3f)
         {
-            threeStar.SetActive(false);
-            oneStar.SetActive(false);
-            twoStar.SetActive(true);
+            scoreBoard.SetActive(true);
+            star1Image.sprite = stars[1];
+            star2Image.sprite = stars[1];
+            star3Image.sprite = stars[0];
+            scoreboardText.text = "Getting Better! Keep going";
         }
         else if (sumAdded - randomNumber < 6f && sumAdded - randomNumber > -6)
         {
-            threeStar.SetActive(false);
-            oneStar.SetActive(true);
-            twoStar.SetActive(false);
+            scoreBoard.SetActive(true);
+            star1Image.sprite = stars[1];
+            star2Image.sprite = stars[0];
+            star3Image.sprite = stars[0];
+            scoreboardText.text = "Nice Try, Keep going!";
         }
-        else 
+        else
         {
-            fail.SetActive(true);
-            oneStar.SetActive(false);
-            twoStar.SetActive(false);
-            threeStar.SetActive(false);
+            scoreBoard.SetActive(true);
+            star1Image.sprite = stars[0];
+            star2Image.sprite = stars[0];
+            star3Image.sprite = stars[0];
+            scoreboardText.text = "Try Again!";
         }
     }
 
