@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae8d8a3192163b43a34da533a5e2462, type: 3}
-  m_Name: Oreo
+  m_Name: VanillaCreamCookie
   m_EditorClassIdentifier: 
   id: 31
-  itemName: Oreo
+  itemName: Vanilla Cream Cookie
   price: 3.3
   icon: {fileID: 0}
   itemType: Cookies
