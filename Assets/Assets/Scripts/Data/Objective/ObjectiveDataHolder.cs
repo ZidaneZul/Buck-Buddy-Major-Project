@@ -9,6 +9,9 @@ public class ObjectiveDataHolder : MonoBehaviour
     public int quantity;
     public bool isItemHere;
     public int orderNumber;
+
+    public GameObject line;
+    public bool sufficientAmount = false;
     // Start is called before the first frame update
     void Start()
     {
