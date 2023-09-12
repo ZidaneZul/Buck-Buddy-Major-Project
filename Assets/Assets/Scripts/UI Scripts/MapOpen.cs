@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class MapOpen : MonoBehaviour
 {
-    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
+    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList, dynamicShoppingList
         , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight, budgetRemainderPanel;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
@@ -81,6 +81,7 @@ public class MapOpen : MonoBehaviour
             MoveButtonLeft.SetActive(isActive);
             MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
+            dynamicShoppingList.SetActive(isActive);
 
 
             foreach (GameObject button in aislePoint)
@@ -109,6 +110,7 @@ public class MapOpen : MonoBehaviour
             MoveButtonLeft.SetActive(cartActive);
             MoveButtonRight.SetActive(cartActive);
             panel.SetActive(false);
+            dynamicShoppingList.SetActive(cartActive);
         }
         
         InventoryManager.Instance.ShowItem();

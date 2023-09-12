@@ -11,9 +11,6 @@ public class Objective : MonoBehaviour
 
     public ObjectiveData objectiveData;
 
-    List<ObjectiveDataHolder> dynamicOBjList = new List<ObjectiveDataHolder>();
-    ObjectiveDataHolder[] dynamicObj;
-
     public GameObject textPrefab, dynamicTextPrefab, shoppingListContent, dynamicShoppingListContent, dynamicShoppingList;
     public List<KeyValuePair<string, int>> objList = new List<KeyValuePair<string, int>>();
     public List<string> requiredAisleItems = new List<string>();
@@ -30,16 +27,8 @@ public class Objective : MonoBehaviour
     void Start()
     {
         ShoppingListDisplay();
-        //foreach (KeyValuePair<string, int> obj in objList)
-        //{
-        //    Debug.Log("Require food type is " + obj.Key + " " + obj.Value);
-        //}
-        levelBudget_Txt = GameObject.Find("LevelBudget_Txt").GetComponent<TextMeshProUGUI>();
 
         ShowBudget();
-        GetBudget();
-        GetContentListType();
-
     }
 
     // Update is called once per frame
@@ -50,7 +39,6 @@ public class Objective : MonoBehaviour
         if (mapLocationSript.DidPlayerChangeAisle())
         {
             SortShoppingList();
-
         }
     }
 
@@ -60,12 +48,10 @@ public class Objective : MonoBehaviour
         
         //get the first word of where the player is (Meat Seafood Aisle ==> Meat)
         string location = mapLocationSript.FindPlayer().Split(' ')[0];
-        Debug.Log(location);
 
         //Get a list of different item types in that aisle (Veggie aisle has "onion, lettuce, carrot etc")
         string[] aisleItemType = MapDataList.instance.GetAisleTypes(location);
 
-        Debug.Log(objList.Count);
         //goes thru the item type required for obj
         foreach (KeyValuePair<string, int> obj in objList)
         {
@@ -84,11 +70,6 @@ public class Objective : MonoBehaviour
         return requiredAisleItems;
     }
 
-    public void GetContentListType()
-    {
-        dynamicObj = dynamicShoppingListContent.GetComponentsInChildren<ObjectiveDataHolder>();
-        dynamicOBjList = dynamicObj.ToList();
-    }
 
 
 
@@ -103,7 +84,7 @@ public class Objective : MonoBehaviour
 
             foreach (string requireItemType in GetCurrentAisleItem())
             {
-                if (objScript.typeOfItem == requireItemType)
+                if (objScript.typeOfItem == requireItemType && !objScript.sufficientAmount)
                 {
                     obj.gameObject.SetActive(true);
                     obj.SetSiblingIndex(ordernumber);
@@ -145,13 +126,16 @@ public class Objective : MonoBehaviour
             var itemSprite = shoppingListItems.transform.Find("FoodType_Img").GetComponent<Image>();
             var dynItemSprite = dynamicShoppingListItem.transform.Find("FoodType_Img").GetComponent<Image>();
 
-            ObjectiveDataHolder objDataHolder = dynamicShoppingListItem.GetComponent<ObjectiveDataHolder>();
+            ObjectiveDataHolder dynamicObjDataHolder = dynamicShoppingListItem.GetComponent<ObjectiveDataHolder>();
+            ObjectiveDataHolder objDataHolder = shoppingListItems.GetComponent<ObjectiveDataHolder>();
 
             itemName.text = obj.itemType;
             objDataHolder.typeOfItem = obj.itemType;
+            dynamicObjDataHolder.typeOfItem = obj.itemType;
 
             itemQuantity.text = obj.amount.ToString();
             dynItemQuantity.text = "x" + obj.amount.ToString();
+            dynamicObjDataHolder.quantity = obj.amount;
             objDataHolder.quantity = obj.amount;
 
             itemSprite.sprite = obj.iconSprite;
@@ -163,11 +147,87 @@ public class Objective : MonoBehaviour
 
     public void ShowBudget()
     {
+        levelBudget_Txt = GameObject.Find("LevelBudget_Txt").GetComponent<TextMeshProUGUI>();
         levelBudget_Txt.text = "Budget: $" + objectiveData.budget.ToString("F2");
     }
 
     public float GetBudget()
     {
         return objectiveData.budget;
+    }
+
+    public void ObjCheckOff()
+    {
+        foreach(Transform item in dynamicShoppingListContent.transform)
+        {
+            ObjectiveDataHolder itemDataHolder = item.GetComponent<ObjectiveDataHolder>();
+
+            foreach (KeyValuePair<string, int> cartItems in InventoryManager.Instance.GetCartTypes())
+            {
+                Debug.Log(cartItems.Key == itemDataHolder.typeOfItem);
+                if(cartItems.Key == itemDataHolder.typeOfItem)
+                {
+                    if (cartItems.Value >= itemDataHolder.quantity)
+                    {
+                        itemDataHolder.sufficientAmount = true;
+                        Debug.Log("ENUF");
+                        itemDataHolder.line.SetActive(true);
+                    }
+                }
+            }
+            if (!itemDataHolder.sufficientAmount)
+            {
+                itemDataHolder.sufficientAmount = false;
+                itemDataHolder.line.SetActive(false);
+            }
+        }
+
+        foreach (Transform item in shoppingListContent.transform)
+        {
+            ObjectiveDataHolder itemDataHolder = item.GetComponent<ObjectiveDataHolder>();
+
+            foreach (KeyValuePair<string, int> cartItems in InventoryManager.Instance.GetCartTypes())
+            {
+                if (cartItems.Key == itemDataHolder.typeOfItem)
+                {
+                    if (cartItems.Value >= itemDataHolder.quantity)
+                    {
+                        itemDataHolder.sufficientAmount = true;
+                        itemDataHolder.line.SetActive(true);
+                    }
+                }
+            }
+            if (!itemDataHolder.sufficientAmount)
+            {
+                itemDataHolder.sufficientAmount = false;
+                itemDataHolder.line.SetActive(false);
+            }
+        }
+    }
+
+    public void ChangeItemDataBoolValue(string itemToReset)
+    {
+        Debug.Log("trying to find the error");
+        foreach(Transform item in dynamicShoppingListContent.transform)
+        {
+            ObjectiveDataHolder itemDataHolder = item.GetComponent<ObjectiveDataHolder>();
+
+            if (itemDataHolder.typeOfItem == itemToReset)
+            {
+
+                itemDataHolder.sufficientAmount = false;
+                ObjCheckOff();
+            }
+        }
+        foreach (Transform item in shoppingListContent.transform)
+        {
+            ObjectiveDataHolder itemDataHolder = item.GetComponent<ObjectiveDataHolder>();
+
+            if (itemDataHolder.typeOfItem == itemToReset)
+            {
+                itemDataHolder.sufficientAmount = false;
+                ObjCheckOff();
+            }
+        }
     }
 }
