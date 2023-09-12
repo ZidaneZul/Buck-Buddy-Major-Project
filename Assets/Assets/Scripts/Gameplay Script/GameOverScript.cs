@@ -13,6 +13,7 @@ public class GameOverScript : MonoBehaviour
     public TimeData timeData;
     public GameObject scoreBoard;
     public TextMeshProUGUI timeReport;
+    public LevelData levelData;
 
     private void Start()
     {

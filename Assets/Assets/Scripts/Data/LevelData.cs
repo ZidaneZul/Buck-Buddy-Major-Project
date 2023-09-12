@@ -11,6 +11,7 @@ public class LevelData : ScriptableObject
     public class LevelDataHolder
     {
         public int levelNumber;
+        public int levelStarAmount;
         public string foodName;
         public Sprite itemToMake;
         public string[] ingredients;

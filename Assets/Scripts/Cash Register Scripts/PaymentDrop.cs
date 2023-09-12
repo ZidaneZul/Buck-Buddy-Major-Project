@@ -26,6 +26,8 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     public Image star1Image,star2Image,star3Image;
     public TextMeshProUGUI scoreboardText;
     public Sprite[] stars;
+    public LevelData levelData;
+    public ButtonDataHolder buttonDataHolder;
 
     public Vector3 cashDropPos;
     public float offset;
@@ -57,6 +59,7 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
     
     public void Start()
     {
+        buttonDataHolder = GameObject.Find("RandomEventHandler").GetComponent<ButtonDataHolder>();
         star1Image = star1.GetComponent<Image>();
         star2Image = star2.GetComponent<Image>();
         star3Image = star3.GetComponent<Image>();
@@ -315,6 +318,16 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             star2Image.sprite = stars[1];
             star3Image.sprite = stars[1];
             scoreboardText.text = "Perfect! Nice Job";
+            foreach (LevelData.LevelDataHolder data in levelData.levelDataHolder)
+            {
+                if (data.levelNumber == buttonDataHolder.LevelSelected)
+                {
+                    if(data.levelStarAmount < 3)
+                    {
+                        data.levelStarAmount = 3;
+                    }
+                }
+            }
         }
         else if (sumAdded - randomNumber < 3f && sumAdded - randomNumber > -3f)
         {
@@ -323,6 +336,16 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             star2Image.sprite = stars[1];
             star3Image.sprite = stars[0];
             scoreboardText.text = "Getting Better! Keep going";
+            foreach (LevelData.LevelDataHolder data in levelData.levelDataHolder)
+            {
+                if (data.levelNumber == buttonDataHolder.LevelSelected)
+                {
+                    if (data.levelStarAmount < 2)
+                    {
+                        data.levelStarAmount = 2;
+                    }
+                }
+            }
         }
         else if (sumAdded - randomNumber < 6f && sumAdded - randomNumber > -6)
         {
@@ -331,6 +354,16 @@ public class PaymentDrop : MonoBehaviour, IDropHandler
             star2Image.sprite = stars[0];
             star3Image.sprite = stars[0];
             scoreboardText.text = "Nice Try, Keep going!";
+            foreach (LevelData.LevelDataHolder data in levelData.levelDataHolder)
+            {
+                if (data.levelNumber == buttonDataHolder.LevelSelected)
+                {
+                    if (data.levelStarAmount < 1)
+                    {
+                        data.levelStarAmount = 1;
+                    }
+                }
+            }
         }
         else
         {
