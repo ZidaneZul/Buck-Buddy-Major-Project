@@ -75,6 +75,10 @@ public class InventoryManager : MonoBehaviour
                 cartQuantity.text = "9+";
             }
         }
+        else
+        {
+            cartAmount.SetActive(false);
+        }
        // Debug.Log("Total price is " + totalPrice);
 
         //BudgetReminder();
