@@ -321,6 +321,18 @@ PrefabInstance:
       propertyPath: levelData
       value: 
       objectReference: {fileID: 11400000, guid: 28cce03899a254940b902f0fba7700f0, type: 2}
+    - target: {fileID: 3529921712936533992, guid: 12417bb00e14df945a13f83fcfdc91a4, type: 3}
+      propertyPath: starImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529921712936533992, guid: 12417bb00e14df945a13f83fcfdc91a4, type: 3}
+      propertyPath: starImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: d978d1452b6786f458b880700c73f680, type: 3}
+    - target: {fileID: 3529921712936533992, guid: 12417bb00e14df945a13f83fcfdc91a4, type: 3}
+      propertyPath: starImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 40c33b324bfd01b438f20df326695c09, type: 3}
     - target: {fileID: 5613165128715068385, guid: 12417bb00e14df945a13f83fcfdc91a4, type: 3}
       propertyPath: m_RootOrder
       value: 2
