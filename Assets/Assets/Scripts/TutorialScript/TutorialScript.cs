@@ -217,9 +217,11 @@ public class TutorialScript : MonoBehaviour
         }
         if (Index == 6)
         {
-            DialogueBox.transform.position = DialoguePositions[2].transform.position;
+            DialogueBox.transform.position = DialoguePositions[3].transform.position;
             TutorialChatBox.transform.position = TextPosition.transform.position;
             DialogueBox.sprite = DialogueBoxAssets[2];
+            DialogueBox.transform.localScale = new Vector3(0.75f * -1, DialogueBox.transform.localScale.y - 0.5f, DialogueBox.transform.localScale.z);
+
             CoinMascot.enabled = false;
             TutorialMap.SetActive(true);
 
