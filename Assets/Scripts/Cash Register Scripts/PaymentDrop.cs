@@ -5,13 +5,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
+
 
 public class PaymentDrop : MonoBehaviour, IDropHandler
 {
     //Variables (Placement and activeMoney Variables)
     public GameObject[] placement;
-    public List<GameObject> activeMoney;
+    public List<GameObject> activeMoney; 
 
     //All the coins and money put in a list and converted into gameobject variables to use for later.
     public List<GameObject> twoDollar;
