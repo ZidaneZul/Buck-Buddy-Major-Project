@@ -19,7 +19,6 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
-    bool isActive,shoppingCartActive,cartActive;
     public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
@@ -86,10 +85,6 @@ public class MapOpen : MonoBehaviour
 
             foreach (GameObject button in aislePoint)
             {
-                Debug.Log("Goin thru buttons");
-               // Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
-             //       "\n buttun name is " + button.name);
-
                 if (button.name.Replace("_Btn", "").Contains(mapLocationScript.FindPlayer().Replace(" ", "")))
                 {
                     selectedHead.transform.position = button.transform.position;
@@ -128,7 +123,10 @@ public class MapOpen : MonoBehaviour
 
         }
         else if (InventoryManager.Instance.CheckForObj())
-                     SceneManager.LoadScene("CashRegister");
+        {
+            SaveCartItems();
+            SceneManager.LoadScene("CashRegister");
+        }
         else
         {
             objPanel.SetActive(true);
@@ -139,14 +137,20 @@ public class MapOpen : MonoBehaviour
             shoppingCartPanel.SetActive(false);
         }
     }
+    public void SaveCartItems()
+    {
+        storeCartData storage = GameObject.Find("RandomEventHandler").GetComponent<storeCartData>();
+        storage.CleanList();
+        
+        storage.cartData = InventoryManager.Instance.GetShoppingCartItems();
+        storage.data = InventoryManager.Instance.itemList;
+    }
 
     public void GetHelpForMissingCart()
     {
         helpPanelBody_Txt.text = InventoryManager.Instance.FindMissingItems();
-;
+
         helpPanelCtnBtn.SetActive(false);
-
-
     }
 
     public void TeleportToAisleDynamic()

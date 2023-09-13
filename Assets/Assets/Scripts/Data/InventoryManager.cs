@@ -42,6 +42,8 @@ public class InventoryManager : MonoBehaviour
     public float totalPrice;
     public float budget;
 
+    public storeCartData cartData;
+
     private void Awake()
     {
         Instance = this;
@@ -52,14 +54,11 @@ public class InventoryManager : MonoBehaviour
         cartAmount.SetActive(false);
         budget = Objective.Instance.GetBudget();
 
+        CheckIfReturningFromCashRegister();
+
         //itemContent = GameObject.Find("Content").transform;
         //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
         // itemList = PaymentDrop.storedData;
-        foreach (ItemData item in PaymentDrop.storedData)
-        {
-            itemList.Add(item);
-            totalPrice += item.price;
-        }
     }
 
     // Update is called once per frame
@@ -79,9 +78,11 @@ public class InventoryManager : MonoBehaviour
         {
             cartAmount.SetActive(false);
         }
-       // Debug.Log("Total price is " + totalPrice);
+        // Debug.Log("Total price is " + totalPrice);
 
         //BudgetReminder();
+        cartData = GameObject.Find("RandomEventHandler").GetComponent<storeCartData>();
+
     }
     public void Add(ItemData item)
     {
@@ -112,6 +113,7 @@ public class InventoryManager : MonoBehaviour
 
 
         //goes through items list
+        //itemList is needed so that we make the displayed item in the ui hold the correct data (to remove from cart)
         foreach (var item in itemList)
         {
             //goes through the pairs in the dup count list
@@ -142,7 +144,7 @@ public class InventoryManager : MonoBehaviour
         SetInventoryItems();
     }
 
-    Dictionary<string , int> CountDuplicates(List<string> CDlist)
+    public Dictionary<string , int> CountDuplicates(List<string> CDlist)
     {
         Dictionary<string, int> duplicateCounts = new Dictionary<string, int>();
 
@@ -157,6 +159,7 @@ public class InventoryManager : MonoBehaviour
                 duplicateCounts[itemName] = 1;
             }
         }
+        Debug.LogWarning("dup counts" + duplicateCounts.Count);
 
         return duplicateCounts;
     }
@@ -174,14 +177,13 @@ public class InventoryManager : MonoBehaviour
     }
     void FindIDs()
     {
-        if (cartPanel.activeInHierarchy)
-        {
+        
             //Debug.Log("Cart is open");
             foreach (var item in itemList)
             {
                 idList.Add(item.itemName);
             }
-        }
+        
         //else
         //{
         //    // Debug.Log("Cart is close");
@@ -353,7 +355,6 @@ public class InventoryManager : MonoBehaviour
         }
         return missingItems;
     }
-
     public Dictionary<string, int> GetCartTypes()
     {
         cartObjDiction.Clear();
@@ -371,5 +372,26 @@ public class InventoryManager : MonoBehaviour
             }
         }   
         return cartObjDiction;
+    }
+
+    public Dictionary<string, int> GetShoppingCartItems()
+    {
+        CleanList();
+        FindIDs();
+        duplicateCounts = CountDuplicates(idList);
+        Debug.LogWarning("dup counts" + duplicateCounts.Count);
+        return duplicateCounts;
+    }
+
+    public void CheckIfReturningFromCashRegister()
+    {
+    Debug.LogWarning("DHFSOFOFIHOIF" + cartData.getItemData); 
+        if (cartData.getItemData)
+        {
+            foreach (var item in cartData.data)
+                itemList.Add(item);
+            Debug.LogWarning("SToLEN ITem DATA");
+            cartData.getItemData = false;
+        }
     }
 }

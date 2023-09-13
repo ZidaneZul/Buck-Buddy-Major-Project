@@ -73,6 +73,13 @@ public class MapLocation : MonoBehaviour
             ResetCloneList();
             currentAisleSection = closestPoint;
             sectionsClone.Remove(closestPoint);
+            foreach(var thing in sectionsClone)
+            {
+                if(thing.name == currentAisleSection.name)
+                {
+                    sectionsClone.Remove(thing);
+                }
+            }
         }
 
         currentAisle_string = string.Concat(currentAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
