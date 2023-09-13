@@ -6,15 +6,13 @@ using System.Linq;
 
 public class MapLocation : MonoBehaviour
 {
-    public GameObject[] sections;
+    public GameObject[] sections, borders;
     public List<GameObject> sectionsClone;
 
     public GameObject player;
 
     public float closestDistance;
     public GameObject closestPoint, leftClosestPoint, rightClosestPoint;
-
-    public MapLocation mapLocationScript;
 
     public GameObject currentAisleSection;
 
@@ -24,6 +22,7 @@ public class MapLocation : MonoBehaviour
     void Start()
     {
         sections = GameObject.FindGameObjectsWithTag("Sections");
+        borders = GameObject.FindGameObjectsWithTag("Border");
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -34,7 +33,9 @@ public class MapLocation : MonoBehaviour
         //FindPlayer();
     }
 
-    
+    /// <summary>
+    /// function to reset the variables used to find locations.
+    /// </summary>
     public void ResetCloneList()
     {
         sectionsClone.Clear();
@@ -43,28 +44,32 @@ public class MapLocation : MonoBehaviour
         leftAisle_string = null;
         rightAisle_string = null;
         furthestAisle_string = null;
-        foreach(GameObject section in sections)
+        foreach(GameObject section in borders)
         {
-            sectionsClone.Add(section);
+             sectionsClone.Add(section.transform.parent.gameObject);
         }
     }
 
-    public string FindPlayerMap()
-    {
-        return "amp";
-    }
-
+    /// <summary>
+    /// Main function to get the current aisle where the player is in. Sets the closestDistance to a high number to help 
+    /// find the closes object. goes thru the borders array to find which aisle is closest. it would then save the parent
+    /// gameobject and string to be used later. The if (currentAisleSection != closestPoint) statement is chechking if the
+    /// player leaves the aisle. If they did, reset all the variables and then finds the current aisle in the clone list to
+    /// delete. Clone list to be used for finding left and right aisle. Since there is 2 borders per aisle, need to delete
+    /// the aisle from the clone twice.
+    /// </summary>
     public string FindPlayer()
     {
         //resets the distance(cant be 0 else the if statement will NEVER run)
         closestDistance = 1000;
-        foreach (GameObject section in sections)
+        foreach (GameObject section in borders)
         {
             if (Vector3.Distance(section.transform.position, player.transform.position) < closestDistance)
             {
                 closestDistance = Vector3.Distance(section.transform.position, player.transform.position);
-                closestPoint = section;
-                currentAisle_string = section.name;
+                
+                closestPoint = section.transform.parent.gameObject;
+                currentAisle_string = section.transform.parent.name;
             }
         }
 
@@ -72,19 +77,21 @@ public class MapLocation : MonoBehaviour
         {
             ResetCloneList();
             currentAisleSection = closestPoint;
-            sectionsClone.Remove(closestPoint);
-            foreach(var thing in sectionsClone)
+            foreach (GameObject border in borders)
             {
-                if(thing.name == currentAisleSection.name)
+                Debug.LogWarning(border.transform.parent.name + closestPoint.name);
+                if (border.transform.parent.name == closestPoint.name)
                 {
-                    sectionsClone.Remove(thing);
+                    sectionsClone.Remove(border);
+                    Debug.LogWarning("DELTEING");
                 }
             }
+            
         }
 
         currentAisle_string = string.Concat(currentAisle_string.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
 
-       // Debug.LogError(currentAisle_string);
+       //Debug.LogWarning(currentAisle_string);
         return currentAisle_string;
 
     }
@@ -97,7 +104,8 @@ public class MapLocation : MonoBehaviour
         {
             //checks if the aisle is to the left of the player and is the current closest point
             if((Vector3.Distance(section.transform.position, player.transform.position) < closestLeftDistance) &&
-                section.transform.position.x <= player.transform.position.x)
+                section.transform.position.x <= player.transform.position.x
+                && !(section.name == closestPoint.name))
             {
                 closestLeftDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 leftClosestPoint = section;
@@ -123,7 +131,8 @@ public class MapLocation : MonoBehaviour
         {
             //checks if the aisle is to the right of the player and is the current closest point
             if (Vector3.Distance(section.transform.position, player.transform.position) < closestRightDistance &&
-                section.transform.position.x >= player.transform.position.x)
+                section.transform.position.x >= player.transform.position.x
+                && !(section.name == closestPoint.name))
             {
                 closestRightDistance = Vector3.Distance(section.transform.position, player.transform.position);
                 rightClosestPoint = section;
