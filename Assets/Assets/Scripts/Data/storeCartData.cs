@@ -18,7 +18,7 @@ public class storeCartData : MonoBehaviour
 
     private void Update()
     {
-        Debug.LogWarning("cartData " + cartData.Count);
+       // Debug.LogWarning("cartData " + cartData.Count);
     }
 
     public void boolChange()

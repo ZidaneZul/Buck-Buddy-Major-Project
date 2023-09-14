@@ -26,6 +26,7 @@ TagManager:
   - FoodBubble
   - GameManager
   - Border
+  - Food
   layers:
   - Default
   - TransparentFX
@@ -77,6 +78,9 @@ TagManager:
     locked: 0
   - name: FoodStack3
     uniqueID: 3632102957
+    locked: 0
+  - name: Glass
+    uniqueID: 2301739347
     locked: 0
   - name: FoodPopout
     uniqueID: 1148412727

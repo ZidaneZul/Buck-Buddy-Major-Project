@@ -6,7 +6,7 @@ public class NPCSpawning : MonoBehaviour
 {
     public GameObject Player,NPC,spawnedNpc;
     public GameObject[] TypesOfNpc;
-    public List<GameObject> NPCspawnerLocations;
+    public List<GameObject> NPCspawnerLocations = new List<GameObject>();
     public int numberHolder;
     public DialogueManager dialogueManager;
 
@@ -16,7 +16,6 @@ public class NPCSpawning : MonoBehaviour
     {
         NPCspawnerLocations = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
-        Player = GameObject.FindGameObjectWithTag("Player");
         
         FindClosestWaypoint();
     }

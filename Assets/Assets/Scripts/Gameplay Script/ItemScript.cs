@@ -16,7 +16,7 @@ public class ItemScript : MonoBehaviour
     public GameObject tutorialBox;
 
     public bool didTextSpawn = false;
-    public bool isPointClose = false;
+   // public bool isPointClose = false;
     bool testingGizmos = false;
     bool otherFoodBubbleOpen = false;
     bool foodBubbleClicked = false;
@@ -78,25 +78,25 @@ public class ItemScript : MonoBehaviour
 
     }
 
-    void FindPlayer()
-    {
-        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, boxSize);
-        foreach (Collider collider in colliders)
-        {
-            if (collider.CompareTag("Player") && !talkingToNPC)
-            {
-                Debug.Log("Showing bubble");
-                Debug.LogWarning(didTextSpawn);
-                ShowBubble();
-            }
-            else
-            {
-                Debug.LogWarning("Deleting bubble");
-                Debug.Log("HELP");
-                DeleteBubble();
-            }
-        }
-    }
+    //void FindPlayer()
+    //{
+    //    Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, boxSize);
+    //    foreach (Collider collider in colliders)
+    //    {
+    //        if (collider.CompareTag("Player") && !talkingToNPC)
+    //        {
+    //            Debug.Log("Showing bubble");
+    //            Debug.LogWarning(didTextSpawn);
+    //            ShowBubble();
+    //        }
+    //        else
+    //        {
+    //            Debug.LogWarning("Deleting bubble");
+    //            Debug.Log("HELP");
+    //            DeleteBubble();
+    //        }
+    //    }
+    //}
 
     private void OnMouseUpAsButton()
     {
@@ -141,46 +141,46 @@ public class ItemScript : MonoBehaviour
 
         }
     }
-    void FindClosePoint()
-    {
-        if (!isPointClose)
-        {
-            foreach (GameObject point in foodPoints)
-            {
-                RaycastHit hit;
+//    void FindClosePoint()
+//    {
+//        if (!isPointClose)
+//        {
+//            foreach (GameObject point in foodPoints)
+//            {
+//                RaycastHit hit;
 
-                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y
-                    - 2.5f, point.transform.position.z);
-                Debug.DrawLine(point.transform.position, LinePoint) ;
+//                Vector3 LinePoint = new Vector3 ( point.transform.position.x, point.transform.position.y
+//                    - 2.5f, point.transform.position.z);
+//                Debug.DrawLine(point.transform.position, LinePoint) ;
 
-                Debug.Log(Vector3.Distance(point.transform.position, transform.position));
+//                Debug.Log(Vector3.Distance(point.transform.position, transform.position));
 
-//                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2.5f))
-                if (Vector3.Distance(transform.position, point.transform.position) < 2.2)
-                {
-                    tempPoint = point;
-                    isPointClose = true;
+////                if (Physics.Raycast(point.transform.position, transform.TransformDirection(Vector3.down),out hit, 2.5f))
+//                if (Vector3.Distance(transform.position, point.transform.position) < 2.2)
+//                {
+//                    tempPoint = point;
+//                    isPointClose = true;
 
-                }
+//                }
 
-            }
-        }
-    }
+//            }
+//        }
+//    }
 
-    void IsCloseToFood()
-    {
-        if (isPointClose && !talkingToNPC)
-        {
-            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2.2)
-            {
-                ShowBubble();
-            }
-            else
-            {
-                DeleteBubble();
-            }
-        }
-    }
+//    void IsCloseToFood()
+//    {
+//        if (isPointClose && !talkingToNPC)
+//        {
+//            if (Vector3.Distance(transform.position, tempPoint.transform.position) < 2.2)
+//            {
+//                ShowBubble();
+//            }
+//            else
+//            {
+//                DeleteBubble();
+//            }
+//        }
+//    }
     public void ShowBubble()
     {
         if (!didTextSpawn)
@@ -207,7 +207,7 @@ public class ItemScript : MonoBehaviour
     {
         Destroy(foodBubbleClone);
         didTextSpawn=false;
-        isPointClose=false;
+      //  isPointClose=false;
     }
         
 }

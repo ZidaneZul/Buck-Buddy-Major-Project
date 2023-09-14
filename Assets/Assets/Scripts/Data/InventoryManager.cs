@@ -54,7 +54,7 @@ public class InventoryManager : MonoBehaviour
         cartAmount.SetActive(false);
         budget = Objective.Instance.GetBudget();
 
-        CheckIfReturningFromCashRegister();
+        //CheckIfReturningFromCashRegister();
 
         //itemContent = GameObject.Find("Content").transform;
         //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
@@ -383,15 +383,15 @@ public class InventoryManager : MonoBehaviour
         return duplicateCounts;
     }
 
-    public void CheckIfReturningFromCashRegister()
-    {
-    Debug.LogWarning("DHFSOFOFIHOIF" + cartData.getItemData); 
-        if (cartData.getItemData)
-        {
-            foreach (var item in cartData.data)
-                itemList.Add(item);
-            Debug.LogWarning("SToLEN ITem DATA");
-            cartData.getItemData = false;
-        }
-    }
+    //public void CheckIfReturningFromCashRegister()
+    //{
+    //Debug.LogWarning("DHFSOFOFIHOIF" + cartData.getItemData); 
+    //    if (cartData.getItemData)
+    //    {
+    //        foreach (var item in cartData.data)
+    //            itemList.Add(item);
+    //        Debug.LogWarning("SToLEN ITem DATA");
+    //        cartData.getItemData = false;
+    //    }
+    //}
 }
