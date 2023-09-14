@@ -15,13 +15,13 @@ public class InventoryManager : MonoBehaviour
     public List<ItemData> itemSpawnedList = new List<ItemData>();
 
     //used to get the quantity for each item in the cart
-    public Dictionary<int, int> duplicateCounts;
+    public Dictionary<string, int> duplicateCounts;
 
     //used for finding dups
-    List<int> idList = new List<int>();
+    List<string> idList = new List<string>();
 
     //so that the item prefab in cart spawns once per item
-    List<int> spawnedCartIds = new List<int>();
+    List<string> spawnedCartNames = new List<string>();
 
     //to attach the data to the item spawned list
     public InventoryItemController[] InventoryItem;
@@ -42,6 +42,8 @@ public class InventoryManager : MonoBehaviour
     public float totalPrice;
     public float budget;
 
+    public storeCartData cartData;
+
     private void Awake()
     {
         Instance = this;
@@ -52,14 +54,11 @@ public class InventoryManager : MonoBehaviour
         cartAmount.SetActive(false);
         budget = Objective.Instance.GetBudget();
 
+        CheckIfReturningFromCashRegister();
+
         //itemContent = GameObject.Find("Content").transform;
         //cancelToggle = GameObject.Find("ToggleRemove_Btn").GetComponent<Toggle>();
         // itemList = PaymentDrop.storedData;
-        foreach (ItemData item in PaymentDrop.storedData)
-        {
-            itemList.Add(item);
-            totalPrice += item.price;
-        }
     }
 
     // Update is called once per frame
@@ -79,9 +78,11 @@ public class InventoryManager : MonoBehaviour
         {
             cartAmount.SetActive(false);
         }
-       // Debug.Log("Total price is " + totalPrice);
+        // Debug.Log("Total price is " + totalPrice);
 
         //BudgetReminder();
+        cartData = GameObject.Find("RandomEventHandler").GetComponent<storeCartData>();
+
     }
     public void Add(ItemData item)
     {
@@ -89,23 +90,16 @@ public class InventoryManager : MonoBehaviour
         totalPrice += item.price;
         itemsInCart++;
         budget -= item.price;
+        Objective.Instance.ObjCheckOff();
     }
     public void Remove(ItemData item)
     {
-        Debug.Log("remove item");
         itemList.Remove(item);
         totalPrice -= item.price;
         itemsInCart--;
         budget += item.price;
+        Objective.Instance.ObjCheckOff();
     } 
-    //public void BudgetReminder()
-    //{
-    //    if (budget <= 5f)
-    //    {
-    //        budgetReminder.SetActive(true);
-    //    }
-    //    else { budgetReminder.SetActive(false); }
-    //}
 
     public void ShowItem()
     {
@@ -119,10 +113,11 @@ public class InventoryManager : MonoBehaviour
 
 
         //goes through items list
+        //itemList is needed so that we make the displayed item in the ui hold the correct data (to remove from cart)
         foreach (var item in itemList)
         {
             //goes through the pairs in the dup count list
-            foreach (KeyValuePair<int, int> pair in duplicateCounts)
+            foreach (KeyValuePair<string, int> pair in duplicateCounts)
             {
                 Debug.Log("Element: " + pair.Key + " - Count: " + pair.Value);
                 
@@ -130,11 +125,11 @@ public class InventoryManager : MonoBehaviour
                 //it was the first unique item id to be added, makes a cart slot and adds the
                 //name price and quantity of the item.
                 //Adds to itemSpawnedList so that the cart slot would contain the correct item script.
-                if (pair.Key == item.id && !spawnedCartIds.Contains(item.id))
+                if (pair.Key == item.itemName && !spawnedCartNames.Contains(item.itemName))
                 {                
                     itemSpawnedList.Add(item);
                     GameObject textObj = Instantiate(textPrefab, itemContent);
-                    spawnedCartIds.Add(pair.Key);
+                    spawnedCartNames.Add(pair.Key);
 
                     var itemName = textObj.transform.Find("FoodName_Txt").GetComponent<TextMeshProUGUI>();
                     var itemPrice = textObj.transform.Find("FoodPrice_Txt").GetComponent<TextMeshProUGUI>();
@@ -149,49 +144,46 @@ public class InventoryManager : MonoBehaviour
         SetInventoryItems();
     }
 
-    Dictionary<int, int> CountDuplicates(List<int> CDlist)
+    public Dictionary<string , int> CountDuplicates(List<string> CDlist)
     {
-        Dictionary<int, int> duplicateCounts = new Dictionary<int, int>();
+        Dictionary<string, int> duplicateCounts = new Dictionary<string, int>();
 
-        foreach (int idNumber in CDlist)
+        foreach (string itemName in CDlist)
         {
-            if (duplicateCounts.ContainsKey(idNumber))
+            if (duplicateCounts.ContainsKey(itemName))
             {
-                duplicateCounts[idNumber]++;
-                //Debug.Log("Duplicate count " + duplicateCounts[idNumber]
-                //    + "\n element is " + idNumber );
+                duplicateCounts[itemName]++;
             }
             else
             {
-                duplicateCounts[idNumber] = 1;
+                duplicateCounts[itemName] = 1;
             }
         }
+        Debug.LogWarning("dup counts" + duplicateCounts.Count);
 
         return duplicateCounts;
     }
 
     public void CleanList()
     {
-        //Debug.Log("cleaning clean clean");
         foreach (Transform item in itemContent)
         {
             Destroy(item.gameObject);
         }
         idList.Clear();
-        spawnedCartIds.Clear();
+        spawnedCartNames.Clear();
         itemSpawnedList.Clear();
         
     }
     void FindIDs()
     {
-        if (cartPanel.activeInHierarchy)
-        {
+        
             //Debug.Log("Cart is open");
             foreach (var item in itemList)
             {
-                idList.Add(item.id);
+                idList.Add(item.itemName);
             }
-        }
+        
         //else
         //{
         //    // Debug.Log("Cart is close");
@@ -222,22 +214,12 @@ public class InventoryManager : MonoBehaviour
         //Debug.Log("Setting inv items");
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
         
-        for (int i = 0; i < spawnedCartIds.Count; i++)
+        for (int i = 0; i < spawnedCartNames.Count; i++)
         {
             InventoryItem[i].AddItem(itemSpawnedList[i]);
             InventoryItem[i].getItemQuantity = false;
             
         }
-    }
-
-    public void GoToCashier()
-    {
-        if (CheckForObj())
-        {
-            Debug.Log("Go to cashier nownwownwonw");
-        }
-        else
-            Debug.Log("Mising items pls find");
     }
 
     public bool CheckForObj()
@@ -253,18 +235,14 @@ public class InventoryManager : MonoBehaviour
         //this code would get the total amount of food items. 5 bread (of any brand) etc.
         foreach (var item in itemList)
         {
-            Debug.Log("ITEM");
-
             //s Debug.Log(objItem.Key + item.itemType + string.Equals(objItem.Key, item.itemType));
             if (cartObjDiction.ContainsKey(item.itemType))
             {
-                Debug.Log("There is a dupe");
                 cartObjDiction[item.itemType]++;
             }
             else
             {
                 cartObjDiction[item.itemType] = 1;
-                Debug.Log("there is a new food type");
             }
            // Debug.Log(item.itemType + cartObjDiction[item.itemType].ToString());
         }
@@ -303,8 +281,6 @@ public class InventoryManager : MonoBehaviour
         {
             if (!checks.Value)
             {
-                Debug.Log("Missing items!");
-                Debug.Log("doin the function to find whats missing");
                 return false;
             }
         }
@@ -313,7 +289,6 @@ public class InventoryManager : MonoBehaviour
         {
             return false;
         }
-        Debug.Log("Proceed to cashier");
         return true;
     }
 
@@ -379,5 +354,44 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return missingItems;
+    }
+    public Dictionary<string, int> GetCartTypes()
+    {
+        cartObjDiction.Clear();
+
+        foreach (var item in itemList)
+        {
+
+            if (cartObjDiction.ContainsKey(item.itemType))
+            {
+                cartObjDiction[item.itemType]++;
+            }
+            else
+            {
+                cartObjDiction[item.itemType] = 1;
+            }
+        }   
+        return cartObjDiction;
+    }
+
+    public Dictionary<string, int> GetShoppingCartItems()
+    {
+        CleanList();
+        FindIDs();
+        duplicateCounts = CountDuplicates(idList);
+        Debug.LogWarning("dup counts" + duplicateCounts.Count);
+        return duplicateCounts;
+    }
+
+    public void CheckIfReturningFromCashRegister()
+    {
+    Debug.LogWarning("DHFSOFOFIHOIF" + cartData.getItemData); 
+        if (cartData.getItemData)
+        {
+            foreach (var item in cartData.data)
+                itemList.Add(item);
+            Debug.LogWarning("SToLEN ITem DATA");
+            cartData.getItemData = false;
+        }
     }
 }

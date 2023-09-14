@@ -107,12 +107,12 @@ public class CashBudget : MonoBehaviour
     {
         if(coinsBudgetInCents > 0)
         {
-         Debug.Log("coins Budget" + coinsBudgetInCents);
+         //Debug.Log("coins Budget" + coinsBudgetInCents);
 
             int coinsRandom = Random.Range(0, coinSpawners.Length);
             float randomCoinValue = float.Parse(coinSpawners[coinsRandom].name.Replace(textToRemoveCoin, ""));
 
-            Debug.Log("coins budget left is " + coinsBudgetInCents + "\n random coin value is " + randomCoinValue);
+            //Debug.Log("coins budget left is " + coinsBudgetInCents + "\n random coin value is " + randomCoinValue);
 
             if(randomCoinValue <= coinsBudgetInCents)
             {

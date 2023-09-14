@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class MapOpen : MonoBehaviour
 {
-    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList
+    public GameObject panel, player, buttonPressed, shoppingCartPanel, shoppingList, dynamicShoppingList
         , objPanel, helpPanelCtnBtn, MoveButtonLeft, MoveButtonRight, budgetRemainderPanel;
     public GameObject[] waypoints;
     public DialogueHandler dialogueHandler;
@@ -19,7 +19,6 @@ public class MapOpen : MonoBehaviour
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
     public bool isMaleTest;
-    bool isActive,shoppingCartActive,cartActive;
     public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
@@ -81,14 +80,11 @@ public class MapOpen : MonoBehaviour
             MoveButtonLeft.SetActive(isActive);
             MoveButtonRight.SetActive(isActive);
             shoppingCartPanel.SetActive(false);
+            dynamicShoppingList.SetActive(isActive);
 
 
             foreach (GameObject button in aislePoint)
             {
-                Debug.Log("Goin thru buttons");
-               // Debug.LogWarning("the player is in " + mapLocationScript.FindPlayer().Replace(" ","") +
-             //       "\n buttun name is " + button.name);
-
                 if (button.name.Replace("_Btn", "").Contains(mapLocationScript.FindPlayer().Replace(" ", "")))
                 {
                     selectedHead.transform.position = button.transform.position;
@@ -109,6 +105,7 @@ public class MapOpen : MonoBehaviour
             MoveButtonLeft.SetActive(cartActive);
             MoveButtonRight.SetActive(cartActive);
             panel.SetActive(false);
+            dynamicShoppingList.SetActive(cartActive);
         }
         
         InventoryManager.Instance.ShowItem();
@@ -126,7 +123,10 @@ public class MapOpen : MonoBehaviour
 
         }
         else if (InventoryManager.Instance.CheckForObj())
-                     SceneManager.LoadScene("CashRegister");
+        {
+            SaveCartItems();
+            SceneManager.LoadScene("CashRegister");
+        }
         else
         {
             objPanel.SetActive(true);
@@ -137,14 +137,20 @@ public class MapOpen : MonoBehaviour
             shoppingCartPanel.SetActive(false);
         }
     }
+    public void SaveCartItems()
+    {
+        storeCartData storage = GameObject.Find("RandomEventHandler").GetComponent<storeCartData>();
+        storage.CleanList();
+        
+        storage.cartData = InventoryManager.Instance.GetShoppingCartItems();
+        storage.data = InventoryManager.Instance.itemList;
+    }
 
     public void GetHelpForMissingCart()
     {
         helpPanelBody_Txt.text = InventoryManager.Instance.FindMissingItems();
-;
+
         helpPanelCtnBtn.SetActive(false);
-
-
     }
 
     public void TeleportToAisleDynamic()

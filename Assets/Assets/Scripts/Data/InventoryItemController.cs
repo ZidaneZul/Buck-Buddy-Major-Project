@@ -28,19 +28,15 @@ public class InventoryItemController : MonoBehaviour
 
     public void RemoveOne()
     {
-
-        Debug.Log(item.name);
-        Debug.Log(gameObject);
-        foreach (KeyValuePair<int, int> pair in InventoryManager.Instance.duplicateCounts)
+        foreach (KeyValuePair<string, int> pair in InventoryManager.Instance.duplicateCounts)
         {
             Debug.Log("Going thru dictionary");
-            if (pair.Key == item.id)
+            if (pair.Key == item.itemName)
             {
                 if (!getItemQuantity)
                 {
                     quantity = pair.Value;
                     getItemQuantity = true;
-                    Debug.Log("STOLEN LE VALUE");
                 }
 
                // Debug.Log("Found the id in dic");
@@ -52,7 +48,7 @@ public class InventoryItemController : MonoBehaviour
                  quantityTxt.text = quantity + "x";
                 if (quantity <= 0)
                 {
-                    Debug.Log("Deleting from list" + gameObject);
+                    Objective.Instance.ChangeItemDataBoolValue(item.itemType);
                     Destroy(gameObject);
                 }
             }

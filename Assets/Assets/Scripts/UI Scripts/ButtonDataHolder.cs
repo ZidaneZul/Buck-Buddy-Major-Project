@@ -12,6 +12,8 @@ public class ButtonDataHolder : MonoBehaviour
     public Image levelRecipe;
     public LevelData levelData;
     public bool stopper;
+    public Image star1, star2, star3;
+    public Sprite[] starImages;
 
 
     private void Start()
@@ -39,6 +41,11 @@ public class ButtonDataHolder : MonoBehaviour
            ingredientText = GameObject.Find("ObjectiveInformation").GetComponent<TextMeshProUGUI>();
            levelRecipe = GameObject.Find("LevelRecipeIcon").GetComponent<Image>();
            levelNumberHolder.text = "Level " + LevelSelected;
+           star1 = GameObject.Find("StarMainMenu1").GetComponent<Image>();
+           star2 = GameObject.Find("StarMainMenu2").GetComponent<Image>();
+           star3 = GameObject.Find("StarMainMenu3").GetComponent<Image>();
+
+
             foreach (LevelData.LevelDataHolder data in levelData.levelDataHolder)
             {
                 if(data.levelNumber == LevelSelected)
@@ -60,6 +67,38 @@ public class ButtonDataHolder : MonoBehaviour
                         }
                     }
                     stopper = true;
+                    switch (data.levelStarAmount)
+                    {
+                        case 0:
+                            {
+                                star1.sprite = starImages[0];
+                                star2.sprite = starImages[0];
+                                star3.sprite = starImages[0];
+                                break;
+                            }
+                        case 1:
+                            {
+                                star1.sprite = starImages[1];
+                                star2.sprite = starImages[0];
+                                star3.sprite = starImages[0];
+                                break;
+                            }
+                        case 2:
+                            {
+                                star1.sprite = starImages[1];
+                                star2.sprite = starImages[1];
+                                star3.sprite = starImages[0];
+                                break;
+                            }
+                        case 3:
+                            {
+                                star1.sprite = starImages[1];
+                                star2.sprite = starImages[1];
+                                star3.sprite = starImages[1];
+                                break;
+                            }
+
+                    }
 
                 }
             }

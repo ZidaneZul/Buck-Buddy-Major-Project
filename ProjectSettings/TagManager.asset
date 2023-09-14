@@ -25,6 +25,7 @@ TagManager:
   - Tutorial
   - FoodBubble
   - GameManager
+  - Border
   layers:
   - Default
   - TransparentFX

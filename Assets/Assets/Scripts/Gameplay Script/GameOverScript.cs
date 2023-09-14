@@ -11,7 +11,9 @@ public class GameOverScript : MonoBehaviour
     public float timeStart;
     public TextMeshProUGUI timerText;
     public TimeData timeData;
-
+    public GameObject scoreBoard;
+    public TextMeshProUGUI timeReport;
+    public LevelData levelData;
 
     private void Start()
     {
@@ -42,11 +44,31 @@ public class GameOverScript : MonoBehaviour
                 return;
             }
         }
+        //if (scoreBoard != null && scoreBoard != isActiveAndEnabled)
+        //{
+        //    timeStart += Time.deltaTime;
+        //    Timer(timeStart);
+        //    timeData.cashierTime = timeStart;
+        //}
         else
         {
-            timeStart += Time.deltaTime;
-            Timer(timeStart);
-            timeData.cashierTime = timeStart;
+            if (scoreBoard != null && scoreBoard.activeInHierarchy)
+            {
+                float currentTime = (timeData.mainLevelTime + timeData.cashierTime);
+                float minutes = Mathf.FloorToInt(currentTime / 60);
+                float seconds = Mathf.FloorToInt(currentTime % 60);
+                timeReport.text = "Time Taken: " + string.Format("{0:00}m {1:00}s", minutes, seconds); ;
+                return;
+            }
+            else
+            {
+                timeStart += Time.deltaTime;
+                Timer(timeStart);
+                timeData.cashierTime = timeStart;
+            }
+
+            
+
         }
 
     }

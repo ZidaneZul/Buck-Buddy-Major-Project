@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDataHolder:
   - levelNumber: 1
+    levelStarAmount: 0
     foodName: Ham Sandwich
     itemToMake: {fileID: 21300000, guid: 738a7defd41d6c343b81876227db7afc, type: 3}
     ingredients:
     - Bread
     - Ham
   - levelNumber: 2
+    levelStarAmount: 0
     foodName: Egg Cheese Sandwich
     itemToMake: {fileID: 21300000, guid: 14d2be13465df9c41aba9a2ad7c44962, type: 3}
     ingredients:
@@ -27,6 +29,7 @@ MonoBehaviour:
     - Egg
     - Cheese
   - levelNumber: 3
+    levelStarAmount: 0
     foodName: Fried Noodles
     itemToMake: {fileID: 21300000, guid: 6ad7069e6d10d164c9799868fc614689, type: 3}
     ingredients:
@@ -34,6 +37,7 @@ MonoBehaviour:
     - Chicken
     - Soy Sauce
   - levelNumber: 4
+    levelStarAmount: 0
     foodName: Chicken Soup
     itemToMake: {fileID: 21300000, guid: f047ed6bc4d7968499632b73800d66c2, type: 3}
     ingredients:
@@ -42,6 +46,7 @@ MonoBehaviour:
     - Packet Soup
     - Lettuce
   - levelNumber: 5
+    levelStarAmount: 0
     foodName: Cheeseburger
     itemToMake: {fileID: 21300000, guid: d593824eab3ad85478ccefbe17aecfa9, type: 3}
     ingredients:
@@ -50,6 +55,7 @@ MonoBehaviour:
     - Chicken
     - Lettuce
   - levelNumber: 6
+    levelStarAmount: 0
     foodName: Mushroom Burger
     itemToMake: {fileID: 21300000, guid: fe8a5fddb4c3d7142b476c4a2015572e, type: 3}
     ingredients:
@@ -58,6 +64,7 @@ MonoBehaviour:
     - Mushroom
     - Lettuce
   - levelNumber: 7
+    levelStarAmount: 0
     foodName: BBQ Chicken Pizza
     itemToMake: {fileID: 21300000, guid: 051e9393d87b0c4468b2923ee8b3a884, type: 3}
     ingredients:
@@ -67,6 +74,7 @@ MonoBehaviour:
     - Cheese
     - Onions
   - levelNumber: 8
+    levelStarAmount: 0
     foodName: Mushroom Pizza
     itemToMake: {fileID: 21300000, guid: 32e6851ad0d0a5044b65139dae1bc52a, type: 3}
     ingredients:
@@ -76,6 +84,7 @@ MonoBehaviour:
     - Cheese
     - Onions
   - levelNumber: 9
+    levelStarAmount: 0
     foodName: Chocolate Cake
     itemToMake: {fileID: 21300000, guid: 817f34fd9c6a7e9409a9aa1cd2d15d87, type: 3}
     ingredients:
@@ -85,6 +94,7 @@ MonoBehaviour:
     - Vanilla Cream
     - Milk
   - levelNumber: 10
+    levelStarAmount: 0
     foodName: Pineapple Citrus Juice
     itemToMake: {fileID: 21300000, guid: c3c2843025ebbe34e923f231a3865571, type: 3}
     ingredients:
@@ -95,6 +105,7 @@ MonoBehaviour:
     - Mint
     - Ginger
   - levelNumber: 11
+    levelStarAmount: 0
     foodName: Sausage Egg Sandwich
     itemToMake: {fileID: 21300000, guid: 57e8ca72e5c745d4dad2889545ae223a, type: 3}
     ingredients:
@@ -105,6 +116,7 @@ MonoBehaviour:
     - Lettuce
     - Tomato
   - levelNumber: 12
+    levelStarAmount: 0
     foodName: Vegetable Fruit Salad
     itemToMake: {fileID: 21300000, guid: f117af8ed72f39843a9c4474a140aa66, type: 3}
     ingredients:
@@ -115,6 +127,7 @@ MonoBehaviour:
     - Onion
     - Orange
   - levelNumber: 13
+    levelStarAmount: 0
     foodName: Chicken Vegetable Sandwich
     itemToMake: {fileID: 21300000, guid: 4c0ac0a29edcfd8438763e8928ad0670, type: 3}
     ingredients:
@@ -125,6 +138,7 @@ MonoBehaviour:
     - Cheese
     - Cucumber
   - levelNumber: 14
+    levelStarAmount: 0
     foodName: Spaghetti
     itemToMake: {fileID: 21300000, guid: 843dd476e5ca22746a7f929dcad402a1, type: 3}
     ingredients:
@@ -135,6 +149,7 @@ MonoBehaviour:
     - Salt
     - Onion
   - levelNumber: 15
+    levelStarAmount: 0
     foodName: Rainbow Cake
     itemToMake: {fileID: 21300000, guid: 3aa2b3bffe24c604a85af09ea9ffc031, type: 3}
     ingredients:
