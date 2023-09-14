@@ -18,7 +18,6 @@ public class MapOpen : MonoBehaviour
 
     public Sprite maleHead, femaleHead;
     public GameObject selectedHead;
-    public bool isMaleTest;
     public  PlayerSelectOption selectedModelScript;
 
     string waypointString, buttonName;
