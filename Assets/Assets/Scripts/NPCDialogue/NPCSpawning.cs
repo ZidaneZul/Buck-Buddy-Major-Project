@@ -23,6 +23,10 @@ public class NPCSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(spawnedNpc == null)
+        {
+            return;
+        }
 
         if(dialogueManager.NPCInteracted == false)
         {

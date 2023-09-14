@@ -328,12 +328,13 @@ public class DialogueManager : MonoBehaviour
         LeftArrow.SetActive(true);
         RightArrow.SetActive(true);
         animator.SetBool("IsOpen", false);
-        npcSpawning.spawnedNpc.SetActive(false);
         talkingToNpc = false;
         if (Scammed)
         {
             gameOverScript.levelBudget -= gameOverScript.levelBudget;
         }
+        npcSpawning.spawnedNpc.SetActive(false);
+
 
 
     }
