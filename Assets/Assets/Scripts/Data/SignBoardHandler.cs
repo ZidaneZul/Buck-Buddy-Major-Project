@@ -16,7 +16,7 @@ public class SignBoardHandler : MonoBehaviour
     
     
     // Start is called before the first frame update
-    void Start()
+    void Start() // To Obtain the signboard gameobject and assigning it to variables
     {
         item1Holder = gameObject.transform.Find("Item1");
         item1Text = item1Holder.GetComponent<TextMeshPro>();
@@ -30,7 +30,7 @@ public class SignBoardHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // To change the hanging signboard sample text to actual names
     {
         item1Text.text = signBoardData.itemName1;
         item2Text.text = signBoardData.itemName2;

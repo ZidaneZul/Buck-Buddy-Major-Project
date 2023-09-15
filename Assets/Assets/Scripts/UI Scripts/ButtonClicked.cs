@@ -12,7 +12,7 @@ public class ButtonClicked : MonoBehaviour
         buttonDataHolder = GameObject.Find("RandomEventHandler").GetComponent<ButtonDataHolder>();
     }
     // Start is called before the first frame update
-    public void WhichBtnClicked(Button btn)
+    public void WhichBtnClicked(Button btn) // Holds the number of the level selected
     {
         btn.transform.name = "clicked";
         for (int i = 0; i < btn.transform.parent.transform.childCount; i++)

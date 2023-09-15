@@ -56,16 +56,16 @@ public class NPCRandomChance : MonoBehaviour
 
     void Update()
     {
-        if(GameObject.FindGameObjectWithTag("NPC") != null)
+        if(GameObject.FindGameObjectWithTag("NPC") != null) // If the npc is not null and does not find a player, it will continuously patrol
         {
             GotoNextPoint();
             Debug.Log(nma.remainingDistance);
         }
-        if ((PlayerDetection()))
+        if ((PlayerDetection())) // if the NPC detects a player nearby it will start to play the conversation
         {
             TestDialogue();
         }
-        if (GameObject.FindGameObjectWithTag("NPC") == null)
+        if (GameObject.FindGameObjectWithTag("NPC") == null) // Spawn an NPC if it is missing
         {
             StartCoroutine(NPCSpawner(SceneName));
 
@@ -83,7 +83,7 @@ public class NPCRandomChance : MonoBehaviour
 
         if (NPCOnScene != null)
         {
-            collidedObjects = Physics.OverlapSphere(nma.transform.position, 3f);
+            collidedObjects = Physics.OverlapSphere(nma.transform.position, 3f); // Checks all the object that collides with the NPC
         }
 
     }
@@ -110,6 +110,7 @@ public class NPCRandomChance : MonoBehaviour
             dialogueBoxInScene.SetActive(false);
             StopAllCoroutines();
 
+            // Assigning all the NPC Variable needed for level 1
         }
     }
     bool PlayerDetection()
@@ -123,7 +124,7 @@ public class NPCRandomChance : MonoBehaviour
                 if (k.gameObject.tag == "Player")
                 {
                     Player = k.gameObject;
-                    character = k.gameObject.GetComponent<CharacterScript>();
+                    character = k.gameObject.GetComponent<CharacterScript>(); // Obtain the player attributes for modification
                     return true;
                 }
 
@@ -135,7 +136,7 @@ public class NPCRandomChance : MonoBehaviour
     }
 
 
-    void GotoNextPoint()
+    void GotoNextPoint() // Patrol method, depending on which waypoint the NPC spawns on or travels to, it will move to the next
     {
         if (!PlayerDetection())
         {
@@ -251,7 +252,7 @@ public class NPCRandomChance : MonoBehaviour
 
             }
         }
-        else if ((PlayerDetection()) && (interacted == false))
+        else if ((PlayerDetection()) && (interacted == false)) // If the player entered the vicinity of the NPC, they will move towards the player, disable his movement and wait for a key prompt
         {
             nma.isStopped = true;
             character.speed = 0f;
@@ -313,7 +314,7 @@ public class NPCRandomChance : MonoBehaviour
 
     }
 
-    void TestDialogue()
+    void TestDialogue() // Depending on the NPC Type it will display the respective dialog
     {
         int NPCTypeHolder = 0;
         dialogueBoxInScene.SetActive(true);

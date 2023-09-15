@@ -21,7 +21,7 @@ public class ButtonDataHolder : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    private void Update()
+    private void Update() // Assigns the level sample text and images to the respective level related assets.
     {
         scene = SceneManager.GetActiveScene();
 

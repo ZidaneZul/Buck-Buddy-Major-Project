@@ -28,7 +28,8 @@ public class GameOverScript : MonoBehaviour
     {
 
 
-
+        // If the scene is not cash register, the time taken will modify the dataset for the main level section
+        // The game will continuously count up and it will check the level budget to ensure it is always above 0, if it below 0 it will result in a game over
         if(SceneManager.GetActiveScene().name != "CashRegister")
         {
             timeStart += Time.deltaTime;
@@ -53,7 +54,7 @@ public class GameOverScript : MonoBehaviour
         //}
         else
         {
-            if (scoreBoard != null && scoreBoard.activeInHierarchy)
+            if (scoreBoard != null && scoreBoard.activeInHierarchy) // If the end game score board is not empty and is active, it will display the total time taken
             {
                 float currentTime = (timeData.mainLevelTime + timeData.cashierTime);
                 float minutes = Mathf.FloorToInt(currentTime / 60);
@@ -63,7 +64,7 @@ public class GameOverScript : MonoBehaviour
             }
             else
             {
-                timeStart += Time.deltaTime;
+                timeStart += Time.deltaTime; //  if the score isnt active then it will signify that it is in the cashier scene, any time taken will modify the time taken value in cashiertime
                 Timer(timeStart);
                 timeData.cashierTime = timeStart;
             }
@@ -73,7 +74,7 @@ public class GameOverScript : MonoBehaviour
         }
 
     }
-    public void Timer(float currentTime)
+    public void Timer(float currentTime) // Timer to display on the hud in a clock format
     {
         currentTime += 1;
         float minutes = Mathf.FloorToInt(currentTime / 60);
