@@ -32,9 +32,9 @@ public class InventoryManager : MonoBehaviour
 
     Dictionary<string, bool> checkObj = new Dictionary<string, bool>();
 
-    public GameObject textPrefab, cartPanel,cartAmount, budgetReminder;
+    public GameObject textPrefab, cartAmount, budgetReminder;
     public TextMeshProUGUI cartQuantity;
-    public Toggle cancelToggle;
+   // public Toggle cancelToggle;
     public Transform itemContent;
     public int itemsInCart;
 
@@ -214,7 +214,7 @@ public class InventoryManager : MonoBehaviour
         //Debug.Log("Setting inv items");
         InventoryItem = itemContent.GetComponentsInChildren<InventoryItemController>();
         
-        for (int i = 0; i < spawnedCartNames.Count; i++)
+        for (int i = 0; i < itemSpawnedList.Count; i++)
         {
             InventoryItem[i].AddItem(itemSpawnedList[i]);
             InventoryItem[i].getItemQuantity = false;
@@ -374,14 +374,14 @@ public class InventoryManager : MonoBehaviour
         return cartObjDiction;
     }
 
-    public Dictionary<string, int> GetShoppingCartItems()
-    {
-        CleanList();
-        FindIDs();
-        duplicateCounts = CountDuplicates(idList);
-        Debug.LogWarning("dup counts" + duplicateCounts.Count);
-        return duplicateCounts;
-    }
+    //public Dictionary<string, int> GetShoppingCartItems()
+    //{
+    //    CleanList();
+    //    FindIDs();
+    //    duplicateCounts = CountDuplicates(idList);
+    //    Debug.LogWarning("dup counts" + duplicateCounts.Count);
+    //    return duplicateCounts;
+    //}
 
     //public void CheckIfReturningFromCashRegister()
     //{

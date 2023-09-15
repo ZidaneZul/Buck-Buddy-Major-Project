@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8568055341523526875}
   - component: {fileID: 1236547197535539729}
   m_Layer: 5
-  m_Name: AdjecentAisles
+  m_Name: AdjacentAisles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

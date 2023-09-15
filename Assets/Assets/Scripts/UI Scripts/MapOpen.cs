@@ -141,7 +141,7 @@ public class MapOpen : MonoBehaviour
         storeCartData storage = GameObject.Find("RandomEventHandler").GetComponent<storeCartData>();
         storage.CleanList();
         
-        storage.cartData = InventoryManager.Instance.GetShoppingCartItems();
+        storage.cartData = InventoryManager.Instance.GetCartTypes();
         storage.data = InventoryManager.Instance.itemList;
     }
 
