@@ -16,8 +16,8 @@ public class NPCSpawning : MonoBehaviour
     {
         NPCspawnerLocations = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
-        
-        FindClosestWaypoint();
+
+        StartCoroutine(TimeBuffer());
     }
 
     // Update is called once per frame
@@ -36,32 +36,38 @@ public class NPCSpawning : MonoBehaviour
                 dialogueManager.NPCInteracted = true;
             }
         }
-
+        // checks if the player is near the NPC and start the dialogue if its true
 
     }
-
-    void FindClosestWaypoint()
+    IEnumerator TimeBuffer()
     {
-        float distanceToClosestWaypoint = Mathf.Infinity;
-        GameObject closestWaypoint = null;
-        foreach(GameObject waypoint in NPCspawnerLocations)
-        {
-            float distanceToPlayer = (waypoint.transform.position - Player.transform.position).sqrMagnitude;
-            if(distanceToPlayer < distanceToClosestWaypoint)
-            {
-                distanceToClosestWaypoint = distanceToPlayer;
-                closestWaypoint = waypoint;
-                NPCspawnerLocations.Remove(closestWaypoint);
-                SpawnNPC();
+        yield return new WaitForSeconds(2f);
 
-
-            }
-
-
-        }
+        SpawnNPC();
     }
 
-    void SpawnNPC()
+    //void FindClosestWaypoint() // Finds the closest waypoint 
+    //{
+    //    float distanceToClosestWaypoint = Mathf.Infinity; 
+    //    GameObject closestWaypoint = null;
+    //    foreach(GameObject waypoint in NPCspawnerLocations)
+    //    {
+    //        float distanceToPlayer = (waypoint.transform.position - Player.transform.position).sqrMagnitude;
+    //        if(distanceToPlayer < distanceToClosestWaypoint)
+    //        {
+    //            distanceToClosestWaypoint = distanceToPlayer;
+    //            closestWaypoint = waypoint;
+    //            NPCspawnerLocations.Remove(closestWaypoint);
+    //            SpawnNPC();
+
+
+    //        }
+
+
+    //    }
+    //}
+
+    void SpawnNPC() // Checks what type of NPC it is and assigns the according variable
     {
         if(dialogueManager.npcData.name == "Scammer")
         {
@@ -71,11 +77,11 @@ public class NPCSpawning : MonoBehaviour
         {
             NPC = TypesOfNpc[0];
         }
-        numberHolder = Random.Range(0, NPCspawnerLocations.Count);
+        numberHolder = Random.Range(1, NPCspawnerLocations.Count);
         spawnedNpc = Instantiate(NPC, NPCspawnerLocations[numberHolder].transform);
     }
 
-    bool PlayerInVicinity()
+    bool PlayerInVicinity() // Check if the player is within radius
     {
         if(Vector3.Distance(Player.transform.position, spawnedNpc.transform.position) <= 5f)
         {

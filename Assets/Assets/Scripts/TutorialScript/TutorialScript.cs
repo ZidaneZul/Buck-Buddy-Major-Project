@@ -68,7 +68,7 @@ public class TutorialScript : MonoBehaviour
         
 
 
-        if (SceneManager.GetActiveScene().name == "Level1")
+        if (SceneManager.GetActiveScene().name == "Level1") // Only plays the tutorial if it is level 1
         {
             //StartCoroutine(StartTutorial());
             StartDialogue();
@@ -86,7 +86,7 @@ public class TutorialScript : MonoBehaviour
         GrayedBox.SetActive(false);
     }
 
-    public void MapTutorialStart()
+    public void MapTutorialStart() // Enable all the related tutorial UI
     {
         if (SceneManager.GetActiveScene().name == "Level1")
         {
@@ -109,7 +109,7 @@ public class TutorialScript : MonoBehaviour
 
     }
 
-    public void StartDialogue()
+    public void StartDialogue() // Starts the tutorial explanation sequence
     {
         TutorialChatBox.SetActive(true);
         GrayedBox.SetActive(true);
@@ -121,7 +121,7 @@ public class TutorialScript : MonoBehaviour
         }
         DisplayNextSentence();
     }
-    public void DisplayNextSentence()
+    public void DisplayNextSentence() // Displays the next sentence, if the sentence is not fully completed yet, it will autocomplete upon clicking.
     {
         if (!firstTime)
         {
@@ -151,7 +151,7 @@ public class TutorialScript : MonoBehaviour
         }
 
     }
-    IEnumerator CloseTimer()
+    IEnumerator CloseTimer() // Disable all tutorial related UI
     {
         yield return new WaitForSeconds(1.5f);
         GrayedBox.SetActive(false);
@@ -163,7 +163,7 @@ public class TutorialScript : MonoBehaviour
 
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string sentence) // Animating the text to have a typing effect
     {
         TutorialMesssage.text = "";
 
@@ -175,7 +175,7 @@ public class TutorialScript : MonoBehaviour
 
     }
 
-    public void DialogueStarter()
+    public void DialogueStarter() // This method modifies the placement of each asset during the tutorial to make it look animated
     {
         if (Index == 0)
         {
@@ -235,7 +235,7 @@ public class TutorialScript : MonoBehaviour
 
         }
     }
-    IEnumerator StartTutorial()
+    IEnumerator StartTutorial() // Coroutine for auto plays similarly to dialogueStarter
     {
         GrayedBox.SetActive(true);
         TutorialChatBox.SetActive(true);

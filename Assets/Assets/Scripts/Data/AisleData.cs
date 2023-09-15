@@ -10,8 +10,8 @@ public class AisleData : ScriptableObject
     [System.Serializable]
     public class AisleDataHolder
     {
-        public GameObject Aisle;
-        public string[] FoodTypeInAisle;
+        public GameObject Aisle; // Hold the Aisle waypoint
+        public string[] FoodTypeInAisle; // the different food types that are in the Aisle
     }
 
     public AisleDataHolder[] aisleDataHolder;

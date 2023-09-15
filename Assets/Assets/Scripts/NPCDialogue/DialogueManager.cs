@@ -43,6 +43,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log(npcData.ScenarioType);
     }
 
+    // Every the player interacts with the map, there is a 1/10 chance in triggering the NPC
     public void NPCRandomChance()
     {
         if (NPCInteracted)
@@ -61,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void Update()
     {
-        if (talkingToNpc)
+        if (talkingToNpc) // It will disable the movement keys once in a conversation
         {
             LeftArrow.SetActive(false);
             RightArrow.SetActive(false);
@@ -69,7 +70,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void StartDialogue()
+    public void StartDialogue() // Dialog trigger, Assigning all the respective variables needed for the NPC
     {
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
@@ -129,7 +130,7 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
     }
-    public void DisplayNextSentence()
+    public void DisplayNextSentence() // Dequeues the latest variable and move on to the next sequence
     {
         if(dialogues.Count == 0)
         {
@@ -195,7 +196,7 @@ public class DialogueManager : MonoBehaviour
         //NPCImage.sprite = images;
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string sentence) // Animating the text to make it look like its typing
     {
         dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
@@ -207,7 +208,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void StartPlayerInteraction()
+    public void StartPlayerInteraction() // Displays the yes and no options
     {
         yesButton.SetActive(true);
         noButton.SetActive(true);
@@ -216,21 +217,21 @@ public class DialogueManager : MonoBehaviour
         noButton.GetComponentInChildren<TextMeshProUGUI>().text = noResponses.Peek();
 
     }
-    public void LeftPersonTalking()
+    public void LeftPersonTalking() // Dims out the right person when left is talking
     {
         nameText.text = npcData.FirstPersonName;
         NPCImage2.color = new Color(0.5f, 0.5f, 0.5f);
         NPCImage1.color = Color.white;
     }
 
-    public void RightPersonTalking()
+    public void RightPersonTalking() // Dims out the left person when right is talking
     {
         nameText.text = npcData.SecondPersonName;
         NPCImage1.color = new Color(0.5f, 0.5f, 0.5f);
         NPCImage2.color = Color.white;
     }
 
-    public void YesChoice()
+    public void YesChoice() // When player press Yes, conduct respective yes outcomes
     {
 
         LeftPersonTalking();
@@ -279,7 +280,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void NoChoice()
+    public void NoChoice() // When player press no, carry out respective no outcomes.
     {
         dialogueText.text = noResponses.Peek();
         LeftPersonTalking();
@@ -317,7 +318,7 @@ public class DialogueManager : MonoBehaviour
         }
 
     }
-    IEnumerator CloseTimer()
+    IEnumerator CloseTimer() // Close all UI related to the NPC
     {
         yesButton.SetActive(false);
         noButton.SetActive(false);

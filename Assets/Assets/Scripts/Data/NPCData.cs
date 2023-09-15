@@ -9,10 +9,10 @@ public class NPCData : ScriptableObject
 
     public class NpcScenario
     {
-        public string dialogue;
-        public bool FirstImage;
-        public bool SecondImage;
-        public bool PlayerInteraction;
+        public string dialogue; // The dialogue that would be displayed
+        public bool FirstImage; // Whether the person on the left is talking
+        public bool SecondImage; // Whether the person on the right is talking
+        public bool PlayerInteraction; // Whether the player would need to awnser yes or no
         
     }
     public enum MyEnum // your custom enumeration
