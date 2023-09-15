@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectCharacterScript : MonoBehaviour
 {
+    public GameObject uiAudio;
     public bool IsMale;
 
     Color dim, bright;
@@ -59,5 +60,6 @@ public class SelectCharacterScript : MonoBehaviour
             Debug.Log("is male is " + IsMale);
             SceneManager.LoadScene("LevelSelectTest");
         }
+        Destroy(uiAudio, 0.5f);
     }
 }

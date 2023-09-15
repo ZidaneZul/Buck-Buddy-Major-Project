@@ -8,6 +8,7 @@ using TMPro;
 public class ButtonPressFunctions : MonoBehaviour
 {
     public ButtonDataHolder buttonDataHolder;
+    public GameObject uiAudio;
 
     void Start()
     {
@@ -18,30 +19,38 @@ public class ButtonPressFunctions : MonoBehaviour
     public void ConfirmSelection()
     {
         SceneManager.LoadScene("Level" + buttonDataHolder.LevelSelected);
+        Destroy(uiAudio, 0.5f);
+        Destroy(GameObject.Find("BGM"));
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("PlayerSelect");
+        Destroy(uiAudio, 0.5f);
     }
     public void SelectLvl()
     {
         SceneManager.LoadScene("LevelSelectTest");
+        Destroy(uiAudio, 0.5f);
     }
 
     public void Back()
     {
         SceneManager.LoadScene("LevelSelectTest");
+        Destroy(uiAudio, 0.5f);
     }
 
     public void NextLevel()
     {
         SceneManager.LoadScene("Level" + (buttonDataHolder.LevelSelected + 1));
+        Destroy(uiAudio, 0.5f);
     }
 
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Destroy(uiAudio, 0.5f);
+        Destroy(GameObject.Find("BGM"));
     }
 
     public void ReturnToGame()

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class GameOverScript : MonoBehaviour
 {
+    public GameObject uiAudio;
     public Objective objectiveData;
     public float levelBudget;
     public GameObject gameOverMenu;
@@ -91,16 +92,21 @@ public class GameOverScript : MonoBehaviour
     public void SelectNewLevel()
     {
         SceneManager.LoadScene("LevelSelectTest");
+        Destroy(uiAudio, 0.5f);
+        Destroy(GameObject.Find("BGM"));
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Destroy(uiAudio, 0.5f);
+        Destroy(GameObject.Find("BGM"));
     }
 
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        Destroy(uiAudio, 0.5f);
     }
 
 
