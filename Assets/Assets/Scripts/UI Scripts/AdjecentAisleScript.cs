@@ -4,13 +4,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class AdjacentAisleScript : MonoBehaviour
+public class AdjecentAisleScript : MonoBehaviour
 {
     public GameObject go, leftObject, rightObject, currentObject;
     public TextMeshProUGUI currentAisle_txt, leftAisle_txt, rightAisle_txt;
     public Image currentAisle_img, leftAisle_img, rightAisle_img;
 
     public GameObject[] aisles;
+    public GameObject[] aislesClone;
 
     public MapLocation mapLocationScript;
 
@@ -27,7 +28,7 @@ public class AdjacentAisleScript : MonoBehaviour
     void Start()
     {
         aisles = GameObject.FindGameObjectsWithTag("Sections");
-        go = GameObject.Find("AdjacentAisles");
+        go = GameObject.Find("AdjecentAisles");
 
         currentObject = go.transform.GetChild(1).gameObject;
         currentAisle_txt = currentObject.GetComponentInChildren<TextMeshProUGUI>();

@@ -58,9 +58,5 @@ public class ButtonPressFunctions : MonoBehaviour
         SceneManager.LoadScene("Level" + (buttonDataHolder.LevelSelected));
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 
 }

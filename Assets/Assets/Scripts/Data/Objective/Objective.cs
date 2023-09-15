@@ -205,19 +205,16 @@ public class Objective : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// This function is needed as if the level obj only require one bread, and the player deletes that
-    /// bread in the cart it would not update the bool and the item would still be checked off in the
-    /// shopping list.
-    /// </summary>
     public void ChangeItemDataBoolValue(string itemToReset)
     {
+        Debug.Log("trying to find the error");
         foreach(Transform item in dynamicShoppingListContent.transform)
         {
             ObjectiveDataHolder itemDataHolder = item.GetComponent<ObjectiveDataHolder>();
 
             if (itemDataHolder.typeOfItem == itemToReset)
             {
+
                 itemDataHolder.sufficientAmount = false;
                 ObjCheckOff();
             }
