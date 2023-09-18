@@ -106,7 +106,7 @@ public class GameOverScript : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name.ToString());
         Destroy(uiAudio, 0.5f);
     }
 
